@@ -3,6 +3,9 @@
 {
   imports = [
     ../system/common.nix
+    ../system/systemdboot.nix
+    ../system/containers.nix
+    ../system/virtmanager.nix
     ../hardware/desktop.nix
     ../users/user.nix
   ];
@@ -18,5 +21,12 @@
     g810-led
     piper
   ];
+  hardware.opengl.extreaPackages = [
+    pkgs.amdvlk
+  ];
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "performance"l
+  };
 
 }
