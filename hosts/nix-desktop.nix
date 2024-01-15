@@ -3,7 +3,8 @@
 {
   imports = [
     ../system/common.nix
-    
+    ../hardware/desktop.nix
+    ../users/user.nix
   ];
 
   system.stateVersion = "23.05";
