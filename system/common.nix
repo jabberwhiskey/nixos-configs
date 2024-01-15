@@ -6,4 +6,9 @@
 
   time.timeZone = "US/Mountain";
 
+  services.xserver = {
+    layout = "us"
+    xkbVarient = "";
+  };
+
 }
