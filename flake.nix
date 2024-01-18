@@ -19,11 +19,26 @@
     stable,
     nixos-hardware,
     hyprland,
+    ...
     }:{
       nixosConfigurations = {
 	nixos-laptop = nixpkgs.lib.nixosSystem {
 	  system = "x86_64-linux";
 	  modules = [
+	    ./hosts/nixos-laptop.nix
+	    home-manager.nixosModules.home-manager
+	    {
+	      home-manager = {
+		useGlobalPackages = true;
+		useUserPackages = true;
+		users.jce = {
+		  imports = [
+		    ./home.home.nix
+		  ];
+		};
+		home.stateVersion = "22.11";
+	      };
+	    }
 	  ];
 	};
 	nixos-server = stable.lib.nixosSystem {

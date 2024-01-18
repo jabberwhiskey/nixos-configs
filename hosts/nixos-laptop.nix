@@ -5,7 +5,7 @@
     ../system/common.nix
     ../system/systemdboot.nix
     ../system/containers.nix
-    ../users/user.nix
+    ../user/user.nix
     ../hardware/hplaptop.nix
   ];
   system.stateVersion = "22.11";

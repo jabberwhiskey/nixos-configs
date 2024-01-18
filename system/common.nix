@@ -22,15 +22,15 @@
 
 
   services.xserver = {
-    layout = "us"
+    layout = "us";
     xkbVarient = "";
   };
   nix = {
     gc = {
       automatic = true;
-      options = "--delete-older-than 30d"l
+      options = "--delete-older-than 30d";
     };
-    optimise.automatic = true.
+    optimise.automatic = true;
   };
   sound.enable = true;
   hardware.pulseaudio.enable = false;
