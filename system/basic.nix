@@ -23,7 +23,6 @@
 
   services.xserver = {
     layout = "us";
-    xkbVarient = "";
   };
   nix = {
     gc = {

@@ -7,7 +7,7 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
-  enviroment.systemPackages = [
+  environment.systemPackages = [
     pkgs.podman
   ];
 }

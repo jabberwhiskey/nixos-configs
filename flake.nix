@@ -6,7 +6,7 @@
     stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager";
-      follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -20,7 +20,7 @@
     nixos-hardware,
     hyprland,
     ...
-    }:{
+    }: {
       nixosConfigurations = {
 	nixos-laptop = nixpkgs.lib.nixosSystem {
 	  system = "x86_64-linux";
@@ -29,36 +29,38 @@
 	    home-manager.nixosModules.home-manager
 	    {
 	      home-manager = {
-		useGlobalPackages = true;
+		useGlobalPkgs = true;
 		useUserPackages = true;
-		users.jce = {
+		users.jcw = {
 		  imports = [
 		    ./home.home.nix
 		  ];
 		};
-		home.stateVersion = "22.11";
+		extraSpecialArgs = {
+		  home.stateVersion = "22.11";
+		};
 	      };
 	    }
 	  ];
 	};
-	nixos-server = stable.lib.nixosSystem {
-	  system = "x86_64-linux";
-	  modules = [
-
-	  ];
-	};
-	framework = nixpkgs.lib.nixosSystem {
-	  system = "x86_64-linux";
-	  modules = [
-
-	  ];
-	};
-	nix-desktop = nixpkgs.lib.nixosSystem {
-	  system = "x86_64-linux";
-	  modules = [
-
-	  ];
-	};
+#	nixos-server = stable.lib.nixosSystem {
+#	  system = "x86_64-linux";
+#	  modules = [
+#
+#	  ];
+#	};
+#	framework = nixpkgs.lib.nixosSystem {
+#	  system = "x86_64-linux";
+#	  modules = [
+#
+#	  ];
+#	};
+#	nix-desktop = nixpkgs.lib.nixosSystem {
+#	  system = "x86_64-linux";
+#	  modules = [
+#
+#	  ];
+#	};
       };
     };
   }

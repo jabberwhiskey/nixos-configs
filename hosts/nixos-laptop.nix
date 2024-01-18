@@ -10,7 +10,7 @@
   ];
   system.stateVersion = "22.11";
   
-  networking.hostname = "nixos-laptop";
+  networking.hostName = "nixos-laptop";
 
   environment.systemPackages = with pkgs; [
     usbutils
