@@ -1,9 +1,9 @@
 {
-  description = "config for modular nixos systems"
+  description = "config for modular nixos systems";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-23-11";
+    stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       follows = "nixpkgs";
@@ -47,4 +47,4 @@
       };
     };
   }
-}
+
