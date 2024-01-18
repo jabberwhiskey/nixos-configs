@@ -33,11 +33,11 @@
 		useUserPackages = true;
 		users.jcw = {
 		  imports = [
-		    ./home.home.nix
+		    ./home/home.nix
 		  ];
+		  home.stateVersion = "22.11";
 		};
 		extraSpecialArgs = {
-		  home.stateVersion = "22.11";
 		};
 	      };
 	    }

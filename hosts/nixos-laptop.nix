@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../system/common.nix
+    ../system/basic.nix
     ../system/systemdboot.nix
     ../system/containers.nix
     ../user/user.nix
