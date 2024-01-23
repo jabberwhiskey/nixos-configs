@@ -20,9 +20,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
-  services.xserver = {
-    layout = "us";
+  environment.systemPackages = with pkgs; [
+    tmux
+  ];
   };
   nix = {
     gc = {

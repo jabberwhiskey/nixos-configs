@@ -34,6 +34,7 @@
 		users.jcw = {
 		  imports = [
 		    ./home/home.nix
+		    ./home/sway.nix
 		  ];
 		  home.stateVersion = "22.11";
 		};
