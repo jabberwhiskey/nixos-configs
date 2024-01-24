@@ -1,9 +1,11 @@
-{ pkgs, config, ... };
-
+{ pkgs, config, ... }:
 {
-  services.xserver.displayManager.sddm = {
+  services.xserver = {
     enable = true;
-    wayland.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    desktopManager.plasma5.enable = true;
   };
-  services.xserver.desktopManager.plasma5.enable = true;
 }

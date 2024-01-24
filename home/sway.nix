@@ -222,6 +222,7 @@
       grim
       slurp
       light
+      foot
       swayest-workstyle
     ];
   services.network-manager-applet.enable = true;

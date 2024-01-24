@@ -1,10 +1,20 @@
 #A common config needed for all (my) nixos systems
 { pkgs, config, ... }:
 {
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   time.timeZone = "US/Mountain";
+
+  networking.networkmanager.enable = true;
 
   services.fwupd.enable = true;
 
@@ -23,7 +33,6 @@
   environment.systemPackages = with pkgs; [
     tmux
   ];
-  };
   nix = {
     gc = {
       automatic = true;
