@@ -6,6 +6,7 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
+      mpv
       htop
       bitwarden
       bitwarden-cli
@@ -13,6 +14,8 @@
       vivaldi
       unzip
       yt-dlp
+      ffmpeg
+      qutebroswer
     ];
     sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
