@@ -15,7 +15,7 @@
       unzip
       yt-dlp
       ffmpeg
-      qutebroswer
+      qutebrowser
     ];
     sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
