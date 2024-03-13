@@ -234,7 +234,7 @@
   };
   home.pointerCursor = {
     package = pkgs.catppuccin-cursors.frappeBlue;
-    size = 16;
+    size = 25;
     name = "Catppuccin-Frappe-Blue-Cursors";
   };
 }
