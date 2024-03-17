@@ -21,54 +21,54 @@
     hyprland,
     ...
     }: {
-      nixosConfigurations = {
-	nixos-laptop = nixpkgs.lib.nixosSystem {
-	  system = "x86_64-linux";
-	  modules = [
-	    ./hosts/nixos-laptop.nix
-	    home-manager.nixosModules.home-manager
-	    {
+    nixosConfigurations = {
+	    nixos-laptop = nixpkgs.lib.nixosSystem {
+	    system = "x86_64-linux";
+	    modules = [
+	      ./hosts/nixos-laptop.nix
+	      home-manager.nixosModules.home-manager
+	      {
 	      home-manager = {
-		useGlobalPkgs = true;
-		useUserPackages = true;
-		users.jcw = {
-		  imports = [
-		    ./home/home.nix
-		    ./home/sway.nix
-		  ];
-		  home.stateVersion = "22.11";
-		};
-		extraSpecialArgs = {
-		};
-	      };
-	    }
-	  ];
-	};
+		       useGlobalPkgs = true;
+		       useUserPackages = true;
+		       users.jcw = {
+		         imports = [
+		           ./home/home.nix
+		           ./home/sway.nix
+		         ];
+		         home.stateVersion = "22.11";
+		       };
+		       extraSpecialArgs = {
+		       };
+	       };
+	      }
+	    ];
+	  };
 #	nixos-server = stable.lib.nixosSystem {
 #	  system = "x86_64-linux";
 #	  modules = [
 #
 #	  ];
 #	};
-	framework = nixpkgs.lib.nixosSystem {
-	  system = "x86_64-linux";
-	  modules = [
-      ./hosts/framework.nix
-      home-manager.nixosModules.home-manager
-      {
-        home-manager = [
-          useGlobalpkgs = true;
-          useUserPackages = true;
-        ];
-        users.jcw = [
-          imports = [
-            ./home/home.nix
-          ];
-        ];
-        home.stateVersion = "23.05"
-      }
-	  ];
-	};
+	  framework = nixpkgs.lib.nixosSystem {
+	    system = "x86_64-linux";
+	    modules = [
+        ./hosts/framework.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.jcw = [
+            imports = [
+              ./home/home.nix
+              ];
+            ];
+            home.stateVersion = "23.05"
+          };
+        }
+	    ];
+	  };
 	nix-desktop = nixpkgs.lib.nixosSystem {
 	  system = "x86_64-linux";
 	  modules = [
