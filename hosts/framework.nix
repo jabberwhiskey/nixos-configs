@@ -3,7 +3,7 @@
 {
   imports = [
     ../system/basic.nix
-#    ../system/plasma.nix
+    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
@@ -19,7 +19,7 @@
     usbutils
     pciutils
   ];
-  services.xserver.displayManager.sessionPackages = with pkgs; [
-    sway
-  ];
+#  services.xserver.displayManager.sessionPackages = with pkgs; [
+#    sway
+#  ];
 }

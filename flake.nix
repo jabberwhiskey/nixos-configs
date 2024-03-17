@@ -50,12 +50,25 @@
 #
 #	  ];
 #	};
-#	framework = nixpkgs.lib.nixosSystem {
-#	  system = "x86_64-linux";
-#	  modules = [
-#
-#	  ];
-#	};
+	framework = nixpkgs.lib.nixosSystem {
+	  system = "x86_64-linux";
+	  modules = [
+      ./hosts/framework.nix
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = [
+          useGlobalpkgs = true;
+          useUserPackages = true;
+        ];
+        users.jcw = [
+          imports = [
+            ./home/home.nix
+          ];
+        ];
+        home.stateVersion = "23.05"
+      }
+	  ];
+	};
 	nix-desktop = nixpkgs.lib.nixosSystem {
 	  system = "x86_64-linux";
 	  modules = [
