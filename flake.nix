@@ -59,11 +59,11 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.jcw = [
-            imports = [
-              ./home/home.nix
+            users.jcw = {
+              imports = [
+                ./home/home.nix
               ];
-            ];
+            };
             home.stateVersion = "23.05"
           };
         }
