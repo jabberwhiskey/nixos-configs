@@ -67,6 +67,9 @@
             };
           };
         }
+        nixos-hardware.nixosModules.framework-11th-gen-intel
+        hyprland.nixosModules.default
+        {programs.hyprland.enable = true;}
 	    ];
 	  };
 	nix-desktop = nixpkgs.lib.nixosSystem {
