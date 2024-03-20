@@ -13,7 +13,7 @@
   ];
   system.stateVersion = "23.05";
 
-  networking.hostName = "nixos-laptop";
+  networking.hostName = "framework";
 
   environment.systemPackages = with pkgs; [
     usbutils
