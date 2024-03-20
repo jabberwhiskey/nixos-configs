@@ -12,7 +12,7 @@
     ../system/sdr.nix
   ];
   system.stateVersion = "23.05";
-  #boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
+  boot.loader.efi.efiSysMountPoint = lib.default "/boot";
 
   networking.hostName = "framework";
 
