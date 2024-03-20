@@ -50,7 +50,7 @@
 #
 #	  ];
 #	};
-	  framework = nixpkgs.lib.nixosSystem {
+	  framework = stable.lib.nixosSystem {
 	    system = "x86_64-linux";
 	    modules = [
         ./hosts/framework.nix
