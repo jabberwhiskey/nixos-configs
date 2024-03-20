@@ -15,7 +15,7 @@
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
   networking.hostName = "framework";
-  networking.wireless.enable = true;
+#  networking.wireless.enable = true;
 
   environment.systemPackages = with pkgs; [
     usbutils
