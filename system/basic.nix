@@ -1,13 +1,13 @@
 #A common config needed for all (my) nixos systems
 { pkgs, config, ... }:
 {
-#  boot.loader = {
-#    systemd-boot.enable = true;
-#    efi = {
-#      canTouchEfiVariables = true;
-#      efiSysMountPoint = "/boot/efi";
-#    };
-#  };
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
