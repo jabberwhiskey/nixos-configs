@@ -1,4 +1,4 @@
-{ pkgs, comfig, ... }:
+{ pkgs, comfig, lib, ... }:
 
 {
   imports = [
@@ -12,6 +12,7 @@
     ../system/sdr.nix
   ];
   system.stateVersion = "23.05";
+  boot.loader.efi.efiSysMountPoint = lib.mkforce "/boot";
 
   networking.hostName = "framework";
 
