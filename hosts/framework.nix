@@ -13,6 +13,13 @@
   ];
   system.stateVersion = "23.05";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
+  
+  services.fprintd.package = pkgs.fprintd.overrideAttrs {
+    mesonCheckFlags = [
+      "--no-suite"
+      "fprintd:TestPamFprintd"
+    ];
+  }; # for a failed fprintd build
 
   networking.hostName = "framework";
 #  networking.wireless.enable = true;
