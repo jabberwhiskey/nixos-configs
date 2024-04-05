@@ -1,4 +1,4 @@
-{ pkgs, comfig, ... }:
+{ pkgs, comfig, lib, ... }:
 
 {
   imports = [
@@ -14,6 +14,7 @@
   system.stateVersion = "22.11";
   
   networking.hostName = "nixos-laptop";
+  boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
 
   environment.systemPackages = with pkgs; [
     usbutils
