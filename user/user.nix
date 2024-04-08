@@ -1,3 +1,4 @@
+{pkgs, config, ...}:
 {
   users.users.jcw = {
     isNormalUser = true;
@@ -9,5 +10,8 @@
       "audio"
       "sound"
     ];
+    useDefaultShell = true;
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 }

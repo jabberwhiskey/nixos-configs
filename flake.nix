@@ -10,6 +10,11 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
+
+    dotfiles ={
+      url = "github:jabberwhiskey/dotfiles";
+      flake = false;
+	};
   };
 
   outputs = inputs@{
@@ -19,6 +24,7 @@
     stable,
     nixos-hardware,
     hyprland,
+    dotfiles,
     ...
     }: {
     nixosConfigurations = {
@@ -62,8 +68,11 @@
             users.jcw = {
               imports = [
                 ./home/home.nix
+                ./home/hyprland.nix
+                ./home/waybar.nix
               ];
             home.stateVersion = "23.05";
+ #           xdg.configFile."hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf";
             };
           };
         }

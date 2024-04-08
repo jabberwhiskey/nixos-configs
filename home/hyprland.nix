@@ -1,8 +1,10 @@
 { config, pkgs, lib, ...}:
 {
   home = {
-    file = {
-      ".config/hypr/hyprland.config".source = config.lib.file.mkOutOfStoreSymlink ../extra/laptopHyprland.conf;
-    };
+   # xdg.configFile."hyprland".source = "${dotfiles}/hypr/hyprland";
+    packages = with pkgs; [
+      wofi
+      alacritty
+    ];
   };
 }

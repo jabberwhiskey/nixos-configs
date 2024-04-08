@@ -11,7 +11,7 @@
       bitwarden
       bitwarden-cli
       firefox
-      vivaldi
+      #vivaldi
       unzip
       yt-dlp
       ffmpeg
