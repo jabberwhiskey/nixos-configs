@@ -72,7 +72,7 @@
                 ./home/waybar.nix
               ];
             home.stateVersion = "23.05";
- #           xdg.configFile."hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf";
+#            xdg.configFile."hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf";
             };
           };
         }

@@ -1,13 +1,17 @@
-{ config, pkgs, lib, ...}:
+{config, pkgs, lib, ...}:
 {
   home = {
    # xdg.configFile."hyprland".source = "${dotfiles}/hypr/hyprland";
     packages = with pkgs; [
       wofi
-      alacritty
       ranger
       swaylock-effects
     ];
+  };
+  wayland.windowManager.hyprland = {
+    #enable = true;
+    systemd.enable = true;
+
   };
   gtk = {
     cursorTheme = {
@@ -24,7 +28,7 @@
     systemdTarget = "hyprland-session.target";
     timeouts = [
 #      {timeout = 240; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";}
-      {timeout = 300; command = "${pkgs.swaylock}/bin/swaylock --screenshots --clock --indicator indicator-radius 100 --indicator-thickness 7 --effect-vifnette 0.5:0.5 --effect-blur 7x5 --ringcolor bb00cc --grace 4 --fade-in 0.3 ";}
+      {timeout = 300; command = "${pkgs.swaylock-effects}/bin/swaylock --screenshots --clock --indicator indicator-radius 100 --indicator-thickness 7 --effect-vifnette 0.5:0.5 --effect-blur 7x5 --ringcolor bb00cc --grace 4 --fade-in 0.3 ";}
       {timeout = 600; command = "${pkgs.systemd}/bin/systemctl suspend";}
     ];
 
@@ -35,6 +39,16 @@
       eDP-1 = {
         path = "/home/jcw/Pictures/wallpapers/framework";
         sorting = "descending";
+      };
+    };
+  };
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window = {
+        decorations = "none";
+	blur = true;
+	opacity = 0.7;
       };
     };
   };
