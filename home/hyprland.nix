@@ -86,7 +86,7 @@
         "$mod, C, killactive,"
         "$mod SHIFT, Q, exit,"
         "$mod, E, exec, $term -e $fileManager"
-        "$mod, D, exec, ${pkgs.wofi}/bin/wofi --show drun "
+        "$mod, D, exec, "${pkgs.wofi}/bin/wofi --show drun"
         "$mod, P, pseudo," #dwindle
         "$mod, J, togglesplit," #dwindle
         "$mod, F, togglefloating,"
