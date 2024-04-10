@@ -1,10 +1,13 @@
 {config, pkgs, lib, ...}:
 {
   home = {
-   # xdg.configFile."hyprland".source = "${dotfiles}/hypr/hyprland";
     packages = with pkgs; [
       wofi
       ranger
+      grim
+      slurp
+      wl-clipboard
+      swayimg
       swaylock-effects
     ];
   };
@@ -81,16 +84,21 @@
       windowrulev2 = [
         "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
       ];
+      windowrule = [
+        "float,^(swayimg)$"
+      ];
       bind = [
         "$mod, Return, exec, $term"
         "$mod, C, killactive,"
         "$mod SHIFT, Q, exit,"
         "$mod, E, exec, $term -e $fileManager"
-        "$mod, D, exec, "${pkgs.wofi}/bin/wofi --show drun"
+        "$mod, D, exec, ${pkgs.wofi}/bin/wofi --show drun"
         "$mod, P, pseudo," #dwindle
         "$mod, J, togglesplit," #dwindle
         "$mod, F, togglefloating,"
         "$mod SHIFT, F,fullscreen"
+	", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of whole screen taken'"
+	"SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g | ${pkgs.slurp}/bin/slurp  - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of the region taken' -t 1000 "
         #move focus
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -143,9 +151,51 @@
     enable = true;
     systemdTarget = "hyprland-session.target";
     timeouts = [
-#      {timeout = 240; command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";}
-      {timeout = 300; command = "${pkgs.swaylock-effects}/bin/swaylock --screenshots --clock --indicator indicator-radius 100 --indicator-thickness 7 --effect-vifnette 0.5:0.5 --effect-blur 7x5 --ringcolor bb00cc --grace 4 --fade-in 0.3 ";}
-      {timeout = 600; command = "${pkgs.systemd}/bin/systemctl suspend";}
+      {
+        timeout = 240;
+	command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+	resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+      }
+      {
+        timeout = 300; 
+	command = ''${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
+	  --clock \
+	  --indicator \
+	  --indicator-radius 100 \
+	  --indicator-thickness 7 \
+	  --effect-blur 7x5 \
+	  --effect-vignette 0.5:0.5 \
+	  --ring-color bb00cc \
+	  --key-hl-color 880033 \
+	  --line-color 00000000 \
+	  --inside-color 00000088 \
+	  --separator-color 00000000 \
+	  --grace 2 \
+	  --fade-in 0.2''; 
+      }
+      {
+        timeout = 600;
+	command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+	command = ''${pkgs.swaylock-effects}/bin/swaylock --screenshots \
+          --clock \
+	  --indicator \
+	  --indicator-radius 100 \
+	  --indicator-thickness 7 \
+	  --effect-blur 7x5 \
+	  --effect-vignette 0.5:0.5 \
+	  --ring-color bb00cc \
+	  --key-hl-color 880033 \
+	  --line-color 00000000 \
+	  --inside-color 00000088 \
+	  --separator-color 00000000 \
+	  --grace 2 \
+	  --fade-in 0.2'';
+      }
     ];
 
   };
@@ -165,8 +215,12 @@
       window = {
         decorations = "none";
 	blur = true;
-	opacity = 0.7;
+	opacity = 0.8;
       };
     };
+  };
+  services.clipman = {
+    enable = true;
+    systemdTarget = "hyprland-session.target";
   };
 }
