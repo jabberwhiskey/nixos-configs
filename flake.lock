@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "dotfiles": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1712501570,
-        "narHash": "sha256-VgSv+ocM4yT7zqJYrAqqoeA9Y4z7u/sZ0CrKI46x6EU=",
-        "owner": "jabberwhiskey",
-        "repo": "dotfiles",
-        "rev": "1121b46570266c9708fec9ad710b05a24f15b77a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jabberwhiskey",
-        "repo": "dotfiles",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -189,7 +173,6 @@
     },
     "root": {
       "inputs": {
-        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixos-hardware": "nixos-hardware",
