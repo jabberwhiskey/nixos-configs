@@ -104,11 +104,6 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
-	#resize window
-	"$mod Alt, up, resizeactive, 0 10"
-	"$mod Alt, down, resizeactive, 0 -10"
-	"$mod Alt, right, resizeactive, 10 0"
-	"$mod Alt, left, resizeactive, -10 0"
 	#move window
 	"$mod SHIFT, up, movewindow, u"
 	"$mod SHIFT, down, movewindow, d"
@@ -144,6 +139,10 @@
       binde = [
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
+	#resize window
+	"$mod Alt, up, resizeactive, 0 10"
+	"$mod Alt, down, resizeactive, 0 -10"
+	"$mod Alt, right, resizeactive, 10 0"
       ];
       bindm = [
        "$mod, mouse:272, movewindow"
