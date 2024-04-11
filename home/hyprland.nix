@@ -143,6 +143,7 @@
 	"$mod Alt, up, resizeactive, 0 10"
 	"$mod Alt, down, resizeactive, 0 -10"
 	"$mod Alt, right, resizeactive, 10 0"
+	"$mod Alt, left, resizeactive, -10 0"
       ];
       bindm = [
        "$mod, mouse:272, movewindow"
