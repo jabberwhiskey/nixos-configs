@@ -225,7 +225,7 @@
     enable = true;
     systemdTarget = "hyprland-session.target";
   };
-  services.playerctl = {
+  services.playerctld = {
     enable = true;
   };
 }
