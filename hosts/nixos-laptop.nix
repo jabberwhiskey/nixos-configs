@@ -20,7 +20,6 @@
     usbutils
     pciutils
   ];
-  services.xserver.displayManager.sessionPackages = with pkgs; [
-    sway
+  programs.sway.enable = true;
   ];
 }
