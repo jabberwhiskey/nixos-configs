@@ -9,7 +9,6 @@
       wl-clipboard
       swayimg
       swaylock-effects
-      playerctl
     ];
   };
   wayland.windowManager.hyprland = {
@@ -99,22 +98,22 @@
         "$mod, F, togglefloating,"
         "$mod SHIFT, F,fullscreen"
 	", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of whole screen taken'"
-	"SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g | '$(slurp)'  - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of the region taken' -t 1000 "
+	"SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g  '$(slurp)'  - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of the region taken' -t 1000 "
         #move focus
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 	#resize window
-	"$mod Alt, up, resizeactive 0 10"
-	"$mod Alt, down, resizeactive 0 -10"
-	"$mod Alt, right, resizeactive 10 0"
-	"$mod Alt, left, resizeactive -10 0"
+	"$mod Alt, up, resizeactive, 0 10"
+	"$mod Alt, down, resizeactive, 0 -10"
+	"$mod Alt, right, resizeactive, 10 0"
+	"$mod Alt, left, resizeactive, -10 0"
 	#move window
-	"$mod SHIFT, up, movewindow u"
-	"$mod SHIFT, down, movewindow d"
-	"$mod SHIFT, left, movewindow l"
-	"$mod SHIFT, right, movewinoow r"
+	"$mod SHIFT, up, movewindow, u"
+	"$mod SHIFT, down, movewindow, d"
+	"$mod SHIFT, left, movewindow, l"
+	"$mod SHIFT, right, movewindow, r"
         #scratchpad
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
@@ -226,4 +225,7 @@
     enable = true;
     systemdTarget = "hyprland-session.target";
   };
+  services.playerctl = [
+    enable = true;
+  ];
 }
