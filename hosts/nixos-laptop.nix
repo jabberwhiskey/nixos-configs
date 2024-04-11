@@ -21,5 +21,4 @@
     pciutils
   ];
   programs.sway.enable = true;
-  ];
 }
