@@ -9,6 +9,7 @@
       wl-clipboard
       swayimg
       swaylock-effects
+      playerctl
     ];
   };
   wayland.windowManager.hyprland = {
@@ -98,12 +99,22 @@
         "$mod, F, togglefloating,"
         "$mod SHIFT, F,fullscreen"
 	", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of whole screen taken'"
-	"SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g | ${pkgs.slurp}/bin/slurp  - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of the region taken' -t 1000 "
+	"SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g | '$(slurp)'  - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of the region taken' -t 1000 "
         #move focus
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+	#resize window
+	"$mod Alt, up, resizeactive 0 10"
+	"$mod Alt, down, resizeactive 0 -10"
+	"$mod Alt, right, resizeactive 10 0"
+	"$mod Alt, left, resizeactive -10 0"
+	#move window
+	"$mod SHIFT, up, movewindow u"
+	"$mod SHIFT, down, movewindow d"
+	"$mod SHIFT, left, movewindow l"
+	"$mod SHIFT, right, movewinoow r"
         #scratchpad
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
@@ -112,6 +123,10 @@
         ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
 	#mute, volume is under binde
 	", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	#playerctl
+	", XF86AudioPrev, exec, plyerctl previous"
+	", XF86AudioNext, exec, plyerctl next"
+	", XF86AudioPlay, exec, plyerctl play-pause"
       ]
       ++(
        builtins.concatLists (builtins.genList (
@@ -137,13 +152,6 @@
       ];
     };
   };
-  gtk = {
-    cursorTheme = {
-      name = "Capitaine Cursors";
-      pacakge = pkgs.capitaine-cursors-themed;
-      size = 36;
-    };
-  };
   services.dunst = {
     enable = true;
   };
@@ -151,11 +159,6 @@
     enable = true;
     systemdTarget = "hyprland-session.target";
     timeouts = [
-      {
-        timeout = 240;
-	command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-	resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-      }
       {
         timeout = 300; 
 	command = ''${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
