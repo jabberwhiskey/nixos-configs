@@ -11,7 +11,7 @@
         menu = "${pkgs.wofi}/bin/wofi";
 
 
-        terminal = "${pkgs.foot}/bin/foot";
+        terminal = "${pkgs.alacritty}/bin/alacritty";
 
         workspaceAutoBackAndForth = true;
         window = {
@@ -64,7 +64,7 @@
           "${mod}+t" = "exec ${pkgs.mako}/bin/makoctl dismiss";
           "${mod}+Shift+t" = "exec ${pkgs.mako}/bin/makoctl dismiss -a";
 
-          "${mod}+Shift+q" = "kill";
+          "${mod}+c" = "kill";
           "${mod}+${left}" = "focus left";
           "${mod}+${down}" = "focus down";
           "${mod}+${up}" = "focus up";
@@ -158,9 +158,8 @@
           smartBorders = "on";
           smartGaps = true;
         };
-       
-
       };
+      systemd.enable = true;
       extraConfig = ''
         output * background '~/Pictures/wallpapers/wallpaper1.jpg'  fill
         exec_always sworkstyle &> /tmp/workstyle.log
@@ -169,9 +168,6 @@
         enable = true;
       };
  
-    };
-    programs.swaylock = {
-      enable = true;
     };
     programs.wofi = {
       enable = true;
@@ -220,22 +216,82 @@
    };
     home.packages = with pkgs; [
       grim
+      swaylock-effects
       slurp
       light
-      foot
       swayest-workstyle
     ];
-  services.network-manager-applet.enable = true;
-
-  services.mako = {
+    home.sessionVariables = {
+      TERMINAL = "alacrity";
+      BROSWER = "firefox";
+    };
+    services.swayidle = {
     enable = true;
-    anchor = "top-right";
+    systemdTarget = "sway-session.target";
+    timeouts = [
+      {
+        timeout = 300; 
+	command = ''${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
+	 --clock \
+	 --indicator \
+	 --indicator-radius 100 \
+	 --indicator-thickness 7 \
+	 --effect-blur 7x5 \
+	 --effect-vignette 0.5:0.5 \
+	 --ring-color bb00cc \
+	 --key-hl-color 880033 \
+	 --line-color 00000000 \
+	 --inside-color 00000088 \
+	 --separator-color 00000000 \
+	 --grace 2 \
+	 --fade-in 0.2''; 
+      }
+      {
+        timeout = 600;
+	command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+	command = ''${pkgs.swaylock-effects}/bin/swaylock --screenshots \
+          --clock \
+	 --indicator \
+	 --indicator-radius 100 \
+	 --indicator-thickness 7 \
+	 --effect-blur 7x5 \
+	 --effect-vignette 0.5:0.5 \
+	 --ring-color bb00cc \
+	 --key-hl-color 880033 \
+	 --line-color 00000000 \
+	 --inside-color 00000088 \
+	 --separator-color 00000000 \
+	 --grace 2 \
+	 --fade-in 0.2'';
+      }
+    ];
+  };
+   programs.alacritty = {
+    enable = true;
+    settings = {
+      window = {
+        decorations = "none";
+	blur = true;
+	opacity = 0.8;
+      };
+    };
+  };
+  services.dunst = {
+    enable = true;
 
   };
   home.pointerCursor = {
     package = pkgs.catppuccin-cursors.frappeBlue;
     size = 25;
     name = "Catppuccin-Frappe-Blue-Cursors";
+  };
+  programs.nnn = {
+    enable = true;
   };
 }
 

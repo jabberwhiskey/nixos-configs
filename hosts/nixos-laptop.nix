@@ -4,7 +4,7 @@
   imports = [
     ../system/basic.nix
     ../system/kernel-latest.nix
-    ../system/plasma.nix
+#    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
