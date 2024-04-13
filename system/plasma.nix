@@ -3,7 +3,7 @@
   services.desktopManager= {
     plasma6.enable = true;
   };
-  services.xserver = {
+  services.displayManager = {
     enable=true;
     displayManager = {
       sddm = {
