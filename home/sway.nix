@@ -174,6 +174,11 @@
       style = ''
         backround-color: #5A5A5A;
       '';
+      settings = {
+        term = "${pkgs.alacritty}/bin/alacritty";
+	width = "25%";
+	allow_images = true;
+      };
     };
     programs.i3status-rust = {
       enable = true;
@@ -225,6 +230,7 @@
       TERMINAL = "alacrity";
       BROSWER = "firefox";
     };
+
     services.swayidle = {
     enable = true;
     systemdTarget = "sway-session.target";
