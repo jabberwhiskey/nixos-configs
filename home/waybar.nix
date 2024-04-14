@@ -6,10 +6,10 @@
        mainBar = {
          layer = "top";
          position = "top";
-         height = 30;
+         height = 45;
          modules-left = [ "hyprland/workspaces" ];
          modules-center = [ "clock" ];
-         modules-right = [ "tray" "battery" "network" "wireplumber" ];
+         modules-right = [ "tray" "idle_inhibitor" "battery" "network" "wireplumber" ];
 
          "hyprland/workspaces" = {
            format = "{name}";
@@ -49,6 +49,13 @@
              icon-size = 20;
              show-passive-items = "true";
            };
+	   idle_inhibitor = {
+              format = "icon";
+	      format_icons = {
+                activated = "";
+		deactivated = "";
+	      };
+	   };
            "bluetooth" = {
            	format = " {status}";
            	format-connected = " {device_alias}";
