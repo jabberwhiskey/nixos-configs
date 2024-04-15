@@ -87,6 +87,7 @@
                 imports = [
                   ./home/home.nix
                   ./home/hm-dconf.nix
+                  ./home/waybar.nix
                 ];
                 home.stateVersion = "22.11";
               };
