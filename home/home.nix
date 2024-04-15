@@ -24,6 +24,10 @@
       SHELL = "${pkgs.zsh}/bin/zsh";
     };
   };
+  xdg = {
+    enable = true;
+    portal.xdgOpenUsePortal = true;
+  };
   programs.bash = {
     enable = true;
   };
