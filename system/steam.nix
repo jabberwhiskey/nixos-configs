@@ -8,6 +8,6 @@
   }; 
   environment.systemPackages = [
     pkgs.lutris
-    gamescope
+    pkgs.gamescope
   ];
 }
