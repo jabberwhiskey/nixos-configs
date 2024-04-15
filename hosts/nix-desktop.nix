@@ -9,7 +9,7 @@
     ../system/containers.nix
     ../system/virtmanager.nix
     ../hardware/desktop.nix
-    ../users/user.nix
+    ../user/user.nix
     ../system/bluetooth.nix
   ];
 
