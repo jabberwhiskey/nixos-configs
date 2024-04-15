@@ -14,7 +14,6 @@
   ];
 
   system.stateVersion = "23.05";
-  home.stateVersion = "23.05";
 
   networking.hostName = "nix-desktop";
 
