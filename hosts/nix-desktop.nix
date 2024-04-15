@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../system/common.nix
+    ../system/basic.nix
     ../system/systemdboot.nix
     ../system/containers.nix
     ../system/virtmanager.nix
