@@ -15,6 +15,7 @@
     ../system/fonts.nix
     ../system/kernel-latest.nix
     ../system/greetd.nix
+    ../system/steam.nix
   ];
 
   system.stateVersion = "23.05";
