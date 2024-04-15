@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   imports = [
@@ -19,6 +20,7 @@
   system.stateVersion = "23.05";
 
   networking.hostName = "nix-desktop";
+  networking.networkmanager.enable = lib.mkForce false;
 
   services.ratbagd.enable = true;
 
