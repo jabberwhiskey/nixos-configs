@@ -90,7 +90,7 @@
                   ./home/hm-dconf.nix
                   ./home/waybar.nix
                 ];
-                home.stateVersion = "22.11";
+                home.stateVersion = "23.11";
               };
               extraSpecialArgs = {
               };
