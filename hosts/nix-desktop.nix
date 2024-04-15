@@ -18,7 +18,7 @@
     ../system/steam.nix
   ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
   networking.hostName = "nix-desktop";
