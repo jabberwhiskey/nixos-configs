@@ -11,6 +11,9 @@
     ../hardware/desktop.nix
     ../user/user.nix
     ../system/bluetooth.nix
+    ../system/fonts.nix
+    ../system/kernel-latest.nix
+    ../system/greetd.nix
   ];
 
   system.stateVersion = "23.05";
