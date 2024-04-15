@@ -235,6 +235,11 @@
     systemdTarget = "sway-session.target";
     timeouts = [
       {
+        timeout = 600;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+ 
+      {
         timeout = 300;
         command = ''          ${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
           	 --clock \
@@ -250,10 +255,6 @@
           	 --separator-color 00000000 \
           	 --grace 2 \
           	 --fade-in 0.2'';
-      }
-      {
-        timeout = 600;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
     events = [
