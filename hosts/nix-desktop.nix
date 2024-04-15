@@ -18,7 +18,7 @@
   ];
 
   system.stateVersion = "23.05";
-  boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi"
+  boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
 
   networking.hostName = "nix-desktop";
   networking.networkmanager.enable = lib.mkForce false;
