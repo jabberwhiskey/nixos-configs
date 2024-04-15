@@ -95,6 +95,7 @@
               };
             };
           }
+          {programs.hyprland.enable = true;}
         ];
       };
     };
