@@ -10,6 +10,7 @@
       btop
       mpv
       htop
+      imv
       bitwarden
       bitwarden-cli
       firefox
@@ -57,5 +58,16 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
+  };
+  services.udiskie = {
+    enable = true;
+    automount = true;
+    notify = true;
+    settings = {
+      program_options = {
+        udisks_version = 2;
+	tray = true;
+      };
+    };
   };
 }

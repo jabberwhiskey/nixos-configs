@@ -6,4 +6,8 @@
       enable = true;
     };
   }; 
+  environment.systemPackages = [
+    pkgs.lutris
+    gamescope
+  ];
 }

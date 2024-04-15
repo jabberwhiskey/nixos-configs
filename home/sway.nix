@@ -62,15 +62,10 @@
       in {
         "${mod}+Alt+w" = "exec ${pkgs.firefox}/bin/firefox";
         "${mod}+Return" = "exec ${terminal}";
-        "${mod}+Alt+d" = "exec ${pkgs.discord}/bin/discord";
         "${mod}+d" = "exec ${menu} -d --show=drun";
-        "Menu" = "exec ${menu} -d --show=drun";
-        "${mod}+Alt+p" = "exec ${pkgs.pcmanfm}/bin/pcmanfm";
         "${mod}+Alt+b" = "exec ${pkgs.bitwarden}/bin/bitwarden";
-        "${mod}+Alt+n" = "exec ${pkgs.nnn}/bin/nnn";
-
-        "${mod}+t" = "exec ${pkgs.mako}/bin/makoctl dismiss";
-        "${mod}+Shift+t" = "exec ${pkgs.mako}/bin/makoctl dismiss -a";
+        "${mod}+Alt+n" = "exec ${terminal} -e ${pkgs.nnn}/bin/nnn";
+        "${mod}+Alt+m" = "exec ${terminal} -e ${pkgs.btop}/bin/btop";
 
         "${mod}+c" = "kill";
         "${mod}+${left}" = "focus left";
@@ -174,7 +169,8 @@
       backround-color: #5A5A5A;
     '';
     settings = {
-      term = "${pkgs.alacritty}/bin/alacritty";
+       term = "alacritty -e";
+#      term = "${pkgs.alacritty}/bin/alacritty";
       width = "25%";
       allow_images = true;
     };
@@ -226,7 +222,7 @@
     swayest-workstyle
   ];
   home.sessionVariables = {
-    TERMINAL = "alacrity";
+    TERMINAL = "alacritty";
     BROSWER = "firefox";
   };
 

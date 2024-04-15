@@ -14,6 +14,9 @@
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  services.udisks2 = {
+    enable = true;
+  };
 
   time.timeZone = "US/Mountain";
 
