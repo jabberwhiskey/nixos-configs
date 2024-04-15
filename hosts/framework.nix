@@ -16,7 +16,7 @@
     ../system/sdr.nix
   ];
   system.stateVersion = "23.05";
-  boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
+  boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
 
   services.fprintd.package = pkgs.fprintd.overrideAttrs {
