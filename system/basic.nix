@@ -1,6 +1,9 @@
 #A common config needed for all (my) nixos systems
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   boot.loader = {
     systemd-boot.enable = true;
     efi = {
@@ -10,7 +13,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   time.timeZone = "US/Mountain";
 

@@ -1,10 +1,13 @@
-{ pkgs, comfig, lib, ... }:
-
 {
+  pkgs,
+  comfig,
+  lib,
+  ...
+}: {
   imports = [
     ../system/basic.nix
     ../system/greetd.nix
-#    ../system/plasma.nix
+    #    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
@@ -15,7 +18,7 @@
   system.stateVersion = "23.05";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
-  
+
   services.fprintd.package = pkgs.fprintd.overrideAttrs {
     mesonCheckFlags = [
       "--no-suite"
@@ -35,7 +38,7 @@
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
   security.pam.services.swaylock = {};
-#  services.xserver.displayManager.sessionPackages = with pkgs; [
-#    sway
-#  ];
+  #  services.xserver.displayManager.sessionPackages = with pkgs; [
+  #    sway
+  #  ];
 }

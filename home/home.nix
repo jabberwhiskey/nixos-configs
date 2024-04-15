@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     username = "jcw";
     homeDirectory = "/home/jcw";
@@ -41,7 +43,7 @@
     antidote = {
       enable = true;
       plugins = [
-       "lonr/ghoti"
+        "lonr/ghoti"
         "marlonrichert/zsh-autocomplete"
         "agnoster/agnoster-zsh-theme"
         "davidde/git"
@@ -51,7 +53,6 @@
     initExtra = ''
       setopt NO_NOMATCH
     '';
-
   };
   programs.tmux = {
     enable = true;

@@ -1,11 +1,12 @@
-{ config, pkgs, ...}:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../user/user.nix
     ../system/common.nix
     ../system/systemdboot.nix
-
   ];
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
@@ -26,11 +27,10 @@
   ];
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 80 443 8080 8989 13400];
+    allowedTCPPorts = [22 80 443 8080 8989 13400];
   };
   systemd.tmpfiles.rules = [
     "Z /media/plex 0776 sonarr users"
     "z /media/nas 0777 jcw sonarr"
   ];
 }
-

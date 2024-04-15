@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   fonts.packages = with pkgs; [
-#    noto-fonts
+    #    noto-fonts
     font-awesome
     fira-code
     fira-code-symbols

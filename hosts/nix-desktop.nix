@@ -1,6 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ../system/common.nix
     ../system/systemdboot.nix
@@ -18,7 +20,6 @@
 
   services.ratbagd.enable = true;
 
-
   environment.systemPackages = with pkgs; [
     usbutils
     pciutils
@@ -30,7 +31,6 @@
   ];
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "performance"
+    cpuFreqGovernor = "performance";
   };
-
 }

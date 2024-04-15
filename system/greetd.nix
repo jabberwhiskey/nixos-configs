@@ -1,5 +1,8 @@
-{pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   services.greetd = {
     enable = true;
     settings = rec {
@@ -10,5 +13,4 @@
       default_session = initial_session;
     };
   };
-
 }

@@ -1,452 +1,451 @@
 {
-#  home = {
-   programs.waybar = {
-     enable = true;
-     settings = {
-       mainBar = {
-         layer = "top";
-         position = "top";
-         height = 45;
-         modules-left = [ "hyprland/workspaces" ];
-         modules-center = [ "clock" ];
-         modules-right = [ "tray" "idle_inhibitor" "battery" "network" "wireplumber" ];
+  #  home = {
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 45;
+        modules-left = ["hyprland/workspaces"];
+        modules-center = ["clock"];
+        modules-right = ["tray" "idle_inhibitor" "battery" "network" "wireplumber"];
 
-         "hyprland/workspaces" = {
-           format = "{name}";
-           on-click = "activate";
-           on-scroll-up = "hyprctl dispatch workspace e+1";
-           on-scroll-down = "hyprctl dispatch workspace e-1";
-         };
-         "clock" = {
-           interval = 1;
-           format = "{:%I:%M %p}";
-           format-alt = "{:%A, %B %d, %Y (%r)}";
-         tooltip-format = "\n<span size='9pt'> <tt><small>{calendar}</small></tt></span>";
-           calendar = {
-              "mode"= "year";
-                     "mode-mon-col" = 3;
-                     "weeks-pos" = "right";
-                     "on-scroll"= 1;
-                     "on-click-right"= "mode";
-                     "format"= {
-                               "months"=     "<span color='#ffead3'><b>{}</b></span>";
-                               "days"=       "<span color='#ecc6d9'><b>{}</b></span>";
-                               "weeks"=      "<span color='#99ffdd'><b>W{}</b></span>";
-                               "weekdays"=   "<span color='#ffcc66'><b>{}</b></span>";
-                               "today"=      "<span color='#ff6699'><b><u>{}</u></b></span>";
-                               };
-                     };
-         "actions"=  {
-                     "on-click-right"= "mode";
-                     "on-click-forward"= "tz_up";
-                     "on-click-backward"= "tz_down";
-                     "on-scroll-up"= "shift_up";
-                     "on-scroll-down"= "shift_down";
-                     };
-           };
-           "tray" = {
-             spacing = 10;
-             icon-size = 20;
-             show-passive-items = "true";
-           };
-	   idle_inhibitor = {
-              format = "icon";
-	      format_icons = {
-                activated = "";
-		deactivated = "";
-	      };
-	   };
-           "bluetooth" = {
-           	format = " {status}";
-           	format-connected = " {device_alias}";
-           	format-connected-battery = " {device_alias} {device_battery_percentage}%";
- 	          tooltip-format= "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
- 	          tooltip-format-connected= "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
- 	          tooltip-format-enumerate-connected= "{device_alias}\t{device_address}";
- 	          tooltip-format-enumerate-connected-battery= "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-
-           };
-           "battery" = {
-              bat = "BAT1";
-  	          interval = 60;
-  	          states = {
-  		          warning = 30;
-  		          critical = 15;
-  	          };
-  	          format = "{capacity}% {icon}";
-  	          format-icons = [ "" "" "" "" ""];
-  	          max-length = 25;
-           };
-             "network"= {
-    	          interface= "wlp170s0";
-    	          format= "{ifname}";
-    	          format-wifi= "{essid} ({signalStrength}%) ";
-    	          format-ethernet= "{ifname} ";
-    	          format-disconnected= "";
-    	          #format-disconnected= "";
-    	          tooltip-format= "{ifname}";
-              	tooltip-format-wifi= "{essid} ({signalStrength}%) ";
-    	          tooltip-format-ethernet= "{ifname} ";
-    	          tooltip-format-disconnected= "Disconnected";
-    	          max-length= 50;
-             };
-             "wireplumber"= {
-                format= "{volume}% {icon}";
-                format-muted= "";
-                on-click= "helvum";
-                format-icons= ["" "" ""];
-             };
-         };
+        "hyprland/workspaces" = {
+          format = "{name}";
+          on-click = "activate";
+          on-scroll-up = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
+        };
+        "clock" = {
+          interval = 1;
+          format = "{:%I:%M %p}";
+          format-alt = "{:%A, %B %d, %Y (%r)}";
+          tooltip-format = "\n<span size='9pt'> <tt><small>{calendar}</small></tt></span>";
+          calendar = {
+            "mode" = "year";
+            "mode-mon-col" = 3;
+            "weeks-pos" = "right";
+            "on-scroll" = 1;
+            "on-click-right" = "mode";
+            "format" = {
+              "months" = "<span color='#ffead3'><b>{}</b></span>";
+              "days" = "<span color='#ecc6d9'><b>{}</b></span>";
+              "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
+              "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
+              "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+          };
+          "actions" = {
+            "on-click-right" = "mode";
+            "on-click-forward" = "tz_up";
+            "on-click-backward" = "tz_down";
+            "on-scroll-up" = "shift_up";
+            "on-scroll-down" = "shift_down";
+          };
+        };
+        "tray" = {
+          spacing = 10;
+          icon-size = 20;
+          show-passive-items = "true";
+        };
+        idle_inhibitor = {
+          format = "icon";
+          format_icons = {
+            activated = "";
+            deactivated = "";
+          };
+        };
+        "bluetooth" = {
+          format = " {status}";
+          format-connected = " {device_alias}";
+          format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+        };
+        "battery" = {
+          bat = "BAT1";
+          interval = 60;
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-icons = ["" "" "" "" ""];
+          max-length = 25;
+        };
+        "network" = {
+          interface = "wlp170s0";
+          format = "{ifname}";
+          format-wifi = "{essid} ({signalStrength}%) ";
+          format-ethernet = "{ifname} ";
+          format-disconnected = "";
+          #format-disconnected= "";
+          tooltip-format = "{ifname}";
+          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+          tooltip-format-ethernet = "{ifname} ";
+          tooltip-format-disconnected = "Disconnected";
+          max-length = 50;
+        };
+        "wireplumber" = {
+          format = "{volume}% {icon}";
+          format-muted = "";
+          on-click = "helvum";
+          format-icons = ["" "" ""];
+        };
       };
-      style = ''
-            * {
+    };
+    style = ''
+                 * {
 
-     border: none;
+          border: none;
 
-     border-radius: 0;
+          border-radius: 0;
 
-     /* `otf-font-awesome` is required to be installed for icons */
+          /* `otf-font-awesome` is required to be installed for icons */
 
-     font-family: Cozette, monospace;
+          font-family: Cozette, monospace;
 
-     font-size: 11px;
+          font-size: 11px;
 
-     min-height: 0;
+          min-height: 0;
 
- }
+      }
 
- 
 
- window#waybar {
 
-     background-color: #282828;
+      window#waybar {
 
-     border-bottom: 3px solid #282828;
+          background-color: #282828;
 
-     color: #fff;
+          border-bottom: 3px solid #282828;
 
-     transition-property: background-color;
+          color: #fff;
 
-     transition-duration: .5s;
+          transition-property: background-color;
 
- }
+          transition-duration: .5s;
 
- 
+      }
 
- window#waybar.hidden {
 
-     opacity: 0.2;
 
- }
+      window#waybar.hidden {
 
- 
+          opacity: 0.2;
 
- /*
+      }
 
- window#waybar.empty {
 
-     background-color: transparent;
 
- }
+      /*
 
- window#waybar.solo {
+      window#waybar.empty {
 
-     background-color: #FFFFFF;
+          background-color: transparent;
 
- }
+      }
 
- */
+      window#waybar.solo {
 
- 
+          background-color: #FFFFFF;
 
- #workspaces button {
+      }
 
-     padding: 0 5px;
+      */
 
-     background-color: #282828;
 
-     color: #fff;
 
-     border-bottom: 3px solid #282828;
+      #workspaces button {
 
- }
+          padding: 0 5px;
 
- 
+          background-color: #282828;
 
- #workspaces button:hover {
+          color: #fff;
 
-     background: rgba(0, 0, 0, 0.2);
+          border-bottom: 3px solid #282828;
 
-     box-shadow: inherit;
+      }
 
-     border-bottom: 3px solid #282828;
 
- }
 
- 
+      #workspaces button:hover {
 
- #workspaces button.focused {
+          background: rgba(0, 0, 0, 0.2);
 
-     background-color: #fff;
+          box-shadow: inherit;
 
-     color: #282828;
+          border-bottom: 3px solid #282828;
 
-     border-bottom: 3px solid #fff;
+      }
 
- }
 
- 
 
- #workspaces button.urgent {
+      #workspaces button.focused {
 
-     background-color: #282828;
+          background-color: #fff;
 
-     color: #2ecc40;
+          color: #282828;
 
-     border-bottom: 3px solid #282828;
+          border-bottom: 3px solid #fff;
 
- }
+      }
 
- 
 
- #mode {
 
-     background-color: #282828;
+      #workspaces button.urgent {
 
-     border-bottom: 3px solid #282828;
+          background-color: #282828;
 
- }
+          color: #2ecc40;
 
- 
+          border-bottom: 3px solid #282828;
 
- #clock,
+      }
 
- #battery,
 
- #cpu,
 
- #memory,
+      #mode {
 
- #temperature,
+          background-color: #282828;
 
- #backlight,
+          border-bottom: 3px solid #282828;
 
- #network,
+      }
 
- #pulseaudio,
 
- #custom-media,
 
- #tray,
+      #clock,
 
- #mode,
+      #battery,
 
- #idle_inhibitor,
+      #cpu,
 
- #mpd {
+      #memory,
 
-     padding: 0 10px;
+      #temperature,
 
-     margin: 0 4px;
+      #backlight,
 
-     color: #ffffff;
+      #network,
 
- }
+      #pulseaudio,
 
- 
+      #custom-media,
 
- #clock {
+      #tray,
 
-     background-color: #282828;
+      #mode,
 
-     color: #fff;
+      #idle_inhibitor,
 
- 
+      #mpd {
 
- }
+          padding: 0 10px;
 
- 
+          margin: 0 4px;
 
- #battery {
+          color: #ffffff;
 
-     background-color: #ffffff;
+      }
 
-     color: #282828;
 
- }
 
- 
+      #clock {
 
- #battery.charging {
+          background-color: #282828;
 
-     color: #ffffff;
+          color: #fff;
 
-     background-color: #3d9970;
 
- }
 
- 
+      }
 
- @keyframes blink {
 
-     to {
 
-         background-color: #ffffff;
+      #battery {
 
-         color: #282828;
+          background-color: #ffffff;
 
-     }
+          color: #282828;
 
- }
+      }
 
- 
 
- #battery.critical:not(.charging) {
 
-     background-color: #ff4136;
+      #battery.charging {
 
-     color: #ffffff;
+          color: #ffffff;
 
-     animation-name: blink;
+          background-color: #3d9970;
 
-     animation-duration: 0.5s;
+      }
 
-     animation-timing-function: linear;
 
-     animation-iteration-count: infinite;
 
-     animation-direction: alternate;
+      @keyframes blink {
 
- }
+          to {
 
- 
+              background-color: #ffffff;
 
- label:focus {
+              color: #282828;
 
-     background-color: #282828;
+          }
 
- }
+      }
 
- 
 
- #cpu {
 
-     background-color: #282828;
+      #battery.critical:not(.charging) {
 
-     color: #fff;
+          background-color: #ff4136;
 
- }
+          color: #ffffff;
 
- 
+          animation-name: blink;
 
- #memory {
+          animation-duration: 0.5s;
 
-     background-color: #282828;
+          animation-timing-function: linear;
 
-     color: #fff;
+          animation-iteration-count: infinite;
 
- }
+          animation-direction: alternate;
 
- 
+      }
 
- #backlight {
 
-     background-color: #282828;
 
-     color: #fff;
+      label:focus {
 
- }
+          background-color: #282828;
 
- 
+      }
 
- #network {
 
-     background-color: #282828;
 
-     color: #fff;
+      #cpu {
 
- }
+          background-color: #282828;
 
- 
+          color: #fff;
 
- #network.disconnected {
+      }
 
-     background-color: #282828;
 
-     color: #fff;
 
- }
+      #memory {
 
- 
+          background-color: #282828;
 
- #pulseaudio {
+          color: #fff;
 
-     background-color: #282828;
+      }
 
-     color: #fff;
 
- }
 
- 
+      #backlight {
 
- #pulseaudio.muted {
+          background-color: #282828;
 
-     background-color: #282828;
+          color: #fff;
 
-     color: #fff;
+      }
 
- }
 
- 
 
- #temperature {
+      #network {
 
-     background-color: #282828;
+          background-color: #282828;
 
-     color: #fff;
+          color: #fff;
 
- }
+      }
 
- 
 
- #temperature.critical {
 
-     background-color: #282828;
+      #network.disconnected {
 
-     color: #fff;
+          background-color: #282828;
 
- }
+          color: #fff;
 
- 
+      }
 
- #tray {
 
-     background-color: #282828;
 
-     color: #fff;
+      #pulseaudio {
 
- }
+          background-color: #282828;
 
- 
+          color: #fff;
 
- #idle_inhibitor {
+      }
 
-     background-color: #282828;
 
-     color: #fff;
 
- }
+      #pulseaudio.muted {
 
- 
+          background-color: #282828;
 
- #idle_inhibitor.activated {
+          color: #fff;
 
-     background-color: #282828;
+      }
 
-     color: #fff;
 
- }
-         '';
-     };
-#  };
+
+      #temperature {
+
+          background-color: #282828;
+
+          color: #fff;
+
+      }
+
+
+
+      #temperature.critical {
+
+          background-color: #282828;
+
+          color: #fff;
+
+      }
+
+
+
+      #tray {
+
+          background-color: #282828;
+
+          color: #fff;
+
+      }
+
+
+
+      #idle_inhibitor {
+
+          background-color: #282828;
+
+          color: #fff;
+
+      }
+
+
+
+      #idle_inhibitor.activated {
+
+          background-color: #282828;
+
+          color: #fff;
+
+      }
+    '';
+  };
+  #  };
 }
