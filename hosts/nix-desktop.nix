@@ -26,7 +26,7 @@
     g810-led
     piper
   ];
-  hardware.opengl.extreaPackages = [
+  hardware.opengl.extraPackages = [
     pkgs.amdvlk
   ];
   powerManagement = {
