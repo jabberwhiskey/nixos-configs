@@ -33,10 +33,6 @@
     fsType = "ext4";
   };
 
-  fileSystems."/home/jcw/vm" = {
-    device = "/dev/disk/by-uuid/36bd364d-0b0e-4e3c-8432-fffd856ecf1d";
-    fsType = "ext4";
-  };
 
   swapDevices = [];
 
