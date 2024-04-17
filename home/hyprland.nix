@@ -7,6 +7,7 @@
   home = {
     packages = with pkgs; [
       wofi
+      pcmanfm-qt
       ranger
       grim
       slurp
@@ -27,7 +28,7 @@
       ];
       "$mod" = "SUPER";
       "$term" = "${pkgs.alacritty}/bin/alacritty";
-      "$fileManager" = "${pkgs.ranger}/bin/ranger";
+      "$fileManager" = "${pkgs.pcmanfm}/bin/pcmanfm";
       env = [
         "XCURSOR_SIZE,24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
@@ -95,7 +96,7 @@
           "$mod, Return, exec, $term"
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
-          "$mod, E, exec, $term -e $fileManager"
+          "$mod, E, exec, $fileManager"
           "$mod, D, exec, ${pkgs.wofi}/bin/wofi --show drun"
           "$mod, P, pseudo," #dwindle
           "$mod, J, togglesplit," #dwindle
