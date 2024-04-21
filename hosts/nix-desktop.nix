@@ -25,6 +25,8 @@
 
   services.ratbagd.enable = true;
 
+  security.pamm.services.swaylock = {};
+
   environment.systemPackages = with pkgs; [
     usbutils
     pciutils
