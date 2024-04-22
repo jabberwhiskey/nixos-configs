@@ -44,7 +44,8 @@
       ];
 
       startup = [
-        {command = "mako";}
+        {command = "${pkgs.dunst}/bin/dunst";}
+        {command = "${pkgs.wpaperd}/bin/wpaperd";}
       ];
     };
     config = {
@@ -156,7 +157,6 @@
     };
     systemd.enable = true;
     extraConfig = ''
-      output * background '~/Pictures/wallpapers/wallpaper1.jpg'  fill
       exec_always sworkstyle &> /tmp/workstyle.log
     '';
     swaynag = {
@@ -293,5 +293,15 @@
   };
   programs.ranger = {
     enable = true;
+  };
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      eDP-1 = {
+        path = "/home/jcw/Pictures/wallpapers";
+        sorting = "descending";
+        duration = "10m";
+      };
+    };
   };
 }
