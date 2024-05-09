@@ -10,6 +10,10 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
+    wayland-pipewire-idle-inhibit = {
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -19,6 +23,7 @@
     stable,
     nixos-hardware,
     hyprland,
+    wayland-pipewire-idle-inhibit,
     ...
   }: {
     nixosConfigurations = {
@@ -32,7 +37,19 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.jcw = {
+	        services.wayland-pipewire-idle-inhibit = {
+                  enable = true;
+                  systemdTarget = "sway-session.target";
+                  settings = {
+                    verbosity = "INFO";
+                    media_minimum_duration = 10;
+                    idle_inhibitor = "wayland";
+                    sink_whitelist = [
+                    ];
+                  };
+                };
                 imports = [
+		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/home.nix
                   ./home/sway.nix
                 ];
@@ -100,6 +117,25 @@
           {programs.hyprland.enable = true;}
         ];
       };
+#      gpdwin = stable.lib.nixosSystem {
+#        system = "x86_64-linux";
+#	modules = [
+#          ./hosts/gpdwin.nix
+#	  home-manager.nixosModules.home-manager
+#	  {
+#            home-manager = {
+#              useGlobalPkgs = true;
+#	      useUserPackages = true;
+#	      users.jcw = {
+#                imports = [
+#                  ./home/home.nix
+#		];
+#	      home.stateVersion = "23.11";
+#	      };
+#	    };
+#	  }
+#	];
+#      };
     };
   };
 }
