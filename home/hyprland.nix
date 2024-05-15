@@ -7,6 +7,7 @@
   home = {
     packages = with pkgs; [
       wofi
+      helvum
       pcmanfm-qt
       ranger
       grim
