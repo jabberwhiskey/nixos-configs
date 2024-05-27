@@ -93,6 +93,7 @@
                 };
                 imports = [
                   ./home/home.nix
+		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/hyprland.nix
                   ./home/waybar.nix
                 ];
@@ -122,12 +123,11 @@
                     verbosity = "INFO";
                     media_minimum_duration = 10;
                     idle_inhibitor = "wayland";
-                    sink_whitelist = [
-                    ];
                   };
 		};
                 imports = [
                   ./home/home.nix
+		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
 		  ./home/hyprland.nix
                   ./home/hm-dconf.nix
                   ./home/waybar.nix
