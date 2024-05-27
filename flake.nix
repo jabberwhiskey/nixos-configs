@@ -125,7 +125,7 @@
                     sink_whitelist = [
                     ];
                   };
-		};`
+		};
                 imports = [
                   ./home/home.nix
 		  ./home/hyprland.nix
