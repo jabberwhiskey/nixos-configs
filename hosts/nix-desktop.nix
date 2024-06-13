@@ -42,7 +42,7 @@
     };
   };
   users.users.jcw = {
-    extraGroups = [ "uucp" "dialout" ];
+    extraGroups = [ "uucp" "dialout" "input" ];
   };
 
   environment.systemPackages = with pkgs; [
