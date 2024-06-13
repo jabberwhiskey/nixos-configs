@@ -55,9 +55,12 @@
     g810-led
     piper
   ];
-  hardware.opengl.extraPackages = [
-    pkgs.amdvlk
-  ];
+  hardware = {
+    steam-hardware.enable = true;
+    opengl.extraPackages = [
+      pkgs.amdvlk
+    ];
+  };
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "performance";
