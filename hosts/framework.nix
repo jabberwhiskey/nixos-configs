@@ -19,12 +19,13 @@
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
 
-  services.fprintd.package = pkgs.fprintd.overrideAttrs {
-    mesonCheckFlags = [
-      "--no-suite"
-      "fprintd:TestPamFprintd"
-    ];
-  }; # for a failed fprintd build
+#  services.fprintd.package = pkgs.fprintd.overrideAttrs {
+#    mesonCheckFlags = [
+#      "--no-suite"
+#      "fprintd:TestPamFprintd"
+#    ];
+#  }; # for a failed fprintd build
+  services.fprintd.enable = lib.mkForce false; #disbale fprintd becasue it fails all the time
 
   networking.hostName = "framework";
 
