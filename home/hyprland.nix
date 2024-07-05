@@ -10,8 +10,6 @@
       helvum
       pcmanfm-qt
       ranger
-      grim
-      slurp
       wl-clipboard
       swayimg
       swaylock-effects
@@ -81,7 +79,7 @@
         preserve_split = "true";
       };
       master = {
-        new_is_master = "true";
+        new_status = "true";
       };
       gestures = {
         workspace_swipe = "false";
@@ -103,8 +101,9 @@
           "$mod, J, togglesplit," #dwindle
           "$mod, F, togglefloating,"
           "$mod SHIFT, F,fullscreen"
-          ", Print, exec, ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of whole screen taken'"
-          "SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g  '$(slurp)'  - | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.wl-clipboard}/bin/wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | ${pkgs.dunst}/bin/dunstify 'Screenshot of the region taken' -t 1000 "
+          ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output" 
+          "SHIFT, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m region"
+          "Alt, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m active"
           #move focus
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
