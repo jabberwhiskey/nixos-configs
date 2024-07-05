@@ -31,6 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     brillo
+    chezmoi
     usbutils
     pciutils
     libsForQt5.kwallet
