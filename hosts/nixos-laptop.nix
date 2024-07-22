@@ -23,5 +23,5 @@
     usbutils
     pciutils
   ];
-  programs.sway.enable = true;
+#  programs.sway.enable = true;
 }
