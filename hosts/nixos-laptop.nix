@@ -1,7 +1,9 @@
 {
   pkgs,
-  comfig,
+  config,
   lib,
+  inputs,
+  hyprland,
   ...
 }: {
   imports = [
@@ -23,5 +25,20 @@
     usbutils
     pciutils
   ];
-#  programs.sway.enable = true;
+  programs.sway ={
+    enable = true;
+    extraPackages = with pkgs; [
+      swaylock-effects
+      swayidle
+      wofi
+      i3status-rust
+      grim 
+      slurp
+      ranger
+    ];
+  };
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  };
 }

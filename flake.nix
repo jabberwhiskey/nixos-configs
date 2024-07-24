@@ -32,6 +32,7 @@
     nixosConfigurations = {
       nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixos-laptop.nix
           home-manager.nixosModules.home-manager
@@ -59,6 +60,7 @@
                 home.stateVersion = "22.11";
               };
               extraSpecialArgs = {
+	        inherit inputs; 
               };
             };
           }

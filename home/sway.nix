@@ -291,14 +291,11 @@
     size = 25;
     name = "Catppuccin-Frappe-Blue-Cursors";
   };
-  programs.ranger = {
-    enable = true;
-  };
   programs.wpaperd = {
     enable = true;
     settings = {
       eDP-1 = {
-        path = "/home/jcw/Pictures/wallpapers";
+        path = "${config.home.homeDirectory}/Pictures/Wallpapers/";
         sorting = "descending";
         duration = "10m";
       };
