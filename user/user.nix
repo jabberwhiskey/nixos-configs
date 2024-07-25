@@ -22,5 +22,4 @@
     ];
   };
   programs.zsh.enable = true;
-  ];
 }
