@@ -15,10 +15,12 @@
     ];
     useDefaultShell = true;
     shell = pkgs.zsh;
+    packages = with pkgs; [
+      neovim
+      neomutt
+      yadm
+    ];
   };
   programs.zsh.enable = true;
-  environment.systemPackages = with pkgs; [
-    neovim
-    neomutt
   ];
 }
