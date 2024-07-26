@@ -7,7 +7,7 @@
 }: {
   home = {
     packages = with pkgs; [
-      wofi
+      anyrun
       helvum
       pcmanfm-qt
       ranger
@@ -97,7 +97,7 @@
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
-          "$mod, D, exec, ${pkgs.wofi}/bin/wofi --show drun"
+          "$mod, D, exec, ${pkgs.anyrun}/bin/anyrun-show"
           "$mod, P, pseudo," #dwindle
           "$mod, J, togglesplit," #dwindle
           "$mod, F, togglefloating,"
@@ -210,7 +210,7 @@
     enable = true;
     settings = {
       eDP-1 = {
-        path = "/home/jcw/Pictures/wallpapers/framework";
+        path = "${config.home.homeDirectory}/Pictures/Wallpapers";
         sorting = "descending";
         duration = "10m";
       };

@@ -43,7 +43,7 @@
               users.jcw = {
 	        services.wayland-pipewire-idle-inhibit = {
                   enable = true;
-                  systemdTarget = "sway-session.target";
+                  systemdTarget = "sway-session.target hyprland-session.target`";
                   settings = {
                     verbosity = "INFO";
                     media_minimum_duration = 10;
@@ -55,7 +55,9 @@
                 imports = [
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/home.nix
-                  ./home/sway.nix
+		  ./home/hyprland.nix
+		  ./home/waybar.nix
+#                  ./home/sway.nix
                 ];
                 home.stateVersion = "22.11";
               };
@@ -102,7 +104,7 @@
                 home.stateVersion = "23.05";
               };
             };
-          }
+         }
           nixos-hardware.nixosModules.framework-11th-gen-intel
           hyprland.nixosModules.default
           {programs.hyprland.enable = true;}
