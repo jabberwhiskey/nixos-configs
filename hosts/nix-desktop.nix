@@ -57,7 +57,7 @@
   ];
   hardware = {
     steam-hardware.enable = true;
-    opengl.extraPackages = [
+    graphics.extraPackages = [
       pkgs.amdvlk
     ];
   };
