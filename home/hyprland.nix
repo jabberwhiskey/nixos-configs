@@ -8,13 +8,13 @@
   home = {
     packages = with pkgs; [
       anyrun
+      imv
       rofi-wayland
       helvum
       waybar
       pcmanfm-qt
       ranger
       wl-clipboard
-      swayimg
       swaylock-effects
     ];
   };
