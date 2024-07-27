@@ -12,5 +12,6 @@
   };
   environment.systemPackages = [
     pkgs.podman
+    pkgs.distrobox
   ];
 }
