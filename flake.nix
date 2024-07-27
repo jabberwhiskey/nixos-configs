@@ -56,7 +56,6 @@
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/home.nix
 		  ./home/hyprland.nix
-		  ./home/waybar.nix
 #                  ./home/sway.nix
                 ];
                 home.stateVersion = "22.11";

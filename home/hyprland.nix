@@ -8,7 +8,9 @@
   home = {
     packages = with pkgs; [
       anyrun
+      rofi-wayland
       helvum
+      waybar
       pcmanfm-qt
       ranger
       wl-clipboard
@@ -97,7 +99,8 @@
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
-          "$mod, D, exec, ${pkgs.anyrun}/bin/anyrun-show"
+          "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
+          "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun"
           "$mod, P, pseudo," #dwindle
           "$mod, J, togglesplit," #dwindle
           "$mod, F, togglefloating,"
