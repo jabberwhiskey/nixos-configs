@@ -18,6 +18,13 @@
       swaylock-effects
     ];
   };
+  gtk = {
+    theme.name = "adwaita-dark";
+  };
+  qt = {
+    platformTheme.name = "qt6ct";
+    style.name = "adwaita-dark";
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
