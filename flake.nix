@@ -132,7 +132,6 @@
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
 		  ./home/hyprland.nix
                   ./home/hm-dconf.nix
-                  ./home/waybar.nix
                 ];
                 home.stateVersion = "23.11";
               };
