@@ -16,14 +16,21 @@
       ranger
       wl-clipboard
       swaylock-effects
+      kdePackages.kasts
     ];
   };
   gtk = {
-    theme.name = "adwaita-dark";
+    theme.name = "Adwaita-Dark";
+    enable = true;
+
   };
   qt = {
-    platformTheme.name = "qt6ct";
-    style.name = "adwaita-dark";
+    platformTheme.name = "qtct";
+    style = {
+      name = "breeze";
+      package = pkgs.kdePackages.qt6ct;
+    };
+    enable = true;
   };
   wayland.windowManager.hyprland = {
     enable = true;
@@ -40,7 +47,8 @@
       "$fileManager" = "${pkgs.pcmanfm}/bin/pcmanfm";
       env = [
         "XCURSOR_SIZE,24"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
+        "QT_QPA_PLATFORMTHEME,qt6ct,gtk3,wayland"
+	"XDG_CURRENT_DESKTOP,Hyprland"
       ];
       input = {
         kb_layout = "us";
@@ -54,9 +62,9 @@
         gaps_in = "5";
         gaps_out = "10";
         border_size = "2";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
-        layout = "dwindle";
+        "col.active_border" = "rgba(00f8ffee) rgba(e80e0eee) 10deg";
+        "col.inactive_border" = "rgba(000000aa)";
+        layout = "dawindle";
         #allow_tearring = "false";
       };
       decoration = {
@@ -74,10 +82,10 @@
       };
       animations = {
         enabled = "true";
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = "myBezier, 1, 0.81, 0.03, 0.34";
         animation = [
-          "windows, 1, 7, default, popin 80%"
-          "windowsOut, 1, 7, default, popin 80%"
+          "windows, 1, 5, default, popin 90%"
+          "windowsOut, 1, 7, default, popin 90%"
           "border, 1, 10, default"
           "borderangle, 1, 8, default"
           "fade, 1, 7, default"
@@ -96,6 +104,7 @@
       };
       windowrulev2 = [
         "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
+        "float,class:^(Waydroid)$,title:^(Waydroid)$"
       ];
       windowrule = [
         "float,^(swayimg)$"

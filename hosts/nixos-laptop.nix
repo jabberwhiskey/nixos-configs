@@ -8,6 +8,8 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/qt.nix
+    ../system/waydroid.nix
     ../system/kernel-latest.nix
     #    ../system/plasma.nix
     ../system/fonts.nix
