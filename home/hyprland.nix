@@ -47,7 +47,7 @@
       "$fileManager" = "${pkgs.pcmanfm}/bin/pcmanfm";
       env = [
         "XCURSOR_SIZE,24"
-        "QT_QPA_PLATFORMTHEME,qt6ct,gtk3,wayland"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
 	"XDG_CURRENT_DESKTOP,Hyprland"
       ];
       input = {
