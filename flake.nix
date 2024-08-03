@@ -41,19 +41,9 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.jcw = {
-	        services.wayland-pipewire-idle-inhibit = {
-                  enable = true;
-                  systemdTarget = "hyprland-session.target";
-                  settings = {
-                    verbosity = "INFO";
-                    media_minimum_duration = 10;
-                    idle_inhibitor = "wayland";
-                    sink_whitelist = [
-                    ];
-                  };
-                };
-                imports = [
+               imports = [
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
+		  ./home/inhibit-hyprland.nix
                   ./home/home.nix
 		  ./home/hyprland.nix
 #                  ./home/sway.nix
@@ -75,6 +65,7 @@
       #	};
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/framework.nix
           home-manager.nixosModules.home-manager
@@ -83,24 +74,17 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.jcw = {
-                services.wayland-pipewire-idle-inhibit = {
-                  enable = true;
-                  systemdTarget = "hyprland-session.target";
-                  settings = {
-                    verbosity = "INFO";
-                    media_minimum_duration = 10;
-                    idle_inhibitor = "wayland";
-                    sink_whitelist = [
-                    ];
-                  };
-                };
-                imports = [
+               imports = [
                   ./home/home.nix
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/hyprland.nix
+		  ./home/inhibit-hyprland.nix
                 ];
                 home.stateVersion = "23.05";
               };
+              extraSpecialArgs = {
+	        inherit inputs; 
+	     };
             };
          }
           nixos-hardware.nixosModules.framework-11th-gen-intel
@@ -130,6 +114,7 @@
                 imports = [
                   ./home/home.nix
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
+		  ./home/inhibit-hyprland.nix
 		  ./home/hyprland.nix
                   ./home/hm-dconf.nix
                 ];
