@@ -17,21 +17,28 @@
       wl-clipboard
       swaylock-effects
       kdePackages.kasts
+      qt6ct
+      qt6ct
+      kdePackages.breeze-icons
+      kdePackages.breeze
     ];
   };
   gtk = {
-    theme.name = "Adwaita-Dark";
+    theme = {
+      name = "Adwaita-Dark";
+      package = pkgs.gnome-themes-extra;
+    };
     enable = true;
 
   };
-  qt = {
-    platformTheme.name = "qtct";
-    style = {
-      name = "breeze";
-      package = pkgs.kdePackages.qt6ct;
-    };
-    enable = true;
-  };
+#  qt = {
+#    platformTheme.name = "qtct";
+#    style = {
+#      name = "breeze";
+#      package = pkgs.kdePackages.qt6ct;
+#    };
+#    enable = true;
+#  };
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;

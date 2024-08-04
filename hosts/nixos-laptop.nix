@@ -8,7 +8,8 @@
 }: {
   imports = [
     ../system/basic.nix
-    ../system/qt.nix
+    ../system/u2f.nix
+#    ../system/qt.nix
     ../system/waydroid.nix
     ../system/kernel-latest.nix
     #    ../system/plasma.nix
@@ -18,7 +19,7 @@
     ../user/user.nix
     ../hardware/hplaptop.nix
   ];
-  system.stateVersion = "22.11";
+  system.stateVersion = "24.05";
 
   networking.hostName = "nixos-laptop";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
