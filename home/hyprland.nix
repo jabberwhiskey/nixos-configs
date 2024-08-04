@@ -44,7 +44,7 @@
       ];
       "$mod" = "SUPER";
       "$term" = "${pkgs.alacritty}/bin/alacritty";
-      "$fileManager" = "${pkgs.pcmanfm}/bin/pcmanfm";
+      "$fileManager" = "${pkgs.pcmanfm-qt}/bin/pcmanfm-qt";
       env = [
         "XCURSOR_SIZE,24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
@@ -68,7 +68,7 @@
         #allow_tearring = "false";
       };
       decoration = {
-        rounding = "10";
+        rounding = "5";
         blur = {
           enabled = "true";
           size = "3";
@@ -107,7 +107,8 @@
         "float,class:^(Waydroid)$,title:^(Waydroid)$"
       ];
       windowrule = [
-        "float,^(swayimg)$"
+        "float,^(imv)$"
+        "float,^(mpv)$"
       ];
       bind =
         [
