@@ -11,6 +11,7 @@
     ../system/u2f.nix
 #    ../system/qt.nix
     ../system/waydroid.nix
+    ../system/greetd.nix
     ../system/kernel-latest.nix
     #    ../system/plasma.nix
     ../system/fonts.nix
