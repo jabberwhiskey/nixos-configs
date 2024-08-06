@@ -48,7 +48,7 @@
 		  ./home/hyprland.nix
 #                  ./home/sway.nix
                 ];
-                home.stateVersion = "22.11";
+                home.stateVersion = "24.05";
               };
               extraSpecialArgs = {
 	        inherit inputs; 
@@ -88,12 +88,11 @@
             };
          }
           nixos-hardware.nixosModules.framework-11th-gen-intel
-          hyprland.nixosModules.default
-          {programs.hyprland.enable = true;}
         ];
       };
       nix-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nix-desktop.nix
           home-manager.nixosModules.home-manager
@@ -102,15 +101,6 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.jcw = {
-                services.wayland-pipewire-idle-inhibit = {
-                  enable = true;
-                  systemdTarget = "hyprland-session.target";
-                  settings = {
-                    verbosity = "INFO";
-                    media_minimum_duration = 10;
-                    idle_inhibitor = "wayland";
-                  };
-		};
                 imports = [
                   ./home/home.nix
 		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
@@ -124,8 +114,6 @@
               };
             };
           }
-          hyprland.nixosModules.default
-          {programs.hyprland.enable = true;}
         ];
       };
 #      gpdwin = stable.lib.nixosSystem {
