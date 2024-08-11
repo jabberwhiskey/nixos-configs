@@ -1,6 +1,7 @@
 {
   pkgs,
-  comfig,
+  config,
+  inputs,
   lib,
   ...
 }: {
