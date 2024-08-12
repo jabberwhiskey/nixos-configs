@@ -15,6 +15,7 @@
     ../user/user.nix
     ../hardware/framework.nix
     ../system/sdr.nix
+    ../system/kernel-latest.nix
   ];
   system.stateVersion = "23.05";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
