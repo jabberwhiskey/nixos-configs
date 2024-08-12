@@ -51,7 +51,7 @@
       plugins = [
         "lonr/ghoti"
         "marlonrichert/zsh-autocomplete"
-        "agnoster/agnoster-zsh-theme"
+#        "agnoster/agnoster-zsh-theme" #seems to be gone?
         "davidde/git"
       ];
     };
