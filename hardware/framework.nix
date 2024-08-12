@@ -47,7 +47,7 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [ {device = "/swap/swapfile"; } ];
 
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

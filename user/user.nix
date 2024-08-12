@@ -14,12 +14,17 @@
       "sound"
     ];
     useDefaultShell = true;
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
     packages = with pkgs; [
       neovim
       neomutt
       yadm
     ];
   };
-  programs.zsh.enable = true;
+  #programs.zsh.enable = true;
+  programs.bash.completion.enable = true;
+  programs.git = {
+    enable = true;
+    prompt.enable = true;
+  };
 }
