@@ -51,6 +51,8 @@
       # Show working directory and git branch status in terminal shell.
       # Customize as desired for your shell prompt preferences.
       export PS1='\w $(__git_ps1 "(%s)") \$ '
+
+      export LS_COLORS=$LS_COLORS:'di=1;36:'
     '';
     enableCompletion = true;
 
