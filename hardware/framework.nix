@@ -17,26 +17,32 @@
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/08e83f33-75e2-4059-9f51-b1b8de619ac7";
+ fileSystems."/" =
+    { device = "/dev/disk/by-uuid/a6946593-df92-4aa9-9841-14aa96ad1a86";
       fsType = "btrfs";
-      options = [ "subvol=@root" "compress=zstd" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/08e83f33-75e2-4059-9f51-b1b8de619ac7";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
+      options = [ "subvol=root" "compress=zstd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/08e83f33-75e2-4059-9f51-b1b8de619ac7";
+    { device = "/dev/disk/by-uuid/a6946593-df92-4aa9-9841-14aa96ad1a86";
       fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" ];
+      options = [ "subvol=home" "compress=zstd" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/a6946593-df92-4aa9-9841-14aa96ad1a86";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/snapshots" =
+    { device = "/dev/disk/by-uuid/a6946593-df92-4aa9-9841-14aa96ad1a86";
+      fsType = "btrfs";
+      options = [ "subvol=snapshots" "compress=zstd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/720C-D30B";
+    { device = "/dev/disk/by-uuid/2275-4EC5";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
