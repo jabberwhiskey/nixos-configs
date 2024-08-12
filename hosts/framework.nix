@@ -8,8 +8,9 @@
   imports = [
     ../system/basic.nix
     ../system/greetd.nix
-    #    ../system/plasma.nix
+    #../system/plasma.nix
     ../system/fonts.nix
+    ../system/suspend.nix
     ../system/systemdboot.nix
     ../system/containers.nix
     ../user/user.nix
