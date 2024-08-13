@@ -10,6 +10,7 @@
     ../system/greetd.nix
     #../system/plasma.nix
     ../system/fonts.nix
+    ../system/hyprpam.nix
     ../system/suspend.nix
     ../system/systemdboot.nix
     ../system/containers.nix

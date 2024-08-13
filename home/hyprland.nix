@@ -15,7 +15,7 @@
       pcmanfm-qt
       ranger
       wl-clipboard
-      swaylock-effects
+ #     swaylock-effects
       kdePackages.kasts
       qt6ct
       qt6ct
@@ -187,37 +187,14 @@
   services.dunst = {
     enable = true;
   };
-  services.swayidle = {
-    enable = true;
-    systemdTarget = "hyprland-session.target";
-    timeouts = [
-      {
-        timeout = 300;
-        command = ''          ${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
-          	  --clock \
-          	  --indicator \
-          	  --indicator-radius 100 \
-          	  --indicator-thickness 7 \
-          	  --effect-blur 7x5 \
-          	  --effect-vignette 0.5:0.5 \
-          	  --ring-color bb00cc \
-          	  --key-hl-color 880033 \
-          	  --line-color 00000000 \
-          	  --inside-color 00000088 \
-          	  --separator-color 00000000 \
-          	  --grace 2 \
-          	  --fade-in 0.2'';
-      }
+#  services.swayidle = {
+#    enable = true;
+#    systemdTarget = "hyprland-session.target";
+#    timeouts = [
 #      {
-#        timeout = 600;
-#        command = "${pkgs.systemd}/bin/systemctl suspend";
-#      }
-    ];
-#    events = [
-#      {
-#        event = "before-sleep";
-#        command = ''          ${pkgs.swaylock-effects}/bin/swaylock --screenshots \
-#                    --clock \
+#        timeout = 300;
+#        command = ''          ${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
+#          	  --clock \
 #          	  --indicator \
 #          	  --indicator-radius 100 \
 #          	  --indicator-thickness 7 \
@@ -231,7 +208,47 @@
 #          	  --grace 2 \
 #          	  --fade-in 0.2'';
 #      }
-#    ];
+#  };
+  services.hypridle = {
+    settings = {
+      general = {
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "hyprlock";
+      };
+      listener = [
+        {
+          timeout = 900;
+          on-timeout = "hyprlock";
+        }
+        {
+          timeout = 1200;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+      ]; 
+    };
+  };
+  programs.hyprlock = {
+    settings = {
+      general = {
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "hyprlock";
+      };
+
+      listener = [
+        {
+          timeout = 900;
+          on-timeout = "hyprlock";
+        }
+        {
+          timeout = 1200;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
   };
   programs.wpaperd = {
     enable = true;
