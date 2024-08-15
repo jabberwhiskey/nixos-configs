@@ -21,6 +21,7 @@
       qt6ct
       kdePackages.breeze-icons
       kdePackages.breeze
+      wezterm
     ];
   };
   gtk = {
@@ -120,6 +121,7 @@
       bind =
         [
           "$mod, Return, exec, $term"
+          "$mod Alt, M, exec, ${pkgs.wezterm}/bin/wezterm"
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
