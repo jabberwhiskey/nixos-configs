@@ -22,6 +22,7 @@
       kdePackages.breeze-icons
       kdePackages.breeze
       wezterm
+      kitty
     ];
   };
   gtk = {
@@ -122,6 +123,7 @@
         [
           "$mod, Return, exec, $term"
           "$mod Alt, M, exec, ${pkgs.wezterm}/bin/wezterm"
+          "$mod, M, exec, ${pkgs.kitty}/bin/kitty"
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
