@@ -13,10 +13,10 @@
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wayland-pipewire-idle-inhibit = {
-      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+#    wayland-pipewire-idle-inhibit = {
+#      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#    };
   };
 
   outputs = inputs @ {
