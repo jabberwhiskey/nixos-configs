@@ -44,11 +44,6 @@
             "on-scroll-down" = "shift_down";
           };
         };
-        "tray" = {
-          spacing = 10;
-          icon-size = 20;
-          show-passive-items = "true";
-        };
         idle_inhibitor = {
           format = "icon";
           format_icons = {
@@ -94,6 +89,11 @@
           format-muted = "";
           on-click = "helvum";
           format-icons = ["" "" ""];
+        };
+	"tray" = {
+          spacing = 10;
+          icon-size = 20;
+          show-passive-items = "true";
         };
       };
     };
