@@ -268,7 +268,7 @@
   programs.wpaperd = {
     enable = true;
     settings = {
-      eDP-1 = {
+      any = {
         path = "${config.home.homeDirectory}/Pictures/Wallpapers";
         sorting = "descending";
         duration = "10m";

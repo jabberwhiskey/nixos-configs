@@ -26,7 +26,7 @@
     stable,
     nixos-hardware,
     hyprland,
-    wayland-pipewire-idle-inhibit,
+#    wayland-pipewire-idle-inhibit,
     ...
   }: {
     nixosConfigurations = {
@@ -42,7 +42,7 @@
               useUserPackages = true;
               users.jcw = {
                imports = [
-		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
+#		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
 		  ./home/inhibit-hyprland.nix
                   ./home/home.nix
 		  ./home/hyprland.nix
@@ -76,7 +76,7 @@
               users.jcw = {
                imports = [
                   ./home/home.nix
-		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
+		  #inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/hyprland.nix
 		  ./home/inhibit-hyprland.nix
                 ];
@@ -103,7 +103,7 @@
               users.jcw = {
                 imports = [
                   ./home/home.nix
-		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
+		  #inputs.wayland-pipewire-idle-inhibit.homeModules.default
 		  ./home/inhibit-hyprland.nix
 		  ./home/hyprland.nix
                   ./home/hm-dconf.nix
