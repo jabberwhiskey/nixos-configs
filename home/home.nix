@@ -14,7 +14,6 @@
       bitwarden
       bitwarden-cli
       firefox
-      librewolf
       #vivaldi
       unzip
       yt-dlp
