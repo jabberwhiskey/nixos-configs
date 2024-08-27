@@ -78,6 +78,7 @@
                   ./home/home.nix
 		  #inputs.wayland-pipewire-idle-inhibit.homeModules.default
                   ./home/hyprland.nix
+		  ./home/waybar.nix
 		  ./home/inhibit-hyprland.nix
                 ];
                 home.stateVersion = "23.05";

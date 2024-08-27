@@ -8,14 +8,17 @@
         position = "top";
         height = 45;
         modules-left = ["hyprland/workspaces"];
-        modules-center = ["clock"];
-        modules-right = ["tray" "idle_inhibitor" "battery" "network" "wireplumber"];
+        modules-center = ["hyprland/window"];
+        modules-right = ["idle_inhibitor" "battery" "network" "wireplumber" "tray" "clock"];
 
         "hyprland/workspaces" = {
           format = "{name}";
           on-click = "activate";
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
+          show-special = true;
+        };
+        "hyprland/window" = {
         };
         "clock" = {
           interval = 1;
@@ -45,7 +48,7 @@
           };
         };
         idle_inhibitor = {
-          format = "icon";
+          format = "{icon}";
           format_icons = {
             activated = "";
             deactivated = "";
@@ -90,11 +93,99 @@
           on-click = "helvum";
           format-icons = ["" "" ""];
         };
-	"tray" = {
+        "tray" = {
           spacing = 10;
           icon-size = 20;
           show-passive-items = "true";
         };
       };
     };
+    style = ''
+      * {
+          border: none;
+          border-radius: 45;
+          font-family: Roboto, Helvetica, Arial, sans-serif, nerdfonts; 
+          font-size: 15px;
+          min-height: 0;
+      }
+      
+      window#waybar {
+          background: rgba(0, 0, 0, 0);
+          color: white;
+      }
+      
+      tooltip {
+        background: rgba(43, 48, 59, 0.5);
+        border: 1px solid rgba(100, 114, 125, 0.5);
+      }
+      tooltip label {
+        color: white;
+      }
+      
+      #workspaces button {
+          background: rgba(50, 38, 133, 0.4);
+          color: white;
+          border-bottom: 2px solid transparent;
+          padding: 0 5px;
+      }
+      
+      #workspaces button.focused {
+          background: #64727D;
+          border-bottom: 3px solid white;
+      }
+      
+      #mode, #clock, #battery {
+          padding: 0 10px;
+      }
+      
+      #mode {
+          background: #64727D;
+          border-bottom: 3px solid white;
+      }
+      
+      #clock {
+          background-color: #000000;
+      }
+      
+      #battery {
+          background-color:  #0057ff;
+          color: black;
+      }
+      
+      #battery.charging {
+          color: white;
+          background-color:  #00e813;
+      }
+      
+      @keyframes blink {
+          to {
+              background-color: #ffffff;
+              color: black;
+          }
+      }
+      
+      #battery.warning:not(.charging) {
+          background:  #e83914; 
+          color: white;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: steps(12);
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+      }
+      #network {
+          background: #000000;
+          color: white;
+          padding: 0 10px;
+      }
+      #wireplumber {
+          background:  #809701;
+          padding: 0 10px;
+      }
+      #tray {
+          background: #000000;
+          padding: 0 5px;
+      }
+    '';
+  };
 }
