@@ -72,7 +72,7 @@
         "col.active_border" = "rgba(00f8ffee) rgba(e80e0eee) 10deg";
         "col.inactive_border" = "rgba(000000aa)";
         layout = "dawindle";
-        #allow_tearring = "false";
+        allow_tearing = "false";
       };
       decoration = {
         rounding = "5";
@@ -143,8 +143,8 @@
           "$mod SHIFT, left, movewindow, l"
           "$mod SHIFT, right, movewindow, r"
           #scratchpad
-          "$mod, S, togglespecialworkspace, magic"
-          "$mod SHIFT, S, movetoworkspace, special:magic"
+          "$mod, S, togglespecialworkspace, SCRTCHPD"
+          "$mod SHIFT, S, movetoworkspace, special:SCRTCHPD"
           #brightness
           ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
           ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
@@ -187,28 +187,6 @@
   services.dunst = {
     enable = true;
   };
-#  services.swayidle = {
-#    enable = true;
-#    systemdTarget = "hyprland-session.target";
-#    timeouts = [
-#      {
-#        timeout = 300;
-#        command = ''          ${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
-#          	  --clock \
-#          	  --indicator \
-#          	  --indicator-radius 100 \
-#          	  --indicator-thickness 7 \
-#          	  --effect-blur 7x5 \
-#          	  --effect-vignette 0.5:0.5 \
-#          	  --ring-color bb00cc \
-#          	  --key-hl-color 880033 \
-#          	  --line-color 00000000 \
-#          	  --inside-color 00000088 \
-#          	  --separator-color 00000000 \
-#          	  --grace 2 \
-#          	  --fade-in 0.2'';
-#      }
-#  };
   services.hypridle = {
     enable = true;
     settings = {

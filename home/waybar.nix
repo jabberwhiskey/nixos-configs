@@ -64,7 +64,7 @@
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
         };
         "battery" = {
-          bat = "BAT1";
+ #         bat = "BAT1";
           interval = 60;
           states = {
             warning = 30;
