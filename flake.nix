@@ -44,7 +44,6 @@
               extraSpecialArgs = {
 	              inherit inputs; 
               };
-            };
           }
         ];
       };
