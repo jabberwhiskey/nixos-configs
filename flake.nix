@@ -40,18 +40,9 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.jcw = {
-               imports = [
-#		  inputs.wayland-pipewire-idle-inhibit.homeModules.default
-		  ./home/inhibit-hyprland.nix
-                  ./home/home.nix
-		  ./home/hyprland.nix
-#                  ./home/sway.nix
-                ];
-                home.stateVersion = "24.05";
               };
               extraSpecialArgs = {
-	        inherit inputs; 
+	              inherit inputs; 
               };
             };
           }

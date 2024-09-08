@@ -22,6 +22,15 @@
     ../user/user.nix
     ../hardware/hplaptop.nix
   ];
+  home-manager.users.jcw = {
+    imports = [
+      ../home/waybar.nix
+      ../home/hyprland.nix
+      ../home/inhibit-hyprland.nix
+		  ../home/home.nix
+    ];
+    home.stateVersion = "24.05";
+  };
   system.stateVersion = "24.05";
 
   networking.hostName = "nixos-laptop";
