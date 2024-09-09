@@ -75,7 +75,7 @@
           max-length = 25;
         };
         "network" = {
-          interface = "wlp170s0";
+#          interface = "wlp170s0";
           format = "{ifname}";
           format-wifi = "{essid} ({signalStrength}%) ";
           format-ethernet = "{ifname} ";
