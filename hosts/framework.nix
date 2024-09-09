@@ -20,14 +20,14 @@
     ../system/kernel-latest.nix
   ];
   system.stateVersion = "23.05";
-  home-manager = {
-    users.jcw.imports = [
+  home-manager.users.jcw = {
+    imports = [
       ../home/home.nix
       ../home/waybar.nix
       ../home/hyprland.nix
       ../home/inhibit-hyprland.nix
     ];
-    home.stateversion = "23.05"
+    home.stateVersion = "23.05";
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
