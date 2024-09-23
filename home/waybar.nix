@@ -90,7 +90,7 @@
         "wireplumber" = {
           format = "{volume}% {icon}";
           format-muted = "";
-          on-click = "helvum";
+          on-click = "qpwgraph";
           format-icons = ["" "" ""];
         };
         "tray" = {

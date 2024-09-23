@@ -10,8 +10,8 @@
       anyrun
       imv
       rofi-wayland
-      helvum
       waybar
+      qpwgraph
       pcmanfm-qt
       ranger
       wl-clipboard
