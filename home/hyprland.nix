@@ -50,7 +50,8 @@
         "${pkgs.wpaperd}/bin/wpaperd"
       ];
       "$mod" = "SUPER";
-      "$term" = "${pkgs.alacritty}/bin/alacritty";
+#      "$term" = "${pkgs.alacritty}/bin/alacritty";
+      "$term" = "${pkgs.foot}/bin/foot";
       "$fileManager" = "${pkgs.pcmanfm-qt}/bin/pcmanfm-qt";
       env = [
         "XCURSOR_SIZE,24"
@@ -253,15 +254,43 @@
       };
     };
   };
-  programs.alacritty = {
+#  programs.alacritty = {
+#    enable = true;
+#    settings = {
+#      window = {
+#        decorations = "none";
+#        blur = true;
+#        opacity = 0.8;
+#      };
+#    };
+#  };
+  programs.foot = {
     enable = true;
     settings = {
-      window = {
-        decorations = "none";
-        blur = true;
-        opacity = 0.8;
+      main = {
+        app-id = "foot";
+	font = "monospace:size=14";
+      };
+      colors = {
+        alpha = 0.9;
+        background = "242424";
+	foreground = "ffffff";
       };
     };
+  };
+  programs.ranger = {
+    enable = true;
+    extraConfig = ''
+      set preview_images true
+      set preview_images_method sixel
+    '';
+  };
+  programs.rofi = {
+    enable = true;
+    terminal = "${pkgs.foot}/bin/foot";
+    package = pkgs.rofi-wayland;
+    theme = "android_notification";
+
   };
   services.clipman = {
     enable = true;
