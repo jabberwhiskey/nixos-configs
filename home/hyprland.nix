@@ -269,8 +269,7 @@
     settings = {
       main = {
         app-id = "foot";
-	font = "monospace:size=14";
-              extraSpecialArgs = {
+      	font = "monospace:size=14";
       };
       colors = {
         alpha = 0.9;
