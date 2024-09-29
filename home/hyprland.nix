@@ -269,7 +269,7 @@
     settings = {
       main = {
         app-id = "foot";
-	font = "monospace:size=14";
+	font = "monospace:size=12";
       };
       colors = {
         alpha = 0.9;
