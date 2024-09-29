@@ -28,6 +28,7 @@
       ../home/inhibit-hyprland.nix
     ];
     home.stateVersion = "23.05";
+    programs.foot.settings.main.font = mkForce "monospace:size=14";
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
@@ -60,17 +61,5 @@
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-  home-manager.users.jcw = {
-    home.stateVersion = "23.11";
-    useGlobalPkgs = true;
-    useUserPackages =true;
-    imports = [
-      ../home/home.nix
-      ../home/inhibit-hyprland.nix
-      ../home/hyprland.nix
-      ../home/hm-dconf.nix
-    ];
-    programs.foot.settings.main.font = mkForce "monospace:size=14";
   };
 }
