@@ -41,6 +41,9 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               };
+              extraSpecialArgs = {
+	              inherit inputs; 
+              };
           }
         ];
       };
@@ -52,7 +55,7 @@
       #	};
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-      	specialArgs = {inherit inputs;};
+	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/framework.nix
           home-manager.nixosModules.home-manager
@@ -60,17 +63,14 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = {
-      	        inherit inputs; 
-	            };
             };
-          }
+         }
           nixos-hardware.nixosModules.framework-11th-gen-intel
         ];
       };
       nix-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-      	specialArgs = {inherit inputs;};
+	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nix-desktop.nix
           home-manager.nixosModules.home-manager
