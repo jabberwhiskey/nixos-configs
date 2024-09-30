@@ -28,7 +28,7 @@
       ../home/inhibit-hyprland.nix
     ];
     home.stateVersion = "23.05";
-    programs.foot.settings.main.font = mkForce "monospace:size=14";
+    programs.foot.settings.main.font = lib.mkForce "monospace:size=14";
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
