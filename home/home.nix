@@ -8,10 +8,12 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
+      mumble
       mpv
       htop
       imv
       bitwarden
+      iamb
       bitwarden-cli
       firefox
       #vivaldi

@@ -29,6 +29,7 @@
       ../home/inhibit-hyprland.nix
 		  ../home/home.nix
     ];
+    programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
     home.stateVersion = "24.05";
   };
   system.stateVersion = "24.05";
