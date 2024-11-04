@@ -9,15 +9,11 @@
     packages = with pkgs; [
       anyrun
       imv
-      rofi-wayland
       waybar
       qpwgraph
       pcmanfm-qt
       ranger
-      wl-clipboard
- #     swaylock-effects
       kdePackages.kasts
-      qt6ct
       qt6ct
       kdePackages.breeze-icons
       kdePackages.breeze
@@ -125,6 +121,7 @@
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
+          "$mod, G, exec, ${pkgs.rofi-rbw-wayland}/bin/rofi-rbw"
           "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun"
           "$mod, P, pseudo," #dwindle
           "$mod, J, togglesplit," #dwindle
@@ -290,7 +287,7 @@
     terminal = "${pkgs.foot}/bin/foot";
     package = pkgs.rofi-wayland;
     theme = "android_notification";
-
+    
   };
   services.clipman = {
     enable = true;
