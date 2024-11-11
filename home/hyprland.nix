@@ -7,7 +7,6 @@
 }: {
   home = {
     packages = with pkgs; [
-      anyrun
       imv
       waybar
       qpwgraph
@@ -27,14 +26,14 @@
     enable = true;
 
   };
-#  qt = {
-#    platformTheme.name = "qtct";
-#    style = {
-#      name = "breeze";
-#      package = pkgs.kdePackages.qt6ct;
-#    };
-#    enable = true;
-#  };
+  qt = {
+    platformTheme.name = "qtct";
+    style = {
+      name = "breeze";
+      package = pkgs.kdePackages.qt6ct;
+    };
+    enable = true;
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
@@ -52,7 +51,7 @@
       env = [
         "XCURSOR_SIZE,24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
-	"XDG_CURRENT_DESKTOP,Hyprland"
+	      "XDG_CURRENT_DESKTOP,Hyprland"
       ];
       input = {
         kb_layout = "us";
@@ -122,7 +121,6 @@
           "$mod, E, exec, $fileManager"
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
           "$mod, G, exec, ${pkgs.rofi-rbw-wayland}/bin/rofi-rbw"
-          "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun"
           "$mod, P, pseudo," #dwindle
           "$mod, J, togglesplit," #dwindle
           "$mod, F, togglefloating,"
@@ -184,6 +182,22 @@
   };
   services.dunst = {
     enable = true;
+    settings = {
+      global = {
+        width = 300;
+        height = 300;
+        offset = "30x50";
+        origin = "top-right";
+        transparency = 10;
+        frame_color = "#eceff1";
+        font = "Droid Sans 9";
+      };
+      urgency_normal = {
+        background = "#37474f";
+        foreground = "#eceff1";
+        timeout = 10;
+      };
+    };
   };
   services.hypridle = {
     enable = true;
@@ -203,6 +217,11 @@
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }
+        {
+          timeout = 1800;
+          on-timeout = "systemctl suspend";
+        }      
+        
       ]; 
     };
   };
@@ -271,7 +290,7 @@
       colors = {
         alpha = 0.9;
         background = "242424";
-	foreground = "ffffff";
+      	foreground = "ffffff";
       };
     };
   };
