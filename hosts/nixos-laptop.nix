@@ -32,6 +32,7 @@
     programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
     home.stateVersion = "24.05";
   };
+  home-manager.backupFileExtension = "backup";
   system.stateVersion = "24.05";
 
   networking.hostName = "nixos-laptop";

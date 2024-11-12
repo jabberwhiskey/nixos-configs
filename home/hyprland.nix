@@ -34,7 +34,12 @@
       package = pkgs.rose-pine-gtk-theme;
     };
     enable = true;
-
+  };
+  home.pointerCursor = {
+    package = pkgs.rose-pine-cursor;
+    name = "rose-pine-cursor";
+    size = 24;
+    gtk.enable = true;
   };
   qt = {
     platformTheme.name = "qtct";
