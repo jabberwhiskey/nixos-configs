@@ -13,6 +13,7 @@
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 #      inputs.nixpkgs.follows = "nixpkgs";
     };
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 #    wayland-pipewire-idle-inhibit = {
 #      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
 #      inputs.nixpkgs.follows = "nixpkgs";

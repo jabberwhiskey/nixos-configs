@@ -49,11 +49,11 @@
     usbutils
     pciutils
     libsForQt5.kwallet
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   environment.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
-  security.pam.services.swaylock = {};
   #  services.xserver.displayManager.sessionPackages = with pkgs; [
   #    sway
   #  ];
@@ -62,4 +62,5 @@
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+  hardware.brillo.enable = true;
 }

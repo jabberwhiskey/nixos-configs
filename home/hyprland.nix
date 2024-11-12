@@ -20,9 +20,18 @@
     ];
   };
   gtk = {
+    cursorTheme = {
+      name = "rose-pine";
+      package = pkgs.rose-pine-cursor;
+      size = 24;
+    };
+    iconTheme = {
+      name = "rose-pine-icons";
+      package = pkgs.rose-pine-icon-theme;
+    };
     theme = {
-      name = "Adwaita-Dark";
-      package = pkgs.gnome-themes-extra;
+      name = "rose-pine-gtk";
+      package = pkgs.rose-pine-gtk-theme;
     };
     enable = true;
 
@@ -50,7 +59,9 @@
       "$term" = "${pkgs.foot}/bin/foot";
       "$fileManager" = "${pkgs.pcmanfm-qt}/bin/pcmanfm-qt";
       env = [
-        "XCURSOR_SIZE,24"
+#        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+        "HYPRCURSOR_SIZE, 24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
 	      "XDG_CURRENT_DESKTOP,Hyprland"
       ];

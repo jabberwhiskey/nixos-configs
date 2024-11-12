@@ -103,14 +103,14 @@
     style = ''
       * {
           border: none;
-          border-radius: 45;
+          border-radius: 0;
           font-family: Roboto, Helvetica, Arial, sans-serif, nerdfonts; 
           font-size: 15px;
           min-height: 0;
       }
       
       window#waybar {
-          background: rgba(0, 0, 0, 0);
+          background: #000000;
           color: white;
       }
       
@@ -123,14 +123,14 @@
       }
       
       #workspaces button {
-          background: rgba(50, 38, 133, 0.4);
+          background: #000000;
           color: white;
-          border-bottom: 2px solid transparent;
+          border-bottom: 1px solid transparent;
           padding: 0 5px;
       }
       
       #workspaces button.focused {
-          background: #64727D;
+          background: #ff0000;
           border-bottom: 3px solid white;
       }
       
@@ -148,24 +148,24 @@
       }
       
       #battery {
-          background-color:  #0057ff;
-          color: black;
+          background-color:  #000000;
+          color: white;
       }
       
       #battery.charging {
-          color: white;
-          background-color:  #00e813;
+          color: green;
+          background-color:  #000000;
       }
       
       @keyframes blink {
           to {
               background-color: #ffffff;
-              color: black;
+              color: white;
           }
       }
       
       #battery.warning:not(.charging) {
-          background:  #e83914; 
+          background:  #FF0000; 
           color: white;
           animation-name: blink;
           animation-duration: 0.5s;
@@ -179,7 +179,7 @@
           padding: 0 10px;
       }
       #wireplumber {
-          background:  #809701;
+          background:  #000000;
           padding: 0 10px;
       }
       #tray {

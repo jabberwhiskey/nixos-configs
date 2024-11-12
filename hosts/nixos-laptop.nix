@@ -52,6 +52,7 @@
   environment.systemPackages = with pkgs; [
     usbutils
     pciutils
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 #  programs.sway ={
 #    enable = true;
