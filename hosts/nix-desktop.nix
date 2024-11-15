@@ -19,6 +19,8 @@
     ../system/steam.nix
   ];
 
+  home-manager.backupFileExtension = "backup";
+
   system.stateVersion = "23.11";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
