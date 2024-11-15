@@ -16,6 +16,7 @@
         User = "qbittorrent";
         ExecStart = "${pkgs.qbittorrent-nox}/bin/qbittorrent-nox";
         StateDirectory = "/var/cache/qbittorrent";
+        CacheDirectory = "/var/cache/qbittorrent";
       };
       wantedBy = [ "multi-user.target" ];
     };
