@@ -36,7 +36,7 @@
     };
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [22 80];
+    allowedTCPPorts = [22 80 9091 51413];
   };
   systemd.tmpfiles.rules = [
     "Z /media/plex 0776 sonarr users"
