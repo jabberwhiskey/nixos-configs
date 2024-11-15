@@ -6,6 +6,7 @@
   imports = [
     ../user/user.nix
     ../system/common.nix
+    ../system/tailscale.nix
     ../system/systemdboot.nix
   ];
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
@@ -25,6 +26,10 @@
     htop
     fisn
   ];
+  users.users.jcw = {
+     extraGroups = [ "jellyfin" "sonarr" ];
+     shell = pkgs.fish;
+    };
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [22 80 443 8080 8989 13400];
