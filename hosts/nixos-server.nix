@@ -35,8 +35,8 @@
      extraGroups = [ "jellyfin" "sonarr" ];
     };
   networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [22 80 443 8080 8989 13400];
+    enable = true;
+    allowedTCPPorts = [22 80];
   };
   systemd.tmpfiles.rules = [
     "Z /media/plex 0776 sonarr users"
