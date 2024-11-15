@@ -8,6 +8,7 @@
   imports = [
     ../system/basic.nix
     ../system/greetd.nix
+    ../system/tailscale.nix
     #../system/plasma.nix
     ../system/fonts.nix
     ../system/hyprpam.nix
