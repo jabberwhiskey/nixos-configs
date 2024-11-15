@@ -6,6 +6,7 @@
   imports = [
     ../user/user.nix
     ../system/common.nix
+    ../system/server-torrent.nix
     ../system/tailscale.nix
     ../system/systemdboot.nix
   ];
