@@ -5,7 +5,7 @@
     user = "jcw";
     openFirewall = true;
     settings = {
-      download-dir = "home/jcw/nas/downloads"
+      download-dir = "home/jcw/nas/downloads";
     };
   };
 }
