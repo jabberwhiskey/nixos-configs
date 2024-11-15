@@ -1,25 +1,10 @@
 { pkgs, config, ... }:
 {
-  users.users.qbittorrent = {
-    isNormalUser = false;
-    isSystemUser = true;
-    group = "users";
+  services.transmission = {
+    enable = true;
+    user = "jcw";
+    home = "/home/jcw/nas/downloads";
+    openFirewall = true;
+
   };
-  environment.systemPackages = [ pkgs.qbittorrent-nox ];
-  # add and enable systemd unit
-  systemd = {
-    packages = [ pkgs.qbittorrent-nox ];
-    services."qbittorrent-nox@fc" = {
-      enable = true;
-      serviceConfig = {
-        Type = "simple";
-        User = "qbittorrent";
-        ExecStart = "${pkgs.qbittorrent-nox}/bin/qbittorrent-nox";
-        StateDirectory = "/var/cache/qbittorrent";
-        CacheDirectory = "/var/cache/qbittorrent";
-      };
-      wantedBy = [ "multi-user.target" ];
-    };
-  };
-  networking.firewall.allowedTCPPorts = [ 8080 ];
 }
