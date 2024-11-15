@@ -3,8 +3,9 @@
   services.transmission = {
     enable = true;
     user = "jcw";
-    home = "/home/jcw/nas/downloads";
     openFirewall = true;
-
+    settings = {
+      download-dir = "home/jcw/nas/downloads"
+    };
   };
 }
