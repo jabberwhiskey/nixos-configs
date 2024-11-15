@@ -13,16 +13,17 @@
     ../system/jellyfin.nix
     ../system/systemdboot.nix
   ];
-  users.users.jcw.openssh.authorizedKeys.keyFiles = [
-    ./keys/keys
-  ];
+#  users.users.jcw.openssh.authorizedKeys.keyFiles = [
+#    ./keys/keys
+#  ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
   services.openssh = {
     enable = true;
     settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
+#      PasswordAuthentication = false;
+      PasswordAuthentication = true;
+#      KbdInteractiveAuthentication = false;
     };
   };
   environment.systemPackages = with pkgs; [
