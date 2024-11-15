@@ -8,6 +8,7 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
+      chromium
       mumble
       mpv
       htop
