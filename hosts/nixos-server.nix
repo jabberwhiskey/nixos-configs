@@ -4,14 +4,17 @@
   ...
 }: {
   imports = [
+    ../hardware/nucserver.nix
     ../user/user.nix
-    ../system/common.nix
+    ../system/basic.nix
     ../system/server-torrent.nix
     ../system/tailscale.nix
+    ../system/sonarr.nix
+    ../system/jellyfin.nix
     ../system/systemdboot.nix
   ];
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
-    ../user/keys
+    ./keys/keys
   ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
@@ -19,17 +22,15 @@
     enable = true;
     settings = {
       passwordAuthenticatiomn = false;
-      kbdInteractiveAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
   };
   environment.systemPackages = with pkgs; [
     mc
     htop
-    fisn
   ];
   users.users.jcw = {
      extraGroups = [ "jellyfin" "sonarr" ];
-     shell = pkgs.fish;
     };
   networking.firewall = {
     enable = true;

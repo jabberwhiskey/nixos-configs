@@ -1,3 +1,4 @@
+{ pkgs, config, ... }:
 {
   services.jellyfin = {
     enable = true;

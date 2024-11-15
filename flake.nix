@@ -33,7 +33,7 @@
     nixosConfigurations = {
       nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = {inherit inputs;};
+      	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixos-laptop.nix
           home-manager.nixosModules.home-manager
@@ -44,16 +44,16 @@
               };
           }
         ];
-      };
-      #	nixos-server = stable.lib.nixosSystem {
-      #	  system = "x86_64-linux";
-      #	  modules = [
-      #
-      #	  ];
-      #	};
-      framework = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = {inherit inputs;};
+     };
+     nixos-server = nixpkgs.lib.nixosSystem {
+       system = "x86_64-linux";
+       modules = [
+         ./hosts/nixos-server.nix
+   	   ];
+     };
+     framework = nixpkgs.lib.nixosSystem {
+       system = "x86_64-linux";
+	     specialArgs = {inherit inputs;};
         modules = [
           ./hosts/framework.nix
           home-manager.nixosModules.home-manager
@@ -65,32 +65,32 @@
          }
           nixos-hardware.nixosModules.framework-11th-gen-intel
         ];
-      };
-      nix-desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/nix-desktop.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.jcw = {
-                imports = [
-                  ./home/home.nix
-		  ./home/inhibit-hyprland.nix
-		  ./home/hyprland.nix
-                  ./home/hm-dconf.nix
-                ];
-                home.stateVersion = "23.11";
-              };
-              extraSpecialArgs = {
-              };
-            };
-          }
-        ];
-      };
+       };
+       nix-desktop = nixpkgs.lib.nixosSystem {
+         system = "x86_64-linux";
+	       specialArgs = {inherit inputs;};
+         modules = [
+           ./hosts/nix-desktop.nix
+           home-manager.nixosModules.home-manager
+           {
+             home-manager = {
+               useGlobalPkgs = true;
+               useUserPackages = true;
+               users.jcw = {
+                 imports = [
+                   ./home/home.nix
+		               ./home/inhibit-hyprland.nix
+		               ./home/hyprland.nix
+                   ./home/hm-dconf.nix
+                 ];
+                 home.stateVersion = "23.11";
+               };
+               extraSpecialArgs = {
+               };
+             };
+           }
+         ];
+       };
 #      gpdwin = stable.lib.nixosSystem {
 #        system = "x86_64-linux";
 #	modules = [

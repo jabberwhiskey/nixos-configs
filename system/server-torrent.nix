@@ -1,9 +1,11 @@
+{ pkgs, config, ... }:
 {
   users.users.qbittorrent = {
     isNormalUser = false;
-    extraGroups = [ "sonarr" "users" ];
+    isSystemUser = true;
+    group = "users";
   };
-  environment.systemPackages = with pkgs; [ qbittorrent-nox ];
+  environment.systemPackages = [ pkgs.qbittorrent-nox ];
   # add and enable systemd unit
   systemd = {
     packages = [ pkgs.qbittorrent-nox ];
