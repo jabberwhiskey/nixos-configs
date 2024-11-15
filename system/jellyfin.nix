@@ -2,8 +2,8 @@
 {
   services.jellyfin = {
     enable = true;
-    group = "sonarr";
-    user = "jcw";
+#    group = "sonarr";
+#    user = "jcw";
     openFirewall = true;
   };
   environment.systemPackages = [
