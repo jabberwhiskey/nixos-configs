@@ -18,7 +18,7 @@
 #  ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
-  services.tailscale.useRoutingFeatures = "server";
+  services.tailscale.useRoutingFeatures = "both";
   services.openssh = {
     enable = true;
     settings = {
