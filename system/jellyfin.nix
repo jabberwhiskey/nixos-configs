@@ -26,4 +26,7 @@
       intel-media-sdk # QSV up to 11th gen
     ];
   };
+  users.users.jellyfin = {
+    extraGroups = [ "video" "render" ];
+  };
 }
