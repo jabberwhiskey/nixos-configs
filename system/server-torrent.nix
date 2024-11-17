@@ -7,7 +7,7 @@
     openRPCPort = true;
     settings = {
       download-dir = "/home/jcw/nas/downloads";
-      rpc-whitelist = "127.0.0.1,10.0.0.1,100.103.94.88,100.91.137.34";
+      rpc-whitelist = "127.0.0.1,10.0.0.1,100.103.94.88,100.91.137.34,100.82.251.87";
       rpc-bind-address = "0.0.0.0"; #Bind to own IP
     };
   };
