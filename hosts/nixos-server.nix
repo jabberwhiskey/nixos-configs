@@ -5,8 +5,8 @@
 }: {
   imports = [
     ../hardware/nucserver.nix
-    ../user/user.nix
-    ../system/basic.nix
+    ../user/minimal-user.nix
+    ../system/minimal-basic.nix
     ../system/server-torrent.nix
     ../system/tailscale.nix
     ../system/sonarr.nix
