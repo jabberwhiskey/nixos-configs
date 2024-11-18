@@ -15,7 +15,7 @@
     ../user/user.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
-    ../system/kernel-latest.nix
+#    ../system/kernel-latest.nix
     ../system/greetd.nix
     ../system/steam.nix
   ];
