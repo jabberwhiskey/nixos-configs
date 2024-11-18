@@ -50,6 +50,7 @@
        modules = [
          ./hosts/nixos-server.nix
    	   ];
+       specialArgs = {inherit inputs;};
      };
      framework = nixpkgs.lib.nixosSystem {
        system = "x86_64-linux";
