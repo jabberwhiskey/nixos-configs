@@ -9,6 +9,7 @@
   imports = [
     ../system/basic.nix
     ../system/u2f.nix
+    ../system/tailscale.nix
     ../system/hyprpam.nix
 #    ../system/suspend.nix
 #    ../system/qt.nix

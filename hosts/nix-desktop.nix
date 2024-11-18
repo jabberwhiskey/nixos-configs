@@ -8,6 +8,7 @@
   imports = [
     ../system/basic.nix
     ../system/systemdboot.nix
+    ../system/tailscale.nix
     ../system/containers.nix
     ../system/virtmanager.nix
     ../hardware/desktop.nix

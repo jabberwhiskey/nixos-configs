@@ -4,30 +4,39 @@
   ...
 }: {
   imports = [
+    ../hardware/nucserver.nix
     ../user/user.nix
-    ../system/common.nix
+    ../system/basic.nix
+    ../system/server-torrent.nix
+    ../system/tailscale.nix
+    ../system/sonarr.nix
+    ../system/jellyfin.nix
     ../system/systemdboot.nix
   ];
-  users.users.jcw.openssh.authorizedKeys.keyFiles = [
-    ../user/keys
-  ];
+#  users.users.jcw.openssh.authorizedKeys.keyFiles = [
+#    ./keys/keys
+#  ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
+  services.tailscale.useRoutingFeatures = "both";
   services.openssh = {
     enable = true;
     settings = {
-      passwordAuthenticatiomn = false;
-      kbdInteractiveAuthentication = false;
+#      PasswordAuthentication = false;
+      PasswordAuthentication = true;
+#      KbdInteractiveAuthentication = false;
     };
   };
   environment.systemPackages = with pkgs; [
     mc
     htop
-    fisn
   ];
+  users.users.jcw = {
+     extraGroups = [ "jellyfin" "sonarr" ];
+    };
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [22 80 443 8080 8989 13400];
+    allowedTCPPorts = [22 80 9091 51413];
   };
   systemd.tmpfiles.rules = [
     "Z /media/plex 0776 sonarr users"

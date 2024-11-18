@@ -64,7 +64,8 @@
       "$term" = "${pkgs.foot}/bin/foot";
       "$fileManager" = "${pkgs.pcmanfm-qt}/bin/pcmanfm-qt";
       env = [
-#        "XCURSOR_SIZE,24"
+        "XCURSOR_SIZE,24"
+        "XCURSOR_THEME,rose-pine"
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "HYPRCURSOR_SIZE, 24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
