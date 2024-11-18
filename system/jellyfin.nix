@@ -1,7 +1,8 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, inputs, config, lib, ... }:
 {
   services.jellyfin = {
     enable = true;
+    package = inputs.nixpkgs.legacyPackages.x86_64-linux.jellyfin;
 #    group = "sonarr";
 #    user = "jcw";
     openFirewall = true;
