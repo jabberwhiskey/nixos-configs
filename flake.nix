@@ -92,25 +92,7 @@
            }
          ];
        };
-#      gpdwin = stable.lib.nixosSystem {
-#        system = "x86_64-linux";
-#	modules = [
-#          ./hosts/gpdwin.nix
-#	  home-manager.nixosModules.home-manager
-#	  {
-#            home-manager = {
-#              useGlobalPkgs = true;
-#	      useUserPackages = true;
-#	      users.jcw = {
-#                imports = [
-#                  ./home/home.nix
-#		];
-#	      home.stateVersion = "23.11";
-#	      };
-#	    };
-#	  }
-#	];
-#      };
+
     };
   };
 }
