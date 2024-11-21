@@ -30,6 +30,7 @@
   fileSystems."/media/nas" = {
     device = "/dev/disk/by-uuid/a80b6ac6-825d-479f-8ddf-03ff21336f13";
     fsType = "btrfs";
+    options = [ "compress=zstd" "subvol=@nas" ];
   };
 
   fileSystems."/media/plex" = {
