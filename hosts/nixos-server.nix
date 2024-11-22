@@ -23,7 +23,7 @@
     enable = true;
     settings = {
       PasswordAuthentication = false;
-      PasswordAuthentication = true;
+#      PasswordAuthentication = true;
       KbdInteractiveAuthentication = false;
     };
   };
