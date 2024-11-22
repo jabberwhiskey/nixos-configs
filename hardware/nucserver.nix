@@ -35,8 +35,9 @@
   };
 
   fileSystems."/media/plex" = {
-    device = "/dev/disk/by-uuid/5ef42dde-e9b6-4761-b301-9476830e127c";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/04a14bf7-ecf9-4dc7-af44-8a68de787687";
+    fsType = "btrfs";
+    options = [ "compress=zstd" "subvol=@plex" ];
   };
 
   swapDevices = [
