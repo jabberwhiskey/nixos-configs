@@ -22,9 +22,9 @@
   services.openssh = {
     enable = true;
     settings = {
-#      PasswordAuthentication = false;
+      PasswordAuthentication = false;
       PasswordAuthentication = true;
-#      KbdInteractiveAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
   };
   environment.systemPackages = with pkgs; [
