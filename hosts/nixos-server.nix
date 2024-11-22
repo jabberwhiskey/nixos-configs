@@ -14,7 +14,7 @@
     ../system/systemdboot.nix
   ];
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
-    ../users/keys
+    ../user/keys
   ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
