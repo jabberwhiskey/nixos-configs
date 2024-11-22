@@ -13,9 +13,9 @@
     ../system/jellyfin.nix
     ../system/systemdboot.nix
   ];
-#  users.users.jcw.openssh.authorizedKeys.keyFiles = [
-#    ./keys/keys
-#  ];
+  users.users.jcw.openssh.authorizedKeys.keyFiles = [
+    ../users/keys
+  ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
   services.tailscale.useRoutingFeatures = "both";
