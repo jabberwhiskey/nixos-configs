@@ -39,7 +39,7 @@
     allowedTCPPorts = [22 80 9091 51413];
   };
   systemd.tmpfiles.rules = [
-    "Z /media/plex 0776 sonarr users"
-    "z /media/nas 0777 jcw sonarr"
+    "Z /media/plex 0664  jcw users - -"
+    "Z /media/nas 0664 jcw users - -"
   ];
 }
