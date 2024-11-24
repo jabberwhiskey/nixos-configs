@@ -17,14 +17,14 @@
   };
   hardware.graphics = {
     enable = true;
-    extraPackages = with inputs.old-stable.legacyPackages.x86_64-linux; [
-      intel-media-driver
-      intel-vaapi-driver # previously vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+    extraPackages = [
+      pkgs.intel-media-driver
+      pkgs.intel-vaapi-driver # previously vaapiIntel
+      pkgs.vaapiVdpau
+      pkgs.libvdpau-va-gl
+      inputs.old-stable.legacyPackages.x86_64-linux.intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
       #hpl-gpu-rt # QSV on 11th gen or newer
-      intel-media-sdk # QSV up to 11th gen
+      pkgs.intel-media-sdk # QSV up to 11th gen
     ];
   };
   systemd.services.jellyfin.serviceConfig.PrivateDevices = lib.mkForce false;
