@@ -27,6 +27,7 @@
     home-manager,
     stable,
     nixos-hardware,
+    old-stable,
     hyprland,
 #    wayland-pipewire-idle-inhibit,
     ...
