@@ -83,7 +83,7 @@
         gaps_in = "5";
         gaps_out = "10";
         border_size = "2";
-        "col.active_border" = "rgba(00f8ffee) rgba(e80e0eee) 10deg";
+        "col.active_border" = "rgba(c0c0c0ee) rgba(ffffffee) 66deg";
         "col.inactive_border" = "rgba(000000aa)";
         layout = "dawindle";
         allow_tearing = "false";
@@ -138,9 +138,8 @@
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-          "$mod, G, exec, ${pkgs.rofi-rbw-wayland}/bin/rofi-rbw"
           "$mod, P, pseudo," #dwindle
-          "$mod, J, togglesplit," #dwindle
+          "$mod, V, togglesplit," #dwindle
           "$mod, F, togglefloating,"
           "$mod SHIFT, F,fullscreen"
           ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output" 
