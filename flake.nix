@@ -3,7 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    old-stable.url = "github:NixOS/nixpkgs/nixos-24.05"; #for intel-compute-runtime that changed, breaking jellyfin.
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
