@@ -44,7 +44,7 @@
         Z = {
           user = "jcw";
           group = "users";
-          mode = 0775;
+          mode = "0776";
         };
       };
     };
@@ -53,7 +53,7 @@
         Z = {
           user = "jcw";
           group = "users";
-          mode = 0775;
+          mode = "0776";
         };
       };
     };
