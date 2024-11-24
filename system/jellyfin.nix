@@ -10,7 +10,8 @@
   environment.systemPackages = [
     pkgs.jellyfin
     pkgs.jellyfin-web
-    pkgs.jellyfin-ffmpeg
+#    pkgs.jellyfin-ffmpeg
+    pkgs.ffmpeg
   ];
   nixpkgs.config.packageOverrides = pkgs: {
   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
