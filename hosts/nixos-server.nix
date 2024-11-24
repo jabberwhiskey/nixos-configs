@@ -38,8 +38,24 @@
     enable = true;
     allowedTCPPorts = [22 80 9091 51413];
   };
-  systemd.tmpfiles.rules = [
-    "Z /media/plex 0664  jcw users - -"
-    "Z /media/nas 0664 jcw users - -"
-  ];
+  systemd.tmpfiles.settings = {
+    "10-perms_for_nas" = {
+      "/media/nas" = {
+        Z = {
+          user = "jcw";
+          group = "users";
+          mode = 0775;
+        };
+      };
+    };
+    "10-perms_for_media" = {
+      "/media/plex" = {
+        Z = {
+          user = "jcw";
+          group = "users";
+          mode = 0775;
+        };
+      };
+    };
+  };
 }
