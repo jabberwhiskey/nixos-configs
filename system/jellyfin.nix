@@ -26,8 +26,8 @@
       pkgs.libvdpau-va-gl
 #      inputs.old-stable.legacyPackages.x86_64-linux.intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
       pkgs.intel-compute-runtime
-      #hpl-gpu-rt # QSV on 11th gen or newer
-#      pkgs.intel-media-sdk # QSV up to 11th gen
+#      hpl-gpu-rt # QSV on 11th gen or newer
+      pkgs.intel-media-sdk # QSV up to 11th gen
     ];
   };
   systemd.services.jellyfin.serviceConfig.PrivateDevices = lib.mkForce false;
