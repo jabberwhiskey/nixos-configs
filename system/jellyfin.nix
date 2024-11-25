@@ -3,7 +3,7 @@
   services.jellyfin = {
     enable = true;
     package = inputs.nixpkgs.legacyPackages.x86_64-linux.jellyfin;
-#    group = "sonarr";
+    group = "users";
     user = "jcw";
     openFirewall = true;
   };
