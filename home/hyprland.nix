@@ -8,6 +8,7 @@
   home = {
     packages = with pkgs; [
       imv
+      nwg-look
       waybar
       qpwgraph
       pcmanfm-qt
@@ -21,7 +22,7 @@
   };
   gtk = {
     cursorTheme = {
-      name = "rose-pine";
+      name = "BreezeX-RosePine-Linux";
       package = pkgs.rose-pine-cursor;
       size = 24;
     };
@@ -30,14 +31,14 @@
       package = pkgs.rose-pine-icon-theme;
     };
     theme = {
-      name = "rose-pine-gtk";
+      name = "rose-pine";
       package = pkgs.rose-pine-gtk-theme;
     };
     enable = true;
   };
   home.pointerCursor = {
     package = pkgs.rose-pine-cursor;
-    name = "rose-pine-cursor";
+    name = "BreezeX-RosePine-Linux";
     size = 24;
     gtk.enable = true;
   };

@@ -187,8 +187,9 @@
           padding: 0 5px;
       }
       #bluetooth {
-          backround: #000000;
-          padding: 0 5px:
+          background: #000000;
+          color: white;
+      }
     '';
   };
 }
