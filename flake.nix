@@ -47,7 +47,7 @@
           }
         ];
      };
-     nixos-server = old-stable.lib.nixosSystem {
+     nixos-server = stable.lib.nixosSystem {
        system = "x86_64-linux";
        modules = [
          ./hosts/nixos-server.nix
