@@ -10,20 +10,22 @@
   environment.systemPackages = [
     pkgs.jellyfin
     pkgs.jellyfin-web
-#    pkgs.jellyfin-ffmpeg
-    pkgs.ffmpeg
+    pkgs.jellyfin-ffmpeg
+ #   pkgs.ffmpeg
   ];
   nixpkgs.config.packageOverrides = pkgs: {
   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
-  hardware.graphics = {
+  hardware.opengl = { #for 24.05 and earlier
+#  hardware.graphics = {
     enable = true;
     extraPackages = [
       pkgs.intel-media-driver
       pkgs.intel-vaapi-driver # previously vaapiIntel
       pkgs.vaapiVdpau
       pkgs.libvdpau-va-gl
-      inputs.old-stable.legacyPackages.x86_64-linux.intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+#      inputs.old-stable.legacyPackages.x86_64-linux.intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+      pkgs.intel-compute-runtime
       #hpl-gpu-rt # QSV on 11th gen or newer
       pkgs.intel-media-sdk # QSV up to 11th gen
     ];
