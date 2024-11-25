@@ -48,6 +48,8 @@
   users.users.jcw = {
     extraGroups = [ "uucp" "dialout" "input" ];
   };
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
 
   environment.systemPackages = with pkgs; [
     usbutils
