@@ -4,15 +4,15 @@
     enable = true;
     package = inputs.nixpkgs.legacyPackages.x86_64-linux.jellyfin;
 #    group = "sonarr";
-#    user = "jcw";
+    user = "jcw";
     openFirewall = true;
   };
-  environment.systemPackages = [
-    pkgs.jellyfin
-    pkgs.jellyfin-web
-    pkgs.jellyfin-ffmpeg
- #   pkgs.ffmpeg
-  ];
+#  environment.systemPackages = [
+#    pkgs.jellyfin
+#    pkgs.jellyfin-web
+#    pkgs.jellyfin-ffmpeg
+#    pkgs.ffmpeg
+#  ];
   nixpkgs.config.packageOverrides = pkgs: {
   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
