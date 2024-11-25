@@ -1,8 +1,12 @@
 { pkgs, inputs, config, lib, ... }:
 {
+  users.users.jellyfin.group = "users";
+  users.users.jellyfin.isSystemUser = true;
+
   services.jellyfin = {
     enable = true;
     package = inputs.nixpkgs.legacyPackages.x86_64-linux.jellyfin;
+    group = "users";
     user = "jcw";
     openFirewall = true;
   };
