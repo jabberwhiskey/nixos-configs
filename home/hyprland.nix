@@ -8,7 +8,6 @@
   home = {
     packages = with pkgs; [
       imv
-      nwg-look
       waybar
       qpwgraph
       pcmanfm-qt
