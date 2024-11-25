@@ -60,6 +60,7 @@
     pciutils
     g810-led
     piper
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   hardware = {
     steam-hardware.enable = true;
