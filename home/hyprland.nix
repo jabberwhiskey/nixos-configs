@@ -147,9 +147,13 @@
           "Alt, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m active"
           #move focus
           "$mod, left, movefocus, l"
+          "$mod, H, movefocus, l"
           "$mod, right, movefocus, r"
+          "$mod, L, movefocus, r"
           "$mod, up, movefocus, u"
+          "$mod, K, movefocus, u"
           "$mod, down, movefocus, d"
+          "$mod, J, movefocus, d"
           #move window
           "$mod SHIFT, up, movewindow, u"
           "$mod SHIFT, down, movewindow, d"
