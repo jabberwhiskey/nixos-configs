@@ -8,6 +8,7 @@
   home = {
     packages = with pkgs; [
       imv
+      wl-clipboard
       waybar
       qpwgraph
       pcmanfm-qt
