@@ -10,4 +10,5 @@
       turbo = "auto";
     };
   };
+  services.thermald.enable = true;
 }

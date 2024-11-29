@@ -14,6 +14,7 @@
 #    ../system/suspend.nix
 #    ../system/qt.nix
     ../system/waydroid.nix
+    ../system/intel-laptop.nix
     ../system/greetd.nix
     ../system/kernel-latest.nix
 #    ../system/plasma.nix
@@ -38,18 +39,6 @@
 
   networking.hostName = "nixos-laptop";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-     governor = "powersave";
-     turbo = "never";
-    };
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };
-
 
   environment.systemPackages = with pkgs; [
     usbutils
