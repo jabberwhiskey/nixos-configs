@@ -1,3 +1,4 @@
+{ pkgs, config, ... }:
 {
   services.auto-cpufreq = {
     enable = true;
@@ -6,7 +7,7 @@
       turbo = "never";
     };
     charger = {
-      governor = "powersave";
+      governor = "performance";
       turbo = "auto";
     };
   };
