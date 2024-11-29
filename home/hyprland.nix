@@ -139,10 +139,11 @@
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
+          "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
           "$mod, P, pseudo," #dwindle
           "$mod, V, togglesplit," #dwindle
-          "$mod, F, togglefloating,"
-          "$mod SHIFT, F,fullscreen"
+          "$mod, F, fullscreen,"
+          "$mod SHIFT, F,togglefloating"
           ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output" 
           "SHIFT, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m region"
           "Alt, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m active"
