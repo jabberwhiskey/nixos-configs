@@ -9,6 +9,7 @@
     packages = with pkgs; [
       btop
       chromium
+      kdePackages.kasts
       mumble
       mpv
       htop

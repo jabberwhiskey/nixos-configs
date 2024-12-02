@@ -7,6 +7,7 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/plasma.nix
     ../system/systemdboot.nix
     ../system/tailscale.nix
     ../system/containers.nix
@@ -15,8 +16,8 @@
     ../user/user.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
-#    ../system/kernel-latest.nix
-    ../system/greetd.nix
+    ../system/kernel-latest.nix
+#    ../system/greetd.nix
     ../system/steam.nix
   ];
 
@@ -60,7 +61,7 @@
     pciutils
     g810-led
     piper
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+#    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   hardware = {
     steam-hardware.enable = true;
@@ -72,9 +73,9 @@
     enable = true;
     cpuFreqGovernor = "performance";
   };
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
+#  programs.hyprland = {
+#    enable = true;
+#    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+#    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+#  };
 }

@@ -82,8 +82,8 @@
                users.jcw = {
                  imports = [
                    ./home/home.nix
-		               ./home/inhibit-hyprland.nix
-		               ./home/hyprland.nix
+#		   ./home/inhibit-hyprland.nix
+#		   ./home/hyprland.nix
                    ./home/hm-dconf.nix
                  ];
                  home.stateVersion = "23.11";

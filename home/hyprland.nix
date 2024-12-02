@@ -14,7 +14,6 @@
       pcmanfm-qt
       ranger
       brillo
-      kdePackages.kasts
       qt6ct
       kdePackages.breeze-icons
       kdePackages.breeze
