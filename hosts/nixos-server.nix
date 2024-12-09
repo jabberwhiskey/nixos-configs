@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
@@ -40,7 +41,6 @@
   };
   nixpkgs.config.permittedInsecurePackages = [
     "aspnetcore-runtime-6.0.36"
-    "aspnetcore-runtime-wrapped-6.0.36"     
     "aspnetcore-runtime-wrapped-6.0.36"
     "dotnet-runtime-wrapped-6.0.36"
     "dotnet-runtime-6.0.36"
