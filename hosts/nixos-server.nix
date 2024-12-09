@@ -38,6 +38,12 @@
     enable = true;
     allowedTCPPorts = [22 80 9091 51413];
   };
+  nixpkgs.config.permittedInsecurePackages = [
+    "aspnetcore-runtime-wrapped-6.0.36"
+    "aspnetcore-runtime-wrapped-6.0.36"
+    "dotnet-sdk-6.0.428"
+    "dotnet-sdk-wrapped-6.0.428"
+  ];
   systemd.tmpfiles.settings = {
     "10-perms_for_nas" = {
       "/media/nas" = {
