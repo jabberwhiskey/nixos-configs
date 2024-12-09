@@ -30,22 +30,6 @@
 
   services.ratbagd.enable = true;
 
-  security.pam.services.swaylock = {};
-  systemd = {
-    user.services.lxqt-policykit-agent = {
-      description = "lxqt-policykit-agent";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.lxqt.lxqt-policykit}/bin/lxqt-policykit-agent";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-      };
-    };
-  };
   users.users.jcw = {
     extraGroups = [ "uucp" "dialout" "input" ];
   };
@@ -69,6 +53,7 @@
       pkgs.amdvlk
     ];
   };
+  hardware.xone.enable = true;
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "performance";
