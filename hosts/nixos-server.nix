@@ -40,7 +40,7 @@
     enable = true;
     allowedTCPPorts = [22 80 9091 51413];
   };
-  inputs.nixosConfigurations.nixos-laptop.nixpkgs.lib.nixosSystem.modules.config.permittedInsecurePackages = [
+  inputs.nixosConfigurations.nixos-laptop.nixpkgs.lib.nixosSystem.modules.nixpkgs.config.permittedInsecurePackages = [
     "aspnetcore-runtime-6.0.36"
     "aspnetcore-runtime-wrapped-6.0.36"
     "dotnet-runtime-wrapped-6.0.36"
