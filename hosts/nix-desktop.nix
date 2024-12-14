@@ -7,6 +7,7 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/bt-off.nix
     ../system/plasma.nix
     ../system/systemdboot.nix
     ../system/tailscale.nix
