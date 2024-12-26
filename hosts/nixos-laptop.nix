@@ -45,6 +45,7 @@
     pciutils
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
+  services.gvfs.enable = true; #for pcmanfm
 #  programs.sway ={
 #    enable = true;
 #    extraPackages = with pkgs; [
