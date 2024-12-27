@@ -8,7 +8,7 @@
   imports = [
     ../system/basic.nix
     ../system/bt-off.nix
-    ../system/plasma.nix
+#    ../system/plasma.nix
     ../system/systemdboot.nix
     ../system/tailscale.nix
     ../system/containers.nix
@@ -18,11 +18,21 @@
     ../system/bluetooth.nix
     ../system/fonts.nix
     ../system/kernel-latest.nix
-#    ../system/greetd.nix
+    ../system/greetd.nix
     ../system/steam.nix
   ];
-
-  home-manager.backupFileExtension = "backup";
+  home-manager = {
+    users.jcw = {
+        imports = [
+          ../home/home.nix
+          ../home/inhibit-hyprland.nix
+          ../home/hyprland.nix
+          ../home/hm-dconf.nix
+        ];
+        home.stateVersion = "23.11";
+    };
+    backupFileExtension = "backup";
+    };
 
   system.stateVersion = "23.11";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
@@ -46,7 +56,7 @@
     pciutils
     g810-led
     piper
-#    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   hardware = {
     steam-hardware.enable = true;
@@ -59,9 +69,9 @@
     enable = true;
     cpuFreqGovernor = "performance";
   };
-#  programs.hyprland = {
-#    enable = true;
-#    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-#    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-#  };
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 }
