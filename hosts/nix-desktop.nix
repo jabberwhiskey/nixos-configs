@@ -29,12 +29,12 @@
           ../home/hyprland.nix
           ../home/hm-dconf.nix
         ];
-        home.stateVersion = "23.11";
+        home.stateVersion = "24.11";
     };
     backupFileExtension = "backup";
     };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
   networking.hostName = "nix-desktop";
