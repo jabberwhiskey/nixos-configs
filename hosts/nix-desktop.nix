@@ -49,8 +49,6 @@
 
   environment.systemPackages = with pkgs; [
     usbutils
-    gtypist
-    tuxtype
     lxqt.lxqt-policykit
     bazecor
     pciutils
