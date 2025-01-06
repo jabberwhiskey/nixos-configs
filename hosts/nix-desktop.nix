@@ -26,6 +26,7 @@
         imports = [
           ../home/home.nix
           ../home/inhibit-hyprland.nix
+	  ../home/waybar2.nix
           ../home/hyprland.nix
           ../home/hm-dconf.nix
         ];
