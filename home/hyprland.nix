@@ -134,6 +134,8 @@
       bind =
         [
           "$mod, Return, exec, $term"
+          "$mod, Space, exec, dunstctl close-all"
+          "$mod Alt, Space, exec, dunstctl history-pop"
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
