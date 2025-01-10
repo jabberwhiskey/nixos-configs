@@ -6,7 +6,7 @@
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nix-bitcoin = {
       url = "github:fort-nix/nix-bitcoin/release";
-      inputs.nixpkgs.follows = "stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -50,14 +50,11 @@
           }
         ];
      };
-     small-server = stable.lib.nixosSystem {
+     small-server = nixpkgs.lib.nixosSystem {
        system = "x86_64-linux";
        modules = [
          ./hosts/small-server.nix
           nix-bitcoin.nixosModules.default
-          (nix-bitcoin + /modules/presets/secure-node.nix)
-          (nix-bitcoin + /modules/presets/wireguard.nix)
-          (nix-bitcoin + /modules/presets/hardened.nix)
    	   ];
        specialArgs = {inherit inputs;};
      };
