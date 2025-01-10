@@ -36,9 +36,20 @@
     };
 
   system.stateVersion = "24.11";
+  users.users.jcw.openssh.authorizedKeys.keyFiles = [
+    ../user/keys
+  ];
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
   networking.hostName = "nix-desktop";
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+#      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = false;
+    };
+  };
 
   services.ratbagd.enable = true;
 
