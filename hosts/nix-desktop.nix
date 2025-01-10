@@ -55,6 +55,7 @@
     pciutils
     g810-led
     piper
+    wine
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   hardware = {
