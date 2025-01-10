@@ -13,9 +13,14 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/d43144f9-6a98-44fc-bbb1-c4ee38b69c8a";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "subvol=@" "compress=zstd" ];
     };
 
+  fileSystems."/mome" =
+    { device = "/dev/disk/by-uuid/d43144f9-6a98-44fc-bbb1-c4ee38b69c8a";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "compress=zstd" ];
+    };
   fileSystems."/boot/efi" =
     { device = "/dev/disk/by-uuid/5CBF-00A4";
       fsType = "vfat";
