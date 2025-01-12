@@ -18,8 +18,8 @@
     packages = with pkgs; [
       neovim
       neomutt
-      deploy-rs
       yadm
+      nvtop
     ];
   };
   #programs.zsh.enable = true;
