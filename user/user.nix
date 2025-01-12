@@ -18,6 +18,7 @@
     packages = with pkgs; [
       neovim
       neomutt
+      deploy-rs
       yadm
     ];
   };
