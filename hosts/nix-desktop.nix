@@ -17,7 +17,8 @@
     ../user/user.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
-    ../system/kernel-latest.nix
+#    ../system/kernel-latest.nix
+    ../system/kernel-zen.nix
     ../system/greetd.nix
     ../system/steam.nix
   ];
@@ -26,7 +27,7 @@
         imports = [
           ../home/home.nix
           ../home/inhibit-hyprland.nix
-	  ../home/waybar2.nix
+       	  ../home/waybar2.nix
           ../home/hyprland.nix
           ../home/hm-dconf.nix
         ];
@@ -75,6 +76,8 @@
       pkgs.amdvlk
     ];
   };
+  
+  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76];
   hardware.xone.enable = true;
   powerManagement = {
     enable = true;
