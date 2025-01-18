@@ -30,6 +30,9 @@
     mc
     htop
   ];
+   nix.settings.trusted-users = [
+     "jcw"
+    ];
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
   users.users.jcw = {
     };
