@@ -7,12 +7,14 @@
 }: {
   home = {
     packages = with pkgs; [
-      imv
+#      imv
       wl-clipboard
       waybar
       qpwgraph
       pcmanfm-qt
-      ranger
+#      ranger
+      nnn
+      nomacs
       brillo
       qt6ct
       kdePackages.breeze-icons
@@ -318,13 +320,13 @@
       };
     };
   };
-  programs.ranger = {
-    enable = true;
-    extraConfig = ''
-      set preview_images true
-      set preview_images_method sixel
-    '';
-  };
+#  programs.ranger = {
+#    enable = true;
+#    extraConfig = ''
+#      set preview_images true
+#      set preview_images_method sixel
+#    '';
+#  };
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.foot}/bin/foot";
