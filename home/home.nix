@@ -16,7 +16,7 @@
       imv
       bitwarden
       iamb
-      bitwarden-cli
+#      bitwarden-cli
       firefox
       #vivaldi
       unzip
