@@ -1,4 +1,4 @@
-{ home-manager, pkgs, config, inputs, lib, ... };
+{ home-manager, pkgs, config, inputs, lib, ... }:
 {
   imports = [
     ../home/sway.nix
