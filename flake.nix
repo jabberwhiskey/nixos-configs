@@ -97,7 +97,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs self;};
         modules = [
-          ./hosts/craptop
+          ./hosts/craptop.nix
         ];
       };
     };
