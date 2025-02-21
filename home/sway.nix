@@ -12,9 +12,9 @@
       down = "j";
       up = "k";
       right = "l";
-      menu = "${pkgs.wofi}/bin/wofi";
+      menu = "wofi";
 
-      terminal = "${pkgs.alacritty}/bin/alacritty";
+      terminal = "foot";
 
       workspaceAutoBackAndForth = true;
       window = {
@@ -30,7 +30,7 @@
 
       bars = [
         {
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-A.toml";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
           position = "top";
           command = "${pkgs.sway}/bin/swaybar";
           id = "swaybar";
@@ -178,7 +178,7 @@
   programs.i3status-rust = {
     enable = true;
     bars = {
-      A = {
+      default = {
         blocks = [
           {
             block = "battery";

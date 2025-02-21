@@ -65,7 +65,7 @@
   programs.git = {
     enable = true;
     userName = "jcw";
-    userEmail = "jwillbanks2@gmail.com";
+    userEmail = "github.u9l99@aleeas.com";
   };
   programs.zsh = {
     enable = true;

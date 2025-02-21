@@ -9,6 +9,14 @@
   home = {
     username = "jcw";
     homeDirectory = "/home/jcw";
+    packages = with pkgs; [
+      btop
+    ];
+  };
+  programs.git = {
+    enable = true;
+    userName = "jcw";
+    userEmail = "github.u9l99@aleeas.com";
   };
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
