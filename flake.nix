@@ -97,7 +97,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs self;};
         username = "jcw";
-        hostname = "craptop";
         system = "x86_64-linux";
         modules = [
           ./hosts/craptop
