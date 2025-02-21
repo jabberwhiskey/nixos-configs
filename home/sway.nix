@@ -12,7 +12,7 @@
       down = "j";
       up = "k";
       right = "l";
-      menu = "wofi";
+      menu = "${pkgs.rofi-wayland}/bin/rofi";
 
       terminal = "foot";
 
@@ -45,6 +45,7 @@
 
       startup = [
         {command = "${pkgs.dunst}/bin/dunst";}
+        {command = "${pkgs.swaybg}/bin/swaybg -o * -i ~/Pictures/Wallpapers/1382343.jpg -m fill";}
         {command = "${pkgs.wpaperd}/bin/wpaperd";}
       ];
     };
@@ -63,7 +64,7 @@
       in {
         "${mod}+Alt+w" = "exec ${pkgs.firefox}/bin/firefox";
         "${mod}+Return" = "exec ${terminal}";
-        "${mod}+d" = "exec ${menu} -d --show=drun";
+        "${mod}+d" = "exec ${menu}  -show drun";
         "${mod}+Alt+b" = "exec ${pkgs.bitwarden}/bin/bitwarden";
         "${mod}+Alt+n" = "exec ${terminal} -e ${pkgs.ranger}/bin/ranger";
         "${mod}+Alt+m" = "exec ${terminal} -e ${pkgs.btop}/bin/btop";
@@ -156,25 +157,25 @@
       };
     };
     systemd.enable = true;
-    extraConfig = ''
-      exec_always sworkstyle &> /tmp/workstyle.log
-    '';
+#    extraConfig = ''
+#      exec_always sworkstyle &> /tmp/workstyle.log
+#    '';
     swaynag = {
       enable = true;
     };
   };
-  programs.wofi = {
-    enable = true;
-    style = ''
-      backround-color: #5A5A5A;
-    '';
-    settings = {
-       term = "alacritty -e";
+#  programs.wofi = {
+#    enable = true;
+#    style = ''
+#      backround-color: #5A5A5A;
+#    '';
+#    settings = {
+#       term = "alacritty -e";
 #      term = "${pkgs.alacritty}/bin/alacritty";
-      width = "25%";
-      allow_images = true;
-    };
-  };
+#      width = "25%";
+#      allow_images = true;
+#    };
+#  };
   programs.i3status-rust = {
     enable = true;
     bars = {
@@ -209,20 +210,21 @@
             };
           };
         };
-        icons = "awesome5";
+        icons = "awesome4";
         theme = "gruvbox-dark";
       };
     };
   };
   home.packages = with pkgs; [
     grim
-    swaylock-effects
+#    swaylock-effects
     slurp
     light
-    swayest-workstyle
+    rofi-wayland
+#    swayest-workstyle
   ];
   home.sessionVariables = {
-    TERMINAL = "alacritty";
+    TERMINAL = "foot";
     BROSWER = "firefox";
   };
 
@@ -273,16 +275,6 @@
       }
     ];
   };
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        decorations = "none";
-        blur = true;
-        opacity = 0.8;
-      };
-    };
-  };
   services.dunst = {
     enable = true;
   };
@@ -294,7 +286,7 @@
   programs.wpaperd = {
     enable = true;
     settings = {
-      eDP-1 = {
+      any = {
         path = "${config.home.homeDirectory}/Pictures/Wallpapers/";
         sorting = "descending";
         duration = "10m";

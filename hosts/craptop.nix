@@ -2,6 +2,7 @@
 {
   imports = [
     ../home/sway.nix
+    ../home/bash.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
