@@ -95,7 +95,7 @@
     homeConfigurations = {
       "jcw@craptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = {inherit inputs self;};
         username = "jcw";
         hostname = "craptop";
         system = "x86_64-linux";
