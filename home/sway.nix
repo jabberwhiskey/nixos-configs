@@ -6,6 +6,7 @@
 }: {
   wayland.windowManager.sway = {
     enable = true;
+    checkConfig = false;
     config = rec {
       modifier = "Mod4";
       left = "h";
@@ -17,6 +18,11 @@
       terminal = "foot";
 
       workspaceAutoBackAndForth = true;
+      output = {
+        "*" = {
+          bg =  "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
+	};
+      };
       window = {
         titlebar = true;
         hideEdgeBorders = "both";
@@ -38,15 +44,14 @@
           fonts = {
             names = ["DejaVu Sans Mono" "FontAwesome5Free"];
             style = "Bold Semi-Condensed";
-            size = 11.0;
+            size = 10.0;
           };
         }
       ];
 
       startup = [
         {command = "${pkgs.dunst}/bin/dunst";}
-        {command = "${pkgs.swaybg}/bin/swaybg -o * -i ~/Pictures/Wallpapers/1382343.jpg -m fill";}
-        {command = "${pkgs.wpaperd}/bin/wpaperd";}
+#        {command = "nixGL ${pkgs.wpaperd}/bin/wpaperd";}
       ];
     };
     config = {
@@ -157,9 +162,8 @@
       };
     };
     systemd.enable = true;
-#    extraConfig = ''
-#      exec_always sworkstyle &> /tmp/workstyle.log
-#    '';
+    extraConfig = ''
+    '';
     swaynag = {
       enable = true;
     };
@@ -217,11 +221,10 @@
   };
   home.packages = with pkgs; [
     grim
-#    swaylock-effects
+    swaylock
     slurp
     light
     rofi-wayland
-#    swayest-workstyle
   ];
   home.sessionVariables = {
     TERMINAL = "foot";
@@ -239,7 +242,8 @@
  
       {
         timeout = 300;
-        command = ''          ${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
+        command = ''          
+	         ${pkgs.swaylock-effects}/bin/swaylock  --screenshots \
           	 --clock \
           	 --indicator \
           	 --indicator-radius 100 \
@@ -258,7 +262,8 @@
     events = [
       {
         event = "before-sleep";
-        command = ''          ${pkgs.swaylock-effects}/bin/swaylock --screenshots \
+        command = ''
+	         ${pkgs.swaylock-effects}/bin/swaylock --screenshots \
                     --clock \
           	 --indicator \
           	 --indicator-radius 100 \
@@ -286,7 +291,7 @@
   programs.wpaperd = {
     enable = true;
     settings = {
-      any = {
+      default = {
         path = "${config.home.homeDirectory}/Pictures/Wallpapers/";
         sorting = "descending";
         duration = "10m";
