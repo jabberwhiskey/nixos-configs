@@ -28,6 +28,8 @@
   home-manager.users.jcw = {
     imports = [
       ../home/waybar.nix
+      ../home/bash.nix
+      ../home/zsh.nix
       ../home/hyprland.nix
       ../home/inhibit-hyprland.nix
 		  ../home/home.nix
