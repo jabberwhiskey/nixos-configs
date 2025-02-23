@@ -26,6 +26,10 @@
     ../hardware/hplaptop.nix
   ];
   home-manager.users.jcw = {
+    programs.zsh.shellAliases = { 
+      "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
+      "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
+    };
     imports = [
       ../home/waybar.nix
       ../home/bash.nix
