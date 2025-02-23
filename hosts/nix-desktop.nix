@@ -26,6 +26,8 @@
     users.jcw = {
         imports = [
           ../home/home.nix
+          ../home/bash.nix
+          ../home/zsh.nix
           ../home/inhibit-hyprland.nix
        	  ../home/waybar2.nix
           ../home/hyprland.nix
