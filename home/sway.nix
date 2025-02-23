@@ -288,14 +288,14 @@
     size = 25;
     name = "Catppuccin-Frappe-Blue-Cursors";
   };
-  programs.wpaperd = {
-    enable = true;
-    settings = {
-      default = {
-        path = "${config.home.homeDirectory}/Pictures/Wallpapers/";
-        sorting = "descending";
-        duration = "10m";
-      };
-    };
-  };
+#  services.wpaperd = {
+#    enable = true;
+#    settings = {
+#      default = {
+#        path = "${config.home.homeDirectory}/Pictures/Wallpapers/";
+#        sorting = "descending";
+#        duration = "10m";
+#      };
+#    };
+#  };
 }
