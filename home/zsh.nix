@@ -7,7 +7,7 @@
     shellAliases = {
       "ll" = "ls -l";
       "la" = "ls -la";
-      "g" = "git"
+      "g" = "git";
     };
     history.expireDuplicatesFirst = true;
     history = {
