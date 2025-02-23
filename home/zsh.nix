@@ -4,6 +4,11 @@
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    shellAliases = {
+      "ll" = "ls -l";
+      "la" = "ls -la";
+      "g" = "git"
+    };
     history.expireDuplicatesFirst = true;
     history = {
       size = 10000;
