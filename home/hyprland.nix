@@ -8,13 +8,12 @@
   home = {
     packages = with pkgs; [
 #      imv
+      qview
       wl-clipboard
       waybar
       qpwgraph
       pcmanfm-qt
-#      ranger
-      nnn
-      nomacs
+#      nomacs
       brillo
       qt6ct
       kdePackages.breeze-icons
@@ -130,7 +129,7 @@
         "float,class:^(Waydroid)$,title:^(Waydroid)$"
       ];
       windowrule = [
-        "float,^(imv)$"
+        "float,^(qview)$"
         "float,^(mpv)$"
       ];
       bind =
@@ -320,13 +319,13 @@
       };
     };
   };
-#  programs.ranger = {
-#    enable = true;
-#    extraConfig = ''
-#      set preview_images true
+  programs.ranger = {
+    enable = true;
+    extraConfig = ''
+      set preview_images true
 #      set preview_images_method sixel
-#    '';
-#  };
+    '';
+  };
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.foot}/bin/foot";

@@ -13,7 +13,6 @@
       mumble
       mpv
       htop
-      imv
       bitwarden
       iamb
 #      bitwarden-cli
@@ -25,7 +24,9 @@
       qutebrowser
     ];
     sessionVariables = {
-#      SHELL = "${pkgs.zsh}/bin/zsh";
+      SHELL = "${pkgs.zsh}/bin/zsh";
+      BROWSER = "firefox";
+      IMAGE_VIEWER = "qview";
     };
   };
   xdg = {
