@@ -286,7 +286,7 @@
       ]; 
     };
   };
-  programs.wpaperd = {
+  services.wpaperd = {
     enable = true;
     settings = {
       any = {
