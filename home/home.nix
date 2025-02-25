@@ -25,6 +25,7 @@
     ];
     sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
+      MANPAGER = "nvim +Man!";
       BROWSER = "firefox";
       IMAGE_VIEWER = "qview";
     };
