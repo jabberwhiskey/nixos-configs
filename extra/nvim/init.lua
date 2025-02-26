@@ -1,4 +1,4 @@
 require("keymaps.keymap")
 require("user.option")
-require("plugin")
+require("plugin.toggleterm")
 require("config.lazy")
