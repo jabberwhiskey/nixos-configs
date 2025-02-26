@@ -4,6 +4,7 @@
     ../home/sway.nix
     ../home/bash.nix
     ../home/zsh.nix
+    ../home/nvim.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -15,6 +16,7 @@
       btop
     ];
   };
+  programs.neovim.package = { pkgs.emptyFile };
   programs.git = {
     enable = true;
     userName = "jcw";
