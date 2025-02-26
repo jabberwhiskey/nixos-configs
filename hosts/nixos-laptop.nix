@@ -16,8 +16,8 @@
     ../system/waydroid.nix
     ../system/intel-laptop.nix
     ../system/greetd.nix
-    #../system/kernel-latest.nix
-    ../system/kernel-zen.nix
+    ../system/kernel-latest.nix
+#    ../system/kernel-zen.nix
 #    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
@@ -33,10 +33,11 @@
     imports = [
       ../home/waybar.nix
       ../home/bash.nix
+      ../home/nvim.nix
       ../home/zsh.nix
       ../home/hyprland.nix
       ../home/inhibit-hyprland.nix
-		  ../home/home.nix
+      ../home/home.nix
     ];
     programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
     home.stateVersion = "24.05";

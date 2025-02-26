@@ -32,7 +32,7 @@
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/bf153eba-aa24-421d-b5d7-1090fa0df482";
       fsType = "btrfs";
-      options = [ "subvol=nix" "compress=zstd" "noatime" ];
+      options = [ "subvol=nix2" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot/efi" =

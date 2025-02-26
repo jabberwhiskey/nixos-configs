@@ -33,7 +33,7 @@
       };
       Service = {
 	ExecStart = "${pkgs.wayland-pipewire-idle-inhibit}/bin/wayland-pipewire-idle-inhibit";
-	Restart = "Always";
+	Restart = "always";
 	RestartSec = 10;
       };
     };
