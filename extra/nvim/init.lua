@@ -1,3 +1,4 @@
 require("keymaps.keymap")
 require("user.option")
-require("plugins")
+require("plugin")
+require("config.lazy")
