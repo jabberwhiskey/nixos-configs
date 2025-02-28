@@ -31,7 +31,6 @@
   }: {
     nixosConfigurations = {
       nixos-laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
       	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixos-laptop.nix
@@ -45,7 +44,6 @@
         ];
      };
      small-server = stable.lib.nixosSystem {
-       system = "x86_64-linux";
        modules = [
          ./hosts/small-server.nix
           nix-bitcoin.nixosModules.default
@@ -56,7 +54,6 @@
        specialArgs = {inherit inputs;};
      };
      nixos-server = stable.lib.nixosSystem {
-       system = "x86_64-linux";
        modules = [
          ./hosts/nixos-server.nix
    	   ];
@@ -78,7 +75,6 @@
         ];
        };
        nix-desktop = nixpkgs.lib.nixosSystem {
-         system = "x86_64-linux";
 	       specialArgs = {inherit inputs;};
          modules = [
            ./hosts/nix-desktop.nix

@@ -35,6 +35,10 @@
         ];
         home.stateVersion = "24.11";
     };
+    wayland.windowManager.hyprland = {
+      package = null;
+      portalPackage = null;
+    };
     backupFileExtension = "backup";
     };
 
@@ -90,4 +94,5 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+  nixpkgs.hostPlatform = "x86_64-linux";
 }

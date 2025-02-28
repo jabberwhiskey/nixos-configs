@@ -26,6 +26,10 @@
     ../hardware/hplaptop.nix
   ];
   home-manager.users.jcw = {
+    wayland.windowManager.hyprland = {
+      package = null;
+      portalPackage = null;
+    };
     programs.zsh.shellAliases = { 
       "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
       "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
@@ -44,6 +48,7 @@
   };
   home-manager.backupFileExtension = "backup";
   system.stateVersion = "24.05";
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "nixos-laptop";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";

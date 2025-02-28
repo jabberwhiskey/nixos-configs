@@ -31,10 +31,15 @@
       ../home/inhibit-hyprland.nix
     ];
     home.stateVersion = "23.05";
+    wayland.windowManager.hyprland = {
+      package = null;
+      portalPackage = null;
+    };
     programs.foot.settings.main.font = lib.mkForce "monospace:size=14";
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
+  nixpkgs.hostPlatform = "x86_64-linux";
 
 #  services.fprintd.package = pkgs.fprintd.overrideAttrs {
 #    mesonCheckFlags = [
