@@ -16,7 +16,8 @@
       btop
     ];
   };
-  programs.neovim.package = { pkgs.emptyFile };
+  #wayland.windowManager.sway.package =  pkgs.emptyFile;
+  wayland.windowManager.sway.package =  null;
   programs.git = {
     enable = true;
     userName = "jcw";
