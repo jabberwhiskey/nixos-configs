@@ -70,9 +70,6 @@
         "${mod}+Alt+w" = "exec ${pkgs.firefox}/bin/firefox";
         "${mod}+Return" = "exec ${terminal}";
         "${mod}+d" = "exec ${menu}  -show drun";
-        "${mod}+Alt+b" = "exec ${pkgs.bitwarden}/bin/bitwarden";
-        "${mod}+Alt+n" = "exec ${terminal} -e ${pkgs.ranger}/bin/ranger";
-        "${mod}+Alt+m" = "exec ${terminal} -e ${pkgs.btop}/bin/btop";
 
         "${mod}+c" = "kill";
         "${mod}+${left}" = "focus left";
@@ -184,6 +181,7 @@
     enable = true;
     bars = {
       default = {
+        "${mod}+Alt+b" = "exec bitwarden";
         blocks = [
           {
             block = "battery";
