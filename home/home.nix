@@ -9,6 +9,8 @@
     packages = with pkgs; [
       btop
       chromium
+      brave
+      discord
       kdePackages.kasts
       mumble
       mpv
