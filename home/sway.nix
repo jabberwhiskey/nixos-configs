@@ -136,10 +136,11 @@
           "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
           "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
 
-          "XF86MonBrightnessUp" = "exec ${pkgs.light}/bin/light -A 10";
-          "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U 10";
+          "XF86MonBrightnessUp" = "light -A 10";
+          "XF86MonBrightnessDown" = "exec light -U 10";
 
           "${mod}+apostrophe" = "move workspace to output right";
+          "${mod}+Alt+space" = "exec dunstctl ";
 
           "${mod}+minus" = "scratchpad show";
           "${mod}+underscore" = "move container to scratchpad";
@@ -217,9 +218,7 @@
   };
   home.packages = with pkgs; [
     grim
-    swaylock
     slurp
-    light
     rofi-wayland
   ];
   home.sessionVariables = {
