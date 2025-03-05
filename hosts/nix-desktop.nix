@@ -34,10 +34,10 @@
           ../home/hm-dconf.nix
         ];
         home.stateVersion = "24.11";
-    };
-    wayland.windowManager.hyprland = {
-      package = null;
-      portalPackage = null;
+        wayland.windowManager.hyprland = {
+          package = null;
+          portalPackage = null;
+	};
     };
     backupFileExtension = "backup";
     };
