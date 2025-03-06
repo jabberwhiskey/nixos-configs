@@ -13,6 +13,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    jovian = {
+      url = "github:https://github.com/Jovian-Experiments/Jovian-NixOS";
+    };
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
