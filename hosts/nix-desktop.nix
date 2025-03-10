@@ -75,6 +75,7 @@
     piper
     wine
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    daggerfall-unity
   ];
   hardware = {
     steam-hardware.enable = true;
