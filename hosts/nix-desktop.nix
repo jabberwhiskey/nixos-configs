@@ -34,10 +34,10 @@
           ../home/hm-dconf.nix
         ];
         home.stateVersion = "24.11";
-        wayland.windowManager.hyprland = {
-          package = null;
-          portalPackage = null;
-	};
+    };
+    wayland.windowManager.hyprland = {
+      package = null;
+      portalPackage = null;
     };
     backupFileExtension = "backup";
     };
@@ -75,6 +75,7 @@
     piper
     wine
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    daggerfall-unity
   ];
   hardware = {
     steam-hardware.enable = true;
