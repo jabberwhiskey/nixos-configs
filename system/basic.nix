@@ -13,6 +13,7 @@
   time.timeZone = "US/Mountain";
 
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
 
   services.fwupd.enable = true;
 
