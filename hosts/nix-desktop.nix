@@ -33,15 +33,13 @@
           ../home/hyprland.nix
           ../home/hm-dconf.nix
         ];
-        home.stateVersion = "24.11";
-    };
-    wayland.windowManager.hyprland = {
-      package = null;
-      portalPackage = null;
-    };
-    backupFileExtension = "backup";
-    };
-
+      home.stateVersion = "24.11";
+      wayland.windowManager.hyprland = {
+        package = null;
+        portalPackage = null;
+        };
+      };
+     };
   system.stateVersion = "24.11";
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
