@@ -30,6 +30,7 @@
     ...
   }: {
     nixosConfigurations = {
+#beater laptop
       nixos-laptop = nixpkgs.lib.nixosSystem {
       	specialArgs = {inherit inputs;};
         modules = [
@@ -43,6 +44,7 @@
           }
         ];
      };
+#node
      small-server = stable.lib.nixosSystem {
        modules = [
          ./hosts/small-server.nix
@@ -51,14 +53,17 @@
           (nix-bitcoin + /modules/presets/wireguard.nix)
           (nix-bitcoin + /modules/presets/hardened.nix)
    	   ];
+       system = "x86_64-linux";
        specialArgs = {inherit inputs;};
      };
+#media server/nas
      nixos-server = stable.lib.nixosSystem {
        modules = [
          ./hosts/nixos-server.nix
    	   ];
        specialArgs = {inherit inputs;};
      };
+#Framework Laptop
      framework = nixpkgs.lib.nixosSystem {
        system = "x86_64-linux";
 	     specialArgs = {inherit inputs;};
@@ -74,8 +79,9 @@
           nixos-hardware.nixosModules.framework-11th-gen-intel
         ];
        };
+#Desktop
        nix-desktop = nixpkgs.lib.nixosSystem {
-	 specialArgs = {inherit inputs;};
+	       specialArgs = {inherit inputs;};
          modules = [
            ./hosts/nix-desktop.nix
            home-manager.nixosModules.home-manager
@@ -88,6 +94,7 @@
          ];
        };
     };
+#Home-manager configurations
     homeConfigurations = {
       "jcw@craptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
