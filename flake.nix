@@ -10,7 +10,7 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+#      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland = {
@@ -31,17 +31,12 @@
   }: {
     nixosConfigurations = {
 #beater laptop
-      nixos-laptop = nixpkgs.lib.nixosSystem {
+      nixos-laptop = stable.lib.nixosSystem {
+#      nixos-laptop = nixpkgs.lib.nixosSystem {
       	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixos-laptop.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              };
-          }
         ];
      };
 #node
