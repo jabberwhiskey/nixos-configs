@@ -28,7 +28,6 @@
   };
   environment.systemPackages = with pkgs; [
     mc
-    doas-sudo-shim
     htop
   ];
    nix.settings.trusted-users = [

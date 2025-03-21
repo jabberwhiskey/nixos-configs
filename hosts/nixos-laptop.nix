@@ -7,7 +7,8 @@
   ...
 }: {
   imports = [
-    ../system/basic.nix
+#    ../system/basic.nix
+    ../system/basic-stable.nix
     ../system/u2f.nix
     ../system/tailscale.nix
     ../system/hyprpam.nix
@@ -25,26 +26,30 @@
     ../user/user.nix
     ../hardware/hplaptop.nix
   ];
-  home-manager.users.jcw = {
-    wayland.windowManager.hyprland = {
-      package = null;
-      portalPackage = null;
+  home-manager = { 
+    users.jcw = {
+      wayland.windowManager.hyprland = {
+        package = null;
+        portalPackage = null;
+      };
+      programs.zsh.shellAliases = { 
+        "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
+        "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
+      };
+      imports = [
+        ../home/waybar.nix
+        ../home/bash.nix
+        ../home/nvim.nix
+        ../home/zsh.nix
+        ../home/hyprland.nix
+        ../home/inhibit-hyprland.nix
+        ../home/home.nix
+      ];
+      programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
+      home.stateVersion = "24.05";
     };
-    programs.zsh.shellAliases = { 
-      "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
-      "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
-    };
-    imports = [
-      ../home/waybar.nix
-      ../home/bash.nix
-      ../home/nvim.nix
-      ../home/zsh.nix
-      ../home/hyprland.nix
-      ../home/inhibit-hyprland.nix
-      ../home/home.nix
-    ];
-    programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
-    home.stateVersion = "24.05";
+    useGlobalPkgs = true;
+    useUserPackages = true;
   };
   home-manager.backupFileExtension = "backup";
   system.stateVersion = "24.05";

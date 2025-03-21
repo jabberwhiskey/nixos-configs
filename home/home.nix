@@ -4,6 +4,7 @@
   ...
 }: {
   home = {
+    enableNixpkgsReleaseCheck = false;
     username = "jcw";
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
