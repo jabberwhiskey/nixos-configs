@@ -100,7 +100,7 @@
       };
     "jcw@linainverse" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs self;};
+        extraSpecialArgs = {inherit inputs;};
         modules = [
           ./hosts/linainverse.nix
         ];
