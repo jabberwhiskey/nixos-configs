@@ -23,7 +23,7 @@
     userName = "jcw";
     userEmail = "github.u9l99@aleeas.com";
   };
-#  programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
   home.stateVersion = "24.11";
   targets.genericLinux.enable = true;
 }
