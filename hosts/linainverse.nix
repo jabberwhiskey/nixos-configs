@@ -5,6 +5,7 @@
     ../home/bash.nix
     ../home/zsh.nix
     ../home/nvim.nix
+    ../home/home.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
