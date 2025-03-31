@@ -4,6 +4,9 @@
     lib,
     ...
   }: {
+    home.sessionVariables = {
+      DISPLAY = "wayland";
+    };
     wayland.windowManager.sway = {
       enable = true;
       checkConfig = false;
