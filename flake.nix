@@ -102,7 +102,7 @@
         #pkgs = nixpkgs.legacyPackages.x86_64-linux;
         pkgs = nixpkgs.legacyPackages.${system};
 	system = "x86_64-linux";
-#:        extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = {inherit inputs;};
         modules = [
           ./hosts/linainverse.nix
         ];
