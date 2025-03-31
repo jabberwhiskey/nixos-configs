@@ -3,6 +3,7 @@
   imports = [
     ../home/sway.nix
     ../home/bash.nix
+    ../home/sway-inhibit.nix
     ../home/zsh.nix
     ../home/nvim.nix
     ../home/home.nix
