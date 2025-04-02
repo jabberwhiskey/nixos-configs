@@ -95,7 +95,7 @@
           "${mod}+Shift+Right" = "move right";
 
           "${mod}+Shift+space" = "floating toggle";
-          "${mod}+space" = "focus mode_toggle";
+          "${mod}+m" = "focus mode_toggle";
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
 
@@ -143,7 +143,8 @@
           "XF86MonBrightnessDown" = "exec light -U 10";
 
           "${mod}+apostrophe" = "move workspace to output right";
-          "${mod}+Alt+space" = "exec dunstctl ";
+          "${mod}+Alt+space" = "exec dunstctl history-pop";
+          "${mod}+space" = "exec dunstctl close-all";
 
           "${mod}+minus" = "scratchpad show";
           "${mod}+underscore" = "move container to scratchpad";
