@@ -28,4 +28,20 @@
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";
   targets.genericLinux.enable = true;
+  programs.foot = {
+    enable = true;
+#    package = null;
+    settings = {
+      main = {
+        app-id = "foot";
+      	font = "monospace:size=12";
+      };
+      colors = {
+        alpha = 0.9;
+        background = "242424";
+      	foreground = "ffffff";
+      };
+    };
+  };
 }
+
