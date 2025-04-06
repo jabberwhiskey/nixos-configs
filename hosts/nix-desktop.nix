@@ -17,8 +17,8 @@
     ../user/user.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
-#    ../system/kernel-latest.nix
-    ../system/kernel-zen.nix
+    ../system/kernel-latest.nix
+#    ../system/kernel-zen.nix
     ../system/greetd.nix
     ../system/steam.nix
   ];
@@ -82,7 +82,8 @@
     ];
   };
   
-  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76];
+#  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76];
+  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_14.system76-io];
   hardware.xone.enable = true;
   powerManagement = {
     enable = true;
