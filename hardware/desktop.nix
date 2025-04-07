@@ -18,22 +18,26 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
+#    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
+    device = "/dev/disk/by-uuid/06957a11-5d26-4f11-a461-75099a5dd091";
     fsType = "btrfs";
     options = [ "subvol=root" "compress=zstd" ];
   };
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
+#    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
+    device = "/dev/disk/by-uuid/06957a11-5d26-4f11-a461-75099a5dd091";
     fsType = "btrfs";
     options = [ "subvol=home" "compress=zstd" ];
   };
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
+#    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
+    device = "/dev/disk/by-uuid/06957a11-5d26-4f11-a461-75099a5dd091";
     fsType = "btrfs";
     options = [ "subvol=nix" "compress=zstd" "noatime" ];
   };
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/DEFD-AB86";
+#    device = "/dev/disk/by-uuid/DEFD-AB86";
+    device = "/dev/disk/by-uuid/70E9-C9C5";
     fsType = "vfat";  
     options = [ "fmask=0022" "dmask=0022" ];
   };
