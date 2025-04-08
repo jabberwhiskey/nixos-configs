@@ -259,6 +259,11 @@
     size = 25;
     name = "Catppuccin-Frappe-Blue-Cursors";
   };
+  gtk.cursorTheme = {
+    name = "Catppuccin-Frappe-Blue-Cursors";
+    size = 25;
+    package = pkgs.catppuccin-cursors.frappeBlue;
+  };
 #  services.wpaperd = {
 #    enable = true;
 #    settings = {
