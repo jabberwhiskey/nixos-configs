@@ -5,7 +5,7 @@
     ...
   }: {
     home.sessionVariables = {
-      #DISPLAY = "WAYLAND";
+      DISPLAY = "WAYLAND";
     };
     wayland.windowManager.sway = {
       enable = true;
@@ -139,7 +139,7 @@
           "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
           "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
 
-          "XF86MonBrightnessUp" = "light -A 10";
+          "XF86MonBrightnessUp" = "exec light -A 10";
           "XF86MonBrightnessDown" = "exec light -U 10";
 
           "${mod}+apostrophe" = "move workspace to output right";
