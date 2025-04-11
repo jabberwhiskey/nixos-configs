@@ -4,9 +4,6 @@
     lib,
     ...
   }: {
-    home.sessionVariables = {
-      DISPLAY = "WAYLAND";
-    };
     wayland.windowManager.sway = {
       enable = true;
       checkConfig = false;
@@ -24,7 +21,17 @@
         output = {
           "*" = {
             bg =  "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
-    };
+          };
+        };
+        defaultWorkspace = "workspace number 1";
+        colors = {
+          focused = {
+            background = "#630000";
+            border = "#6b1818";
+            childBorder = "#630000";
+            indicator = "#db4d4d";
+            text = "#ffffff";
+          };
         };
         window = {
           titlebar = true;
@@ -48,6 +55,20 @@
               names = ["DejaVu Sans Mono" "FontAwesome5Free"];
               style = "Bold Semi-Condensed";
               size = 10.0;
+            };
+            colors = {
+              background = "#000000";
+              statusline = "#fa2802";
+              focusedWorkspace = {
+                background = "#bd1a1a";
+                border = "#fa6e6e";
+                text = "#000000";
+              };
+              inactiveWorkspace = {
+                background = "#000000";
+                border = "#000000";
+                text = "#fa6e6e";
+              };
             };
           }
         ];
@@ -132,8 +153,8 @@
           "${mod}+Shift+e" = "exec swaynag -t warning -m 'Do you want to exit Sway?' -b 'Yes, exit sway' 'swaymsg exit'";
           "${mod}+r" = "mode resize";
 
-          "print" = "exec  ${pkgs.grim}/bin/grim -g- screenshot-$(date +%Y%m%d-%H%M%S).png";
-          "${mod}+print" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g-  screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "print" = "exec  grim  screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "${mod}+print" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g -o  screenshot-$(date +%Y%m%d-%H%M%S).png";
 
           "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
           "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
@@ -208,10 +229,13 @@
         ];
         settings = {
           theme = {
-            theme = "solarized-dark";
+            theme = "native";
             overrides = {
-              idle_bg = "#123456";
-              idle_fg = "#abcdef";
+#              idle_bg = "#ff0303";
+              idle_bg = "#000000";
+#              idle_fg = "#000000";
+              idle_fg = "#ff0303";
+              seperator = "f74d4d";
             };
           };
         };
