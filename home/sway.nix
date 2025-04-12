@@ -246,6 +246,7 @@
   };
   home.packages = with pkgs; [
     grim
+    swayimg
     slurp
     rofi-wayland
   ];
