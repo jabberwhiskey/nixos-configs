@@ -43,5 +43,10 @@
       };
     };
   };
+  nix = {
+    gc = {
+      automatic = true;
+    };
+  };
 }
 
