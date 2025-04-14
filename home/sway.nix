@@ -278,6 +278,9 @@
   };
   services.dunst = {
     enable = true;
+    settings = {
+      };
+    };
   };
   home.pointerCursor = {
     package = pkgs.catppuccin-cursors.frappeBlue;
