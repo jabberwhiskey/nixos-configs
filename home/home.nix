@@ -9,6 +9,7 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
+      fractal
       chromium
       brave
       discord
