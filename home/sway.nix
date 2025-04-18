@@ -21,7 +21,17 @@
         output = {
           "*" = {
             bg =  "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
-    };
+          };
+        };
+        defaultWorkspace = "workspace number 1";
+        colors = {
+          focused = {
+            background = "#630000";
+            border = "#6b1818";
+            childBorder = "#630000";
+            indicator = "#db4d4d";
+            text = "#ffffff";
+          };
         };
         window = {
           titlebar = true;
@@ -45,6 +55,20 @@
               names = ["DejaVu Sans Mono" "FontAwesome5Free"];
               style = "Bold Semi-Condensed";
               size = 10.0;
+            };
+            colors = {
+              background = "#000000";
+              statusline = "#fa2802";
+              focusedWorkspace = {
+                background = "#bd1a1a";
+                border = "#fa6e6e";
+                text = "#000000";
+              };
+              inactiveWorkspace = {
+                background = "#000000";
+                border = "#000000";
+                text = "#fa6e6e";
+              };
             };
           }
         ];
@@ -92,7 +116,7 @@
           "${mod}+Shift+Right" = "move right";
 
           "${mod}+Shift+space" = "floating toggle";
-          "${mod}+space" = "focus mode_toggle";
+          "${mod}+m" = "focus mode_toggle";
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
 
@@ -129,18 +153,19 @@
           "${mod}+Shift+e" = "exec swaynag -t warning -m 'Do you want to exit Sway?' -b 'Yes, exit sway' 'swaymsg exit'";
           "${mod}+r" = "mode resize";
 
-          "print" = "exec  ${pkgs.grim}/bin/grim -g- screenshot-$(date +%Y%m%d-%H%M%S).png";
-          "${mod}+print" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g-  screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "print" = "exec  grim  screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "${mod}+print" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g -o  screenshot-$(date +%Y%m%d-%H%M%S).png";
 
           "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
           "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
           "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
 
-          "XF86MonBrightnessUp" = "light -A 10";
+          "XF86MonBrightnessUp" = "exec light -A 10";
           "XF86MonBrightnessDown" = "exec light -U 10";
 
           "${mod}+apostrophe" = "move workspace to output right";
-          "${mod}+Alt+space" = "exec dunstctl ";
+          "${mod}+Alt+space" = "exec dunstctl history-pop";
+          "${mod}+space" = "exec dunstctl close-all";
 
           "${mod}+minus" = "scratchpad show";
           "${mod}+underscore" = "move container to scratchpad";
@@ -204,10 +229,13 @@
         ];
         settings = {
           theme = {
-            theme = "solarized-dark";
+            theme = "native";
             overrides = {
-              idle_bg = "#123456";
-              idle_fg = "#abcdef";
+#              idle_bg = "#ff0303";
+              idle_bg = "#000000";
+#              idle_fg = "#000000";
+              idle_fg = "#ff0303";
+              seperator = "f74d4d";
             };
           };
         };
@@ -218,6 +246,7 @@
   };
   home.packages = with pkgs; [
     grim
+    swayimg
     slurp
     rofi-wayland
   ];
@@ -249,11 +278,19 @@
   };
   services.dunst = {
     enable = true;
+    settings = {
+      };
+    };
   };
   home.pointerCursor = {
     package = pkgs.catppuccin-cursors.frappeBlue;
     size = 25;
     name = "Catppuccin-Frappe-Blue-Cursors";
+  };
+  gtk.cursorTheme = {
+    name = "Catppuccin-Frappe-Blue-Cursors";
+    size = 25;
+    package = pkgs.catppuccin-cursors.frappeBlue;
   };
 #  services.wpaperd = {
 #    enable = true;

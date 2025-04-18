@@ -20,6 +20,10 @@
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+    wayland-pipewire-idle-inhibit = {
+      url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -99,6 +103,13 @@
         extraSpecialArgs = {inherit inputs self;};
         modules = [
           ./hosts/craptop.nix
+        ];
+      };
+      "jcw@linainverse" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs self;};
+        modules = [
+          ./hosts/linainverse.nix
         ];
       };
     };

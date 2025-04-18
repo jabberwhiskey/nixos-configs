@@ -124,14 +124,16 @@
       gestures = {
         workspace_swipe = "false";
       };
-      windowrulev2 = [
+      windowrule = [
+#      windowrulev2 = [
         "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
         "float,class:^(Waydroid)$,title:^(Waydroid)$"
+        "float,class:^(mpv)$,title:^(mpv)$"
       ];
-      windowrule = [
-        "float,^(qview)$"
-        "float,^(mpv)$"
-      ];
+#      windowrule = [
+#        "float,^(qview)$"
+#        "float,^(mpv)$"
+#      ];
       bind =
         [
           "$mod, Return, exec, $term"
