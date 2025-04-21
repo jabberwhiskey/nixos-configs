@@ -167,10 +167,12 @@
           "$mod, down, movefocus, d"
           "$mod, J, movefocus, d"
           #stacks
-          "$mod, code:58, moveintogroup, l" #m
-          "$mod, code:57, lockactivegroup," #n
-          "$mod, code:59, togglegroup," #,
-          "$mod, code:60, changegroupactive," #.
+          "$mod SHIFT, code:59, moveintogroup, l" #,
+          "$mod SHIFT, code:60, moveintogroup, r" #,
+          "$mod, code:58, lockactivegroup, toggle" #m
+          "$mod SHIFT, code:61, togglegroup," #/
+          "$mod, code:60, changegroupactive, f" #.
+          "$mod, code:59, changegroupactive, b" #,
           "$mod, code:61, moveoutofgroup, active" #/
           #move window
           "$mod SHIFT, up, movewindow, u"
