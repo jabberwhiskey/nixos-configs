@@ -10,6 +10,7 @@
 #      imv
       qview
       wl-clipboard
+      cliphist
       waybar
       qpwgraph
       pcmanfm-qt
@@ -57,8 +58,10 @@
       monitor = [",preferred,auto,1"];
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
+        "${pkgs.kdePackages.kwallet}/bin/kwalletd6"
         "${pkgs.dunst}/bin/dunst"
         "${pkgs.wpaperd}/bin/wpaperd"
+        "${pkgs.cliphist}/bin/cliphist"
       ];
       "$mod" = "SUPER";
 #      "$term" = "${pkgs.alacritty}/bin/alacritty";
@@ -160,14 +163,20 @@
           "$mod, K, movefocus, u"
           "$mod, down, movefocus, d"
           "$mod, J, movefocus, d"
+          #stacks
+          "$mod, code:58, moveintogroup, l" #m
+          "$mod, code:57, lockactivegroup," #n
+          "$mod, code:59, togglegroup," #,
+          "$mod, code:60, changegroupactive," #.
+          "$mod, code:61, moveoutofgroup, active" #/
           #move window
           "$mod SHIFT, up, movewindow, u"
           "$mod SHIFT, down, movewindow, d"
           "$mod SHIFT, left, movewindow, l"
           "$mod SHIFT, right, movewindow, r"
           #scratchpad
-          "$mod, S, togglespecialworkspace, SCRTCHPD"
-          "$mod SHIFT, S, movetoworkspace, special:SCRTCHPD"
+          "$mod, code:20, togglespecialworkspace, SCRTCHPD" #minus
+          "$mod SHIFT, code:20, movetoworkspace, special:SCRTCHPD" #minus
           #brightness
           ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
           ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
