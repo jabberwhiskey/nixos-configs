@@ -61,7 +61,8 @@
         "${pkgs.kdePackages.kwallet}/bin/kwalletd6"
         "${pkgs.dunst}/bin/dunst"
         "${pkgs.wpaperd}/bin/wpaperd"
-        "${pkgs.cliphist}/bin/cliphist"
+        "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
+        "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
       "$mod" = "SUPER";
 #      "$term" = "${pkgs.alacritty}/bin/alacritty";
@@ -145,10 +146,12 @@
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
+          #rofi
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
+          "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode wl-copy"
           "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
           "$mod, P, pseudo," #dwindle
-          "$mod, V, togglesplit," #dwindle
+          "$mod, code:51, togglesplit," #dwindle
           "$mod, F, fullscreen,"
           "$mod SHIFT, F,togglefloating"
           ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output" 
