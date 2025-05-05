@@ -24,7 +24,7 @@
       ];
     };
 
-    initExtra = ''
+    initContent = ''
       setopt NO_NOMATCH
     '';
   };
