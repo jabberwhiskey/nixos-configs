@@ -50,4 +50,14 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = true;
+    };
+  };
+  users.users.jcw.openssh.authorizedKeys.keyFiles = [
+    ../user/keys
+  ];
 }
