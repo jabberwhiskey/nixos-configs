@@ -7,7 +7,7 @@
 }: {
   imports = [
     ../system/basic.nix
-    ../system/intel-laptop.nix
+#    ../system/intel-laptop.nix
     ../system/greetd.nix
     ../system/tailscale.nix
     #../system/plasma.nix
