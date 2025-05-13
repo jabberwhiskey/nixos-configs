@@ -13,7 +13,7 @@
     #../system/plasma.nix
     ../system/fonts.nix
     ../system/hyprpam.nix
-    ../system/suspend.nix
+#    ../system/suspend.nix
     ../system/systemdboot.nix
     ../system/containers.nix
     ../user/user.nix
@@ -48,7 +48,7 @@
 #      "fprintd:TestPamFprintd"
 #    ];
 #  }; # for a failed fprintd build
-  services.fprintd.enable = lib.mkForce false; #disbale fprintd becasue it fails all the time
+#  services.fprintd.enable = lib.mkForce false; #disbale fprintd becasue it fails all the time
 
   networking.hostName = "framework";
 
@@ -76,5 +76,4 @@
   powerManagement = {
     enable = true;
   };
-  services.thermald.enable = true;
 }
