@@ -148,7 +148,7 @@
           "$mod, E, exec, $fileManager"
           #rofi
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-          "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode wl-copy"
+          "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode | wl-copy"
           "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
           "$mod, P, pseudo," #dwindle
           "$mod, code:51, togglesplit," #dwindle
