@@ -21,14 +21,7 @@
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
   services.tailscale.useRoutingFeatures = "both";
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-#      PasswordAuthentication = true;
-      KbdInteractiveAuthentication = false;
-    };
-  };
+
   environment.systemPackages = with pkgs; [
     mc
     htop
@@ -36,10 +29,6 @@
   users.users.jcw = {
      extraGroups = [ "jellyfin" "sonarr" ];
     };
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [22 80 9091 51413];
-  };
   systemd.tmpfiles.settings = {
     "10-perms_for_nas" = {
       "/media/nas" = {

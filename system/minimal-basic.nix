@@ -1,6 +1,7 @@
 #A common config needed for all (my) nixos systems
 {
   pkgs,
+  lib,
   config,
   ...
 }: {
@@ -12,7 +13,20 @@
   networking.networkmanager.enable = true;
 
   services.fwupd.enable = true;
-
+  services.openssh = {
+    enable = true;
+    openFirewall = lib.mkForce false;
+    settings = {
+      PasswordAuthentication = false;
+#      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = false;
+    };
+  };
+  networking.firewall = {
+    enable = true;
+#    allowedTCPPorts = [ 80 9091 51413];
+    trustedInterfaces = ["tailscale0"];
+  };
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";

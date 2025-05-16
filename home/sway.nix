@@ -153,8 +153,8 @@
           "${mod}+Shift+e" = "exec swaynag -t warning -m 'Do you want to exit Sway?' -b 'Yes, exit sway' 'swaymsg exit'";
           "${mod}+r" = "mode resize";
 
-          "print" = "exec  grim  screenshot-$(date +%Y%m%d-%H%M%S).png";
-          "${mod}+print" = "exec ${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g -o  screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "print" = "exec grim  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "Shift+print" = "exec slurp | grim -g -  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
 
           "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
           "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
@@ -245,9 +245,7 @@
     };
   };
   home.packages = with pkgs; [
-    grim
     swayimg
-    slurp
     rofi-wayland
   ];
   home.sessionVariables = {
@@ -278,9 +276,6 @@
   };
   services.dunst = {
     enable = true;
-    settings = {
-      };
-    };
   };
   home.pointerCursor = {
     package = pkgs.catppuccin-cursors.frappeBlue;

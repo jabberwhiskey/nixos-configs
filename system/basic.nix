@@ -50,4 +50,19 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = ["tailscale0"];
+  };
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = true;
+    };
+  };
+  users.users.jcw.openssh.authorizedKeys.keyFiles = [
+    ../user/keys
+  ];
 }

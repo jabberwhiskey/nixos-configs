@@ -10,6 +10,7 @@
 #      imv
       qview
       wl-clipboard
+      cliphist
       waybar
       qpwgraph
       pcmanfm-qt
@@ -57,8 +58,11 @@
       monitor = [",preferred,auto,1"];
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
+        "${pkgs.kdePackages.kwallet}/bin/kwalletd6"
         "${pkgs.dunst}/bin/dunst"
         "${pkgs.wpaperd}/bin/wpaperd"
+        "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
+        "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
       "$mod" = "SUPER";
 #      "$term" = "${pkgs.alacritty}/bin/alacritty";
@@ -142,10 +146,12 @@
           "$mod, C, killactive,"
           "$mod SHIFT, Q, exit,"
           "$mod, E, exec, $fileManager"
+          #rofi
           "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
+          "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode | wl-copy"
           "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
           "$mod, P, pseudo," #dwindle
-          "$mod, V, togglesplit," #dwindle
+          "$mod, code:51, togglesplit," #dwindle
           "$mod, F, fullscreen,"
           "$mod SHIFT, F,togglefloating"
           ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output" 
@@ -160,14 +166,22 @@
           "$mod, K, movefocus, u"
           "$mod, down, movefocus, d"
           "$mod, J, movefocus, d"
+          #stacks
+          "$mod SHIFT, code:59, moveintogroup, l" #,
+          "$mod SHIFT, code:60, moveintogroup, r" #,
+          "$mod, code:58, lockactivegroup, toggle" #m
+          "$mod SHIFT, code:61, togglegroup," #/
+          "$mod, code:60, changegroupactive, f" #.
+          "$mod, code:59, changegroupactive, b" #,
+          "$mod, code:61, moveoutofgroup, active" #/
           #move window
           "$mod SHIFT, up, movewindow, u"
           "$mod SHIFT, down, movewindow, d"
           "$mod SHIFT, left, movewindow, l"
           "$mod SHIFT, right, movewindow, r"
           #scratchpad
-          "$mod, S, togglespecialworkspace, SCRTCHPD"
-          "$mod SHIFT, S, movetoworkspace, special:SCRTCHPD"
+          "$mod, code:20, togglespecialworkspace, SCRTCHPD" #minus
+          "$mod SHIFT, code:20, movetoworkspace, special:SCRTCHPD" #minus
           #brightness
           ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
           ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
