@@ -1,6 +1,7 @@
 #A common config needed for all (my) nixos systems
 {
   pkgs,
+  lib,
   config,
   ...
 }: {
@@ -18,7 +19,7 @@
       PasswordAuthentication = false;
 #      PasswordAuthentication = true;
       KbdInteractiveAuthentication = false;
-      openFirewall = false;
+      openFirewall = lib.mkForce false;
     };
   };
   networking.firewall = {
