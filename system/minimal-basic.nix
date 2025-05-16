@@ -12,7 +12,20 @@
   networking.networkmanager.enable = true;
 
   services.fwupd.enable = true;
-
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+#      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = false;
+      openFirewall = false;
+    };
+  };
+  networking.firewall = {
+    enable = true;
+#    allowedTCPPorts = [ 80 9091 51413];
+    trustedInterfaces = ["tailscale0"];
+  };
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
