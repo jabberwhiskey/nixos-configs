@@ -15,11 +15,11 @@
   services.fwupd.enable = true;
   services.openssh = {
     enable = true;
+    openFirewall = lib.mkForce false;
     settings = {
       PasswordAuthentication = false;
 #      PasswordAuthentication = true;
       KbdInteractiveAuthentication = false;
-      openFirewall = lib.mkForce false;
     };
   };
   networking.firewall = {
