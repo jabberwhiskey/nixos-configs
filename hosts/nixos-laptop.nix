@@ -18,8 +18,8 @@
 #    ../system/steam.nix
     ../system/intel-laptop.nix
     ../system/greetd.nix
-    ../system/kernel-latest.nix
-#    ../system/kernel-zen.nix
+#    ../system/kernel-latest.nix
+    ../system/kernel-zen.nix
 #    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
