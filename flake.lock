@@ -584,6 +584,7 @@
         "nixpkgs": "nixpkgs_2",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor",
         "stable": "stable",
+        "stable-alt": "stable-alt",
         "wayland-pipewire-idle-inhibit": "wayland-pipewire-idle-inhibit"
       }
     },
@@ -619,6 +620,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "stable-alt": {
+      "locked": {
+        "lastModified": 1748162331,
+        "narHash": "sha256-rqc2RKYTxP3tbjA+PB3VMRQNnjesrT0pEofXQTrMsS8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7c43f080a7f28b2774f3b3f43234ca11661bf334",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
         "repo": "nixpkgs",
         "type": "github"
       }

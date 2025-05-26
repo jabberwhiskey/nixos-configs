@@ -30,6 +30,7 @@
     nixpkgs,
     home-manager,
     stable,
+    stable-alt,
     nixos-hardware,
     hyprland,
     ...
