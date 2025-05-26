@@ -9,6 +9,8 @@
     ../system/basic.nix
 #    ../system/intel-laptop.nix
     ../system/greetd.nix
+    ../system/qt.nix
+    ../system/steam.nix
     ../system/tailscale.nix
     #../system/plasma.nix
     ../system/fonts.nix

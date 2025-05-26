@@ -15,7 +15,7 @@
 #    ../system/suspend.nix
     ../system/qt.nix
     ../system/waydroid.nix
-    ../system/steam.nix
+#    ../system/steam.nix
     ../system/intel-laptop.nix
     ../system/greetd.nix
     ../system/kernel-latest.nix
