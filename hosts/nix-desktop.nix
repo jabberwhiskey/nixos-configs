@@ -37,6 +37,7 @@
       wayland.windowManager.hyprland = {
         package = null;
         portalPackage = null;
+	settings.debug = { full_cm_proto=true; };
         };
       };
      };
