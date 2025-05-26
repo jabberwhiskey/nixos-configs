@@ -3,8 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-24.11";
-    stable-alt.url = "github:NixOS/nixpkgs/nixos-25.05";
+    stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nix-bitcoin = {
       url = "github:fort-nix/nix-bitcoin/release";
       inputs.nixpkgs.follows = "stable";
@@ -30,7 +29,6 @@
     nixpkgs,
     home-manager,
     stable,
-    stable-alt,
     nixos-hardware,
     hyprland,
     ...
@@ -57,7 +55,7 @@
        specialArgs = {inherit inputs;};
      };
 #media server/nas
-     nixos-server = stable-alt.lib.nixosSystem {
+     nixos-server = stable.lib.nixosSystem {
        modules = [
          ./hosts/nixos-server.nix
    	   ];
