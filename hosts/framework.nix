@@ -61,9 +61,6 @@
     libsForQt5.kwallet
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
-  environment.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-  };
   #  services.xserver.displayManager.sessionPackages = with pkgs; [
   #    sway
   #  ];

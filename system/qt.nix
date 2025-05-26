@@ -4,7 +4,7 @@
     qt = {
       enable = true;
       style = "adwaita-dark";
-      platformTheme = "qt5ct";
+      platformTheme = "qt6ct";
 
     };
   };
