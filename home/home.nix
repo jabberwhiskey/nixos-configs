@@ -19,6 +19,7 @@
       htop
       bitwarden
       iamb
+      jellyfin-tui
 #      bitwarden-cli
       firefox
       #vivaldi
