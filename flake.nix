@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nix-bitcoin = {
       url = "github:fort-nix/nix-bitcoin/release";
       inputs.nixpkgs.follows = "stable";
@@ -38,7 +38,6 @@
   }: {
     nixosConfigurations = {
 #beater laptop
-#      nixos-laptop = stable.lib.nixosSystem {
       nixos-laptop = nixpkgs.lib.nixosSystem {
       	specialArgs = {inherit inputs;};
         modules = [

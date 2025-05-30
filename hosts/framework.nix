@@ -9,6 +9,8 @@
     ../system/basic.nix
 #    ../system/intel-laptop.nix
     ../system/greetd.nix
+    ../system/qt.nix
+    ../system/steam.nix
     ../system/tailscale.nix
     #../system/plasma.nix
     ../system/fonts.nix
@@ -59,9 +61,6 @@
     libsForQt5.kwallet
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
-  environment.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-  };
   #  services.xserver.displayManager.sessionPackages = with pkgs; [
   #    sway
   #  ];

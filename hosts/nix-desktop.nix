@@ -15,10 +15,11 @@
     ../system/virtmanager.nix
     ../hardware/desktop.nix
     ../user/user.nix
+    ../system/qt.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
-    ../system/kernel-latest.nix
-#    ../system/kernel-zen.nix
+#    ../system/kernel-latest.nix
+    ../system/kernel-zen.nix
     ../system/greetd.nix
     ../system/steam.nix
   ];
@@ -37,6 +38,7 @@
       wayland.windowManager.hyprland = {
         package = null;
         portalPackage = null;
+	settings.debug = { full_cm_proto=true; };
         };
       };
      };
