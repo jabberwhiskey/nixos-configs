@@ -13,6 +13,7 @@
       chromium
       brave
       discord
+      discordo
       kdePackages.kasts
       mumble
       mpv
