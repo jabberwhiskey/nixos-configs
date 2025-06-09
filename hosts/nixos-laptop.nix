@@ -43,6 +43,7 @@
         ../home/nvim.nix
         ../home/zsh.nix
         ../home/hyprland.nix
+        ../home/hypr-swap-escape.nix
         ../home/inhibit-hyprland.nix
         ../home/home.nix
       ];
