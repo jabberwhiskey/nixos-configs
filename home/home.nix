@@ -11,7 +11,6 @@
       btop
       fractal
       chromium
-      brave
       discord
       discordo
       kdePackages.kasts
@@ -23,7 +22,7 @@
       jellyfin-tui
 #      bitwarden-cli
       firefox
-      #vivaldi
+      browsh
       unzip
       yt-dlp
       ffmpeg
