@@ -28,6 +28,7 @@
     imports = [
       ../home/home.nix
       ../home/bash.nix
+      ../home/hypr-swap-escape.nix
       ../home/zsh.nix
       ../home/waybar.nix
       ../home/hyprland.nix

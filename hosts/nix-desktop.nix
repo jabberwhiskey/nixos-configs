@@ -73,8 +73,8 @@
     ];
   };
   
-#  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76];
-  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_14.system76-io];
+  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76-io];
+#  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
   hardware.xone.enable = true;
   powerManagement = {
     enable = true;

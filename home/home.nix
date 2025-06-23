@@ -11,17 +11,18 @@
       btop
       fractal
       chromium
-      brave
       discord
+      discordo
       kdePackages.kasts
       mumble
       mpv
       htop
       bitwarden
       iamb
+      jellyfin-tui
 #      bitwarden-cli
       firefox
-      #vivaldi
+      browsh
       unzip
       yt-dlp
       ffmpeg
