@@ -6,7 +6,6 @@
   ...
 }: {
   imports = [
-    ../extra/temp-lxml-html-clean.nix
     ../system/basic.nix
 #    ../system/intel-laptop.nix
     ../system/greetd.nix
