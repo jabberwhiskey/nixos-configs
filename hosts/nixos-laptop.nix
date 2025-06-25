@@ -11,16 +11,16 @@
 #    ../system/basic-stable.nix
 #    ../system/u2f.nix
     ../system/tailscale.nix
-#    ../system/hyprpam.nix
+    ../system/hyprpam.nix
 #    ../system/suspend.nix
-#    ../system/qt.nix
+    ../system/qt.nix
     ../system/waydroid.nix
 #    ../system/steam.nix
-#    ../system/intel-laptop.nix
-#    ../system/greetd.nix
+    ../system/intel-laptop.nix
+    ../system/greetd.nix
 #    ../system/kernel-latest.nix
     ../system/kernel-zen.nix
-    ../system/plasma.nix
+#    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
@@ -38,13 +38,13 @@
         "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
       };
       imports = [
-  #      ../home/waybar.nix
+        ../home/waybar.nix
         ../home/bash.nix
         ../home/nvim.nix
         ../home/zsh.nix
-#        ../home/hyprland.nix
- #       ../home/hypr-swap-escape.nix
- #       ../home/inhibit-hyprland.nix
+        ../home/hyprland.nix
+        ../home/hypr-swap-escape.nix
+        ../home/inhibit-hyprland.nix
         ../home/home.nix
       ];
       programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
@@ -56,7 +56,6 @@
   home-manager.backupFileExtension = "backup";
   system.stateVersion = "24.05";
   nixpkgs.hostPlatform = "x86_64-linux";
-  programs.kdeconnect.enable = true;
 
   networking.hostName = "nixos-laptop";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
@@ -79,16 +78,16 @@
 #      ranger
 #    ];
 #  };
-#    programs.hyprland = {
-#      enable = true;
-#      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-#      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-#  };
-#  security.pam.services.jcw.kwallet = {
-#    enable = true;
-#    forceRun = true;
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+  security.pam.services.jcw.kwallet = {
+    enable = true;
+    forceRun = true;
 #    package = pkgs.kdePackages.kwallet-pam;
-#  };
+  };
   nix.settings.trusted-users = [
     "jcw"
     "root"
