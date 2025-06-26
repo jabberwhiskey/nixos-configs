@@ -30,16 +30,16 @@
           ../home/bash.nix
           ../home/zsh.nix
           ../home/inhibit-hyprland.nix
-       	  ../home/waybar2.nix
-          ../home/hyprland.nix
+#      	   ../home/waybar2.nix
+#          ../home/hyprland.nix
           ../home/hm-dconf.nix
         ];
       home.stateVersion = "24.11";
-      wayland.windowManager.hyprland = {
-        package = null;
-        portalPackage = null;
-	settings.debug = { full_cm_proto=true; };
-        };
+#      wayland.windowManager.hyprland = {
+#        package = null;
+#        portalPackage = null;
+#	settings.debug = { full_cm_proto=true; };
+#        };
       };
      };
   system.stateVersion = "24.11";
@@ -57,13 +57,13 @@
 
   environment.systemPackages = with pkgs; [
     usbutils
-    lxqt.lxqt-policykit
+#    lxqt.lxqt-policykit
     bazecor
     pciutils
     g810-led
     piper
     wine
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+#    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     daggerfall-unity
   ];
   hardware = {
@@ -80,10 +80,10 @@
 #    enable = true;
 #    cpuFreqGovernor = "performance";
 #  };
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
+#  programs.hyprland = {
+#    enable = true;
+#    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+#    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+#  };
   nixpkgs.hostPlatform = "x86_64-linux";
 }
