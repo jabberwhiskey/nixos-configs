@@ -9,18 +9,18 @@
   imports = [
     ../system/basic.nix
     ../system/basic-stable.nix
-    ../system/u2f.nix
+#    ../system/u2f.nix
     ../system/tailscale.nix
     ../system/hyprpam.nix
 #    ../system/suspend.nix
     ../system/qt.nix
     ../system/waydroid.nix
 #    ../system/steam.nix
-#    ../system/intel-laptop.nix
-#    ../system/greetd.nix
+    ../system/intel-laptop.nix
+    ../system/greetd.nix
 #    ../system/kernel-latest.nix
     ../system/kernel-zen.nix
-    ../system/plasma.nix
+#    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
@@ -65,7 +65,7 @@
   environment.systemPackages = with pkgs; [
     usbutils
     pciutils
-#    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 #  services.gvfs.enable = true; #for pcmanfm
 #  programs.sway ={
@@ -88,7 +88,7 @@
   security.pam.services.jcw.kwallet = {
     enable = true;
     forceRun = true;
-#    package = pkgs.kdePackages.kwallet-pam;
+    package = pkgs.kdePackages.kwallet-pam;
   };
   nix.settings.trusted-users = [
     "jcw"
