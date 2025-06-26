@@ -15,7 +15,7 @@
     ../system/virtmanager.nix
     ../hardware/desktop.nix
     ../user/user.nix
-#    ../system/qt.nix
+    ../system/qt.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
 #    ../system/kernel-latest.nix
@@ -27,6 +27,7 @@
     users.jcw = {
         imports = [
           ../home/home.nix
+	  ..home/anyrun.nix
           ../home/bash.nix
           ../home/zsh.nix
           ../home/inhibit-hyprland.nix
@@ -74,7 +75,7 @@
   };
   
   boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76-io];
-  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
+#  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
   hardware.xone.enable = true;
 #  powerManagement = {
 #    enable = true;
