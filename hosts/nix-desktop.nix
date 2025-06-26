@@ -18,16 +18,15 @@
     ../system/qt.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
-#    ../system/kernel-latest.nix
-    ../system/kernel-zen.nix
-#     ../system/greetd.nix
+    ../system/kernel-latest.nix
+#    ../system/kernel-zen.nix
+    ../system/greetd.nix
     ../system/steam.nix
   ];
   home-manager = {
     users.jcw = {
         imports = [
           ../home/home.nix
-	  ..home/anyrun.nix
           ../home/bash.nix
           ../home/zsh.nix
           ../home/inhibit-hyprland.nix
@@ -39,14 +38,13 @@
       wayland.windowManager.hyprland = {
         package = null;
         portalPackage = null;
-      	settings.debug = { full_cm_proto=true; };
+	settings.debug = { full_cm_proto=true; };
         };
       };
      };
   system.stateVersion = "24.11";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
-  programs.kdeconnect.enable = true;
   networking.hostName = "nix-desktop";
 
   services.ratbagd.enable = true;
@@ -59,6 +57,7 @@
 
   environment.systemPackages = with pkgs; [
     usbutils
+    lxqt.lxqt-policykit
     bazecor
     pciutils
     g810-led
@@ -74,13 +73,13 @@
     ];
   };
   
-  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76-io];
-#  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
+#  boot.extraModulePackages = with config; [pkgs.linuxPackages_zen.system76];
+  boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
   hardware.xone.enable = true;
-#  powerManagement = {
-#    enable = true;
-#    cpuFreqGovernor = "performance";
-#  };
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "performance";
+  };
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
