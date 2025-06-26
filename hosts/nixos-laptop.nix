@@ -8,19 +8,19 @@
 }: {
   imports = [
     ../system/basic.nix
-#    ../system/basic-stable.nix
-#    ../system/u2f.nix
+    ../system/basic-stable.nix
+    ../system/u2f.nix
     ../system/tailscale.nix
     ../system/hyprpam.nix
 #    ../system/suspend.nix
     ../system/qt.nix
     ../system/waydroid.nix
 #    ../system/steam.nix
-    ../system/intel-laptop.nix
-    ../system/greetd.nix
+#    ../system/intel-laptop.nix
+#    ../system/greetd.nix
 #    ../system/kernel-latest.nix
     ../system/kernel-zen.nix
-#    ../system/plasma.nix
+    ../system/plasma.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
@@ -39,6 +39,7 @@
       };
       imports = [
         ../home/waybar.nix
+        ../home/anyrun.nix
         ../home/bash.nix
         ../home/nvim.nix
         ../home/zsh.nix
@@ -54,6 +55,7 @@
     useUserPackages = true;
   };
   home-manager.backupFileExtension = "backup";
+  programs.kdeconnect.enable = true;
   system.stateVersion = "24.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 
