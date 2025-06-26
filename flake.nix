@@ -21,6 +21,10 @@
       url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -31,6 +35,7 @@
     stable,
     nixos-hardware,
     hyprland,
+    anyrun,
     ...
   }: {
     nixosConfigurations = {
@@ -40,6 +45,7 @@
         modules = [
           ./hosts/nixos-laptop.nix
           home-manager.nixosModules.home-manager
+         {environment.systemPackages = [ anyrun.packages.x86_64-linux.anyrun-with-all-plugins ];}
         ];
      };
 #node

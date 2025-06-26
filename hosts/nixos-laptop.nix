@@ -52,7 +52,9 @@
       home.stateVersion = "24.05";
     };
     useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs;};
     useUserPackages = true;
+  #  sharedModules = [ inputs.anyrun.homeManagerModules.default ];
   };
   home-manager.backupFileExtension = "backup";
   programs.kdeconnect.enable = true;
