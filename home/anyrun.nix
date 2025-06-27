@@ -19,6 +19,7 @@
 #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
 #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/applications"
         inputs.anyrun.packages.${pkgs.system}.applications
+        inputs.anyrun.packages.${pkgs.system}.kidex
         inputs.anyrun.packages.${pkgs.system}.websearch
         # An array of all the plugins you want, which either can be paths to the .so files, or their packages
       ];
@@ -29,6 +30,11 @@
         // this file will be put in ~/.config/anyrun/some-plugin.ron
         // refer to docs of xdg.configFile for available options
         engines: [google]
+      )
+    '';
+    extraConfigFiles."kidex.ron".text = ''
+      config(
+        max_entries: 3,
       )
     '';
     # Inline comments are supported for language injection into
