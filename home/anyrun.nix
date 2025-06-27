@@ -1,7 +1,7 @@
 {pkgs, lib, config, inputs, ... }:
 {
   programs.anyrun = {
-    package = null;
+    package =  inputs.anyrun.packages.${pkgs.system}.anyrun;
     enable = true;
     config = {
       x = { fraction = 0.5; };

@@ -31,6 +31,7 @@
     users.jcw = {
       imports = [
         ../home/home.nix
+	../home/nvim.nix
         ../home/anyrun.nix
         ../home/bash.nix
         ../home/hypr-swap-escape.nix

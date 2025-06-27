@@ -45,7 +45,6 @@
         modules = [
           ./hosts/nixos-laptop.nix
           home-manager.nixosModules.home-manager
-         {environment.systemPackages = [ anyrun.packages.x86_64-linux.anyrun-with-all-plugins ];}
         ];
      };
 #node
