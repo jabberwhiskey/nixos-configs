@@ -54,6 +54,7 @@
   };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   hardware.bluetooth.enable = true; # enables support for Bluetooth
+  programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
     usbutils
