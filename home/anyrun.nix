@@ -19,7 +19,6 @@
 #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
 #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/applications"
         inputs.anyrun.packages.${pkgs.system}.applications
-        inputs.anyrun.packages.${pkgs.system}.kidex
         inputs.anyrun.packages.${pkgs.system}.websearch
         # An array of all the plugins you want, which either can be paths to the .so files, or their packages
       ];
@@ -32,9 +31,12 @@
         engines: [google]
       )
     '';
-    extraConfigFiles."kidex.ron".text = ''
+    extraConfigFiles."applications.ron".text = ''
       config(
-        max_entries: 3,
+        desktop_actions: true,
+        terminal: Some(Terminal(
+        command: "foot",
+        args: "-e {}",
       )
     '';
     # Inline comments are supported for language injection into
