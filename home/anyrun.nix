@@ -5,7 +5,7 @@
     enable = true;
     config = {
       x = { fraction = 0.5; };
-      y = { fraction = 0.3; };
+      y = { fraction = 0.1; };
       width = { fraction = 0.3; };
       hideIcons = false;
       ignoreExclusiveZones = false;
@@ -34,11 +34,16 @@
     # Inline comments are supported for language injection into
     # multi-line strings with Treesitter! (Depends on your editor)
     extraCss = /*css */ ''
-      entry, GtkEntry {
+      * {
+        all: unset;
+        font-family: JetBrainsMono Nerd Font;
+
+      }
+      entry#entry {
         background: red;
       }
-      window, GtkWindow {
-        opacity : 0.1; 
+      #window {
+        Background  : transparent; 
       }
     '';
 
