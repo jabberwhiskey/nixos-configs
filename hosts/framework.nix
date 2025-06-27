@@ -24,22 +24,28 @@
     ../system/kernel-latest.nix
   ];
   system.stateVersion = "23.05";
-  home-manager.users.jcw = {
-    imports = [
-      ../home/home.nix
-      ../home/bash.nix
-      ../home/hypr-swap-escape.nix
-      ../home/zsh.nix
-      ../home/waybar.nix
-      ../home/hyprland.nix
-      ../home/inhibit-hyprland.nix
-    ];
-    home.stateVersion = "23.05";
-    wayland.windowManager.hyprland = {
-      package = null;
-      portalPackage = null;
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs;};
+    users.jcw = {
+      imports = [
+        ../home/home.nix
+        ../home/anyrun.nix
+        ../home/bash.nix
+        ../home/hypr-swap-escape.nix
+        ../home/zsh.nix
+        ../home/waybar.nix
+        ../home/hyprland.nix
+        ../home/inhibit-hyprland.nix
+      ];
+      home.stateVersion = "23.05";
+      wayland.windowManager.hyprland = {
+        package = null;
+        portalPackage = null;
+      };
+      programs.foot.settings.main.font = lib.mkForce "monospace:size=14";
     };
-    programs.foot.settings.main.font = lib.mkForce "monospace:size=14";
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
