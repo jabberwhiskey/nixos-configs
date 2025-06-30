@@ -60,6 +60,8 @@
     usbutils
 #    lxqt.lxqt-policykit
     bazecor
+    xsettingsd
+    xorg.xrdb
     pciutils
     g810-led
     piper
