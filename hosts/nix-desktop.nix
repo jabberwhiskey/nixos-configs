@@ -29,7 +29,7 @@
           ../home/home.nix
           ../home/bash.nix
           ../home/zsh.nix
-          ../home/inhibit-hyprland.nix
+#          ../home/inhibit-hyprland.nix
 #      	   ../home/waybar2.nix
 #          ../home/hyprland.nix
           ../home/hm-dconf.nix
@@ -72,7 +72,7 @@
   hardware = {
     steam-hardware.enable = true;
     graphics.extraPackages = [
-      pkgs.amdvlk
+#      pkgs.amdvlk
     ];
   };
   
