@@ -31,7 +31,7 @@
     users.jcw = {
       imports = [
         ../home/home.nix
-	../home/nvim.nix
+      	../home/nvim.nix
         ../home/anyrun.nix
         ../home/bash.nix
         ../home/hypr-swap-escape.nix
@@ -65,6 +65,7 @@
   environment.systemPackages = with pkgs; [
     chezmoi
     usbutils
+    fw-ectool
     pciutils
     libsForQt5.kwallet
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
