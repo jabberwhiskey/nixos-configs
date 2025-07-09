@@ -71,6 +71,7 @@
     chezmoi
     usbutils
     fw-ectool
+    sbctl
     pciutils
     libsForQt5.kwallet
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
