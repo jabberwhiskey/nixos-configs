@@ -63,10 +63,16 @@
 
   networking.hostName = "nixos-laptop";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
 
   environment.systemPackages = with pkgs; [
     usbutils
     pciutils
+    sbctl
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 #  services.gvfs.enable = true; #for pcmanfm

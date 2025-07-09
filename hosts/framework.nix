@@ -50,7 +50,12 @@
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  }; 
   nixpkgs.hostPlatform = "x86_64-linux";
+
 
 #  services.fprintd.package = pkgs.fprintd.overrideAttrs {
 #    mesonCheckFlags = [
