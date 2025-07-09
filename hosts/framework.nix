@@ -74,9 +74,14 @@
     fw-ectool
     sbctl
     pciutils
-    libsForQt5.kwallet
+    kdePackages.kwallet
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
+  security.pam.services.jcw.kwallet = {
+    forceRun = true;
+    enable = true;
+    package = pkgs.kdePackages.kwallet;
+  };
   #  services.xserver.displayManager.sessionPackages = with pkgs; [
   #    sway
   #  ];
