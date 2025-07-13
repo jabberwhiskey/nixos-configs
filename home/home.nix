@@ -9,8 +9,8 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
-      fractal
       chromium
+      fluffychat
       discord
       discordo
       kdePackages.kasts
