@@ -57,10 +57,6 @@
     settings = {
       monitor = [",preferred,auto,1"];
       exec-once = [
-        "${pkgs.waybar}/bin/waybar"
-        "${pkgs.kdePackages.kwallet}/bin/kwalletd6"
-        "${pkgs.dunst}/bin/dunst"
-        "${pkgs.wpaperd}/bin/wpaperd"
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
@@ -355,5 +351,25 @@
   };
   services.playerctld = {
     enable = true;
+  };
+  systemd.user = {
+    enable = true;
+    services = {
+      "dunst.service" = {
+        Unit = {
+          Documentation = [ "man:dunst" ];
+        };
+        Service = {
+          ExecStart = "${pkgs.dunst}/bin/dunst";
+          Requires = [ "hyprland-session.service" ];
+        };
+      };
+      "wpaperd.service"= {
+        Unit = {
+          Requires = [ "hyprland-session.service" ];
+          ExecStart = "${pkgs.wpaperd}/bin/wpaperd";
+        };
+      };
+    };
   };
 }
