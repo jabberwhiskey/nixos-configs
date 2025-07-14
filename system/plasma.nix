@@ -14,4 +14,8 @@
       wayland.enable = true;
     };
   };
+  security.pam.services.jcw.kwallet = {
+    enable = true;
+    package = pkgs.kdePackages.kwallet-pam;
+  };
 }
