@@ -60,4 +60,5 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
+  systemd.services."prepare-kexec".wantedby= [ "multi-user.target" ];
 }
