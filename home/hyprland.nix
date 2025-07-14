@@ -358,8 +358,7 @@
     services = {
       dunst = {
         Unit = {
-          Wants = [ "hyprland-session.target" ];
-          PartOf = [ "graphical-session.target" ];
+          After = [ "hyprland-session.target" ];
         };
         Service = {
           ExecStart = "${pkgs.dunst}/bin/dunst";
