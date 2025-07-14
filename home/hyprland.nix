@@ -235,6 +235,7 @@
         timeout = 10;
       };
     };
+    waylandDisplay = "wayland-1";
   };
   services.hypridle = {
     enable = true;
@@ -355,18 +356,21 @@
   systemd.user = {
     enable = true;
     services = {
-      "dunst.service" = {
+      dunst = {
         Unit = {
-          Documentation = [ "man:dunst" ];
+          Wants = [ "hyprland-session.target" ];
+          PartOf = [ "graphical-session.target" ];
         };
         Service = {
           ExecStart = "${pkgs.dunst}/bin/dunst";
-          Requires = [ "hyprland-session.service" ];
+        };
+        Install = {
+          WantedBy = [ "graphical-session.target" ];
         };
       };
-      "wpaperd.service"= {
+      wpaperd= {
         Unit = {
-          Requires = [ "hyprland-session.service" ];
+          Wants = [ "hyprland-session.target" ];
           ExecStart = "${pkgs.wpaperd}/bin/wpaperd";
         };
       };
