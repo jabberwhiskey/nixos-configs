@@ -52,7 +52,7 @@
             id = "swaybar";
             trayPadding = 5;
             fonts = {
-              names = ["DejaVu Sans Mono" "FontAwesome5Free"];
+              names = ["DejaVu Sans Mono" "FontAwesome6Free"];
               style = "Bold Semi-Condensed";
               size = 10.0;
             };
