@@ -13,26 +13,27 @@
       fluffychat
       discord
       discordo
-      kdePackages.kasts
+#      kdePackages.kasts
       mumble
       mpv
       htop
       bitwarden
       iamb
       jellyfin-tui
-#      bitwarden-cli
+      bitwarden-cli
       firefox
       browsh
       unzip
       yt-dlp
       ffmpeg
-#      qutebrowser
+      imv
     ];
     sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
       MANPAGER = "nvim +Man!";
       BROWSER = "firefox";
-      IMAGE_VIEWER = "qview";
+      IMAGE_VIEWER = "imv";
+#      IMAGE_VIEWER = "qview";
     };
   };
   xdg = {

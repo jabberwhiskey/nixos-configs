@@ -26,6 +26,7 @@
 
     initContent = ''
       setopt NO_NOMATCH
+      export MANPAGER='nvim +Man!'
     '';
   };
   programs.bash.initExtra = "exec zsh";
