@@ -18,6 +18,11 @@
         terminal = "foot";
 
         workspaceAutoBackAndForth = true;
+        input = {
+          "type:keyboard" = {
+            xkb_options = caps:swapescape;
+          };
+        };
         output = {
           "*" = {
             bg =  "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
