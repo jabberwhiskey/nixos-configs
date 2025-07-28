@@ -190,6 +190,7 @@
       };
       systemd.enable = true;
       extraConfig = ''
+        bindswitch --reload --locked lid:on exec '${pkgs.swaylock}/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2 -s fill'
       '';
       swaynag = {
         enable = true;
@@ -269,7 +270,7 @@
  
       {
         timeout = 300;
-        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2 -s fill";      
+        command = "${pkgs.swaylock}/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2 -s fill";      
       }
     ];
     events = [
