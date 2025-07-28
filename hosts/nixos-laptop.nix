@@ -8,6 +8,8 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/kexec.nix
+    ../system/lanzaboote.nix
     ../system/basic-stable.nix
 #    ../system/u2f.nix
     ../system/tailscale.nix
@@ -63,11 +65,6 @@
 
   networking.hostName = "nixos-laptop";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
-  boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
-  };
 
   environment.systemPackages = with pkgs; [
     usbutils

@@ -7,6 +7,7 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/lanzaboote.nix
 #    ../system/intel-laptop.nix
     ../system/greetd.nix
     ../system/qt.nix
@@ -50,11 +51,6 @@
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
   boot.kernelParams = ["module_blacklist=hid_sensor_hub"];
-  boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
-  }; 
   nixpkgs.hostPlatform = "x86_64-linux";
 
 
