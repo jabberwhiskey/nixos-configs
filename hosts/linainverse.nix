@@ -26,6 +26,13 @@
     userEmail = "github.u9l99@aleeas.com";
   };
   programs.home-manager.enable = true;
+  xdg = {
+    enable = true;
+    systemDirs.data = [
+      "/var/lib/flatpak/exports/share"
+      "/home/jcw/.local/share/flatpak/exports/share"
+    ];
+  };
   home.stateVersion = "24.11";
   targets.genericLinux.enable = true;
   programs.foot = {

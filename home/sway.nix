@@ -269,7 +269,7 @@
  
       {
         timeout = 300;
-        command = "/bin/swaylock";      
+        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2 -s fill";      
       }
     ];
     events = [
