@@ -10,7 +10,7 @@
     packages = with pkgs; [
       btop
       chromium
-      fluffychat
+#      fluffychat
       discord
       discordo
 #      kdePackages.kasts
@@ -18,8 +18,13 @@
       mpv
       htop
       bitwarden
+      ytui-music
+      wiki-tui
+      russ
       iamb
-      jellyfin-tui
+      nix-inspect
+      neonmodem
+#      jellyfin-tui
       bitwarden-cli
       firefox
       browsh
