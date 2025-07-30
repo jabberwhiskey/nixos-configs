@@ -18,8 +18,8 @@
       mpv
       htop
       bitwarden
-      ytui-music
       wiki-tui
+      ytermusic
       russ
       iamb
       nix-inspect
