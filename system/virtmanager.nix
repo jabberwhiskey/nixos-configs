@@ -1,13 +1,20 @@
+{ pkgs, ... }:
 {
   virtualisation = {
     libvirtd.enable = true;
-    spiceUSBRedirection = true;
-    qemu = {
+    spiceUSBRedirection.enable = true;
+    libvirtd.qemu = {
       swtpm.enable = true;
       ovmf.packages = [
-        pkgs.OVMFFULL.fd
+        pkgs.OVMFFull.fd
       ];
     };
   };
-  users.users.jcw.extraGroups = [ "libvirtd" ];
+  users.users.jcw = {
+    extraGroups = [ "libvirtd" ];
+    packages = [ 
+      pkgs.virt-manager
+      pkgs.nemu
+      ];
+  };
 }

@@ -18,6 +18,7 @@
     ../system/hyprpam.nix
 #    ../system/suspend.nix
     ../system/systemdboot.nix
+    ../system/virtmanager.nix
     ../system/containers.nix
     ../user/user.nix
     ../hardware/framework.nix
@@ -32,6 +33,7 @@
     users.jcw = {
       imports = [
         ../home/home.nix
+        ../home/hm-dconf.nix
       	../home/nvim.nix
         ../home/anyrun.nix
         ../home/bash.nix
