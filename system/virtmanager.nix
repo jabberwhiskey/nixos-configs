@@ -14,6 +14,7 @@
     extraGroups = [ "libvirtd" ];
     packages = [ 
       pkgs.virt-manager
+      pkgs.virt-viewer
       pkgs.nemu
       pkgs.spice
       ];

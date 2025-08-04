@@ -20,8 +20,8 @@
       bitwarden
       wiki-tui
       ytermusic
-      russ
       iamb
+      goread
       nix-inspect
       neonmodem
 #      jellyfin-tui
