@@ -73,6 +73,7 @@
     sbctl
     pciutils
     kdePackages.kwallet
+    multivnc
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
   security.pam.services.jcw.kwallet = {

@@ -15,6 +15,7 @@
     packages = [ 
       pkgs.virt-manager
       pkgs.nemu
+      pkgs.spice
       ];
   };
 }
