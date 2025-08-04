@@ -6,7 +6,7 @@
     ../home/sway-inhibit.nix
     ../home/zsh.nix
     ../home/nvim.nix
-    ../home/home.nix
+#    ../home/home.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -14,9 +14,6 @@
   home = {
     username = "jcw";
     homeDirectory = "/home/jcw";
-    packages = with pkgs; [
-      btop
-    ];
   };
   #wayland.windowManager.sway.package =  pkgs.emptyFile;
   wayland.windowManager.sway.package =  null;
@@ -28,6 +25,7 @@
   programs.home-manager.enable = true;
   xdg = {
     enable = true;
+    portal.xdgOpenUsePortal = true;
     systemDirs.data = [
       "/var/lib/flatpak/exports/share"
       "/home/jcw/.local/share/flatpak/exports/share"
@@ -50,9 +48,56 @@
       };
     };
   };
-  nix = {
+   nix = {
     gc = {
       automatic = true;
+    };
+  };
+  home = {
+    enableNixpkgsReleaseCheck = false;
+    packages = with pkgs; [
+      btop
+      chromium
+      discord
+      discordo
+      mumble
+      htop
+      bitwarden
+      wiki-tui
+      ytermusic
+      russ
+      iamb
+      nix-inspect
+      neonmodem
+#      jellyfin-tui
+      bitwarden-cli
+      firefox
+      browsh
+      unzip
+      yt-dlp
+    ];
+    sessionVariables = {
+      SHELL = "${pkgs.zsh}/bin/zsh";
+      MANPAGER = "nvim +Man!";
+      BROWSER = "firefox";
+      IMAGE_VIEWER = "imv";
+#      IMAGE_VIEWER = "qview";
+    };
+  };
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
+  };
+  services.udiskie = {
+    enable = true;
+    automount = true;
+    notify = true;
+    settings = {
+      program_options = {
+        udisks_version = 2;
+      	tray = "auto";
+	      icon_names.media = [ "drive-removable-media-usb" ];
+      };
     };
   };
 }

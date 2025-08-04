@@ -61,8 +61,8 @@
     settings = {
       program_options = {
         udisks_version = 2;
-	tray = "auto";
-	icon_names.media = [ "drive-removable-media-usb" ];
+      	tray = "auto";
+	      icon_names.media = [ "drive-removable-media-usb" ];
       };
     };
   };
