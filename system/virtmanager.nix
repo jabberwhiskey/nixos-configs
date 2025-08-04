@@ -5,9 +5,12 @@
     spiceUSBRedirection.enable = true;
     libvirtd.qemu = {
       swtpm.enable = true;
-      ovmf.packages = [
-        pkgs.OVMFFull.fd
-      ];
+      ovmf = {
+        enable = true;
+        packages = [
+          pkgs.OVMFFull.fd
+        ];
+      };
     };
   };
   users.users.jcw = {
@@ -19,4 +22,5 @@
       pkgs.spice
       ];
   };
+  systemd.tmpfiles.rules = [ "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware" ];
 }
