@@ -18,8 +18,8 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     jovian = {
-      url = "github:https://github.com/Jovian-Experiments/Jovian-NixOS";
-    };
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+      };
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
@@ -44,6 +44,7 @@
     lanzaboote,
     hyprland,
     anyrun,
+    jovian,
     ...
   }: {
     nixosConfigurations = {
@@ -101,7 +102,7 @@
          ];
        };
        gpdwin = nixpkgs.lib.nixosSystem {
-	       specialArgs = {inherit inputs;};
+      	specialArgs = {inherit inputs;};
          modules = [
          ./hosts/gpd.nix
           home-manager.nixosModules.home-manager
