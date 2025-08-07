@@ -100,6 +100,14 @@
            }
          ];
        };
+       gpdwin = nixpkgs.lib.nixosSystem {
+	       specialArgs = {inherit inputs;};
+         modules = [
+         ./hosts/gpd.nix
+          home-manager.nixosModules.home-manager
+          jovian.nixosModules.default
+         ];
+       };
     };
 #Home-manager configurations
     homeConfigurations = {

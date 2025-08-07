@@ -13,11 +13,15 @@
       ../system/steam.nix
     ];
     home-manager = {
-      users.jcw = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      extraSpecialArgs = { inherit inputs;};
+     users.jcw = {
         imports = [
           ..home/home.nix
         ];
       };
+      home.stateVersion = "23.05";
     };
     jovian.steam.autoStart = true;
 
