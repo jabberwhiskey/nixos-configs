@@ -23,12 +23,12 @@
     options = [ "subvol=root" "compress=zstd" ];
   };
   fileSystems."/home" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-label/root";
     fsType = "btrfs";
     options = [ "subvol=home" "compress=zstd" ];
   };
   fileSystems."/nix" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-label/root";
     fsType = "btrfs";
     options = [ "subvol=nix" "compress=zstd" "noatime" ];
   };
