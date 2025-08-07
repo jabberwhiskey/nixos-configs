@@ -1,10 +1,11 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, inputs, ... }:
 {
   config = {
     nixpkgs = {
       hostPlatform = "x86_64-linux";
     };
     imports = [
+      ../hardware/gpd.nix
       ../user/user.nix
       ../system/basic.nix
       ../system/containers.nix
@@ -18,6 +19,7 @@
         ];
       };
     };
+    jovian.steam.autoStart = true;
 
   };
 }
