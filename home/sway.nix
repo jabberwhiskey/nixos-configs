@@ -18,6 +18,11 @@
         terminal = "foot";
 
         workspaceAutoBackAndForth = true;
+        input = {
+          "type:keyboard" = {
+            xkb_options = caps:swapescape;
+          };
+        };
         output = {
           "*" = {
             bg =  "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
@@ -48,11 +53,11 @@
           {
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
             position = "top";
-            command = "${pkgs.sway}/bin/swaybar";
+            command = "swaybar";
             id = "swaybar";
             trayPadding = 5;
             fonts = {
-              names = ["DejaVu Sans Mono" "FontAwesome5Free"];
+              names = ["DejaVu Sans Mono" "FontAwesome6Free"];
               style = "Bold Semi-Condensed";
               size = 10.0;
             };
@@ -156,9 +161,9 @@
           "print" = "exec grim  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
           "Shift+print" = "exec slurp | grim -g -  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
 
-          "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
-          "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
+          "XF86AudioMute" = "exec /bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "XF86AudioRaiseVolume" = "exec /bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
+          "XF86AudioLowerVolume" = "exec /bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
 
           "XF86MonBrightnessUp" = "exec light -A 10";
           "XF86MonBrightnessDown" = "exec light -U 10";
@@ -185,6 +190,7 @@
       };
       systemd.enable = true;
       extraConfig = ''
+        bindswitch --reload --locked lid:on exec '/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill'
       '';
       swaynag = {
         enable = true;
@@ -259,42 +265,23 @@
     timeouts = [
       {
         timeout = 600;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
+        command = "/bin/systemctl suspend";
       }
  
       {
         timeout = 300;
-        command = "/bin/swaylock";      
+        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";      
       }
     ];
     events = [
       {
         event = "before-sleep";
-        command = "/bin/swaylock";
+        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";      
+
       }
     ];
   };
   services.dunst = {
     enable = true;
   };
-  home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.frappeBlue;
-    size = 25;
-    name = "Catppuccin-Frappe-Blue-Cursors";
-  };
-  gtk.cursorTheme = {
-    name = "Catppuccin-Frappe-Blue-Cursors";
-    size = 25;
-    package = pkgs.catppuccin-cursors.frappeBlue;
-  };
-#  services.wpaperd = {
-#    enable = true;
-#    settings = {
-#      default = {
-#        path = "${config.home.homeDirectory}/Pictures/Wallpapers/";
-#        sorting = "descending";
-#        duration = "10m";
-#      };
-#    };
-#  };
 }

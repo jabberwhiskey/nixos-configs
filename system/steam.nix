@@ -27,11 +27,32 @@
         ];
     };
   }; 
-  programs.gamemode.enable = true;
+  programs.gamemode = { 
+    enable = true;
+    settings = {
+      general = {
+        reaper_freq = 5;
+	desiredgov = "performance";
+        desiredprof = "performance";
+	softrealtime = "auto";
+	inhibit_screensaver = 1;
+	renice = 0;
+      };
+      gpu = {
+        apply_gpu_optimisations = "accept-responsibility";
+	amd_perfprmance_level = "high";
+      };
+      cpu = { 
+        park_cores = "yes";
+        pin_cores =  "yes";
+      };
+    };
+  };
   environment.systemPackages = [
     pkgs.lutris
     pkgs.gamescope
     pkgs.steamtinkerlaunch
+    pkgs.lm_sensors
   ];
-
+  users.users.jcw.extraGroups = [ "gamemode" ];
 }

@@ -57,10 +57,6 @@
     settings = {
       monitor = [",preferred,auto,1"];
       exec-once = [
-        "${pkgs.waybar}/bin/waybar"
-        "${pkgs.kdePackages.kwallet}/bin/kwalletd6"
-        "${pkgs.dunst}/bin/dunst"
-        "${pkgs.wpaperd}/bin/wpaperd"
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
@@ -239,6 +235,7 @@
         timeout = 10;
       };
     };
+    waylandDisplay = "wayland-1";
   };
   services.hypridle = {
     enable = true;
@@ -355,5 +352,27 @@
   };
   services.playerctld = {
     enable = true;
+  };
+  systemd.user = {
+    enable = true;
+    services = {
+      dunst = {
+        Unit = {
+          After = [ "hyprland-session.target" ];
+        };
+        Service = {
+          ExecStart = "${pkgs.dunst}/bin/dunst";
+        };
+        Install = {
+          WantedBy = [ "graphical-session.target" ];
+        };
+      };
+      wpaperd= {
+        Unit = {
+          Wants = [ "hyprland-session.target" ];
+          ExecStart = "${pkgs.wpaperd}/bin/wpaperd";
+        };
+      };
+    };
   };
 }

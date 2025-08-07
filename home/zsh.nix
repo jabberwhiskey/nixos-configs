@@ -26,6 +26,9 @@
 
     initContent = ''
       setopt NO_NOMATCH
+      export MANPAGER='nvim +Man!'
+      export PATH=$PATH:/home/jcw/.local/share/flatpak/exports/share
+      export PATH=$PATH:/var/lib/flatpak/exports/share
     '';
   };
   programs.bash.initExtra = "exec zsh";

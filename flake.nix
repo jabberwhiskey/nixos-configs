@@ -8,6 +8,10 @@
       url = "github:fort-nix/nix-bitcoin/release";
       inputs.nixpkgs.follows = "stable";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +28,10 @@
       url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -33,7 +41,9 @@
     home-manager,
     stable,
     nixos-hardware,
+    lanzaboote,
     hyprland,
+    anyrun,
     ...
   }: {
     nixosConfigurations = {
@@ -43,6 +53,7 @@
         modules = [
           ./hosts/nixos-laptop.nix
           home-manager.nixosModules.home-manager
+          lanzaboote.nixosModules.lanzaboote
         ];
      };
 #node
@@ -71,13 +82,8 @@
         modules = [
           ./hosts/framework.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-            };
-         }
           nixos-hardware.nixosModules.framework-amd-ai-300-series
+          lanzaboote.nixosModules.lanzaboote
         ];
        };
 #Desktop

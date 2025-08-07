@@ -8,7 +8,9 @@
 }: {
   imports = [
     ../system/basic.nix
-#    ../system/basic-stable.nix
+    ../system/kexec.nix
+    ../system/lanzaboote.nix
+    ../system/basic-stable.nix
 #    ../system/u2f.nix
     ../system/tailscale.nix
     ../system/hyprpam.nix
@@ -39,6 +41,7 @@
       };
       imports = [
         ../home/waybar.nix
+        ../home/anyrun.nix
         ../home/bash.nix
         ../home/nvim.nix
         ../home/zsh.nix
@@ -51,9 +54,12 @@
       home.stateVersion = "24.05";
     };
     useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs;};
     useUserPackages = true;
+  #  sharedModules = [ inputs.anyrun.homeManagerModules.default ];
   };
   home-manager.backupFileExtension = "backup";
+  programs.kdeconnect.enable = true;
   system.stateVersion = "24.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -63,9 +69,10 @@
   environment.systemPackages = with pkgs; [
     usbutils
     pciutils
+    sbctl
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
-  services.gvfs.enable = true; #for pcmanfm
+#  services.gvfs.enable = true; #for pcmanfm
 #  programs.sway ={
 #    enable = true;
 #    extraPackages = with pkgs; [

@@ -9,30 +9,36 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
-      fractal
       chromium
+#      fluffychat
       discord
       discordo
-      kdePackages.kasts
+#      kdePackages.kasts
       mumble
       mpv
       htop
       bitwarden
+      wiki-tui
+      ytermusic
       iamb
-      jellyfin-tui
-#      bitwarden-cli
+      goread
+      nix-inspect
+      neonmodem
+#      jellyfin-tui
+      bitwarden-cli
       firefox
       browsh
       unzip
       yt-dlp
       ffmpeg
-      qutebrowser
+      imv
     ];
     sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
       MANPAGER = "nvim +Man!";
       BROWSER = "firefox";
-      IMAGE_VIEWER = "qview";
+      IMAGE_VIEWER = "imv";
+#      IMAGE_VIEWER = "qview";
     };
   };
   xdg = {
@@ -55,8 +61,8 @@
     settings = {
       program_options = {
         udisks_version = 2;
-	tray = "auto";
-	icon_names.media = [ "drive-removable-media-usb" ];
+      	tray = "auto";
+	      icon_names.media = [ "drive-removable-media-usb" ];
       };
     };
   };
