@@ -22,6 +22,7 @@
     users.jcw = {
       imports = [
         ../home/home.nix
+        ../home/bash.nix
         ../home/zsh.nix
       ];
       programs.zsh.shellAliases = { 
