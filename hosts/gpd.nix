@@ -24,7 +24,11 @@
         ../home/home.nix
         ../home/zsh.nix
       ];
-    home.stateVersion = "23.05";
+      programs.zsh.shellAliases = { 
+        "update" = "sudo nixos-rebuild boot --flake github:nixos-configs#gpdwin --verbose";
+        "test" = "sudo nixos-rebuild test --flake github:nixos-configs#gpdwin --verbose";
+      };
+   home.stateVersion = "23.05";
     };
   };
 #  specialArgs = { inherit inputs; };
@@ -35,6 +39,9 @@
       autoStart = true;
       enable = true;
       desktopSession = "plasma";
+    };
+    steamos = {
+      useSteamOSConfig = true;
     };
     hardware.has.amd.gpu = true;
   };
