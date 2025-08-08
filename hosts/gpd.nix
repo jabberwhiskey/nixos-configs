@@ -38,11 +38,11 @@
     hardware.has.amd.gpu = true;
   };
   boot = {
-    kerenlParams = ["amd_pstate=active"];
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [
       "quiet"
+      "amd_pstate=active"
       "logLevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
