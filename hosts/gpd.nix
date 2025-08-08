@@ -50,6 +50,7 @@
     ];
   };
   services.displayManager.sddm.settings = {
+    enable = lib.mkForce false;
     Autologin = {
       Session = "gamescope-wayland.desktop";
       User = "jcw";
