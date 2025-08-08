@@ -31,6 +31,7 @@
   system.stateVersion = "25.05";
   jovian = {
     steam = {
+      user = "jcw";
       autoStart = true;
       enable = true;
       desktopSession = "plasma";
