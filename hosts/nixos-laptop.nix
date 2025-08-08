@@ -8,7 +8,6 @@
 }: {
   imports = [
     ../system/basic.nix
-    ../system/kexec.nix
     ../system/lanzaboote.nix
     ../system/basic-stable.nix
 #    ../system/u2f.nix
