@@ -54,8 +54,8 @@
       Session = "gamescope-wayland.desktop";
       User = "jcw";
     };
+    loader.plymouth.enable = true;
   };
-  loader.plymouth.enable = true;
   powerManagement = {
   enable = true;
   };
