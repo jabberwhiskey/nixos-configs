@@ -33,7 +33,7 @@
     steam = {
       autoStart = true;
       enable = true;
-      desktopSession = "plasmawayland";
+      desktopSession = "plasma";
     };
     hardware.has.amd.gpu = true;
   };
