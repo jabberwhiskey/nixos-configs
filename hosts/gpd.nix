@@ -55,7 +55,7 @@
       User = "jcw";
     };
   };
-  plymouth.enable = true;
+  loader.plymouth.enable = true;
   powerManagement = {
   enable = true;
   };
