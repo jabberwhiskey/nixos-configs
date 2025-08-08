@@ -48,14 +48,16 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-  };
-  services.displayManager.sddm.settings = {
-    enable = lib.mkForce false;
-    Autologin = {
-      Session = "gamescope-wayland.desktop";
-      User = "jcw";
-    };
     loader.plymouth.enable = true;
+  };
+  services.displayManager.sddm = {
+    enable = lib.mkForce false;
+    settings = {
+      Autologin = {
+        Session = "gamescope-wayland.desktop";
+        User = "jcw";
+      };
+    };
   };
   powerManagement = {
   enable = true;
