@@ -48,7 +48,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-    loader.plymouth.enable = true;
+    plymouth.enable = true;
   };
   services.displayManager.sddm = {
     enable = lib.mkForce false;
