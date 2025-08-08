@@ -29,8 +29,33 @@
   };
 #  specialArgs = { inherit inputs; };
   system.stateVersion = "25.05";
-  jovian.steam.autoStart = true;
-
+  jovian = {
+    steam = {
+      autoStart = true;
+      enable = true;
+      desktopSession = "plasmawayland";
+    };
+    hardware.has.amd.gpu = true;
+  };
+  boot = {
+    kerenlParams = ["amd_pstate=active"];
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "logLevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+  };
+  services.displayManager.sddm.settings = {
+    Autologin = {
+      Session = "gamescope-wayland.desktop";
+      User = "jcw";
+    };
+  };
+  plymouth.enable = true;
   powerManagement = {
   enable = true;
   };
