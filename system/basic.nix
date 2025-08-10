@@ -24,6 +24,9 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  nixpkgs.config.packageOverrides = pkgs: {
+    sudo = pkgs.sudo.override { withInsults = true; };
+  };
   environment.systemPackages = with pkgs; [
     tmux
     lan-mouse
