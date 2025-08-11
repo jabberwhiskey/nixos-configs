@@ -27,6 +27,7 @@
   environment.systemPackages = with pkgs; [
     tmux
     lan-mouse
+    sudo.override {  withInsults=true; } 
   ];
   nix = {
     gc = {
