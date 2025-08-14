@@ -43,8 +43,13 @@
     };
     steamos = {
       useSteamOSConfig = true;
+      enableAutoMountUdevRules = true;
+      enableBluetoothConfig = true;
     };
     hardware.has.amd.gpu = true;
+  };
+  decky-loader = {
+    enable = true;
   };
   boot = {
     consoleLogLevel = 0;
