@@ -127,6 +127,7 @@
       windowrule = [
 #      windowrulev2 = [
         "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
+        "float,class:^(xdg-desktop-portal-gtk)$,title:^(All Files)$"
         "float,class:^(Waydroid)$,title:^(Waydroid)$"
         "float,class:^(mpv)$,title:^(mpv)$"
       ];
