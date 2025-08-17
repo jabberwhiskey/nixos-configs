@@ -26,8 +26,8 @@
         ../home/zsh.nix
       ];
       programs.zsh.shellAliases = { 
-        "update" = "sudo nixos-rebuild boot --flake github:nixos-configs#gpdwin --verbose";
-        "test" = "sudo nixos-rebuild test --flake github:nixos-configs#gpdwin --verbose";
+        "update" = "sudo nixos-rebuild boot --flake github:jabberwhiskey/nixos-configs#gpdwin --verbose";
+        "test" = "sudo nixos-rebuild test --flake github:jabberwhiskey/nixos-configs#gpdwin --verbose";
       };
    home.stateVersion = "23.05";
     };
@@ -47,9 +47,6 @@
       enableBluetoothConfig = true;
     };
     hardware.has.amd.gpu = true;
-  };
-  decky-loader = {
-    enable = true;
   };
   boot = {
     consoleLogLevel = 0;
