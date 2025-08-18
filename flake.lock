@@ -598,6 +598,22 @@
         "type": "github"
       }
     },
+    "mesa-downgrade": {
+      "locked": {
+        "lastModified": 1754393734,
+        "narHash": "sha256-fbnmAwTQkuXHKBlcL5Nq1sMAzd3GFqCOQgEQw6Hy0Ak=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a683adc19ff5228af548c6539dbc3440509bfed3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a683adc19ff5228af548c6539dbc3440509bfed3",
+        "type": "github"
+      }
+    },
     "nix-bitcoin": {
       "inputs": {
         "extra-container": "extra-container",
@@ -828,6 +844,7 @@
         "hyprland": "hyprland",
         "jovian": "jovian",
         "lanzaboote": "lanzaboote",
+        "mesa-downgrade": "mesa-downgrade",
         "nix-bitcoin": "nix-bitcoin",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
