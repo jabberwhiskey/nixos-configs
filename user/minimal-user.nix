@@ -14,13 +14,11 @@
       "sound"
     ];
     useDefaultShell = true;
-    shell = pkgs.fish;
     packages = with pkgs; [
       neovim
     ];
   };
   #programs.zsh.enable = true;
-  programs.fish.enable = true;
   programs.git = {
     enable = true;
   };
