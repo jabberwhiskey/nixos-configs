@@ -8,6 +8,7 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/pam-u2f.nix
     ../system/lanzaboote.nix
     ../system/basic-stable.nix
 #    ../system/u2f.nix
