@@ -81,10 +81,10 @@
         "network" = {
 #          interface = "wlp170s0";
           format = "{ifname}";
-          format-wifi = "{essid} ({signalStrength}%) ";
+          format-wifi = "Connected ";
           format-ethernet = "{ifname} ";
-          format-disconnected = "";
-          #format-disconnected= "";
+          #format-disconnected = "";
+          format-disconnected= "";
           tooltip-format = "{ifname}";
           tooltip-format-wifi = "{essid} ({signalStrength}%) ";
           tooltip-format-ethernet = "{ifname} ";
@@ -193,6 +193,14 @@
       #bluetooth {
           background: #000000;
           color: white;
+      }
+      #idle_inhibitor {
+          color: white;
+          background-color: #000000;
+      }
+      #idle_inhibitor.activated {
+          color: white;
+          background-color: #1100FF;
       }
     '';
   };

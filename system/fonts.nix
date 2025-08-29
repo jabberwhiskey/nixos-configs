@@ -13,8 +13,5 @@
       ubuntu-classic
       ubuntu-sans-mono
     ];
-    fontconfig = {
-      };
-    };
   };
 }
