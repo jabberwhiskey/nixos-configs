@@ -82,7 +82,7 @@
         border_size = "2";
         "col.active_border" = "rgba(c0c0c0ee) rgba(ffffffee) 66deg";
         "col.inactive_border" = "rgba(000000aa)";
-        layout = "dawindle";
+        layout = "dwindle";
         allow_tearing = "false";
       };
       decoration = {
@@ -116,6 +116,7 @@
       };
       dwindle = {
         pseudotile = "true";
+        force_split = 2;
         preserve_split = "true";
       };
       master = {
