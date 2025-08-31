@@ -32,6 +32,7 @@
   hardware.sane.brscan5 = {
     enable = true;
   };
+  services.printing.enable = true;
   hardware.sane.brscan4.enable = true;
   home-manager = { 
     users.jcw = {
