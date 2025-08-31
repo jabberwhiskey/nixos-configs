@@ -15,13 +15,20 @@
     ../system/containers.nix
     ../system/virtmanager.nix
     ../hardware/desktop.nix
+<<<<<<< HEAD
     ../system/hyprland.nix
+=======
+>>>>>>> e1d11bc (cleaned up config)
     #../system/qt.nix
     ../system/bluetooth.nix
     ../system/fonts.nix
     #../system/kernel-latest.nix
     ../system/kernel-zen.nix
+<<<<<<< HEAD
     ../system/greetd.nix
+=======
+    #../system/greetd.nix
+>>>>>>> e1d11bc (cleaned up config)
     ../system/steam.nix
   ];
   home-manager = {
@@ -31,6 +38,7 @@
         ../home/home.nix
         ../home/bash.nix
         ../home/zsh.nix
+<<<<<<< HEAD
         ../home/inhibit-hyprland.nix
         ../home/waybar2.nix
         ../home/hm-dconf.nix
@@ -50,6 +58,19 @@
     };
   };
   #specialArgs = { inherit inputs; };
+=======
+        #../home/inhibit-hyprland.nix
+        #../home/waybar2.nix
+        #../home/hyprland.nix
+        ../home/hm-dconf.nix
+      ];
+      home.stateVersion = "24.11";
+      #wayland.windowManager.hyprland = {
+      #	settings.debug = { full_cm_proto=true; };
+      #};
+    };
+  };
+>>>>>>> e1d11bc (cleaned up config)
   system.stateVersion = "24.11";
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
 
@@ -60,7 +81,10 @@
   users.users.jcw = {
     extraGroups = [
       "input"
+<<<<<<< HEAD
       "dialout"
+=======
+>>>>>>> e1d11bc (cleaned up config)
     ];
   };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -69,6 +93,10 @@
 
   environment.systemPackages = with pkgs; [
     usbutils
+<<<<<<< HEAD
+=======
+    #lxqt.lxqt-policykit
+>>>>>>> e1d11bc (cleaned up config)
     bazecor
     pciutils
     g810-led
@@ -87,5 +115,13 @@
   #  enable = true;
   #  cpuFreqGovernor = "performance";
   #};
+<<<<<<< HEAD
+=======
+  #programs.hyprland = {
+  #  enable = true;
+  #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  #  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  #};
+>>>>>>> e1d11bc (cleaned up config)
   nixpkgs.hostPlatform = "x86_64-linux";
 }

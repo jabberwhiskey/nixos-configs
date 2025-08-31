@@ -11,9 +11,16 @@
     packages = with pkgs; [
       btop
       chromium
+<<<<<<< HEAD
       lazygit
       discord
       discordo
+=======
+      #      fluffychat
+      discord
+      discordo
+      #      kdePackages.kasts
+>>>>>>> e1d11bc (cleaned up config)
       mumble
       mpv
       htop
@@ -23,6 +30,11 @@
       iamb
       goread
       nix-inspect
+<<<<<<< HEAD
+=======
+      neonmodem
+      #      jellyfin-tui
+>>>>>>> e1d11bc (cleaned up config)
       bitwarden-cli
       firefox
       browsh

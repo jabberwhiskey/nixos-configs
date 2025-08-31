@@ -9,7 +9,10 @@
 {
   imports = [
     ../system/basic.nix
+<<<<<<< HEAD
     ../system/fprint.nix
+=======
+>>>>>>> e1d11bc (cleaned up config)
     ../system/hyprland.nix
     ../system/pam-u2f.nix
     ../system/lanzaboote.nix
@@ -64,7 +67,10 @@
     usbutils
     pciutils
     sbctl
+<<<<<<< HEAD
     tor-browser
+=======
+>>>>>>> e1d11bc (cleaned up config)
   ];
   #  services.gvfs.enable = true; #for pcmanfm
   programs.dconf.enable = true;

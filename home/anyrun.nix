@@ -59,6 +59,7 @@
     extraCss = # css
       ''
         * {
+<<<<<<< HEAD
 
         }
         box.main {
@@ -121,9 +122,24 @@
           100% {
             opacity: 1;
           }
+=======
+          all: unset;
+          font-family: JetBrainsMono Nerd Font;
+
+        }
+        entry#entry {
+          background: red;
+        }
+        #window {
+          Background  : transparent; 
+>>>>>>> e1d11bc (cleaned up config)
         }
       '';
 
   };
+<<<<<<< HEAD
   wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, anyrun" ];
+=======
+  wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun" ];
+>>>>>>> e1d11bc (cleaned up config)
 }

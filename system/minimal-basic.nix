@@ -7,7 +7,11 @@
 }:
 {
   imports = [
+<<<<<<< HEAD
     ../user/minimal-user.nix
+=======
+    ../user/user-minimal.nix
+>>>>>>> e1d11bc (cleaned up config)
   ];
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
