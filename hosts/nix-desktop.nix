@@ -14,7 +14,6 @@
     ../system/containers.nix
     ../system/virtmanager.nix
     ../hardware/desktop.nix
-    ../user/user.nix
 #    ../system/qt.nix
     ../system/bluetooth.nix
     ../system/fonts.nix

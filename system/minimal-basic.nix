@@ -5,6 +5,9 @@
   config,
   ...
 }: {
+  imports = [
+    ../user/user-minimal.nix
+  ];
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
