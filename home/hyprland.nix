@@ -49,6 +49,8 @@
     enable = true;
   };
   wayland.windowManager.hyprland = {
+    package = null;
+    portalPackage = null;
     enable = true;
     systemd.enable = true;
     settings = {

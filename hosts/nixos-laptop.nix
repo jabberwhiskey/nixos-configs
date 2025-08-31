@@ -29,17 +29,8 @@
     ../user/user.nix
     ../hardware/hplaptop.nix
   ];
-  hardware.sane.brscan5 = {
-    enable = true;
-  };
-  services.printing.enable = true;
-  hardware.sane.brscan4.enable = true;
   home-manager = { 
     users.jcw = {
-      wayland.windowManager.hyprland = {
-        package = null;
-        portalPackage = null;
-      };
       programs.zsh.shellAliases = { 
         "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
         "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
@@ -61,11 +52,12 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs;};
     useUserPackages = true;
-  #  sharedModules = [ inputs.anyrun.homeManagerModules.default ];
   };
+
   home-manager.backupFileExtension = "backup";
-  programs.kdeconnect.enable = true;
+  
   system.stateVersion = "24.05";
+
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "nixos-laptop";
@@ -78,18 +70,6 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 #  services.gvfs.enable = true; #for pcmanfm
-#  programs.sway ={
-#    enable = true;
-#    extraPackages = with pkgs; [
-#      swaylock-effects
-#      swayidle
-#      wofi
-#      i3status-rust
-#      grim 
-#      slurp
-#      ranger
-#    ];
-#  };
     programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -97,14 +77,9 @@
   };
   security.pam.services.jcw.kwallet = {
     enable = true;
-    forceRun = true;
+    forceRun = true; #run for hyprland
     package = pkgs.kdePackages.kwallet-pam;
   };
-  nix.settings.trusted-users = [
-    "jcw"
-    "root"
-
-  ];
   hardware.brillo.enable = true;
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot

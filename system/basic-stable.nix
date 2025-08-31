@@ -5,11 +5,10 @@
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  services.udisks2 = {
-    enable = true;
+  nix.settings = {
+    trusted-users = [ "jcw" ];
+    experimental-features = ["nix-command" "flakes"];
   };
-
   time.timeZone = "US/Mountain";
 
   networking.networkmanager.enable = true;
@@ -31,7 +30,6 @@
 
   environment.systemPackages = with pkgs; [
     tmux
-    lan-mouse
   ];
   nix = {
     gc = {
