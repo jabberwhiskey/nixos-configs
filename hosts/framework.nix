@@ -7,6 +7,7 @@
 }: {
   imports = [
     ../system/basic.nix
+    ../system/brotherprinter.nix
     ../system/lanzaboote.nix
     ../system/greetd.nix
     ../system/qt.nix
@@ -70,9 +71,6 @@
     enable = true;
     package = pkgs.kdePackages.kwallet;
   };
-  #  services.xserver.displayManager.sessionPackages = with pkgs; [
-  #    sway
-  #  ];
     programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
