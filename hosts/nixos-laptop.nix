@@ -29,6 +29,10 @@
     ../user/user.nix
     ../hardware/hplaptop.nix
   ];
+  hardware.sane.brscan5 = {
+    enable = true;
+  };
+  hardware.sane.brscan4.enable = true;
   home-manager = { 
     users.jcw = {
       wayland.windowManager.hyprland = {

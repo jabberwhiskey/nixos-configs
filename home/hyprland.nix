@@ -8,13 +8,10 @@
   home = {
     packages = with pkgs; [
 #      imv
-      qview
       wl-clipboard
       cliphist
-      waybar
       qpwgraph
       pcmanfm-qt
-#      nomacs
       brillo
       qt6ct
       kdePackages.breeze-icons
@@ -61,7 +58,6 @@
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
       "$mod" = "SUPER";
-#      "$term" = "${pkgs.alacritty}/bin/alacritty";
       "$term" = "${pkgs.foot}/bin/foot";
       "$fileManager" = "${pkgs.pcmanfm-qt}/bin/pcmanfm-qt";
       env = [
@@ -97,10 +93,14 @@
           passes = "1";
           vibrancy = "0.1696";
         };
- #       "col.shadow" = "rgba(1a1a1aee)";
- #       drop_shadow = "true";
- #       shadow_range = "4";
- #       shadow_render_power = "3";
+        shadow.enabled = false;
+      };
+      group = {
+        groupbar = {
+          gradients = true;
+          indicator_height = 4;
+          "col.active" = "0xffffff";
+        };
       };
       animations = {
         enabled = "true";
@@ -121,20 +121,12 @@
       master = {
         new_status = "true";
       };
-      gestures = {
-        workspace_swipe = "false";
-      };
       windowrule = [
-#      windowrulev2 = [
         "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
         "float,class:^(xdg-desktop-portal-gtk)$,title:^(All Files)$"
         "float,class:^(Waydroid)$,title:^(Waydroid)$"
         "float,class:^(mpv)$,title:^(mpv)$"
       ];
-#      windowrule = [
-#        "float,^(qview)$"
-#        "float,^(mpv)$"
-#      ];
       bind =
         [
           "$mod, Return, exec, $term"
@@ -309,16 +301,6 @@
       };
     };
   };
-#  programs.alacritty = {
-#    enable = true;
-#    settings = {
-#      window = {
-#        decorations = "none";
-#        blur = true;
-#        opacity = 0.8;
-#      };
-#    };
-#  };
   programs.foot = {
     enable = true;
     settings = {
