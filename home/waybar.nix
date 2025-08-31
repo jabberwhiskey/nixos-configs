@@ -51,9 +51,9 @@
             "on-scroll-down" = "shift_down";
           };
         };
-        idle_inhibitor = {
+        "idle_inhibitor" = {
           format = "{icon}";
-          format_icons = {
+          format-icons = {
             activated = "";
             deactivated = "";
           };
@@ -68,7 +68,6 @@
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
         };
         "battery" = {
- #         bat = "BAT1";
           interval = 60;
           states = {
             warning = 30;
@@ -79,7 +78,6 @@
           max-length = 25;
         };
         "network" = {
-#          interface = "wlp170s0";
           format = "{ifname}";
           format-wifi = "Connected ";
           format-ethernet = "{ifname} ";
@@ -194,7 +192,7 @@
           background: #000000;
           color: white;
       }
-      #idle_inhibitor {
+      #idle_inhibitor.deactivated {
           color: white;
           background-color: #000000;
       }
