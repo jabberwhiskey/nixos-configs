@@ -66,4 +66,5 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
+  services.printing.enable = true;
 }

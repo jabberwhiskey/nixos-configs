@@ -19,7 +19,6 @@
     ../system/systemdboot.nix
     ../system/virtmanager.nix
     ../system/containers.nix
-    ../user/user.nix
     ../hardware/framework.nix
     ../system/sdr.nix
 #    ../system/kernel-latest.nix

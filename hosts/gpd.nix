@@ -5,7 +5,6 @@
   };
   imports = [
     ../hardware/gpd.nix
-    ../user/user.nix
     ../system/kernel-latest.nix
     ../system/basic.nix
     ../system/fonts.nix

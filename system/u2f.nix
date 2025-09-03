@@ -8,16 +8,13 @@
      login.u2fAuth = true;
      sudo.u2fAuth = true;
  };
- environment.systemPackages = [
-  pkgs.solo2-cli
- ];
  # https://github.com/solokeys/solo2-cli/blob/main/70-solo2.rules
  services.udev.packages = [
      pkgs.yubikey-personalization
  ];
  security.pam.yubico = {
    enable = true;
-   debug = true;
+   debug = false;
    mode = "challenge-response";
   # id = [ "12345678" ];
 };
