@@ -12,7 +12,7 @@
     ../system/pam-u2f.nix
     ../system/lanzaboote.nix
     ../system/basic-stable.nix
-#    ../system/u2f.nix
+    ../system/u2f.nix
     ../system/tailscale.nix
     ../system/hyprpam.nix
     ../system/qt.nix
@@ -24,7 +24,6 @@
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
-    ../user/user.nix
     ../hardware/hplaptop.nix
   ];
   home-manager = { 

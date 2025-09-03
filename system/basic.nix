@@ -6,6 +6,9 @@
 }: {
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  imports = [
+    ../user/user.nix
+  ];
   services.udisks2 = {
     enable = true;
   };
