@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    mesa-downgrade.url = "github:NixOS/nixpkgs/a683adc19ff5228af548c6539dbc3440509bfed3"; #for gamescope, it breaks on mesa 25.2
+    mesa-downgrade.url = "github:NixOS/nixpkgs/a683adc19ff5228af548c6539dbc3440509bfed3"; # for gamescope, it breaks on mesa 25.2
     stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nix-bitcoin = {
       url = "github:fort-nix/nix-bitcoin/release";
@@ -20,7 +20,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     jovian = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
-      };
+    };
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
@@ -35,101 +35,96 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nix-bitcoin,
-    nixpkgs,
-    home-manager,
-    stable,
-    nixos-hardware,
-    lanzaboote,
-    hyprland,
-    anyrun,
-    mesa-downgrade, #for gamescope
-    jovian,
-    ...
-  }: {
-    nixosConfigurations = {
-#beater laptop
-      nixos-laptop = nixpkgs.lib.nixosSystem {
-      	specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/nixos-laptop.nix
-          home-manager.nixosModules.home-manager
-          lanzaboote.nixosModules.lanzaboote
-        ];
-     };
-#node
-     small-server = stable.lib.nixosSystem {
-       modules = [
-         ./hosts/small-server.nix
-          nix-bitcoin.nixosModules.default
-          (nix-bitcoin + /modules/presets/secure-node.nix)
-          (nix-bitcoin + /modules/presets/wireguard.nix)
-          (nix-bitcoin + /modules/presets/hardened.nix)
-   	   ];
-       system = "x86_64-linux";
-       specialArgs = {inherit inputs;};
-     };
-#media server/nas
-     nixos-server = stable.lib.nixosSystem {
-       modules = [
-         ./hosts/nixos-server.nix
-   	   ];
-       specialArgs = {inherit inputs;};
-     };
-#Framework Laptop
-     framework = nixpkgs.lib.nixosSystem {
-       system = "x86_64-linux";
-	     specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/framework.nix
-          home-manager.nixosModules.home-manager
-          nixos-hardware.nixosModules.framework-amd-ai-300-series
-          lanzaboote.nixosModules.lanzaboote
-      	  { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } #gamescope breaks on updated mesa
-        ];
-       };
-#Desktop
-       nix-desktop = nixpkgs.lib.nixosSystem {
-	       specialArgs = {inherit inputs;};
-         modules = [
-           ./hosts/nix-desktop.nix
-      	   { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } #for gamescope
-           home-manager.nixosModules.home-manager
-           {
-             home-manager = {
-               useGlobalPkgs = true;
-               useUserPackages = true;
-             };
-           }
-         ];
-       };
-       gpdwin = nixpkgs.lib.nixosSystem {
-      	specialArgs = {inherit inputs;};
-         modules = [
-         ./hosts/gpd.nix
-          home-manager.nixosModules.home-manager
-          jovian.nixosModules.default
-         ];
-       };
-    };
-#Home-manager configurations
-    homeConfigurations = {
-      "jcw@craptop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs self;};
-        modules = [
-          ./hosts/craptop.nix
-        ];
+  outputs =
+    inputs@{
+      self,
+      nix-bitcoin,
+      nixpkgs,
+      home-manager,
+      stable,
+      nixos-hardware,
+      lanzaboote,
+      hyprland,
+      anyrun,
+      mesa-downgrade, # for gamescope
+      jovian,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        #beater laptop
+        nixos-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/nixos-laptop.nix
+            home-manager.nixosModules.home-manager
+            lanzaboote.nixosModules.lanzaboote
+          ];
+        };
+        #node
+        small-server = stable.lib.nixosSystem {
+          modules = [
+            ./hosts/small-server.nix
+            nix-bitcoin.nixosModules.default
+            (nix-bitcoin + /modules/presets/secure-node.nix)
+            (nix-bitcoin + /modules/presets/wireguard.nix)
+            (nix-bitcoin + /modules/presets/hardened.nix)
+          ];
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+        };
+        #media server/nas
+        nixos-server = stable.lib.nixosSystem {
+          modules = [
+            ./hosts/nixos-server.nix
+          ];
+          specialArgs = { inherit inputs; };
+        };
+        #Framework Laptop
+        framework = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/framework.nix
+            home-manager.nixosModules.home-manager
+            nixos-hardware.nixosModules.framework-amd-ai-300-series
+            lanzaboote.nixosModules.lanzaboote
+            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # gamescope breaks on updated mesa
+          ];
+        };
+        #Desktop
+        nix-desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/nix-desktop.nix
+            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # for gamescope
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
+            }
+          ];
+        };
+        gpdwin = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/gpd.nix
+            home-manager.nixosModules.home-manager
+            jovian.nixosModules.default
+          ];
+        };
       };
-      "jcw@linainverse" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs self;};
-        modules = [
-          ./hosts/linainverse.nix
-        ];
+      #Home-manager configurations
+      homeConfigurations = {
+        "jcw@linainverse" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs self; };
+          modules = [
+            ./hosts/linainverse.nix
+          ];
+        };
       };
     };
-  };
 }

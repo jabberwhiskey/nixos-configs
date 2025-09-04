@@ -4,12 +4,16 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   imports = [
     ../user/user-minimal.nix
   ];
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   time.timeZone = "US/Mountain";
 
@@ -21,14 +25,14 @@
     openFirewall = lib.mkForce false;
     settings = {
       PasswordAuthentication = false;
-#      PasswordAuthentication = true;
+      #      PasswordAuthentication = true;
       KbdInteractiveAuthentication = false;
     };
   };
   networking.firewall = {
     enable = true;
-#    allowedTCPPorts = [ 80 9091 51413];
-    trustedInterfaces = ["tailscale0"];
+    #    allowedTCPPorts = [ 80 9091 51413];
+    trustedInterfaces = [ "tailscale0" ];
   };
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";

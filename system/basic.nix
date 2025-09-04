@@ -3,9 +3,13 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   imports = [
     ../user/user.nix
   ];
@@ -53,7 +57,7 @@
   };
   networking.firewall = {
     enable = true;
-    trustedInterfaces = ["tailscale0"];
+    trustedInterfaces = [ "tailscale0" ];
   };
   services.openssh = {
     enable = true;

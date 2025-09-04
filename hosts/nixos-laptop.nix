@@ -5,7 +5,8 @@
   inputs,
   hyprland,
   ...
-}: {
+}:
+{
   imports = [
     ../system/basic.nix
     ../system/hyprland.nix
@@ -19,16 +20,16 @@
     ../system/waydroid.nix
     ../system/intel-laptop.nix
     ../system/greetd.nix
-#    ../system/kernel-latest.nix
+    #../system/kernel-latest.nix
     ../system/kernel-zen.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../system/containers.nix
     ../hardware/hplaptop.nix
   ];
-  home-manager = { 
+  home-manager = {
     users.jcw = {
-      programs.zsh.shellAliases = { 
+      programs.zsh.shellAliases = {
         "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
         "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
       };
@@ -44,12 +45,12 @@
       home.stateVersion = "24.05";
     };
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     useUserPackages = true;
   };
 
   home-manager.backupFileExtension = "backup";
-  
+
   system.stateVersion = "24.05";
 
   nixpkgs.hostPlatform = "x86_64-linux";
@@ -62,6 +63,6 @@
     pciutils
     sbctl
   ];
-#  services.gvfs.enable = true; #for pcmanfm
+  #  services.gvfs.enable = true; #for pcmanfm
   programs.dconf.enable = true;
 }

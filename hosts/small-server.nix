@@ -1,9 +1,11 @@
-{ config,
+{
+  config,
   inputs,
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../hardware/small-server.nix
     ../system/nixBitcoin.nix
@@ -22,7 +24,7 @@
     enable = true;
     settings = {
       PasswordAuthentication = false;
-#      PasswordAuthentication = true;
+      #      PasswordAuthentication = true;
       KbdInteractiveAuthentication = false;
     };
   };
@@ -30,15 +32,15 @@
     mc
     htop
   ];
-   nix.settings.trusted-users = [
-     "jcw"
-    ];
+  nix.settings.trusted-users = [
+    "jcw"
+  ];
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot/efi";
   users.users.jcw = {
-    };
+  };
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [22];
+    allowedTCPPorts = [ 22 ];
   };
   nixpkgs.hostPlatform = "x86_64-linux";
 }

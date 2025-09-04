@@ -4,7 +4,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../hardware/nucserver.nix
     ../user/minimal-user.nix
@@ -27,8 +28,11 @@
     htop
   ];
   users.users.jcw = {
-     extraGroups = [ "jellyfin" "sonarr" ];
-    };
+    extraGroups = [
+      "jellyfin"
+      "sonarr"
+    ];
+  };
   systemd.tmpfiles.settings = {
     "10-perms_for_nas" = {
       "/media/nas" = {

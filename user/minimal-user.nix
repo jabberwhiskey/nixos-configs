@@ -2,7 +2,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   users.users.jcw = {
     isNormalUser = true;
     description = "jcw";

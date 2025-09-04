@@ -1,4 +1,9 @@
-{ pkgs, config, nix-bitcoin, ... }:
+{
+  pkgs,
+  config,
+  nix-bitcoin,
+  ...
+}:
 {
   services.bitcoind = {
     enable = true;

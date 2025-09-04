@@ -1,4 +1,10 @@
-{ pkgs, config, lib, inputs, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  inputs,
+  ...
+}:
 {
   nixpkgs = {
     hostPlatform = "x86_64-linux";
@@ -17,21 +23,21 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     users.jcw = {
       imports = [
         ../home/home.nix
         ../home/bash.nix
         ../home/zsh.nix
       ];
-      programs.zsh.shellAliases = { 
+      programs.zsh.shellAliases = {
         "update" = "sudo nixos-rebuild boot --flake github:jabberwhiskey/nixos-configs#gpdwin --verbose";
         "test" = "sudo nixos-rebuild test --flake github:jabberwhiskey/nixos-configs#gpdwin --verbose";
       };
-   home.stateVersion = "23.05";
+      home.stateVersion = "23.05";
     };
   };
-#  specialArgs = { inherit inputs; };
+  #  specialArgs = { inherit inputs; };
   system.stateVersion = "25.05";
   jovian = {
     steam = {
@@ -70,7 +76,7 @@
     };
   };
   powerManagement = {
-  enable = true;
+    enable = true;
   };
   networking.hostName = "gpdwin";
 }

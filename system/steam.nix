@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ...  }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   programs.steam = {
     enable = true;
@@ -21,30 +26,30 @@
           libpulseaudio
           libvorbis
           stdenv.cc.cc.lib
-	  libkrb5
+          libkrb5
           keyutils
           gamemode
         ];
     };
-  }; 
-  programs.gamemode = { 
+  };
+  programs.gamemode = {
     enable = true;
     settings = {
       general = {
         reaper_freq = 5;
-	desiredgov = "performance";
+        desiredgov = "performance";
         desiredprof = "performance";
-	softrealtime = "auto";
-	inhibit_screensaver = 1;
-	renice = 0;
+        softrealtime = "auto";
+        inhibit_screensaver = 1;
+        renice = 0;
       };
       gpu = {
         apply_gpu_optimisations = "accept-responsibility";
-	amd_perfprmance_level = "high";
+        amd_perfprmance_level = "high";
       };
-      cpu = { 
+      cpu = {
         park_cores = "yes";
-        pin_cores =  "yes";
+        pin_cores = "yes";
       };
     };
   };
