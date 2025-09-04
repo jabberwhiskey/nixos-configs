@@ -1,30 +1,50 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "ahci"
+    "nvme"
+    "usb_storage"
+    "usbhid"
+    "sd_mod"
+    "sdhci_pci"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d43144f9-6a98-44fc-bbb1-c4ee38b69c8a";
-      fsType = "btrfs";
-      options = [ "subvol=@" "compress=zstd" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/d43144f9-6a98-44fc-bbb1-c4ee38b69c8a";
+    fsType = "btrfs";
+    options = [
+      "subvol=@"
+      "compress=zstd"
+    ];
+  };
 
-  fileSystems."/mome" =
-    { device = "/dev/disk/by-uuid/d43144f9-6a98-44fc-bbb1-c4ee38b69c8a";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" ];
-    };
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/5CBF-00A4";
-      fsType = "vfat";
-    };
+  fileSystems."/mome" = {
+    device = "/dev/disk/by-uuid/d43144f9-6a98-44fc-bbb1-c4ee38b69c8a";
+    fsType = "btrfs";
+    options = [
+      "subvol=@home"
+      "compress=zstd"
+    ];
+  };
+  fileSystems."/boot/efi" = {
+    device = "/dev/disk/by-uuid/5CBF-00A4";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
 

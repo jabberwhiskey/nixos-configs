@@ -11,9 +11,16 @@
         layer = "top";
         position = "top";
         height = 45;
-        modules-left = ["hyprland/workspaces"];
-        modules-center = ["hyprland/window"];
-        modules-right = ["idle_inhibitor" "battery" "network" "wireplumber" "tray" "clock"];
+        modules-left = [ "hyprland/workspaces" ];
+        modules-center = [ "hyprland/window" ];
+        modules-right = [
+          "idle_inhibitor"
+          "battery"
+          "network"
+          "wireplumber"
+          "tray"
+          "clock"
+        ];
 
         "hyprland/workspaces" = {
           format = "{name}";
@@ -74,7 +81,13 @@
             critical = 15;
           };
           format = "{capacity}% {icon}";
-          format-icons = ["" "" "" "" ""];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
           max-length = 25;
         };
         "network" = {
@@ -82,7 +95,7 @@
           format-wifi = "Connected ";
           format-ethernet = "{ifname} ";
           #format-disconnected = "";
-          format-disconnected= "";
+          format-disconnected = "";
           tooltip-format = "{ifname}";
           tooltip-format-wifi = "{essid} ({signalStrength}%) ";
           tooltip-format-ethernet = "{ifname} ";
@@ -93,7 +106,11 @@
           format = "{volume}% {icon}";
           format-muted = "";
           on-click = "qpwgraph";
-          format-icons = ["" "" ""];
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
         };
         "tray" = {
           spacing = 10;
@@ -110,12 +127,12 @@
           font-size: 15px;
           min-height: 0;
       }
-      
+
       window#waybar {
           background: #000000;
           color: white;
       }
-      
+
       tooltip {
         background: rgba(43, 48, 59, 0.5);
         border: 1px solid rgba(100, 114, 125, 0.5);
@@ -123,49 +140,49 @@
       tooltip label {
         color: white;
       }
-      
+
       #workspaces button {
           background: #000000;
           color: white;
           border-bottom: 1px solid transparent;
           padding: 0 5px;
       }
-      
+
       #workspaces button.focused {
           background: #ff0000;
           border-bottom: 3px solid white;
       }
-      
+
       #mode, #clock, #battery {
           padding: 0 10px;
       }
-      
+
       #mode {
           background: #64727D;
           border-bottom: 3px solid white;
       }
-      
+
       #clock {
           background-color: #000000;
       }
-      
+
       #battery {
           background-color:  #000000;
           color: white;
       }
-      
+
       #battery.charging {
           color: green;
           background-color:  #000000;
       }
-      
+
       @keyframes blink {
           to {
               background-color: #ffffff;
               color: white;
           }
       }
-      
+
       #battery.warning:not(.charging) {
           background:  #FF0000; 
           color: white;

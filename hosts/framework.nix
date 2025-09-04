@@ -4,7 +4,8 @@
   inputs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     ../system/basic.nix
     ../system/brotherprinter.nix
@@ -21,18 +22,18 @@
     ../system/containers.nix
     ../hardware/framework.nix
     ../system/sdr.nix
-#    ../system/kernel-latest.nix
+    #../system/kernel-latest.nix
   ];
   system.stateVersion = "23.05";
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     users.jcw = {
       imports = [
         ../home/home.nix
         ../home/hm-dconf.nix
-      	../home/nvim.nix
+        ../home/nvim.nix
         ../home/bash.nix
         ../home/hypr-swap-escape.nix
         ../home/zsh.nix
@@ -55,7 +56,7 @@
     pciutils
     multivnc
   ];
-  hardware.brillo.enable = true; #brightness control in hyprland
+  hardware.brillo.enable = true; # brightness control in hyprland
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   powerManagement = {

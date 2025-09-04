@@ -1,12 +1,24 @@
-{pkgs, lib, config, inputs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
 {
   programs.anyrun = {
-    package =  inputs.anyrun.packages.${pkgs.system}.anyrun;
+    package = inputs.anyrun.packages.${pkgs.system}.anyrun;
     enable = true;
     config = {
-      x = { fraction = 0.5; };
-      y = { fraction = 0.1; };
-      width = { fraction = 0.3; };
+      x = {
+        fraction = 0.5;
+      };
+      y = {
+        fraction = 0.1;
+      };
+      width = {
+        fraction = 0.3;
+      };
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "top";
@@ -16,8 +28,8 @@
       maxEntries = null;
 
       plugins = [
-#        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
-#        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/applications"
+        #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
+        #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/applications"
         inputs.anyrun.packages.${pkgs.system}.applications
         inputs.anyrun.packages.${pkgs.system}.websearch
         # An array of all the plugins you want, which either can be paths to the .so files, or their packages
@@ -41,20 +53,21 @@
     '';
     # Inline comments are supported for language injection into
     # multi-line strings with Treesitter! (Depends on your editor)
-    extraCss = /*css */ ''
-      * {
-        all: unset;
-        font-family: JetBrainsMono Nerd Font;
+    extraCss = # css
+      ''
+        * {
+          all: unset;
+          font-family: JetBrainsMono Nerd Font;
 
-      }
-      entry#entry {
-        background: red;
-      }
-      #window {
-        Background  : transparent; 
-      }
-    '';
+        }
+        entry#entry {
+          background: red;
+        }
+        #window {
+          Background  : transparent; 
+        }
+      '';
 
   };
-  wayland.windowManager.hyprland.settings.bind  = [ "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun" ];
+  wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun" ];
 }

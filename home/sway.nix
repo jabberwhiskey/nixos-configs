@@ -1,93 +1,97 @@
-  {
-    pkgs,
-    config,
-    lib,
-    ...
-  }: {
-    wayland.windowManager.sway = {
-      enable = true;
-      checkConfig = false;
-      config = rec {
-        modifier = "Mod4";
-        left = "h";
-        down = "j";
-        up = "k";
-        right = "l";
-        menu = "${pkgs.rofi-wayland}/bin/rofi";
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
+  wayland.windowManager.sway = {
+    enable = true;
+    checkConfig = false;
+    config = rec {
+      modifier = "Mod4";
+      left = "h";
+      down = "j";
+      up = "k";
+      right = "l";
+      menu = "${pkgs.rofi-wayland}/bin/rofi";
 
-        terminal = "foot";
+      terminal = "foot";
 
-        workspaceAutoBackAndForth = true;
-        input = {
-          "type:keyboard" = {
-            xkb_options = caps:swapescape;
-          };
+      workspaceAutoBackAndForth = true;
+      input = {
+        "type:keyboard" = {
+          xkb_options = "caps:swapescape";
         };
-        output = {
-          "*" = {
-            bg =  "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
-          };
+      };
+      output = {
+        "*" = {
+          bg = "${config.home.homeDirectory}/Pictures/Wallpapers/1382343.jpg fill";
         };
-        defaultWorkspace = "workspace number 1";
-        colors = {
-          focused = {
-            background = "#630000";
-            border = "#6b1818";
-            childBorder = "#630000";
-            indicator = "#db4d4d";
-            text = "#ffffff";
-          };
+      };
+      defaultWorkspace = "workspace number 1";
+      colors = {
+        focused = {
+          background = "#630000";
+          border = "#6b1818";
+          childBorder = "#630000";
+          indicator = "#db4d4d";
+          text = "#ffffff";
         };
-        window = {
-          titlebar = true;
-          hideEdgeBorders = "both";
-          commands = [
-            {
-              command = "inhibit_idle fullscreen";
-              criteria.class = "mpv";
-            }
-          ];
-        };
-
-        bars = [
+      };
+      window = {
+        titlebar = true;
+        hideEdgeBorders = "both";
+        commands = [
           {
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
-            position = "top";
-            command = "swaybar";
-            id = "swaybar";
-            trayPadding = 5;
-            fonts = {
-              names = ["DejaVu Sans Mono" "FontAwesome6Free"];
-              style = "Bold Semi-Condensed";
-              size = 10.0;
-            };
-            colors = {
-              background = "#000000";
-              statusline = "#fa2802";
-              focusedWorkspace = {
-                background = "#bd1a1a";
-                border = "#fa6e6e";
-                text = "#000000";
-              };
-              inactiveWorkspace = {
-                background = "#000000";
-                border = "#000000";
-                text = "#fa6e6e";
-              };
-            };
+            command = "inhibit_idle fullscreen";
+            criteria.class = "mpv";
           }
         ];
-
-        startup = [
-          {command = "${pkgs.dunst}/bin/dunst";}
-#        {command = "nixGL ${pkgs.wpaperd}/bin/wpaperd";}
-        ];
       };
-      config = {
-        keybindings = let
+
+      bars = [
+        {
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
+          position = "top";
+          command = "swaybar";
+          id = "swaybar";
+          trayPadding = 5;
+          fonts = {
+            names = [
+              "DejaVu Sans Mono"
+              "FontAwesome6Free"
+            ];
+            style = "Bold Semi-Condensed";
+            size = 10.0;
+          };
+          colors = {
+            background = "#000000";
+            statusline = "#fa2802";
+            focusedWorkspace = {
+              background = "#bd1a1a";
+              border = "#fa6e6e";
+              text = "#000000";
+            };
+            inactiveWorkspace = {
+              background = "#000000";
+              border = "#000000";
+              text = "#fa6e6e";
+            };
+          };
+        }
+      ];
+
+      startup = [
+        { command = "${pkgs.dunst}/bin/dunst"; }
+        #        {command = "nixGL ${pkgs.wpaperd}/bin/wpaperd";}
+      ];
+    };
+    config = {
+      keybindings =
+        let
           mod = config.wayland.windowManager.sway.config.modifier;
-          inherit
-            (config.wayland.windowManager.sway.config)
+          inherit (config.wayland.windowManager.sway.config)
             left
             down
             up
@@ -95,7 +99,8 @@
             menu
             terminal
             ;
-        in {
+        in
+        {
           "${mod}+Return" = "exec ${terminal}";
           "${mod}+d" = "exec ${menu}  -show drun";
 
@@ -155,11 +160,13 @@
           "${mod}+s" = "focus child";
 
           "${mod}+Shift+c" = "reload";
-          "${mod}+Shift+e" = "exec swaynag -t warning -m 'Do you want to exit Sway?' -b 'Yes, exit sway' 'swaymsg exit'";
+          "${mod}+Shift+e" =
+            "exec swaynag -t warning -m 'Do you want to exit Sway?' -b 'Yes, exit sway' 'swaymsg exit'";
           "${mod}+r" = "mode resize";
 
           "print" = "exec grim  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
-          "Shift+print" = "exec slurp | grim -g -  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
+          "Shift+print" =
+            "exec slurp | grim -g -  ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
 
           "XF86AudioMute" = "exec /bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
           "XF86AudioRaiseVolume" = "exec /bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
@@ -175,43 +182,43 @@
           "${mod}+minus" = "scratchpad show";
           "${mod}+underscore" = "move container to scratchpad";
         };
-        floating.criteria = [
-          {class = "Bitwarden";}
-        ];
+      floating.criteria = [
+        { class = "Bitwarden"; }
+      ];
 
-        gaps = {
-          horizontal = 5;
-          vertical = 5;
-          inner = 5;
-          outer = 5;
-          smartBorders = "on";
-          smartGaps = true;
-        };
-      };
-      systemd.enable = true;
-      extraConfig = ''
-        bindswitch --reload --locked lid:on exec '/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill'
-      '';
-      swaynag = {
-        enable = true;
+      gaps = {
+        horizontal = 5;
+        vertical = 5;
+        inner = 5;
+        outer = 5;
+        smartBorders = "on";
+        smartGaps = true;
       };
     };
-#  programs.wofi = {
-#    enable = true;
-#    style = ''
-#      backround-color: #5A5A5A;
-#    '';
-#    settings = {
-#       term = "alacritty -e";
-#      term = "${pkgs.alacritty}/bin/alacritty";
-#      width = "25%";
-#      allow_images = true;
-#    };
-#  };
-    programs.i3status-rust = {
+    systemd.enable = true;
+    extraConfig = ''
+      bindswitch --reload --locked lid:on exec '/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill'
+    '';
+    swaynag = {
       enable = true;
-      bars = {
-        default = {
+    };
+  };
+  #  programs.wofi = {
+  #    enable = true;
+  #    style = ''
+  #      backround-color: #5A5A5A;
+  #    '';
+  #    settings = {
+  #       term = "alacritty -e";
+  #      term = "${pkgs.alacritty}/bin/alacritty";
+  #      width = "25%";
+  #      allow_images = true;
+  #    };
+  #  };
+  programs.i3status-rust = {
+    enable = true;
+    bars = {
+      default = {
         blocks = [
           {
             block = "battery";
@@ -226,7 +233,7 @@
             block = "net";
             interval = 5;
           }
-          {block = "sound";}
+          { block = "sound"; }
           {
             block = "time";
             interval = 60;
@@ -237,9 +244,9 @@
           theme = {
             theme = "native";
             overrides = {
-#              idle_bg = "#ff0303";
+              #              idle_bg = "#ff0303";
               idle_bg = "#000000";
-#              idle_fg = "#000000";
+              #              idle_fg = "#000000";
               idle_fg = "#ff0303";
               seperator = "f74d4d";
             };
@@ -267,16 +274,16 @@
         timeout = 600;
         command = "/bin/systemctl suspend";
       }
- 
+
       {
         timeout = 300;
-        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";      
+        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";
       }
     ];
     events = [
       {
         event = "before-sleep";
-        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";      
+        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";
 
       }
     ];

@@ -1,9 +1,9 @@
 { pkgs, config, ... }:
 {
-xdg.configFile.nvim = {
-  enable = true;
-  recursive = true;
-  source = ../extra/nvim;
+  xdg.configFile.nvim = {
+    enable = true;
+    recursive = true;
+    source = ../extra/nvim;
   };
   programs.neovim = {
     enable = true;

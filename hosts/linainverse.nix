@@ -1,4 +1,11 @@
-{ home-manager, pkgs, config, inputs, lib, ... }:
+{
+  home-manager,
+  pkgs,
+  config,
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [
     ../home/sway.nix
@@ -6,7 +13,7 @@
     ../home/sway-inhibit.nix
     ../home/zsh.nix
     ../home/nvim.nix
-#    ../home/home.nix
+    # ../home/home.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -16,7 +23,7 @@
     homeDirectory = "/home/jcw";
   };
   #wayland.windowManager.sway.package =  pkgs.emptyFile;
-  wayland.windowManager.sway.package =  null;
+  wayland.windowManager.sway.package = null;
   programs.git = {
     enable = true;
     userName = "jcw";
@@ -35,20 +42,20 @@
   targets.genericLinux.enable = true;
   programs.foot = {
     enable = true;
-#    package = null;
+    #    package = null;
     settings = {
       main = {
         app-id = "foot";
-      	font = "monospace:size=12";
+        font = "monospace:size=12";
       };
       colors = {
         alpha = 0.9;
         background = "242424";
-      	foreground = "ffffff";
+        foreground = "ffffff";
       };
     };
   };
-   nix = {
+  nix = {
     gc = {
       automatic = true;
     };
@@ -69,7 +76,7 @@
       iamb
       nix-inspect
       neonmodem
-#      jellyfin-tui
+      #      jellyfin-tui
       bitwarden-cli
       firefox
       browsh
@@ -81,7 +88,7 @@
       MANPAGER = "nvim +Man!";
       BROWSER = "firefox";
       IMAGE_VIEWER = "imv";
-#      IMAGE_VIEWER = "qview";
+      #      IMAGE_VIEWER = "qview";
     };
   };
   programs.tmux = {
@@ -95,10 +102,9 @@
     settings = {
       program_options = {
         udisks_version = 2;
-      	tray = "auto";
-	      icon_names.media = [ "drive-removable-media-usb" ];
+        tray = "auto";
+        icon_names.media = [ "drive-removable-media-usb" ];
       };
     };
   };
 }
-

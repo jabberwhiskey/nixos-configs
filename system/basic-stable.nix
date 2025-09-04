@@ -3,11 +3,15 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     trusted-users = [ "jcw" ];
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
   time.timeZone = "US/Mountain";
 
@@ -38,7 +42,7 @@
     };
     optimise.automatic = true;
   };
-#  services.pulseaudio.enable = false;
+  #  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

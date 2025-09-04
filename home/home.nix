@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   home = {
     enableNixpkgsReleaseCheck = false;
     username = "jcw";
@@ -10,10 +11,10 @@
     packages = with pkgs; [
       btop
       chromium
-#      fluffychat
+      #      fluffychat
       discord
       discordo
-#      kdePackages.kasts
+      #      kdePackages.kasts
       mumble
       mpv
       htop
@@ -24,7 +25,7 @@
       goread
       nix-inspect
       neonmodem
-#      jellyfin-tui
+      #      jellyfin-tui
       bitwarden-cli
       firefox
       browsh
@@ -38,7 +39,7 @@
       MANPAGER = "nvim +Man!";
       BROWSER = "firefox";
       IMAGE_VIEWER = "imv";
-#      IMAGE_VIEWER = "qview";
+      #      IMAGE_VIEWER = "qview";
     };
   };
   xdg = {
@@ -61,8 +62,8 @@
     settings = {
       program_options = {
         udisks_version = 2;
-      	tray = "auto";
-	      icon_names.media = [ "drive-removable-media-usb" ];
+        tray = "auto";
+        icon_names.media = [ "drive-removable-media-usb" ];
       };
     };
   };

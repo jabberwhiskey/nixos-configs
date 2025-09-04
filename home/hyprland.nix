@@ -4,10 +4,11 @@
   lib,
   inputs,
   ...
-}: {
+}:
+{
   home = {
     packages = with pkgs; [
-#      imv
+      #      imv
       wl-clipboard
       cliphist
       qpwgraph
@@ -54,7 +55,7 @@
     enable = true;
     systemd.enable = true;
     settings = {
-      monitor = [",preferred,auto,1"];
+      monitor = [ ",preferred,auto,1" ];
       exec-once = [
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
@@ -68,7 +69,7 @@
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "HYPRCURSOR_SIZE, 24"
         "QT_QPA_PLATFORMTHEME,qt6ct"
-	      "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_CURRENT_DESKTOP,Hyprland"
       ];
       input = {
         kb_layout = "us";
@@ -130,74 +131,75 @@
         "float,class:^(Waydroid)$,title:^(Waydroid)$"
         "float,class:^(mpv)$,title:^(mpv)$"
       ];
-      bind =
-        [
-          "$mod, Return, exec, $term"
-          "$mod, Space, exec, dunstctl close-all"
-          "$mod Alt, Space, exec, dunstctl history-pop"
-          "$mod, C, killactive,"
-          "$mod SHIFT, Q, exit,"
-          "$mod, E, exec, $fileManager"
-          #rofi
-          "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-          "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode | wl-copy"
-          "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
-          "$mod, P, pseudo," #dwindle
-          "$mod, code:51, togglesplit," #dwindle
-          "$mod, F, fullscreen,"
-          "$mod SHIFT, F,togglefloating"
-          ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output" 
-          "SHIFT, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m region"
-          "Alt, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m active"
-          #move focus
-          "$mod, left, movefocus, l"
-          "$mod, H, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, L, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, K, movefocus, u"
-          "$mod, down, movefocus, d"
-          "$mod, J, movefocus, d"
-          #stacks
-          "$mod SHIFT, code:59, moveintogroup, l" #,
-          "$mod SHIFT, code:60, moveintogroup, r" #,
-          "$mod, code:58, lockactivegroup, toggle" #m
-          "$mod SHIFT, code:61, togglegroup," #/
-          "$mod, code:60, changegroupactive, f" #.
-          "$mod, code:59, changegroupactive, b" #,
-          "$mod, code:61, moveoutofgroup, active" #/
-          #move window
-          "$mod SHIFT, up, movewindow, u"
-          "$mod SHIFT, down, movewindow, d"
-          "$mod SHIFT, left, movewindow, l"
-          "$mod SHIFT, right, movewindow, r"
-          #scratchpad
-          "$mod, code:20, togglespecialworkspace, SCRTCHPD" #minus
-          "$mod SHIFT, code:20, movetoworkspace, special:SCRTCHPD" #minus
-          #brightness
-          ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
-          ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
-          #mute, volume is under binde
-          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-          #playerctl
-          ", XF86AudioPrev, exec, plyerctl previous"
-          ", XF86AudioNext, exec, plyerctl next"
-          ", XF86AudioPlay, exec, plyerctl play-pause"
-        ]
-        ++ (
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
+      bind = [
+        "$mod, Return, exec, $term"
+        "$mod, Space, exec, dunstctl close-all"
+        "$mod Alt, Space, exec, dunstctl history-pop"
+        "$mod, C, killactive,"
+        "$mod SHIFT, Q, exit,"
+        "$mod, E, exec, $fileManager"
+        #rofi
+        "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
+        "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode | wl-copy"
+        "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
+        "$mod, P, pseudo," # dwindle
+        "$mod, code:51, togglesplit," # dwindle
+        "$mod, F, fullscreen,"
+        "$mod SHIFT, F,togglefloating"
+        ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output"
+        "SHIFT, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m region"
+        "Alt, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m active"
+        #move focus
+        "$mod, left, movefocus, l"
+        "$mod, H, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, L, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, K, movefocus, u"
+        "$mod, down, movefocus, d"
+        "$mod, J, movefocus, d"
+        #stacks
+        "$mod SHIFT, code:59, moveintogroup, l" # ,
+        "$mod SHIFT, code:60, moveintogroup, r" # ,
+        "$mod, code:58, lockactivegroup, toggle" # m
+        "$mod SHIFT, code:61, togglegroup," # /
+        "$mod, code:60, changegroupactive, f" # .
+        "$mod, code:59, changegroupactive, b" # ,
+        "$mod, code:61, moveoutofgroup, active" # /
+        #move window
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        #scratchpad
+        "$mod, code:20, togglespecialworkspace, SCRTCHPD" # minus
+        "$mod SHIFT, code:20, movetoworkspace, special:SCRTCHPD" # minus
+        #brightness
+        ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
+        ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
+        #mute, volume is under binde
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        #playerctl
+        ", XF86AudioPrev, exec, plyerctl previous"
+        ", XF86AudioNext, exec, plyerctl next"
+        ", XF86AudioPlay, exec, plyerctl play-pause"
+      ]
+      ++ (builtins.concatLists (
+        builtins.genList (
+          x:
+          let
+            ws =
+              let
+                c = (x + 1) / 10;
+              in
+              builtins.toString (x + 1 - (c * 10));
+          in
+          [
+            "$mod, ${ws}, workspace, ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+          ]
+        ) 10
+      ));
       binde = [
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -254,9 +256,9 @@
         {
           timeout = 1800;
           on-timeout = "systemctl suspend";
-        }      
-        
-      ]; 
+        }
+
+      ];
     };
   };
   programs.hyprlock = {
@@ -268,7 +270,7 @@
         hide_cursor = true;
         no_fade_in = false;
       };
-  
+
       background = [
         {
           path = "screenshot";
@@ -276,7 +278,7 @@
           blur_size = 8;
         }
       ];
-    
+
       input-field = [
         {
           size = "200, 50";
@@ -291,7 +293,7 @@
           placeholder_text = "'\'Password...'\'";
           shadow_passes = 2;
         }
-      ]; 
+      ];
     };
   };
   services.wpaperd = {
@@ -309,20 +311,20 @@
     settings = {
       main = {
         app-id = "foot";
-      	font = "monospace:size=14";
+        font = "monospace:size=14";
       };
       colors = {
         alpha = 0.9;
         background = "242424";
-      	foreground = "ffffff";
+        foreground = "ffffff";
       };
     };
   };
   programs.ranger = {
     enable = true;
     extraConfig = ''
-      set preview_images true
-#      set preview_images_method sixel
+            set preview_images true
+      #      set preview_images_method sixel
     '';
   };
   programs.rofi = {
@@ -330,7 +332,7 @@
     terminal = "${pkgs.foot}/bin/foot";
     package = pkgs.rofi-wayland;
     theme = "android_notification";
-    
+
   };
   services.clipman = {
     enable = true;
@@ -353,7 +355,7 @@
           WantedBy = [ "graphical-session.target" ];
         };
       };
-      wpaperd= {
+      wpaperd = {
         Unit = {
           Wants = [ "hyprland-session.target" ];
           ExecStart = "${pkgs.wpaperd}/bin/wpaperd";

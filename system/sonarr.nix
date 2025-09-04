@@ -1,4 +1,9 @@
-{pkgs, inputs, config, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   nixpkgs.config.permittedInsecurePackages = [
     "aspnetcore-runtime-6.0.36"
@@ -10,7 +15,7 @@
   ];
   services.sonarr = {
     enable = true;
-#    package = inputs.nixpkgs.legacyPackages.x86_64-linux.sonarr;
+    #    package = inputs.nixpkgs.legacyPackages.x86_64-linux.sonarr;
     openFirewall = true;
     user = "jcw";
   };
