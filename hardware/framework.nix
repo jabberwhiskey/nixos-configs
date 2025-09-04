@@ -47,9 +47,11 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ {device = "/swap/swapfile"; } ];
-
-
+  swapDevices = [{
+    device = "/swap/swapfile"; 
+    }];
+   boot.resumeDevice = "/dev/disk/by-uuid/a6946593-df92-4aa9-9841-14aa96ad1a86";
+   boot.kernelParams = [ "resume_offset=69148679" ];
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
@@ -58,6 +60,15 @@
   # networking.interfaces.wlp170s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "balanced";
+  powerManagement.enable = lib.mkDefault true;
+  services.logind = {
+    lidSwitch = "suspend-then-hibernate";
+    powerKey = "hibernate";
+    powerKeyLongPress = "poweroff";
+  };
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=5d
+    SuspendState=mem
+  '';
 }
