@@ -87,10 +87,10 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "balanced";
   powerManagement.enable = lib.mkDefault true;
-  services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    powerKey = "hibernate";
-    powerKeyLongPress = "poweroff";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandlePowerKey = "hibernate";
+    HandlePowerKeyLongPress = "poweroff";
   };
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=5d
