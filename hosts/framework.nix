@@ -8,6 +8,7 @@
 {
   imports = [
     ../system/basic.nix
+    ../system/fprint.nix
     ../system/brotherprinter.nix
     ../system/lanzaboote.nix
     ../system/hyprland.nix
@@ -48,13 +49,6 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "framework";
-  services.fprintd.enable = true;
-  security.pam.services = {
-    sudo.fprintAuth = true;
-    polkit-1.fprintAuth = true;
-    greetd.fprintAuth = true;
-    login.fprintAuth = true;
-  };
   environment.systemPackages = with pkgs; [
     usbutils
     fw-ectool
