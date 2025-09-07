@@ -9,9 +9,13 @@
   imports = [
     ../system/basic.nix
 <<<<<<< HEAD
+<<<<<<< HEAD
     ../system/fprint.nix
 =======
 >>>>>>> e1d11bc (cleaned up config)
+=======
+    ../system/fprint.nix
+>>>>>>> e6b0881 (updated lockfile)
     ../system/brotherprinter.nix
     ../system/lanzaboote.nix
     ../system/hyprland.nix
@@ -54,6 +58,7 @@
 
   networking.hostName = "framework";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   services.fprintd.enable = true;
   security.pam.services = {
@@ -63,6 +68,8 @@
     login.fprintAuth = true;
   };
 >>>>>>> e1d11bc (cleaned up config)
+=======
+>>>>>>> e6b0881 (updated lockfile)
   environment.systemPackages = with pkgs; [
     usbutils
     fw-ectool

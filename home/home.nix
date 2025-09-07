@@ -19,8 +19,11 @@
       #      fluffychat
       discord
       discordo
+<<<<<<< HEAD
       #      kdePackages.kasts
 >>>>>>> e1d11bc (cleaned up config)
+=======
+>>>>>>> e6b0881 (updated lockfile)
       mumble
       mpv
       htop
@@ -31,8 +34,11 @@
       goread
       nix-inspect
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       neonmodem
+=======
+>>>>>>> e6b0881 (updated lockfile)
       #      jellyfin-tui
 >>>>>>> e1d11bc (cleaned up config)
       bitwarden-cli

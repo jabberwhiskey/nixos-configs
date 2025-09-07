@@ -10,9 +10,13 @@
   imports = [
     ../system/basic.nix
 <<<<<<< HEAD
+<<<<<<< HEAD
     ../system/fprint.nix
 =======
 >>>>>>> e1d11bc (cleaned up config)
+=======
+    ../system/fprint.nix
+>>>>>>> e6b0881 (updated lockfile)
     ../system/hyprland.nix
     ../system/pam-u2f.nix
     ../system/lanzaboote.nix
