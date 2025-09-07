@@ -9,6 +9,7 @@
 {
   imports = [
     ../system/basic.nix
+    ../system/fprint.nix
     ../system/hyprland.nix
     ../system/pam-u2f.nix
     ../system/lanzaboote.nix
