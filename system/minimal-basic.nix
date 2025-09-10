@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    ../user/user-minimal.nix
+    ../user/minimal-user.nix
   ];
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
