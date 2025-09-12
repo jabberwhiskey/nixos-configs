@@ -36,7 +36,7 @@
   };
   environment.systemPackages = with pkgs; [
     tmux
-    lan-mouse
+    input-leap
   ];
   nix = {
     gc = {
