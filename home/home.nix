@@ -14,7 +14,6 @@
       #      fluffychat
       discord
       discordo
-      #      kdePackages.kasts
       mumble
       mpv
       htop
@@ -24,7 +23,7 @@
       iamb
       goread
       nix-inspect
-      neonmodem
+      neonmodemgs
       #      jellyfin-tui
       bitwarden-cli
       firefox
