@@ -23,7 +23,6 @@
       iamb
       goread
       nix-inspect
-      neonmodemgs
       #      jellyfin-tui
       bitwarden-cli
       firefox
