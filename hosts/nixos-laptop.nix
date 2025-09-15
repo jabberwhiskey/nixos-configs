@@ -72,9 +72,13 @@
     pciutils
     sbctl
 <<<<<<< HEAD
+<<<<<<< HEAD
     tor-browser
 =======
 >>>>>>> e1d11bc (cleaned up config)
+=======
+    tor-browser
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
   ];
   #  services.gvfs.enable = true; #for pcmanfm
   programs.dconf.enable = true;

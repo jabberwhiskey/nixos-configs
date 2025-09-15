@@ -11,6 +11,7 @@
       },
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1758874004,
         "narHash": "sha256-+RUCBtT01Z595NpGc6Tvms+dJ/C/cn1zdjT9+gE6dbU=",
         "owner": "anyrun-org",
@@ -23,6 +24,13 @@
         "repo": "anyrun",
         "rev": "df2a914b5acdd0f39ed4bf4336afc9e94fb28be8",
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1758874004,
+        "narHash": "sha256-+RUCBtT01Z595NpGc6Tvms+dJ/C/cn1zdjT9+gE6dbU=",
+        "owner": "anyrun-org",
+        "repo": "anyrun",
+        "rev": "3c571bc1514c4211d1d6c011a1d482f97efd9c5f",
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "type": "github"
       },
       "original": {
@@ -288,6 +296,7 @@
       },
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1759043321,
         "narHash": "sha256-Efi3THvsIS6Qd97s52/PSSHWybDlSbtUZXP8l3AR9Ps=",
         "owner": "nix-community",
@@ -300,6 +309,13 @@
         "repo": "home-manager",
         "rev": "f56bf065f9abedc7bc15e1f2454aa5c8edabaacf",
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1759043321,
+        "narHash": "sha256-Efi3THvsIS6Qd97s52/PSSHWybDlSbtUZXP8l3AR9Ps=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "c75fd8e300b79502b8eecdacd8a426b12fadb460",
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "type": "github"
       },
       "original": {
@@ -383,6 +399,7 @@
       },
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1759010730,
         "narHash": "sha256-xc8zYNNA+Entmj5DmBKnjMt5tSEQQYDWOIAS5+U2wdU=",
         "ref": "refs/heads/main",
@@ -395,6 +412,13 @@
         "rev": "bce43f74eb8e4570d0d043f5fc8257eef7a57399",
         "revCount": 6411,
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1759010730,
+        "narHash": "sha256-xc8zYNNA+Entmj5DmBKnjMt5tSEQQYDWOIAS5+U2wdU=",
+        "ref": "refs/heads/main",
+        "rev": "766acadcf1e6bfc94fa41ea0d47906c9afca8e24",
+        "revCount": 6459,
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -606,6 +630,7 @@
       },
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1757230583,
         "narHash": "sha256-4uqu7sFPOaVTCogsxaGMgbzZ2vK40GVGMfUmrvK3/LY=",
         "owner": "Jovian-Experiments",
@@ -618,6 +643,13 @@
         "repo": "Jovian-NixOS",
         "rev": "ceaa413a68f28bbf6731464594fdb2c3513e9110",
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1757230583,
+        "narHash": "sha256-4uqu7sFPOaVTCogsxaGMgbzZ2vK40GVGMfUmrvK3/LY=",
+        "owner": "Jovian-Experiments",
+        "repo": "Jovian-NixOS",
+        "rev": "fc3960e6c32c9d4f95fff2ef84444284d24d3bea",
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "type": "github"
       },
       "original": {
@@ -701,6 +733,7 @@
     "nixos-hardware": {
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1758663926,
         "narHash": "sha256-6CFdj7Xs616t1W4jLDH7IohAAvl5Dyib3qEv/Uqw1rk=",
         "owner": "NixOS",
@@ -713,6 +746,13 @@
         "repo": "nixos-hardware",
         "rev": "11b2a10c7be726321bb854403fdeec391e798bf0",
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1758663926,
+        "narHash": "sha256-6CFdj7Xs616t1W4jLDH7IohAAvl5Dyib3qEv/Uqw1rk=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "170ff93c860b2a9868ed1e1102d4e52cb3d934e1",
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "type": "github"
       },
       "original": {
@@ -804,6 +844,7 @@
     "nixpkgs_3": {
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1759036355,
         "narHash": "sha256-0m27AKv6ka+q270dw48KflE0LwQYrO7Fm4/2//KCVWg=",
         "owner": "NixOS",
@@ -816,6 +857,13 @@
         "repo": "nixpkgs",
         "rev": "c6a788f552b7b7af703b1a29802a7233c0067908",
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1759036355,
+        "narHash": "sha256-0m27AKv6ka+q270dw48KflE0LwQYrO7Fm4/2//KCVWg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e9f00bd893984bc8ce46c895c3bf7cac95331127",
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "type": "github"
       },
       "original": {
@@ -950,6 +998,7 @@
     "stable": {
       "locked": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1758791193,
         "narHash": "sha256-F8WmEwFoHsnix7rt290R0rFXNJiMbClMZyIC/e+HYf0=",
         "owner": "NixOS",
@@ -962,6 +1011,13 @@
         "repo": "nixpkgs",
         "rev": "fe83bbdde2ccdc2cb9573aa846abe8363f79a97a",
 >>>>>>> e6b0881 (updated lockfile)
+=======
+        "lastModified": 1758791193,
+        "narHash": "sha256-F8WmEwFoHsnix7rt290R0rFXNJiMbClMZyIC/e+HYf0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "25e53aa156d47bad5082ff7618f5feb1f5e02d01",
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "type": "github"
       },
       "original": {

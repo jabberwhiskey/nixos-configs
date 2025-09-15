@@ -141,12 +141,17 @@
         "$mod, E, exec, $fileManager"
         #rofi
 <<<<<<< HEAD
+<<<<<<< HEAD
         "$mod, D, exec, rofi -show drun"
         "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 =======
         "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
         "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode | wl-copy"
 >>>>>>> e1d11bc (cleaned up config)
+=======
+        "$mod, D, exec, rofi -show drun"
+        "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
         "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, P, pseudo," # dwindle
         "$mod, code:51, togglesplit," # dwindle
@@ -255,6 +260,7 @@
           on-resume = "hyprctl dispatch dpms on";
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         {
           timeout = 1800;
@@ -262,6 +268,8 @@
         }
 
 >>>>>>> e1d11bc (cleaned up config)
+=======
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
       ];
     };
   };
@@ -275,9 +283,12 @@
         no_fade_in = false;
       };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e1d11bc (cleaned up config)
+=======
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
       background = [
         {
           path = "screenshot";
@@ -286,9 +297,12 @@
         }
       ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e1d11bc (cleaned up config)
+=======
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
       input-field = [
         {
           size = "200, 50";
@@ -335,9 +349,12 @@
     extraConfig = ''
             set preview_images true
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       #      set preview_images_method sixel
 >>>>>>> e1d11bc (cleaned up config)
+=======
+>>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
     '';
   };
   programs.rofi = {
