@@ -37,6 +37,7 @@
         ../home/nvim.nix
         ../home/bash.nix
         ../home/hypr-swap-escape.nix
+        ../home/hypridle-extra.nix
         ../home/zsh.nix
         ../home/waybar.nix
       ];

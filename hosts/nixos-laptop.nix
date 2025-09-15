@@ -37,6 +37,7 @@
       imports = [
         ../home/waybar.nix
         ../home/bash.nix
+        ../home/hypridle-extra.nix
         ../home/nvim.nix
         ../home/zsh.nix
         ../home/hypr-swap-escape.nix
@@ -63,6 +64,7 @@
     usbutils
     pciutils
     sbctl
+    tor-browser
   ];
   #  services.gvfs.enable = true; #for pcmanfm
   programs.dconf.enable = true;

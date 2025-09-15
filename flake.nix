@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    mesa-downgrade.url = "github:NixOS/nixpkgs/a683adc19ff5228af548c6539dbc3440509bfed3"; # for gamescope, it breaks on mesa 25.2
     stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nix-bitcoin = {
       url = "github:fort-nix/nix-bitcoin/release";
@@ -46,7 +45,6 @@
       lanzaboote,
       hyprland,
       anyrun,
-      mesa-downgrade, # for gamescope
       jovian,
       ...
     }:
@@ -89,7 +87,6 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-amd-ai-300-series
             lanzaboote.nixosModules.lanzaboote
-            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # gamescope breaks on updated mesa
           ];
         };
         #Desktop
@@ -97,7 +94,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nix-desktop.nix
-            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # for gamescope
             home-manager.nixosModules.home-manager
             {
               home-manager = {

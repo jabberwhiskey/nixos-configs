@@ -57,6 +57,7 @@
     settings = {
       monitor = [ ",preferred,auto,1" ];
       exec-once = [
+	"kwalletd6"
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
@@ -139,8 +140,8 @@
         "$mod SHIFT, Q, exit,"
         "$mod, E, exec, $fileManager"
         #rofi
-        "$mod, D, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-        "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | ${pkgs.rofi-wayland}/bin/rofi -dmenu | cliphist decode | wl-copy"
+        "$mod, D, exec, rofi -show drun"
+        "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, P, pseudo," # dwindle
         "$mod, code:51, togglesplit," # dwindle
@@ -238,11 +239,6 @@
   services.hypridle = {
     enable = true;
     settings = {
-      general = {
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        ignore_dbus_inhibit = false;
-        lock_cmd = "hyprlock";
-      };
       listener = [
         {
           timeout = 900;
@@ -253,11 +249,6 @@
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }
-        {
-          timeout = 1800;
-          on-timeout = "systemctl suspend";
-        }
-
       ];
     };
   };
@@ -270,7 +261,6 @@
         hide_cursor = true;
         no_fade_in = false;
       };
-
       background = [
         {
           path = "screenshot";
@@ -278,7 +268,6 @@
           blur_size = 8;
         }
       ];
-
       input-field = [
         {
           size = "200, 50";
@@ -324,13 +313,11 @@
     enable = true;
     extraConfig = ''
             set preview_images true
-      #      set preview_images_method sixel
     '';
   };
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.foot}/bin/foot";
-    package = pkgs.rofi-wayland;
     theme = "android_notification";
 
   };

@@ -17,11 +17,13 @@
     "xhci_pci"
     "ahci"
     "nvme"
+    "evdev"
     "usb_storage"
     "usbhid"
     "sd_mod"
     "sr_mod"
   ];
+  boot.initrd.systemd.enable = true;
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -33,15 +35,17 @@
     options = [
       "subvol=root"
       "compress=zstd"
+      "ssd"
     ];
   };
   fileSystems."/home" = {
     #    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
-    device = "/dev/disk/by-uuid/06957a11-5d26-4f11-a461-75099a5dd091";
+    device = "/dev/disk/by-uuid/9c06e0e5-2b05-4ab8-b6e3-dc19c21e0baa";
     fsType = "btrfs";
     options = [
       "subvol=home"
       "compress=zstd"
+      "ssd"
     ];
   };
   fileSystems."/nix" = {
@@ -51,6 +55,7 @@
     options = [
       "subvol=nix"
       "compress=zstd"
+      "ssd"
       "noatime"
     ];
   };
