@@ -57,6 +57,7 @@
     settings = {
       monitor = [ ",preferred,auto,1" ];
       exec-once = [
+	"kwalletd6"
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];

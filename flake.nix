@@ -97,7 +97,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nix-desktop.nix
-            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # for gamescope
+#            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # for gamescope
             home-manager.nixosModules.home-manager
             {
               home-manager = {

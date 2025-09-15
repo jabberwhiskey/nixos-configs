@@ -1,7 +1,10 @@
 {
   #  home = {
   programs.waybar = {
-    enable = true;
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };   enable = true;
     settings = {
       mainBar = {
         layer = "top";

@@ -8,13 +8,11 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
   security.pam.services.jcw.kwallet = {
     forceRun = true;
     enable = true;
-    package = pkgs.kdePackages.kwallet;
   };
   home-manager.users.jcw.imports = [
     ../home/hyprland.nix
