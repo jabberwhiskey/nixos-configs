@@ -63,6 +63,7 @@
     usbutils
     pciutils
     sbctl
+    tor-browser
   ];
   #  services.gvfs.enable = true; #for pcmanfm
   programs.dconf.enable = true;
