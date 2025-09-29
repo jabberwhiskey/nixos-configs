@@ -11,7 +11,7 @@
     packages = with pkgs; [
       btop
       chromium
-      #      fluffychat
+      lazygit
       discord
       discordo
       mumble
@@ -23,7 +23,6 @@
       iamb
       goread
       nix-inspect
-      #      jellyfin-tui
       bitwarden-cli
       firefox
       browsh
