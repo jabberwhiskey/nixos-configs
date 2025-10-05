@@ -3,13 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    mesa-downgrade.url = "github:NixOS/nixpkgs/a683adc19ff5228af548c6539dbc3440509bfed3"; # for gamescope, it breaks on mesa 25.2
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
     stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nix-bitcoin = {
       url = "github:fort-nix/nix-bitcoin/release";
@@ -52,13 +45,6 @@
       lanzaboote,
       hyprland,
       anyrun,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      mesa-downgrade, # for gamescope
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
       jovian,
       ...
     }:
@@ -101,13 +87,6 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-amd-ai-300-series
             lanzaboote.nixosModules.lanzaboote
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # gamescope breaks on updated mesa
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
           ];
         };
         #Desktop
@@ -115,13 +94,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nix-desktop.nix
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            { hardware.graphics.package = inputs.mesa-downgrade.legacyPackages.x86_64-linux.mesa; } # for gamescope
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
             home-manager.nixosModules.home-manager
             {
               home-manager = {

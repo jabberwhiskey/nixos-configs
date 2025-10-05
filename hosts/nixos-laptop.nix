@@ -9,14 +9,7 @@
 {
   imports = [
     ../system/basic.nix
-<<<<<<< HEAD
-<<<<<<< HEAD
     ../system/fprint.nix
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-    ../system/fprint.nix
->>>>>>> e6b0881 (updated lockfile)
     ../system/hyprland.nix
     ../system/pam-u2f.nix
     ../system/lanzaboote.nix
@@ -71,14 +64,7 @@
     usbutils
     pciutils
     sbctl
-<<<<<<< HEAD
-<<<<<<< HEAD
     tor-browser
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-    tor-browser
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
   ];
   #  services.gvfs.enable = true; #for pcmanfm
   programs.dconf.enable = true;

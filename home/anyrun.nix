@@ -59,9 +59,6 @@
     extraCss = # css
       ''
         * {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
         }
         box.main {
           background-color: black;
@@ -123,11 +120,8 @@
           100% {
             opacity: 1;
           }
-=======
           all: unset;
           font-family: JetBrainsMono Nerd Font;
-=======
->>>>>>> e6b0881 (updated lockfile)
 
         }
         box.main {
@@ -138,11 +132,6 @@
           border: 2px solid @theme_selected_bg_color;
           box-shadow: 0 0 5px black;  
         }
-<<<<<<< HEAD
-        #window {
-          Background  : transparent; 
->>>>>>> e1d11bc (cleaned up config)
-=======
         window {
           background  : transparent; 
         }
@@ -195,18 +184,9 @@
           100% {
             opacity: 1;
           }
->>>>>>> e6b0881 (updated lockfile)
         }
       '';
 
   };
-<<<<<<< HEAD
-<<<<<<< HEAD
   wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, anyrun" ];
-=======
-  wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, ${pkgs.anyrun}/bin/anyrun" ];
->>>>>>> e1d11bc (cleaned up config)
-=======
-  wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, anyrun" ];
->>>>>>> e6b0881 (updated lockfile)
 }

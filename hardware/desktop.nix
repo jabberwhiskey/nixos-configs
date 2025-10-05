@@ -17,27 +17,13 @@
     "xhci_pci"
     "ahci"
     "nvme"
-<<<<<<< HEAD
-<<<<<<< HEAD
     "evdev"
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-    "evdev"
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
     "usb_storage"
     "usbhid"
     "sd_mod"
     "sr_mod"
   ];
-<<<<<<< HEAD
-<<<<<<< HEAD
   boot.initrd.systemd.enable = true;
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-  boot.initrd.systemd.enable = true;
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -49,39 +35,18 @@
     options = [
       "subvol=root"
       "compress=zstd"
-<<<<<<< HEAD
-<<<<<<< HEAD
       "ssd"
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-      "ssd"
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
     ];
   };
   fileSystems."/home" = {
     #    device = "/dev/disk/by-uuid/0120f833-c80f-4b8d-b175-32661f3b9386";
-<<<<<<< HEAD
-<<<<<<< HEAD
+#    device = "/dev/disk/by-uuid/06957a11-5d26-4f11-a461-75099a5dd091";
     device = "/dev/disk/by-uuid/9c06e0e5-2b05-4ab8-b6e3-dc19c21e0baa";
-=======
-    device = "/dev/disk/by-uuid/06957a11-5d26-4f11-a461-75099a5dd091";
->>>>>>> e1d11bc (cleaned up config)
-=======
-    device = "/dev/disk/by-uuid/9c06e0e5-2b05-4ab8-b6e3-dc19c21e0baa";
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
     fsType = "btrfs";
     options = [
       "subvol=home"
       "compress=zstd"
-<<<<<<< HEAD
-<<<<<<< HEAD
       "ssd"
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-      "ssd"
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
     ];
   };
   fileSystems."/nix" = {
@@ -91,14 +56,7 @@
     options = [
       "subvol=nix"
       "compress=zstd"
-<<<<<<< HEAD
-<<<<<<< HEAD
       "ssd"
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-      "ssd"
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
       "noatime"
     ];
   };

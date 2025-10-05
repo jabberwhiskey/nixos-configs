@@ -8,14 +8,7 @@
 {
   imports = [
     ../system/basic.nix
-<<<<<<< HEAD
-<<<<<<< HEAD
     ../system/fprint.nix
-=======
->>>>>>> e1d11bc (cleaned up config)
-=======
-    ../system/fprint.nix
->>>>>>> e6b0881 (updated lockfile)
     ../system/brotherprinter.nix
     ../system/lanzaboote.nix
     ../system/hyprland.nix
@@ -57,19 +50,6 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "framework";
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  services.fprintd.enable = true;
-  security.pam.services = {
-    sudo.fprintAuth = true;
-    polkit-1.fprintAuth = true;
-    greetd.fprintAuth = true;
-    login.fprintAuth = true;
-  };
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> e6b0881 (updated lockfile)
   environment.systemPackages = with pkgs; [
     usbutils
     fw-ectool

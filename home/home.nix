@@ -11,23 +11,9 @@
     packages = with pkgs; [
       btop
       chromium
-<<<<<<< HEAD
-<<<<<<< HEAD
       lazygit
       discord
       discordo
-=======
-      #      fluffychat
-=======
-      lazygit
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
-      discord
-      discordo
-<<<<<<< HEAD
-      #      kdePackages.kasts
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> e6b0881 (updated lockfile)
       mumble
       mpv
       htop
@@ -37,17 +23,6 @@
       iamb
       goread
       nix-inspect
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      neonmodem
-=======
->>>>>>> e6b0881 (updated lockfile)
-      #      jellyfin-tui
->>>>>>> e1d11bc (cleaned up config)
-=======
->>>>>>> 6f9a7b7 (updated lockfile fixed rofi)
       bitwarden-cli
       firefox
       browsh

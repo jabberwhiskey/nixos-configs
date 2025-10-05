@@ -7,15 +7,7 @@
 }:
 {
   imports = [
-<<<<<<< HEAD
-<<<<<<< HEAD
     ../user/minimal-user.nix
-=======
-    ../user/user-minimal.nix
->>>>>>> e1d11bc (cleaned up config)
-=======
-    ../user/minimal-user.nix
->>>>>>> e6b0881 (updated lockfile)
   ];
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
