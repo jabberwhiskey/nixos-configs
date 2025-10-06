@@ -14,7 +14,7 @@
       down = "j";
       up = "k";
       right = "l";
-      menu = "${pkgs.rofi-wayland}/bin/rofi";
+      menu = "rofi";
 
       terminal = "foot";
 
@@ -83,7 +83,7 @@
       ];
 
       startup = [
-        { command = "${pkgs.dunst}/bin/dunst"; }
+        { command = "dunst"; }
         #        {command = "nixGL ${pkgs.wpaperd}/bin/wpaperd";}
       ];
     };
@@ -259,7 +259,7 @@
   };
   home.packages = with pkgs; [
     swayimg
-    rofi-wayland
+    rofi
   ];
   home.sessionVariables = {
     TERMINAL = "foot";

@@ -22,7 +22,6 @@
     username = "jcw";
     homeDirectory = "/home/jcw";
   };
-  #wayland.windowManager.sway.package =  pkgs.emptyFile;
   wayland.windowManager.sway.package = null;
   programs.git = {
     enable = true;
@@ -76,7 +75,6 @@
       iamb
       nix-inspect
       neonmodem
-      #      jellyfin-tui
       bitwarden-cli
       firefox
       browsh
