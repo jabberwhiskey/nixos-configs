@@ -5,12 +5,6 @@
     spiceUSBRedirection.enable = true;
     libvirtd.qemu = {
       swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [
-          pkgs.OVMFFull.fd
-        ];
-      };
     };
   };
   users.users.jcw = {
