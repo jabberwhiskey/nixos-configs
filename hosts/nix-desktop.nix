@@ -31,7 +31,6 @@
         ../home/home.nix
         ../home/bash.nix
         ../home/zsh.nix
-<<<<<<< HEAD
         ../home/inhibit-hyprland.nix
         ../home/waybar2.nix
         ../home/hm-dconf.nix
