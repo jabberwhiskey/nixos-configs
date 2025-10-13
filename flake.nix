@@ -40,7 +40,6 @@
       nixos-hardware,
       lanzaboote,
       hyprland,
-      anyrun,
       jovian,
       ...
     }:
