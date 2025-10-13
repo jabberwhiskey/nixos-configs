@@ -54,7 +54,7 @@
     };
   };
   environment.systemPackages = [
-    pkgs.lutris
+#    pkgs.lutris
     pkgs.gamescope
     pkgs.steamtinkerlaunch
     pkgs.lm_sensors

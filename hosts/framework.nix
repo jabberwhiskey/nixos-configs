@@ -55,7 +55,6 @@
     fw-ectool
     sbctl
     pciutils
-    multivnc
   ];
   hardware.brillo.enable = true; # brightness control in hyprland
   hardware.bluetooth.enable = true; # enables support for Bluetooth

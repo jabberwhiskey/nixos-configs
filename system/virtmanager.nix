@@ -11,9 +11,6 @@
     extraGroups = [ "libvirtd" ];
     packages = [
       pkgs.virt-manager
-      pkgs.virt-viewer
-      pkgs.nemu
-      pkgs.spice
     ];
   };
   systemd.tmpfiles.rules = [ "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware" ];
