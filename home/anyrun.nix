@@ -7,7 +7,7 @@
 }:
 {
   programs.anyrun = {
-    package = inputs.anyrun.packages.${pkgs.system}.anyrun;
+#    package = inputs.anyrun.packages.${pkgs.system}.anyrun;
     enable = true;
     config = {
       x = {
@@ -30,9 +30,11 @@
       plugins = [
         #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
         #        "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/applications"
-        inputs.anyrun.packages.${pkgs.system}.applications
-        inputs.anyrun.packages.${pkgs.system}.websearch
+        #inputs.anyrun.packages.${pkgs.system}.applications
+        #inputs.anyrun.packages.${pkgs.system}.websearch
         # An array of all the plugins you want, which either can be paths to the .so files, or their packages
+        "${pkgs.anyrun}/lib/libapplications.so"
+        "${pkgs.anyrun}/lib/libwebsearch.so"
       ];
     };
     extraConfigFiles."websearch.ron".text = ''
@@ -40,8 +42,8 @@
         // for any other plugin
         // this file will be put in ~/.config/anyrun/some-plugin.ron
         // refer to docs of xdg.configFile for available options
-        engines: [google],
-        max_entries: 10,
+        engines: [DuckDuckGo],
+        prefix: "?",
       )
     '';
     extraConfigFiles."applications.ron".text = ''
