@@ -28,10 +28,6 @@
       url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -44,7 +40,6 @@
       nixos-hardware,
       lanzaboote,
       hyprland,
-      anyrun,
       jovian,
       ...
     }:
