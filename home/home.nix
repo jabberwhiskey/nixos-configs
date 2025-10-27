@@ -45,8 +45,12 @@
   };
   programs.git = {
     enable = true;
-    userName = "jcw";
-    userEmail = "github.u9l99@aleeas.com";
+    settings = {
+      user = {
+        name = "jcw";
+        email = "github.u9l99@aleeas.com";
+      };
+    };
   };
   programs.tmux = {
     enable = true;
