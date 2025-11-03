@@ -14,7 +14,7 @@
       qpwgraph
       pcmanfm-qt
       brillo
-      qt6ct
+#      qt6ct
       kdePackages.breeze-icons
       kdePackages.breeze
     ];

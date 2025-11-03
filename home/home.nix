@@ -17,7 +17,7 @@
       mumble
       mpv
       htop
-      bitwarden
+      bitwarden-desktop
       wiki-tui
       ytermusic
       iamb
