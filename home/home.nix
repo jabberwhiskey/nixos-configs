@@ -36,7 +36,6 @@
       MANPAGER = "nvim +Man!";
       BROWSER = "firefox";
       IMAGE_VIEWER = "imv";
-      #      IMAGE_VIEWER = "qview";
     };
   };
   xdg = {

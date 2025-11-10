@@ -25,8 +25,12 @@
   wayland.windowManager.sway.package = null;
   programs.git = {
     enable = true;
-    userName = "jcw";
-    userEmail = "github.u9l99@aleeas.com";
+    settings = {
+      user = {
+        name = "jcw";
+        email = "github.u9l99@aleeas.com";
+      };
+    };
   };
   programs.home-manager.enable = true;
   xdg = {
@@ -68,14 +72,14 @@
       discordo
       mumble
       htop
-      bitwarden
+      bitwarden-cli
       wiki-tui
       ytermusic
       russ
       iamb
       nix-inspect
       neonmodem
-      bitwarden-cli
+      bitwarden-desktop
       firefox
       browsh
       unzip
