@@ -10,7 +10,6 @@
     ../system/basic.nix
     ../system/fprint.nix
     ../system/brotherprinter.nix
-    ../system/lanzaboote.nix
     ../system/hyprland.nix
     ../system/greetd.nix
     ../system/qt.nix
