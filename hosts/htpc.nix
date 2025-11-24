@@ -12,6 +12,11 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
+    environment.systemPackages = [
+    pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+		jellyfin
+	]))
+  ];
   users.extraUsers.kodi.isNormalUser = true;
   services.getty.autologinUser = "kodi";
   services.greetd = {
