@@ -126,11 +126,17 @@
       master = {
         new_status = "true";
       };
+#      windowrule = [
+#        "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
+#        "float,class:^(xdg-desktop-portal-gtk)$,title:^(All Files)$"
+#        "float,class:^(Waydroid)$,title:^(Waydroid)$"
+#        "float,class:^(mpv)$,title:^(mpv)$"
+#      ];
       windowrule = [
-        "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
-        "float,class:^(xdg-desktop-portal-gtk)$,title:^(All Files)$"
-        "float,class:^(Waydroid)$,title:^(Waydroid)$"
-        "float,class:^(mpv)$,title:^(mpv)$"
+        "match:class Bitwarden, match:title Bitwarden, float true"
+        "match:class xdg-desktop-portal-gtk, match:title All Files, float true"
+        "match:class Waydroid, match:title Waydroid, float true"
+        "match:class mpv, match:title mpv, float true"
       ];
       bind = [
         "$mod, Return, exec, $term"
