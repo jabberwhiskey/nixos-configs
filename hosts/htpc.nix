@@ -13,13 +13,24 @@
     ../user/keys
   ];
   users.extraUsers.kodi.isNormalUser = true;
-  services.cage.user = "kodi";
-  services.cage.program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
-  services.cage.enable = true;
-  environment.systemPackages = [
-	(pkgs.kodi-wayland.withPackages (kodiPkgs: with kodiPkgs; [
-		jellyfin
-	]))
+  services.getty.autologinUser = "kodi";
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "${pkgs.kodi-gbm}/bin/kodi-standalone";
+        user = "kodi";
+      };
+      default_session = {
+        command = "${pkgs.greetd.greetd}/bin/agreety --cmd sway";
+      };
+    };
+  };
+
+  programs.sway = {
+    enable = true;
+    xwayland.enable = false;
+  };
 ];
   networking.hostName = "htpc";
   nixpkgs.hostPlatform = "x86_64-linux";
