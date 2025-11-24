@@ -12,9 +12,19 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
+  nixpkgs.config.packageOverrides = pkgs: {
+    kodi = pkgs.kodi-gbm.override { extraPackages = with pkgs.kodiPkgs; [
+       youtube
+       jellyfin
+       upnext
+    ];
+    };
+  };
     environment.systemPackages = [
       (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
 		    jellyfin
+        youtube
+        upnext
   	  ]))
     ];
   users.extraUsers.kodi = {
