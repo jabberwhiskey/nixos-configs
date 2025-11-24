@@ -17,7 +17,7 @@
   services.cage.program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
   services.cage.enable = true;
   environment.systemPackages = [
-	(pkgs.kodi.withPackages (kodiPkgs: with kodiPkgs; [
+	(pkgs.kodi-wayland.withPackages (kodiPkgs: with kodiPkgs; [
 		jellyfin
 	]))
 ];
