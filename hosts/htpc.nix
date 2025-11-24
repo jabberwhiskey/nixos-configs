@@ -13,7 +13,7 @@
     ../user/keys
   ];
     environment.systemPackages = [
-    pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+    (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
 		jellyfin
 	]))
   ];
