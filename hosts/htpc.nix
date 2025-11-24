@@ -17,7 +17,12 @@
 		    jellyfin
   	  ]))
     ];
-  users.extraUsers.kodi.isNormalUser = true;
+  users.extraUsers.kodi = {
+    isNormalUser = true;
+    extraGroups = [
+      "input"
+    ];
+  };
   services.getty.autologinUser = "kodi";
   services.greetd = {
     enable = true;
