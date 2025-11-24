@@ -7,7 +7,7 @@
       ../hardware/htpc.nix
       ../system/systemdboot.nix
       ../system/tailscale.nix
-      ../minimal-basic.nix
+      ../system/minimal-basic.nix
     ];
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
