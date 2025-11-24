@@ -13,10 +13,10 @@
     ../user/keys
   ];
     environment.systemPackages = [
-    (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
-		jellyfin
-	]))
-  ];
+      (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+		    jellyfin
+  	  ]))
+    ];
   users.extraUsers.kodi.isNormalUser = true;
   services.getty.autologinUser = "kodi";
   services.greetd = {
@@ -36,7 +36,6 @@
     enable = true;
     xwayland.enable = false;
   };
-];
   networking.hostName = "htpc";
   nixpkgs.hostPlatform = "x86_64-linux";
   system.stateVersion = "25.05";
