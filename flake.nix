@@ -100,6 +100,13 @@
           ];
         };
       };
+      #HTPC
+      htpc = stable.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/htpc
+        ];
+      };
       #Home-manager configurations
       homeConfigurations = {
         "jcw@linainverse" = home-manager.lib.homeManagerConfiguration {
