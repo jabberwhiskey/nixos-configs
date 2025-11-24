@@ -25,4 +25,14 @@
   nixpkgs.hostPlatform = "x86_64-linux";
   system.stateVersion = "25.05";
 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+  };
+  networking.firewall.enable = true;
+
 }
