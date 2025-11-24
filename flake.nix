@@ -103,7 +103,7 @@
         htpc = stable.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/htpc
+            ./hosts/htpc.nix
           ];
         };
       };
