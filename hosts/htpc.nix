@@ -1,6 +1,5 @@
 
 { config, lib, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -13,12 +12,12 @@
     users.kodi = {
       programs.kodi = {
         enable = true;
-        package = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+        package = pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
 		      jellyfin
           youtube
           upnext
           inputstreamhelper
-	      ]));
+	      ])
       };
     };
     users.jcw = {
