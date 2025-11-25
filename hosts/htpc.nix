@@ -1,5 +1,6 @@
 
 { config, lib, pkgs, ... }:
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -17,7 +18,7 @@
           youtube
           upnext
           inputstreamhelper
-	      ]);
+	      ])
       };
     };
     users.jcw = {
