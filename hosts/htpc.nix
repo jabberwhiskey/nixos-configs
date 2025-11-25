@@ -7,7 +7,7 @@ let
       youtube
       upnext
       inputstreamhelper
-	  ]))
+	  ]));
   in
 {
   imports =
