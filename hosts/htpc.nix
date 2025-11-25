@@ -10,6 +10,8 @@
       ../system/minimal-basic.nix
     ];
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users.kodi = {
       home.stateVersion = "25.05";
       programs.kodi = {
