@@ -100,7 +100,7 @@
           ];
         };
         #HTPC
-        htpc = stable.lib.nixosSystem {
+        htpc = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/htpc.nix
