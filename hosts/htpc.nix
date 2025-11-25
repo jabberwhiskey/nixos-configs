@@ -10,7 +10,6 @@
       ../system/minimal-basic.nix
     ];
   home-manager = {
-    users.kodi
     users.jcw = {
       programs.zsh.shellAliases = {
         "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
