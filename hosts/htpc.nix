@@ -11,6 +11,7 @@
     ];
   home-manager = {
     users.kodi = {
+      home.stateVersion = "25.05";
       programs.kodi = {
         enable = true;
         package = pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
