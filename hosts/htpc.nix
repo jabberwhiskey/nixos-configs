@@ -24,6 +24,15 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
+  nixpkgs.config.kodi.enableAdvancedLauncher = true;
+  environment.systemPackages = [
+    (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+		  jellyfin
+      youtube
+      upnext
+      inputstreamhelper
+	  ]))
+  ];
   users.extraUsers.kodi = {
     isNormalUser = true;
     extraGroups = [
@@ -31,14 +40,13 @@
     ];
   };
   services.getty.autologinUser = "kodi";
-  let
-    (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+  let 
+   pkgs.kodi-gbm = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
 		  jellyfin
       youtube
       upnext
       inputstreamhelper
 	  ]))
-  in
   ];
   services.greetd = {
     enable = true;
