@@ -11,21 +11,17 @@
     ];
   home-manager = {
     users.kodi = {
-      programs.kodi ={
+      programs.kodi = {
         enable = true;
         package = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
 		      jellyfin
           youtube
           upnext
           inputstreamhelper
-	      ]));
+	      ]))
       };
     };
     users.jcw = {
-      programs.zsh.shellAliases = {
-        "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
-        "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
-      };
       imports = [
         ../home/bash.nix
         ../home/home.nix
