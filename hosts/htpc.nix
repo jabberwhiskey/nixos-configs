@@ -8,7 +8,6 @@ let
       upnext
       inputstreamhelper
 	  ]))
-  ];
   in
 {
   imports =
