@@ -46,7 +46,7 @@
     enable = true;
     settings = {
       initial_session = {
-        command = "${pkgs.kodi-gbm}/bin/kodi";
+        command = "${pkgs.kodi-gbm}/bin/kodi-standalone";
         user = "kodi";
       };
       default_session = {
