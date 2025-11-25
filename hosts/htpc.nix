@@ -9,17 +9,22 @@
       ../system/tailscale.nix
       ../system/minimal-basic.nix
     ];
+  home-manager = {
+    users.kodi
+    users.jcw = {
+      programs.zsh.shellAliases = {
+        "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
+        "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
+      };
+      imports = [
+        ../home/bash.nix
+        ../home/home.nix
+      ];
+      home.stateVersion = "25.05";
+    };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
-    environment.systemPackages = [
-      (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
-		    jellyfin
-        youtube
-        upnext
-        inputstreamhelper
-  	  ]))
-    ];
   users.extraUsers.kodi = {
     isNormalUser = true;
     extraGroups = [
@@ -27,6 +32,15 @@
     ];
   };
   services.getty.autologinUser = "kodi";
+  let
+    (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+		  jellyfin
+      youtube
+      upnext
+      inputstreamhelper
+	  ]))
+  in
+  ];
   services.greetd = {
     enable = true;
     settings = {

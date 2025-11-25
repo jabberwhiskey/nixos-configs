@@ -104,6 +104,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/htpc.nix
+            home-manager.nixosModules.home-manager
           ];
         };
       };
