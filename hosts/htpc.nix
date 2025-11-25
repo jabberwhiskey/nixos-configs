@@ -17,7 +17,7 @@
 		    jellyfin
         youtube
         upnext
-        inputstreahelper
+        inputstreamhelper
   	  ]))
     ];
   users.extraUsers.kodi = {
