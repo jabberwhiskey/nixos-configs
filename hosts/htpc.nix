@@ -1,6 +1,15 @@
 
 { config, lib, pkgs, ... }:
 
+let 
+   pkgs.kodi-gbm = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+		  jellyfin
+      youtube
+      upnext
+      inputstreamhelper
+	  ]))
+  ];
+  in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -25,14 +34,6 @@
     ../user/keys
   ];
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
-  environment.systemPackages = [
-    (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
-		  jellyfin
-      youtube
-      upnext
-      inputstreamhelper
-	  ]))
-  ];
   users.extraUsers.kodi = {
     isNormalUser = true;
     extraGroups = [
