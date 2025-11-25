@@ -25,7 +25,6 @@
     users.jcw = {
       imports = [
         ../home/bash.nix
-        ../home/home.nix
       ];
       home.stateVersion = "25.05";
     };
