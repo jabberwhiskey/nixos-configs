@@ -1,14 +1,6 @@
 
 { config, lib, pkgs, ... }:
 
-let 
-   pkgs.kodi-gbm = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
-		  jellyfin
-      youtube
-      upnext
-      inputstreamhelper
-	  ]));
-  in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -18,6 +10,17 @@ let
       ../system/minimal-basic.nix
     ];
   home-manager = {
+    users.kodi = {
+      programs.kodi ={
+        enable = true;
+        package = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
+		      jellyfin
+          youtube
+          upnext
+          inputstreamhelper
+	      ]))
+      };
+    };
     users.jcw = {
       programs.zsh.shellAliases = {
         "update" = "sudo nixos-rebuild boot --flake ~/dev/nixos-configs#nixos-laptop --verbose";
@@ -40,14 +43,6 @@ let
     ];
   };
   services.getty.autologinUser = "kodi";
-  let 
-   pkgs.kodi-gbm = (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
-		  jellyfin
-      youtube
-      upnext
-      inputstreamhelper
-	  ]))
-  ];
   services.greetd = {
     enable = true;
     settings = {
