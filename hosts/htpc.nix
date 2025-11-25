@@ -17,7 +17,7 @@
           youtube
           upnext
           inputstreamhelper
-	      ])
+	      ]);
       };
     };
     users.jcw = {
