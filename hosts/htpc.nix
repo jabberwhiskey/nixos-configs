@@ -13,10 +13,11 @@
     ../user/keys
   ];
     environment.systemPackages = [
-      (pkgs.kodi.withPackages (kodiPkgs: with kodiPkgs; [
+      (pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
 		    jellyfin
         youtube
         upnext
+        inputstreahelper
   	  ]))
     ];
   users.extraUsers.kodi = {
