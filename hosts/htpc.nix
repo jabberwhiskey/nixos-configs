@@ -16,13 +16,12 @@
       home.stateVersion = "25.05";
       programs.kodi = {
         enable = true;
-        package = pkgs.kodi-gbm.withPackages (kodiPkgs: with kodiPkgs; [
-		      jellyfin
-          youtube
-          upnext
-          inputstreamhelper
-	      ]);
-      };
+        package = kodiPackages.kodiWithPlugins (pkgs: with pkgs; [
+          kodiPackages.youtube
+	  kodiPackages.jellyfin
+	  kodiPackages.upnext
+    ])      
+  };
     };
     users.jcw = {
       imports = [
