@@ -16,10 +16,10 @@
       home.stateVersion = "25.05";
       programs.kodi = {
         enable = true;
-        package = pkgs.kodiPackages.kodi.withPackages (pkgs: with pkgs; [
-          kodiPackages.youtube
-	  kodiPackages.jellyfin
-	  kodiPackages.upnext
+        package = pkgs.kodiPackages.kodi.withPackages (kodiPackages: with kodiPackages; [
+          youtube
+	  jellyfin
+	  upnext
         ]);      
       };
     };
