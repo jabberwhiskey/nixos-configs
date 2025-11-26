@@ -18,6 +18,8 @@
         enable = true;
         package = pkgs.kodiPackages.kodi.withPackages (kodiPackages: with kodiPackages; [
           youtube
+	  inputstream-adaptive
+	  inputstream-rtmp
 	  jellyfin
 	  upnext
         ]);      
