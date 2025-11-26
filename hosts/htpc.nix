@@ -16,7 +16,7 @@
       home.stateVersion = "25.05";
       programs.kodi = {
         enable = true;
-        package = pkgs.kodiPackages.kodi.withPackages (kodiPackages: with kodiPackages; [
+        package = pkgs.kodi.withPackages (kodiPackages: with kodiPackages; [
           youtube
 	  inputstream-adaptive
 	  inputstream-rtmp
@@ -35,7 +35,9 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
-  nixpkgs.config.kodi.enableAdvancedLauncher = true;
+  nixpkgs.config.kodi = {
+    kodiPackages.youtube = true;
+  };
   users.extraUsers.kodi = {
     isNormalUser = true;
     extraGroups = [
