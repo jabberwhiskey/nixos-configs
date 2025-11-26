@@ -20,7 +20,7 @@
           kodiPackages.youtube
 	  kodiPackages.jellyfin
 	  kodiPackages.upnext
-        ]))      
+        ]));      
       };
     };
     users.jcw = {
