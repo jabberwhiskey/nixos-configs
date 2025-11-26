@@ -16,7 +16,7 @@
       home.stateVersion = "25.05";
       programs.kodi = {
         enable = true;
-        package = pkgs.kodiPackages.kodiWithPlugins (pkgs: with pkgs; [
+        package = pkgs.kodiPackages.kodi.withPackages (pkgs: with pkgs; [
           kodiPackages.youtube
 	  kodiPackages.jellyfin
 	  kodiPackages.upnext
