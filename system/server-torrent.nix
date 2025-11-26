@@ -3,6 +3,7 @@
   services.transmission = {
     enable = true;
     user = "jcw";
+    group = "users";
     openFirewall = true;
     openRPCPort = true;
     settings = {
