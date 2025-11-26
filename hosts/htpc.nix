@@ -44,26 +44,36 @@
       "input"
     ];
   };
-  services.getty.autologinUser = "kodi";
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
-        command = "${pkgs.kodi-gbm}/bin/kodi-standalone";
-        user = "kodi";
-      };
-      default_session = {
-        command = "${pkgs.greetd.greetd}/bin/agreety --cmd sway";
-      };
-    };
-  };
-
-  programs.sway = {
-    enable = true;
-    xwayland.enable = false;
-  };
-  # use alsa; which supports hdmi passthrough
-  services.pulseaudio.enable = false;
+  
+  services.xserver.enable = true;
+  services.xserver.desktopManager.kodi.enable = true;
+  services.xserver.desktopManager.kodi.package = pkgs.kodi-gbm.withPackages (p: [
+    p.youtube
+    p.inputstream-adaptive
+  ]);
+  services.displayManager.autoLogin.user = "kodi";
+  services.xserver.displayManager.lightdm.greeter.enable = false;
+#  services.getty.autologinUser = "kodi";
+#  services.greetd = {
+#    enable = true;
+#    settings = {
+#      initial_session = {
+#        command = "${pkgs.kodi-gbm}/bin/kodi-standalone";
+#        user = "kodi";
+#      };
+#      default_session = {
+#        command = "${pkgs.greetd.greetd}/bin/agreety --cmd sway";
+#      };
+#    };
+#  };
+#
+#  programs.sway = {
+#    enable = true;
+#    xwayland.enable = false;
+#  };
+#  # use alsa; which supports hdmi passthrough
+#  services.pulseaudio.enable = false;
+#  services.pipewire.enable = false;
   services.pipewire.enable = false;
 
   networking.hostName = "htpc";
