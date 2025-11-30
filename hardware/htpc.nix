@@ -13,7 +13,29 @@
   fileSystems."/" =
     { device = "/dev/disk/by-label/root";
       fsType = "btrfs";
+      options = [ "subvol=root" "ssd" "compress=zstd" ];
     };
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "ssd" "compress=zstd" ];
+    };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=home" "ssd" "compress=zstd" ];
+    };
+  fileSystems."/media" =
+    { device = "/dev/disk/by-label/media";
+      fsType = "btrfs";
+      options = [ "uid=jcw" "defaults" ];
+    };
+  fileSystems."/home/jcw/games" =
+    { device = "/dev/disk/by-label/games";
+      fsType = "btrfs";
+      options = [ "subvol=home" "ssd" "compress=zstd" "uid=jcw"];
+    };
+
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/boot";
