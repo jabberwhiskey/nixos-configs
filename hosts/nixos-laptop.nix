@@ -9,9 +9,9 @@
 {
   imports = [
     ../system/basic.nix
-    ../system/cosmic.nix
+#    ../system/cosmic.nix
     ../system/fprint.nix
-#    ../system/hyprland.nix
+    ../system/hyprland.nix
     ../system/pam-u2f.nix
 #    ../system/lanzaboote.nix
     ../system/basic-stable.nix
@@ -20,8 +20,8 @@
     ../system/hyprpam.nix
     ../system/qt.nix
     ../system/waydroid.nix
-#    ../system/intel-laptop.nix
-#    ../system/greetd.nix
+    ../system/intel-laptop.nix
+    ../system/greetd.nix
     #../system/kernel-latest.nix
     ../system/kernel-zen.nix
     ../system/fonts.nix
@@ -36,12 +36,12 @@
         "test" = "sudo nixos-rebuild test --flake ~/dev/nixos-configs#nixos-laptop --verbose";
       };
       imports = [
- #       ../home/waybar.nix
+        ../home/waybar.nix
         ../home/bash.nix
         ../home/hypridle-extra.nix
         ../home/nvim.nix
         ../home/zsh.nix
-#        ../home/hypr-swap-escape.nix
+        ../home/hypr-swap-escape.nix
         ../home/home.nix
       ];
       programs.foot.settings.main.font = lib.mkForce "monospace:size=12";
