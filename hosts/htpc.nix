@@ -9,6 +9,7 @@
       ../system/steam.nix
       ../system/tailscale.nix
       ../system/basic.nix
+      ../system/plasma.nix
     ];
   home-manager = {
     useGlobalPkgs = true;
@@ -35,9 +36,6 @@
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
-  services.cage.user = "jcw";
-  services.cage.program = "${pkgs.kodi-wayland}/bin/kodi-standalone";
-  services.cage.enable = true;
 
   networking.hostName = "htpc";
   nixpkgs.hostPlatform = "x86_64-linux";
