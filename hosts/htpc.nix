@@ -31,11 +31,10 @@
         ../home/home.nix
       ];
       home.stateVersion = "25.05";
-        home.file.widevine-lib.source = "${pkgs.unfree.widevine-cdm}/share/google/chrome/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so";
-        home.file.widevine-lib.target = ".kodi/cdm/libwidevinecdm.so";
-        home.file.widevine-manifest.source = "${pkgs.unfree.widevine-cdm}/share/google/chrome/WidevineCdm/manifest.json";
-        home.file.widevine-manifest.target = ".kodi/cdm/manifest.json";
-
+      home.file.widevine-lib.source = "${pkgs.unfree.widevine-cdm}/share/google/chrome/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so";
+      home.file.widevine-lib.target = ".kodi/cdm/libwidevinecdm.so";
+      home.file.widevine-manifest.source = "${pkgs.unfree.widevine-cdm}/share/google/chrome/WidevineCdm/manifest.json";
+      home.file.widevine-manifest.target = ".kodi/cdm/manifest.json";
     };
   };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
@@ -48,7 +47,4 @@
   networking.hostName = "htpc";
   nixpkgs.hostPlatform = "x86_64-linux";
   system.stateVersion = "25.05";
-
-  networking.firewall.enable = true;
-
 }
