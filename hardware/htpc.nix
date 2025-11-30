@@ -28,7 +28,7 @@
   fileSystems."/media" =
     { device = "/dev/disk/by-label/media";
       fsType = "btrfs";
-      options = [ "uid=jcw" "defaults" ];
+      options = [  "defaults" ];
     };
   fileSystems."/home/jcw/games" =
     { device = "/dev/disk/by-label/games";
