@@ -33,7 +33,7 @@
   fileSystems."/home/jcw/games" =
     { device = "/dev/disk/by-label/games";
       fsType = "btrfs";
-      options = [  "ssd" "compress=zstd" "uid=jcw"];
+      options = [  "ssd" "compress=zstd"];
     };
 
 
