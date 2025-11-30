@@ -30,7 +30,6 @@
         ../home/bash.nix
         ../home/home.nix
       ];
-      home.stateVersion = "25.05";
     };
   };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
