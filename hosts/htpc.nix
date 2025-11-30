@@ -13,7 +13,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.kodi = {
+    users.jcw = {
       home.stateVersion = "25.05";
       programs.kodi = {
         enable = true;
