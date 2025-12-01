@@ -31,7 +31,7 @@
     extraPackages = [
       pkgs.intel-media-driver
       pkgs.intel-vaapi-driver # previously vaapiIntel
-      pkgs.libva-vaapi-driver # previously vaapiIntel
+      pkgs.libva-vdpau-driver # previously vaapiIntel
 #      pkgs.vaapiVdpau
       pkgs.libvdpau-va-gl
       #      inputs.old-stable.legacyPackages.x86_64-linux.intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
