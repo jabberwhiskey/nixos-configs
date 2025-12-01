@@ -6,6 +6,7 @@
     [ # Include the results of the hardware scan.
       ../hardware/htpc.nix
       ../system/bluetooth.nix
+      ../system/kernel-latest.nix
       ../system/systemdboot.nix
       ../system/steam.nix
       ../system/tailscale.nix
