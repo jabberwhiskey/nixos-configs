@@ -35,6 +35,7 @@
       ];
     };
   };
+  security.pam.services.jcw.kwallet.enable = true;
   services.displayManager = {
     autoLogin = {
       enable = true;
