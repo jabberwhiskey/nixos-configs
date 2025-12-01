@@ -40,6 +40,9 @@
       pkgs.intel-media-sdk # QSV up to 11th gen
     ];
   };
+  nixpkgs.config.permittedInsecurePackages = [
+    "intel-media-sdk-23.2.2"
+  ];
   systemd.services.jellyfin.serviceConfig.PrivateDevices = lib.mkForce false;
   users.users.jellyfin = {
     extraGroups = [
