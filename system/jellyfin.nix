@@ -37,7 +37,8 @@
       #      inputs.old-stable.legacyPackages.x86_64-linux.intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
       pkgs.intel-compute-runtime-legacy1
       #      hpl-gpu-rt # QSV on 11th gen or newer
-      pkgs.intel-media-sdk # QSV up to 11th gen
+#      pkgs.intel-media-sdk # QSV up to 11th gen
+
     ];
   };
   nixpkgs.config.permittedInsecurePackages = [
