@@ -43,7 +43,7 @@
     sddm = {
       autoLogin.relogin = true;
     };
-    defaultSession = "plasma-wayland";
+    defaultSession = "plasma";
   };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
