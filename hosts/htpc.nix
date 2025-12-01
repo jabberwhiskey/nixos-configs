@@ -35,6 +35,16 @@
       ];
     };
   };
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "jcw";
+    };
+    sddm = {
+      autoLogin.relogin = true;
+    };
+    defaultSession = "plasma-wayland";
+  };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
   ];
