@@ -67,8 +67,8 @@
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       btop
-      chromium
-      discord
+#      chromium
+#      discord
       discordo
       mumble
       htop
@@ -79,8 +79,8 @@
       iamb
       nix-inspect
       neonmodem
-      bitwarden-desktop
-      firefox
+#      bitwarden-desktop
+#$      firefox
       browsh
       unzip
       yt-dlp
