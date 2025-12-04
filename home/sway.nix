@@ -23,6 +23,12 @@
         "type:keyboard" = {
           xkb_options = "caps:swapescape";
         };
+        "type:touchpad" = {
+          dwt = "enabled";
+          dwtp = "enabled";
+          tap = "enabled";
+          tap_button_map = "lrm";
+        };
       };
       output = {
         "*" = {
