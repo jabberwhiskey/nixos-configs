@@ -74,6 +74,7 @@
       htop
       bitwarden-cli
       wiki-tui
+      ranger
       ytermusic
       russ
       iamb
