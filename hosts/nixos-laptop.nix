@@ -9,6 +9,7 @@
 {
   imports = [
     ../system/basic.nix
+    ../system/systemd-tailscale.nix
 #    ../system/cosmic.nix
     ../system/fprint.nix
     ../system/hyprland.nix

@@ -5,6 +5,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hardware/htpc.nix
+      ../system/systemd-tailscale.nix
       ../system/bluetooth.nix
       ../system/kernel-latest.nix
       ../system/systemdboot.nix

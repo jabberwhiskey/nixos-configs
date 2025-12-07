@@ -8,6 +8,7 @@
 {
   imports = [
     ../system/basic.nix
+    ../system/systemd-tailscale.nix
     ../system/fprint.nix
     ../system/brotherprinter.nix
     ../system/hyprland.nix

@@ -11,6 +11,7 @@
   };
   imports = [
     ../hardware/gpd.nix
+    ../system/systemd-tailscale.nix
     ../system/kernel-latest.nix
     ../system/basic.nix
     ../system/fonts.nix
