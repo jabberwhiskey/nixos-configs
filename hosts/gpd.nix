@@ -67,6 +67,9 @@
     ];
     plymouth.enable = true;
   };
+  services = {
+    gvfs.enable = true;
+  };
   services.displayManager.sddm = {
     enable = lib.mkForce false;
     settings = {
