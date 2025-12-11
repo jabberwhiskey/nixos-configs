@@ -6,7 +6,7 @@
   };
   services.nfs.server = {
     enable = true;
-    hostName = "nixos-server";
+    hostName = "100.85.215.105";
     exports = ''
       /export  100.105.196.3(rw,fsid=0,no_subtree_check)
       /export/shared  100.105.196.3(rw,sync,nohide,insecure,no_subtree_check) 192.168.68.0/24(rw,sync,nohide,insecure,no_subtree_check)
