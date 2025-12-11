@@ -8,7 +8,6 @@
     enable = true;
     hostName = "nixos-server";
     exports = ''
-    exports = ''
       /export  100.105.196.3(rw,fsid=0,no_subtree_check)
       /export/shared  100.105.196.3(rw,sync,nohide,insecure,no_subtree_check)
     '';
