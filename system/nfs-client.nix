@@ -1,6 +1,6 @@
 {pkgs, config, ... }:
 {
-  fileSysytems."/media/shared" = {
+  fileSystems."/media/shared" = {
     device = "nixos-server:/export/shared";
     fstype = "nfs";
   }; 
