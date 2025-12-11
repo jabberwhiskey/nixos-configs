@@ -9,6 +9,7 @@
   imports = [
     ../hardware/nucserver.nix
     ../system/minimal-basic.nix
+    ../system/nfs-server.nix
     ../system/server-torrent.nix
     ../system/tailscale.nix
     ../system/sonarr.nix
