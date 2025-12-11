@@ -6,4 +6,8 @@
     options = [ "x-systemd.automount" "noauto" ];
   }; 
   boot.supportedFilesystems = [ "nfs" ];
+  boot.initrd = {
+  supportedFilesystems = [ "nfs" ];
+  kernelModules = [ "nfs" ];
+};
 }
