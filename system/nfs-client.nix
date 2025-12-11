@@ -3,7 +3,7 @@
   fileSystems."/media/shared" = {
     device = "100.85.215.105:/shared";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "nfsvers=4.0" "noatime" ];
+    options = [ "x-systemd.automount" "noauto" "nfsvers=4.2" "noatime" "defaults" ];
   }; 
   boot.supportedFilesystems = [ "nfs" ];
   boot.initrd = {
