@@ -1,7 +1,9 @@
 {pkgs, config, ... }:
 {
   fileSystems."/media/shared" = {
-    device = "nixos-server:/export/shared";
-    fstype = "nfs";
+    device = "100.85.215.105:/shared";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
   }; 
+  boot.supportedFilesystems = [ "nfs" ];
 }
