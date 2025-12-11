@@ -8,7 +8,7 @@
     enable = true;
     hostName = "nixos-server";
     exports = ''
-      /export/shared  100.105.196.3(rw,nohide,insecure,no_subtree_check) nix-desktop(rw,fsid=0,no_subtree_check) linainverse(rw,fsid=0,no_subtree_check) framework(rw,fsid=0,no_subtree_check)
+      /export/shared  100.105.196.3(rw,sync,nohide,insecure,no_subtree_check) nix-desktop(rw,fsid=0,no_subtree_check) linainverse(rw,fsid=0,no_subtree_check) framework(rw,fsid=0,no_subtree_check)
     '';
     lockdPort = 4001;
     mountdPort = 4002;
