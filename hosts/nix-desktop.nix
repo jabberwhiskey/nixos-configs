@@ -8,6 +8,7 @@
 {
   imports = [
     ../system/basic.nix
+    ../system/nfs-client.nix
     ../system/bt-off.nix
     ../system/systemd-tailscale.nix
 #    ../system/plasma.nix

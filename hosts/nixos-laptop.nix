@@ -9,6 +9,7 @@
 {
   imports = [
     ../system/basic.nix
+    ../system/nfs-client.nix
     ../system/systemd-tailscale.nix
 #    ../system/cosmic.nix
     ../system/fprint.nix
