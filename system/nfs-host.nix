@@ -25,6 +25,6 @@
   };
   systemd.services."nfs-server" = {
     requires = [ "export-shared.mount" ];
-    after = [ "export-shared.mount" ];
+    after = [ "multi-user.target" ];
   };
 }
