@@ -13,6 +13,10 @@
     ../home/sway-inhibit.nix
     ../home/zsh.nix
     ../home/nvim.nix
+    ../home/hyprland.nix
+    ../home/hypr-swap-escape.nix
+    ../home/waybar.nix
+    ../home/inhibit-hyprland.nix
     # ../home/home.nix
   ];
   nixpkgs.config = {
@@ -49,7 +53,7 @@
     settings = {
       main = {
         app-id = "foot";
-        font = "monospace:size=12";
+        font = lib.mkForce "monospace:size=12";
       };
       colors = {
         alpha = 0.9;
@@ -109,5 +113,9 @@
         icon_names.media = [ "drive-removable-media-usb" ];
       };
     };
+  };
+  wayland.windowManager.hyprland = {
+    package = lib.mkForce inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = lib.mkForce inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 }

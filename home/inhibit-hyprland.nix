@@ -28,7 +28,7 @@
     enable = true;
   };
   systemd.user.services = {
-    wayland-pipewire-idle-inhibit = {
+    hyprland-pipewire-idle-inhibit = {
       Install = {
         WantedBy = [ "hyprland-session.target" ];
       };
