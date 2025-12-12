@@ -20,7 +20,10 @@
     allowedUDPPorts = [ 111 2049 4000 4001  4002 20048 ];
   };
   boot.initrd = {
-  supportedFilesystems = [ "nfs" ];
-  kernelModules = [ "nfs" ];
-};
+    supportedFilesystems = [ "nfs" ];
+    kernelModules = [ "nfs" ];
+  };
+  systemd.services."nfs-server" = {
+    requires = [ "export-shared.mount" ];
+  };
 }
