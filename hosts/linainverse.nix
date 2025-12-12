@@ -74,6 +74,7 @@
 #      chromium
 #      discord
       discordo
+      imv
       mumble
       htop
       bitwarden-cli
