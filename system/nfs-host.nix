@@ -29,7 +29,8 @@
   systemd.services.rpcbind = {
     after = [ "tailscale.service" ];
   };
-  systemd.mounts = [
-    export-shared.after = [ "tailscaled.service" ];
-  ];
+  systemd.mounts = [{
+    where = "/export/shared";
+    after = [ "tailscaled.service" ];
+  }];
 }
