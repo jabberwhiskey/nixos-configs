@@ -90,6 +90,8 @@
 
       startup = [
         { command = "dunst"; }
+        { command = "dbus-update-activation-environment --all"; }
+        { command = "gnome-keyring-daemon --start --components=secrets"; }
         #        {command = "nixGL ${pkgs.wpaperd}/bin/wpaperd";}
       ];
     };
