@@ -2,7 +2,7 @@
 {
   fileSystems."/export/shared" = {
     device = "/media/nas/shared";
-    options = [ "bind" ];
+    options = [ "bind" "x-systemd.after=tailscaled.service" ];
   };
   services.nfs.server = {
     enable = true;
@@ -29,8 +29,4 @@
   systemd.services.rpcbind = {
     after = [ "tailscale.service" ];
   };
-  systemd.mounts = [{
-    what = "/export/shared";
-    after = [ "tailscaled.service" ];
-  }];
 }
