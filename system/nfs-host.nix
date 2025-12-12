@@ -30,8 +30,6 @@
     after = [ "tailscale.service" ];
   };
   systemd.mounts = [
-    "export-shared" = {
-      after = [ "tailscaled.service" ];
-    };
+    export-shared.after = [ "tailscaled.service" ];
   ];
 }
