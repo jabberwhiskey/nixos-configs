@@ -23,7 +23,7 @@
     supportedFilesystems = [ "nfs" ];
     kernelModules = [ "nfs" ];
   };
-  systemd.services."nfs-server" = {
+  systemd.services.nfs-server = {
     requires = [ "export-shared.mount" ];
     after = [ "multi-user.target" ];
   };
