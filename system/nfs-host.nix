@@ -24,7 +24,10 @@
     kernelModules = [ "nfs" ];
   };
   systemd.services.nfs-server = {
-    requires = [ "tailscaled.service" ];
     after = [  "rpcbind.service" ];
+  };
+  systemd.services.rpcbind = {
+    after = [ "tailscale.service" ];
+    requires = [ "export-shared.mount" ];
   };
 }
