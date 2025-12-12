@@ -24,6 +24,7 @@
     kernelModules = [ "nfs" ];
   };
   systemd.services.nfs-server = {
-    after = [  "rpcbind.service" "tailscaled.service" ];
+    requires = [ "tailscaled.service" ];
+    after = [  "rpcbind.service" ];
   };
 }
