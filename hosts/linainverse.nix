@@ -15,6 +15,7 @@
     ../home/nvim.nix
     ../home/hyprland.nix
     ../home/hypr-swap-escape.nix
+    ../home/hypridle-extra.nix
     ../home/waybar.nix
     ../home/inhibit-hyprland.nix
     # ../home/home.nix
