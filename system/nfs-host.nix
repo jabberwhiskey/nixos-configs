@@ -2,7 +2,7 @@
 {
   fileSystems."/export/shared" = {
     device = "/media/nas/shared";
-    options = [ "bind" "x-systemd.required-by=nfs-server.service" ];
+    options = [ "bind" "x-systemd.required-by=nfs-server.service" "x-systemd.after=tailscaled.service" ];
   };
   services.nfs.server = {
     enable = true;
