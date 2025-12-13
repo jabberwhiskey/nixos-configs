@@ -15,7 +15,7 @@
     ../home/nvim.nix
     ../home/hyprland.nix
     ../home/hypr-swap-escape.nix
-    ../home/hypridle-extra.nix
+#    ../home/hypridle-extra.nix
     ../home/waybar.nix
     ../home/inhibit-hyprland.nix
     # ../home/home.nix
@@ -120,4 +120,5 @@
     package = lib.mkForce inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = lib.mkForce inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+  programs.hyprlock.enable = lib.mkForce false; #cant get pam to work with home-manager hyprlock
 }

@@ -148,7 +148,7 @@
         #rofi
         "$mod, D, exec, rofi -show drun"
         "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-        "$mod, W, exec, ${pkgs.firefox}/bin/firefox"
+        "$mod, W, exec, firefox"
         "$mod, P, pseudo," # dwindle
         "$mod, code:51, togglesplit," # dwindle
         "$mod, F, fullscreen,"
