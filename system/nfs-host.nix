@@ -2,7 +2,7 @@
 {
   fileSystems."/export/shared" = {
     device = "/media/nas/shared";
-    options = [ "bind" "x-systemd.required-by=nfs-server.service" "x-systemd.after=tailscaled.service" ];
+    options = [ "bind" "x-systemd.before=nfs-server.service" "x-systemd.after=tailscaled.service" ];
   };
   services.nfs.server = {
     enable = true;
@@ -24,6 +24,6 @@
     kernelModules = [ "nfs" ];
   };
   systemd.services.nfs-server = {
-    after = [   "storage.mount" ];
+    after = [ "remote-fs.target" ];
   };
 }
