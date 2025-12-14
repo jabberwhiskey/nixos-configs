@@ -16,7 +16,7 @@
     statdPort = 4000; 
     extraNfsdConfig = ''
       [nfsd]
-      host=100.85.215.105
+      host=0.0.0.0
       vers4.2=y
     '';
   };
