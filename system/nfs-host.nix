@@ -15,7 +15,9 @@
     mountdPort = 4002;
     statdPort = 4000; 
     extraNfsdConfig = ''
+      [nfsd]
       host=100.85.215.105
+      vers4.2=y
     '';
   };
   networking.firewall = {
