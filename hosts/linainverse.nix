@@ -50,6 +50,11 @@
       "/home/jcw/.local/share/flatpak/exports/share"
     ];
   };
+  systemd.user = {
+    tmpfiles.rules = [
+      "L %t/discord-ipc-0 - - - - app/com.discordapp.Discord/discord-ipc-0" #discord presence for flatpak
+    ];
+  };
   home.stateVersion = "24.11";
   targets.genericLinux.enable = true;
   programs.foot = {
