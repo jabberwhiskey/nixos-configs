@@ -76,15 +76,14 @@
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       btop
-      discordo
       imv
+      mpv
       mumble
       htop
       bitwarden-cli
       wiki-tui
       ranger
       ytermusic
-      russ
       iamb
       nix-inspect
       neonmodem
