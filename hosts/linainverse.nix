@@ -15,10 +15,8 @@
     ../home/nvim.nix
     ../home/hyprland.nix
     ../home/hypr-swap-escape.nix
-#    ../home/hypridle-extra.nix
     ../home/waybar.nix
     ../home/inhibit-hyprland.nix
-    # ../home/home.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -41,6 +39,12 @@
   xdg = {
     enable = true;
     portal.xdgOpenUsePortal = true;
+    mimeApps.defaultApplications = {
+      "image/jpeg" = "imv.desktop";
+      "image/png" = "imv.desktop";
+      "image/gif" = "imv.desktop";
+
+    };
     systemDirs.data = [
       "/var/lib/flatpak/exports/share"
       "/home/jcw/.local/share/flatpak/exports/share"
@@ -72,8 +76,6 @@
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       btop
-#      chromium
-#      discord
       discordo
       imv
       mumble
@@ -86,8 +88,6 @@
       iamb
       nix-inspect
       neonmodem
-#      bitwarden-desktop
-#$      firefox
       browsh
       unzip
       yt-dlp
