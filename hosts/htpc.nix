@@ -55,6 +55,7 @@
   ];
    hardware = {
     steam-hardware.enable = true;
+    bluetooth.enable = true;
     xone.enable = true;
   };
   networking.hostName = "htpc";
