@@ -53,6 +53,10 @@
   environment.systemPackages = [
     pkgs.retroarch-full
   ];
+   hardware = {
+    steam-hardware.enable = true;
+    xone.enable = true;
+  };
   networking.hostName = "htpc";
   nixpkgs.hostPlatform = "x86_64-linux";
   system.stateVersion = "25.05";
