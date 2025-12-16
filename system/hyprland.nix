@@ -20,7 +20,7 @@
     ../home/anyrun.nix
   ];
   environment.systemPackages = [
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    pkgs.rose-pine-hyprcursor
   ];
   hardware.brillo.enable = true;
   hardware.bluetooth.enable = true; # enables support for Bluetooth
