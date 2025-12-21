@@ -57,7 +57,7 @@
     settings = {
       monitor = [ ",preferred,auto,1" ];
       exec-once = [
-	"kwalletd6"
+      	"kwalletd6"
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
       ];
@@ -137,6 +137,8 @@
         "match:class xdg-desktop-portal-gtk, match:title All Files, float true"
         "match:class Waydroid, match:title Waydroid, float true"
         "match:class mpv, match:title mpv, float true"
+        "match:class imv, match:title imv, float true"
+        "match:class imv, match:title imv, float true"
       ];
       bind = [
         "$mod, Return, exec, $term"
