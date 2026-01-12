@@ -76,6 +76,7 @@
     g810-led
     piper
     wine
+    linuxKernel.packages.linux_zen.xone
     daggerfall-unity
   ];
   hardware = {
