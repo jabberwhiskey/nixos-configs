@@ -12,6 +12,7 @@
     ../home/bash.nix
     ../home/sway-inhibit.nix
     ../home/zsh.nix
+    ../home/anyrun.nix
     ../home/nvim.nix
     ../home/hyprland.nix
     ../home/hypr-swap-escape.nix
@@ -26,6 +27,13 @@
     homeDirectory = "/home/jcw";
   };
   wayland.windowManager.sway.package = null;
+  programs.zsh = {
+    shellAliases = {
+      update = "sudo apt upgrade --update";
+      hm = "home-manager switch --flake ${config.home.homeDirectory}/dev/nixos-configs#linainverse";
+      hypr = "nixGL start-hyprland";
+    };
+  };
   programs.git = {
     enable = true;
     settings = {
