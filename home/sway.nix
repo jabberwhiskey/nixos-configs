@@ -288,13 +288,9 @@
         command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";
       }
     ];
-    events = [
-      {
-        event = "before-sleep";
-        command = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";
-
-      }
-    ];
+    events = {
+      before-sleep = "/bin/swaylock -i ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper2.png -s fill";
+    };
   };
   services.dunst = {
     enable = true;
