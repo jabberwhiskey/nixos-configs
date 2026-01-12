@@ -30,7 +30,7 @@
   programs.zsh = {
     shellAliases = {
       update = "sudo apt upgrade --update";
-      hm = "home-manager switch --flake github:jabberwhiskey/nixos-configs#linainverse";
+      hm = "home-manager switch --flake ${config.home.homeDirectory}/dev/nixos-configs#jcw@linainverse";
       hypr = "nixGL start-hyprland";
     };
   };
