@@ -82,5 +82,8 @@
   powerManagement = {
     enable = true;
   };
+  environment.systemPackages = [
+    pkgs.retroarch-free
+  ];
   networking.hostName = "gpdwin";
 }

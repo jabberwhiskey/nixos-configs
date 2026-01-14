@@ -51,7 +51,7 @@
     ../user/keys
   ];
   environment.systemPackages = [
-    pkgs.retroarch-full
+    pkgs.retroarch-free
   ];
    hardware = {
     steam-hardware.enable = true;
