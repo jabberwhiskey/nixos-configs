@@ -85,7 +85,6 @@
   boot.extraModulePackages = with config; [ 
     pkgs.linuxPackages_zen.system76
     pkgs.linuxKernel.packages.linux_zen.xone #linux zen xone driver
-    daggerfall-unity
     ];
 
   #boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
