@@ -85,6 +85,7 @@
   boot.extraModulePackages = with config; [ 
     pkgs.linuxPackages_zen.system76
     pkgs.linuxKernel.packages.linux_zen.xone #linux zen xone driver
+    pkgs.linuxKernel.packages.linux_zen.xpadneo
     ];
 
   #boot.extraModulePackages = with config; [pkgs.linuxKernel.packages.linux_6_15.system76-io];
