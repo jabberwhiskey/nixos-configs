@@ -92,6 +92,8 @@
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       btop
+      discord
+      bitwarden-desktop
       imv
       mpv
       mumble
