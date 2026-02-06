@@ -12,15 +12,19 @@
         position = "top";
         height = 45;
         modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = [ "clock" ];
         modules-right = [
           "idle_inhibitor"
           "battery"
+          "temperature"
           "network"
+          "bluetooth"
           "wireplumber"
           "tray"
-          "clock"
         ];
+        "temperature" = {
+          format = "{temperatureC}°C "
+        };
 
         "hyprland/workspaces" = {
           format = "{name}";
@@ -216,6 +220,10 @@
       #idle_inhibitor.activated {
           color: white;
           background-color: #1100FF;
+      }
+      #temperature {
+          color: white;
+          background-color: #000000;
       }
     '';
   };
