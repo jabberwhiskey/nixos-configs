@@ -23,7 +23,7 @@
           "tray"
         ];
         "temperature" = {
-          format = "{temperatureC}°C "
+          format = "{temperatureC}°C ";
         };
 
         "hyprland/workspaces" = {
