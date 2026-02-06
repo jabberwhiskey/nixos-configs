@@ -21,6 +21,7 @@
       extraPkgs =
         pkgs: with pkgs; [
           xorg.libXcursor
+	  mangohud
           xorg.libXi
           xorg.libXinerama
           xorg.libXScrnSaver
