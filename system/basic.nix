@@ -16,6 +16,10 @@
   services.udisks2 = {
     enable = true;
   };
+  services.kmscon = {
+    enable = true;
+    useXkbConfig = true;
+  };
 
   time.timeZone = "US/Mountain";
   networking.networkmanager.enable = true;
