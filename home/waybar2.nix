@@ -11,12 +11,15 @@
         position = "top";
         height = 45;
         modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = [ "clock" ];
         modules-right = [
           "idle_inhibitor"
+	  "tray"
+	  "bluetooth"
+	  "cpu"
+	  "temperature"
           "wireplumber"
-          "tray"
-          "clock"
+	  "gamemode"
         ];
 
         "hyprland/workspaces" = {
@@ -28,6 +31,22 @@
         };
         "hyprland/window" = {
         };
+	"cpu" = {
+     	  format = "{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}";
+     	  format-icons = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];
+	};
+	"gamemode" = {
+	    format = "{glyph}";
+	    format-alt = "{glyph} {count}";
+	    glyph = "";
+	    hide-not-running = true;
+	    use-icon = true;
+	    icon-name = "input-gaming-symbolic";
+	    icon-spacing = 4;
+	    icon-size = 20;
+	    tooltip = true;
+	    tooltip-format = "Games running: {count}";
+	};
         "clock" = {
           interval = 1;
           format = "{:%I:%M %p}";
@@ -55,6 +74,19 @@
             "on-scroll-down" = "shift_down";
           };
         };
+        "bluetooth" = {
+          format = " {status}";
+          format-connected = " {device_alias}";
+          format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+        };
+        "temperature" = {
+          format = "{temperatureC}°C ";
+        };
+	
         idle_inhibitor = {
           format = "{icon}";
           format_icons = {
@@ -152,7 +184,7 @@
           border-bottom: 3px solid white;
       }
 
-      #mode, #clock, #battery {
+      #mode, #tray, #wireplumber, #clock, #battery, #bluetooth, #gamemode, #cpu, #idle_inhibitor {
           padding: 0 10px;
       }
 
@@ -169,7 +201,31 @@
           background-color:  #000000;
           color: white;
       }
+      
+      #bluetooth {
+           background-color: #000000;
+	   color: white;
+      }
 
+      #temperature {
+           color: white;
+	   background-color: #000000;
+      }
+
+      #cpu {
+           color: white;
+	   background-color: #000000;
+      }
+
+      #temperature {
+	   color: white;
+	   background-color: #000000;
+      }
+      
+      #gamemode {
+           color: white
+	   background-color: #000000;
+      }
       #battery.charging {
           color: green;
           background-color:  #000000;

@@ -157,7 +157,7 @@
           border-bottom: 3px solid white;
       }
 
-      #mode, #clock, #battery, #bluetooth, #network, #temperature {
+      #mode, #wireplumber #tray, #clock, #battery, #bluetooth, #network, #temperature {
           padding: 0 10px;
       }
 
