@@ -33,7 +33,7 @@
         };
 	"cpu" = {
      	  format = "{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}";
-     	  format-icons = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];
+     	  format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
 	};
 	"gamemode" = {
 	    format = "{glyph}";
@@ -74,16 +74,7 @@
             "on-scroll-down" = "shift_down";
           };
         };
-        "bluetooth" = {
-          format = " {status}";
-          format-connected = " {device_alias}";
-          format-connected-battery = " {device_alias} {device_battery_percentage}%";
-          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
-          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-        };
-        "temperature" = {
+         "temperature" = {
           format = "{temperatureC}°C ";
         };
 	
