@@ -13,7 +13,7 @@
     ../system/fprint.nix
     ../system/brotherprinter.nix
     ../system/hyprland.nix
-#    ../system/greetd.nix
+    ../system/greetd.nix
     ../system/qt.nix
     ../system/steam.nix
     ../system/tailscale.nix
