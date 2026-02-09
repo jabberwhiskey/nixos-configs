@@ -40,7 +40,7 @@
         ../home/hypr-swap-escape.nix
         ../home/hypridle-extra.nix
         ../home/zsh.nix
-        ../home/waybar.nix
+        ../home/waybar-framework.nix
       ];
       home.stateVersion = "23.05";
       programs.foot.settings.main.font = lib.mkForce "monospace:size=14";
