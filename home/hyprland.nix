@@ -133,15 +133,17 @@
 #        "float,class:^(mpv)$,title:^(mpv)$"
 #      ];
       windowrule = [
-        "match:class Bitwarden, match:title Bitwarden, workspace name:SCRTCHPD, float true, group set always"
+        "match:class Bitwarden, match:title Bitwarden, workspace special:SCRTCHPD, float true, group set always"
         "match:class xdg-desktop-portal-gtk, match:title All Files, float true"
         "match:class Waydroid, match:title Waydroid, float true"
         "match:class mpv, match:title mpv, float true"
         "match:class imv, match:title imv, float true"
-        "match:workspace name:SCRTCHPD, float true"
+        "match:workspace special:SCRTCHPD, float true"
+        "match:class Steam, match:title Steam, monitor 0"
       ];
       workspace = [
-        "name:SCRTCHPD, monitor:0"
+        "special:SCRTCHPD, monitor:0"
+        "1, monitor:0"
       ];
       bind = [
         "$mod, Return, exec, $term"
