@@ -19,7 +19,8 @@
     ../system/tailscale.nix
     ../system/fonts.nix
     ../system/hyprpam.nix
-    ../system/systemdboot.nix
+#    ../system/systemdboot.nix
+    ../system/limine.nix
     ../system/virtmanager.nix
     ../system/containers.nix
     ../hardware/framework.nix
