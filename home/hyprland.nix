@@ -178,7 +178,7 @@
         "$mod SHIFT, code:61, togglegroup," # /
         "$mod, code:60, changegroupactive, f" # .
         "$mod, code:59, changegroupactive, b" # ,
-        "$mod, code:61, moveoutofgroup, active" # /
+        "$mod Alt, code:61, moveoutofgroup, active" # /
         #move window
         "$mod SHIFT, up, movewindow, u"
         "$mod SHIFT, down, movewindow, d"
@@ -186,7 +186,7 @@
         "$mod SHIFT, right, movewindow, r"
         #scratchpad
         "$mod, code:20, togglespecialworkspace, SCRTCHPD" # minus
-        "$mod SHIFT, code:20, movetoworkspace, special:SCRTCHPD" # minus
+        "$mod, code:20, movetoworkspace, special:SCRTCHPD" # minus
         #brightness
         ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
         ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
