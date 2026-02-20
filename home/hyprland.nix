@@ -133,7 +133,7 @@
 #        "float,class:^(mpv)$,title:^(mpv)$"
 #      ];
       windowrule = [
-        "match:class Bitwarden, match:title Bitwarden, workspace special:SCRTCHPD, float true, group set always"
+        "match:class Bitwarden, match:title Bitwarden, workspace special:SCRTCHPD, float true, group set always, size monitor_w*0.5 monitor_h*0.5, center on"
         "match:class xdg-desktop-portal-gtk, match:title All Files, float true"
         "match:class Waydroid, match:title Waydroid, float true"
         "match:class mpv, match:title mpv, float true"
