@@ -105,6 +105,7 @@
         "col.border_locked_active" = "0x750000";
         "col.border_locked_inactive" = "0x330d0d";
         groupbar = {
+          enabled = true; 
           gradients = true;
           indicator_height = 4;
           "col.active" = "0xffffff";
