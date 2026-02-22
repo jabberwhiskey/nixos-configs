@@ -100,10 +100,17 @@
         shadow.enabled = false;
       };
       group = {
+        "col.border_active" = "0xffffff";
+        "col.border_inactive" = "0x000000";
+        "col.border_locked_active" = "0x750000";
+        "col.border_locked_inactive" = "0x330d0d";
         groupbar = {
           gradients = true;
           indicator_height = 4;
           "col.active" = "0xffffff";
+          "col.inactive" = "0x000000";
+          "text_color" = "0x000000";
+          "text_color_inactive" = "0xffffff";
         };
       };
       animations = {
