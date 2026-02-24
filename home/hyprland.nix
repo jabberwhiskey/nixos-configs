@@ -126,14 +126,23 @@
           "workspaces, 1, 6, default"
         ];
       };
+      binds = {
+        workspace_back_and_forth = true;
+      };
       dwindle = {
         pseudotile = "true";
         force_split = 2;
         preserve_split = "true";
       };
       master = {
-        new_status = "true";
+        new_status = "slave";
+        new_on_top = true;
       };
+      scrolling = {
+        fullscreen_on_one_column = true;
+
+      };
+
 #      windowrule = [
 #        "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
 #        "float,class:^(xdg-desktop-portal-gtk)$,title:^(All Files)$"
@@ -151,7 +160,9 @@
       ];
       workspace = [
         "special:SCRTCHPD, monitor:0"
-        "1, monitor:0"
+        "1, monitor:0, defualt:true"
+        "10, layout:scrolling"
+        "9, layout:master"
       ];
       bind = [
         "$mod, Return, exec, $term"
@@ -163,8 +174,6 @@
         #rofi
         "$mod, D, exec, rofi -show drun"
         "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-        "$mod, P, pseudo," # dwindle
-        "$mod, code:51, togglesplit," # dwindle
         "$mod, F, fullscreen,"
         "$mod SHIFT, F,togglefloating"
         ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output"
@@ -179,11 +188,11 @@
         "$mod, K, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, J, movefocus, d"
-        #stacks
+        #groups
         "$mod SHIFT, code:59, moveintogroup, l" # ,
         "$mod SHIFT, code:60, moveintogroup, r" # ,
         "$mod, code:58, lockactivegroup, toggle" # m
-        "$mod SHIFT, code:61, togglegroup," # /
+        #"$mod SHIFT, code:61, togglegroup," # /
         "$mod, code:60, changegroupactive, f" # .
         "$mod, code:59, changegroupactive, b" # ,
         "$mod Alt, code:61, moveoutofgroup, active" # /
@@ -192,6 +201,25 @@
         "$mod SHIFT, down, movewindow, d"
         "$mod SHIFT, left, movewindow, l"
         "$mod SHIFT, right, movewindow, r"
+        #dwindle layout
+        "$mod, U, togglesplit," # dwindle
+        "$mod, I, pseudo," # dwindle
+        #master layout
+        "$mod, B, layoutmsg, swapwithmaster ingnoremaster"
+        "$mod SHIFT, N, layoutmsg, swapnext"
+        "$mod ALT, N, layoutmsg, swapprev"
+        "$mod CONTROL_L, space, layoutmsg, removemaster"
+        "$mod ALT, space, layoutmsg, removemaster"
+        "$mod ALT, B, layoutmsg, rollnext"
+        #scrolling layout
+        "$mod, bracketright, layoutmsg, move +col"
+        "$mod, bracketleft, layoutmsg, move -col"
+        "$mod SHIFT, bracketright, layoutmsg, swapcol r"
+        "$mod SHIFT, bracketleft, layoutmsg, swapcol l"
+        "$mod ALT, code:51, layoutmsg, promote"
+        "$mod, code:51, layoutmsg, togglefit"
+        "$mod, P, layoutmsg, colresize +conf"
+        "$mod, O, layoutmsg, colresize -conf"
         #scratchpad
         "$mod, code:20, togglespecialworkspace, SCRTCHPD" # minus
         "$mod Shift, code:20, movetoworkspace, special:SCRTCHPD" # minus
