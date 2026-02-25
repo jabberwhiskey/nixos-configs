@@ -31,8 +31,13 @@
     shellAliases = {
       update = "sudo apt upgrade --update";
       hm = "home-manager switch --flake ${config.home.homeDirectory}/dev/nixos-configs#jcw@linainverse";
-      hypr = "nixGL start-hyprland";
+      hypr = "start-hyprland";
     };
+    profileExtra = ''
+      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+        exec start-hyprland
+      fi
+    '';
   };
   programs.git = {
     enable = true;
@@ -59,11 +64,6 @@
     systemDirs.data = [
       "/var/lib/flatpak/exports/share"
       "/home/jcw/.local/share/flatpak/exports/share"
-    ];
-  };
-  systemd.user = {
-    tmpfiles.rules = [
-      "L %t/discord-ipc-0 - - - - app/com.discordapp.Discord/discord-ipc-0" #discord presence for flatpak
     ];
   };
   home.stateVersion = "24.11";
