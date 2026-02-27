@@ -8,13 +8,11 @@
 {
   home = {
     packages = with pkgs; [
-      #      imv
       wl-clipboard
       cliphist
       qpwgraph
       pcmanfm-qt
       brillo
-#      qt6ct
       kdePackages.breeze-icons
       kdePackages.breeze
     ];
