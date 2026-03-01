@@ -200,8 +200,8 @@
         "$mod SHIFT, left, movewindow, l"
         "$mod SHIFT, right, movewindow, r"
         #dwindle layout
-        "$mod, U, togglesplit," # dwindle
-        "$mod, I, pseudo," # dwindle
+        "$mod, U, layoutmsg, togglesplit" # dwindle
+        "$mod, I, layoutmsg, pseudo" # dwindle
         #master layout
         "$mod, B, layoutmsg, swapwithmaster ingnoremaster"
         "$mod SHIFT, N, layoutmsg, swapnext"
