@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    ../home/tmux.nix
     ../home/sway.nix
     ../home/bash.nix
     ../home/sway-inhibit.nix
