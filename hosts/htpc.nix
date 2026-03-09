@@ -60,6 +60,16 @@
     xone.enable = true;
   };
   networking.hostName = "htpc";
-  nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs = {
+    hostPlatform = "x86_64-linux";
+    overlays = [
+      (self: super: {
+        libbluray = super.libbluray.override {
+          withAACS = true;
+          withBDplus = true;
+        };
+      })
+    ];
+  };
   system.stateVersion = "25.05";
 }
