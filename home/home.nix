@@ -51,10 +51,9 @@
       };
     };
   };
-  programs.tmux = {
-    enable = true;
-    shell = "${pkgs.zsh}/bin/zsh";
-  };
+  imports = [
+    ./tmux.nix
+  ];
   services.udiskie = {
     enable = true;
     automount = true;
