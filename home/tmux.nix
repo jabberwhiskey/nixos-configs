@@ -3,7 +3,7 @@
     enable = true;
     keyMode = "vi";
     prefix = "C-Space";
-    terminal = "tmux-256color"
+    terminal = "tmux-256color";
     extraConfig = ''
       #split
       unbind %
