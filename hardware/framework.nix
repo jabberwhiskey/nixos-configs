@@ -93,10 +93,10 @@
     HandlePowerKeyLongPress = "poweroff";
   };
   services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=60m 
-    SuspendState=mem
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "2h"; 
+    SuspendState = "mem";
+  };
   services.logind.settings.Login.PowerKey = "hibernate";
   services.logind.settings.Login.PowerKeyLongPress = "poweroff";
 }
