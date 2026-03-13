@@ -158,7 +158,7 @@
       ];
       workspace = [
         "special:SCRTCHPD, monitor:0"
-        "1, monitor:0, defualt:true"
+        "1, m[0], defualt:true"
         "10, layout:scrolling"
         "9, layout:master"
       ];

@@ -49,7 +49,7 @@
 	  [ "$mod Alt, F, exec, hyprctl keyword monitor HDMI-A-1, enable " 
 	   "$mod Alt, G, exec, hyprctl keyword monitor HDMI-A-1, disable " ];
 	  settings.workspace = [
-	    "2, monitor:1"
+	    "2, monitor[1]"
 	  ];
 	
       };
