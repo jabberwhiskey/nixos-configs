@@ -49,6 +49,7 @@
     };
   };
   boot.loader.efi.efiSysMountPoint = lib.mkForce "/boot";
+  boot.plymouth.enable = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
