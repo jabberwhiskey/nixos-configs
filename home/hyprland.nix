@@ -157,7 +157,7 @@
         "match:class Steam, match:title Steam, monitor 0"
       ];
       workspace = [
-        "special:SCRTCHPD, monitor:0"
+        "special:SCRTCHPD, m[0]"
         "1, m[0], defualt:true"
         "10, layout:scrolling"
         "9, layout:master"
