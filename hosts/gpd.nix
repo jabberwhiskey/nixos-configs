@@ -41,9 +41,6 @@
   #  specialArgs = { inherit inputs; };
   system.stateVersion = "25.05";
   jovian = {
-    devices.steamdeck.enable = true;
-    devices.steamdeck.enableKernelPatches = true;
-    devices.steamdeck.enablePerfControlUdevRules = true;
     steam = {
       user = "jcw";
       autoStart = true;
