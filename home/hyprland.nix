@@ -190,7 +190,7 @@
         "$mod SHIFT, code:59, moveintogroup, l" # ,
         "$mod SHIFT, code:60, moveintogroup, r" # ,
         "$mod, code:58, lockactivegroup, toggle" # m
-        #"$mod SHIFT, code:61, togglegroup," # /
+        "$mod Control_L, code:61, togglegroup," # /
         "$mod, code:60, changegroupactive, f" # .
         "$mod, code:59, changegroupactive, b" # ,
         "$mod Alt, code:61, moveoutofgroup, active" # /
