@@ -6,7 +6,7 @@
 }:
 {
   fonts = {
-    packages = with inputs.stable.legacyPackages.x86_64-linux; [
+    packages = with inputs.stable.legacyPackages.${pkgs.system}; [
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
