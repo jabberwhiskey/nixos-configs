@@ -22,6 +22,9 @@
       bind -n M-j select-pane -D
       bind -n M-k select-pane -U
       bind -n M-l select-pane -R
+
+      #open and use popup terminal
+      bind -f display-popup -w 80% -h 75% -xC -yC -E "bash"
       
       #start index at 1
       set -g base-index 1
