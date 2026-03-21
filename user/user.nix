@@ -20,7 +20,6 @@
       neovim
       neomutt
       yadm
-#      nvtopPackages.full
     ];
   };
   #programs.zsh.enable = true;

@@ -33,7 +33,7 @@
     users.jcw = {
       imports = [
         ../home/bash.nix
-        ../home/home.nix
+#        ../home/home.nix
       ];
     };
   };
