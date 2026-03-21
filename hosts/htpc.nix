@@ -33,7 +33,7 @@
     users.jcw = {
       imports = [
         ../home/bash.nix
-#        ../home/home.nix
+        ../home/home.nix
       ];
     };
   };
@@ -62,14 +62,6 @@
   networking.hostName = "htpc";
   nixpkgs = {
     hostPlatform = "x86_64-linux";
-    overlays = [
-      (self: super: {
-        libbluray = super.libbluray.override {
-          withAACS = true;
-          withBDplus = true;
-        };
-      })
-    ];
   };
   system.stateVersion = "25.05";
 }
