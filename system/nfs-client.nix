@@ -16,6 +16,7 @@
   systemd.automounts = [
     {
       name = "home-jcw-shared.automount";
+      enable = true;
       where = "/home/jcw/shared";
     }
   ];
