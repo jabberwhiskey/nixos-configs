@@ -1,10 +1,24 @@
 {pkgs, config, ... }:
 {
-  fileSystems."/home/jcw/shared" = {
-    device = "100.85.215.105:/shared";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "nfsvers=4.2" "noauto"  ];
-  }; 
+  systemd.mounts = [{
+      enable = true;
+      what = "100.85.215.105:/shared";
+      where = "/home/jcw/shared";
+      options = "user,rw,_netdev,nfsvers=4.2";
+      after = ["tailscaled.service"];
+      type = "nfs";
+      name = "home-jcw-shared.mount";
+      mountConfig = {
+        TimeoutSec = 10;
+        LazyUnmount = true;
+      };
+  }];
+  systemd.automounts = [
+    {
+      name = "home-jcw-shared.automount";
+      where = "/home/jcw/shared";
+    }
+  ];
   boot.supportedFilesystems = [ "nfs" ];
   boot.kernelModules = [ "nfs" ];
   boot.initrd = {
