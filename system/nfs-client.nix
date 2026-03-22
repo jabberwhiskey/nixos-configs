@@ -18,6 +18,7 @@
       name = "home-jcw-shared.automount";
       enable = true;
       where = "/home/jcw/shared";
+      wantedBy = [ "multi-user.target" ];
     }
   ];
   boot.supportedFilesystems = [ "nfs" ];
