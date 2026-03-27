@@ -66,6 +66,9 @@
           publicKey = "qDJgY2K+GtC/geqxLN2ZO61LHlwENsMpapC1eGF21mM=";
           persistentKeepalive = 25;
         }];
+        extraOptions = {
+          DNS =  "10.2.0.1, 2a07:b944::2:1";
+        };
       };
     };
   };
