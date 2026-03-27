@@ -56,7 +56,7 @@
     };
   };
   nixpkgs.hostPlatform = "x86_64-linux";
-  networking.wg-quick = {
+  networking.wg-quick.interfaces = {
     wg0 = {
       configFile = "/nixos-server0-US-AZ-96.conf";
     };
