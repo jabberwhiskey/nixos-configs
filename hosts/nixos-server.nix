@@ -73,5 +73,5 @@
     };
   };
   systemd.targets.wireguard-wg1.after = [ "network-online.target" ];
-  systemd.targets.wireguard-wg1.requires = [ "network.target" ];
+  systemd.targets.wireguard-wg1.requires = [ "network-online.target" ];
 }
