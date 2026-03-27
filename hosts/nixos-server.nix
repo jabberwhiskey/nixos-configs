@@ -76,7 +76,7 @@
       Table = "main";
       User = "transmission";
       Priority = 30000;
-      Family = "both"
+      Family = "both";
     }
   ];
 }
