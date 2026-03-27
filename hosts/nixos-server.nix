@@ -21,11 +21,13 @@
   ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
+  networking.firewall.checkReversePath = false;
   services.tailscale.useRoutingFeatures = "both";
 
   environment.systemPackages = with pkgs; [
     mc
     htop
+    wireguard-tools
   ];
   users.users.jcw = {
     extraGroups = [
