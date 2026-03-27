@@ -54,4 +54,22 @@
     };
   };
   nixpkgs.hostPlatform = "x86_64-linux";
+  networking.wireguard = {
+    enable = true;
+    interfaces = {
+      wg1 = {
+        ips = [ "10.2.0.2/32" "2a07:b944::2:2/128"];
+        privateKeyFile = /privatekey
+        peers = [{
+          endpoint = "193.37.254.66:51820";
+          name = "US-AZ#96";
+          allowedIPs = [ "0.0.0.0/0" "::/0"];
+          publicKey = "qDJgY2K+GtC/geqxLN2ZO61LHlwENsMpapC1eGF21mM=";
+          persistentKeepalive = 25;
+          }];
+        };
+      };
+    };
+
+  };
 }
