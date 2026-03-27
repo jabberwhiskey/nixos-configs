@@ -56,24 +56,12 @@
     };
   };
   nixpkgs.hostPlatform = "x86_64-linux";
-  networking.wireguard = {
-    enable = true;
-    interfaces = {
-      wg1 = {
-        ips = [ "10.2.0.2/32" "2a07:b944::2:2/128"];
-        privateKeyFile = "/privatekey";
-        peers = [{
-          endpoint = "193.37.254.66:51820";
-          allowedIPs = [ "0.0.0.0/0" "::/0"];
-          publicKey = "qDJgY2K+GtC/geqxLN2ZO61LHlwENsMpapC1eGF21mM=";
-          persistentKeepalive = 25;
-        }];
-        extraOptions = {
-          DNS =  "10.2.0.1, 2a07:b944::2:1";
-        };
-      };
+  networking.wg-quick = {
+    wg0 = {
+      configFile = "/nixos-server0-US-AZ-96.conf";
     };
   };
-  systemd.targets.wireguard-wg1.after = [ "network-online.target" ];
-  systemd.targets.wireguard-wg1.requires = [ "network-online.target" ];
+  firewall = {
+    allowedUDPPorts = [ 51820 ];
+  };
 }
