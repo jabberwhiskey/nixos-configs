@@ -69,6 +69,6 @@
         }];
       };
     };
-
   };
+  systemd.targets.wiregaurd-wg1.after = "network.target";
 }
