@@ -71,4 +71,5 @@
     };
   };
   systemd.targets.wireguard-wg1.after = [ "network.target" ];
+  systemd.targets.wireguard-wg1.requires = [ "network.target" ];
 }
