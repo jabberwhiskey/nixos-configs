@@ -59,7 +59,7 @@
     interfaces = {
       wg1 = {
         ips = [ "10.2.0.2/32" "2a07:b944::2:2/128"];
-        privateKeyFile = /privatekey
+        privateKeyFile = "/privatekey";
         peers = [{
           endpoint = "193.37.254.66:51820";
           name = "US-AZ#96";
