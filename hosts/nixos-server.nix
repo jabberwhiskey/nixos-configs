@@ -61,7 +61,7 @@
       configFile = "/nixos-server0-US-AZ-96.conf";
     };
   };
-  firewall = {
+  netowrking.firewall = {
     allowedUDPPorts = [ 51820 ];
   };
 }
