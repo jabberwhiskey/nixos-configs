@@ -3,7 +3,7 @@
   services.transmission = {
     enable = true;
     package = pkgs.transmission_4;
-    user = "jcw";
+    user = "transmission";
     group = "users";
     openFirewall = true;
     openRPCPort = true;

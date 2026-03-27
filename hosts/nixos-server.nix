@@ -65,4 +65,18 @@
   networking.firewall = {
     allowedUDPPorts = [ 51820 ];
   };
+  systemd.network.networks."wg0".routingPolicyRules = [
+    {
+      Table = 1000;
+      User = "transmission";
+      Priority = 30001;
+      Family = "both"
+    } 
+    {
+      Table = "main";
+      User = "transmission";
+      Priority = 30000;
+      Family = "both"
+    }
+  ];
 }
