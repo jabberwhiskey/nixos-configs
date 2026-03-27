@@ -62,7 +62,6 @@
         privateKeyFile = "/privatekey";
         peers = [{
           endpoint = "193.37.254.66:51820";
-          name = "US-AZ#96";
           allowedIPs = [ "0.0.0.0/0" "::/0"];
           publicKey = "qDJgY2K+GtC/geqxLN2ZO61LHlwENsMpapC1eGF21mM=";
           persistentKeepalive = 25;
