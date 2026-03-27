@@ -70,7 +70,7 @@
       Table = 1000;
       User = "transmission";
       Priority = 30001;
-      Family = "both"
+      Family = "both";
     } 
     {
       Table = "main";
