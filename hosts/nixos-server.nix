@@ -21,7 +21,7 @@
   ];
   system.stateVersion = "22.05";
   networking.hostName = "nixos-server";
-  networking.firewall.checkReversePath = false;
+  networking.firewall.checkReversePath = loose;
   services.tailscale.useRoutingFeatures = "both";
 
   environment.systemPackages = with pkgs; [
