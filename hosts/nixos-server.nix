@@ -13,6 +13,7 @@
     ../system/server-torrent.nix
     ../system/tailscale.nix
     ../system/sonarr.nix
+    ../system/radarr.nix
     ../system/jellyfin.nix
     ../system/systemdboot.nix
   ];
