@@ -106,6 +106,14 @@
             home-manager.nixosModules.home-manager
           ];
         };
+        #fake server
+        fake-server = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/fake-server.nix
+            home-manager.nixosModules.home-manager
+          ];
+        };
       };
       #Home-manager configurations
       homeConfigurations = {
