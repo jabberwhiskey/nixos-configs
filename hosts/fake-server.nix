@@ -2,7 +2,6 @@
 {
   imports = [
     ../system/basic.nix
-    ../system/.nix
     ../system/containers.nix
     ../system/kernel-latest.nix
     ../system/nfs-client.nix
