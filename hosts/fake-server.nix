@@ -27,7 +27,6 @@
     };
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
   };
   system.stateVersion = "24.11";
   
