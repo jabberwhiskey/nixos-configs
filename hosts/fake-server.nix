@@ -1,4 +1,4 @@
-{ config, self, pkgs, ... }:
+{ config, inputs, self, pkgs, ... }:
 {
   imports = [
     ../system/basic.nix
