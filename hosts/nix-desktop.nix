@@ -41,7 +41,7 @@
       wayland.windowManager.hyprland = {
 #      	settings.debug = { full_cm_proto=true; };
 	settings.monitor = [
-	  "DP-1, 2560x1440@239.95799, 0x0, 1, bitdepth, 10, cm, hdr"
+	  "DP-1, 2560x1440@239.95700, 0x0, 1, bitdepth, 10, cm, hdr, vrr, 1"
           "DP-2, 3840x2160@59.99700, -170x-1080, 2"
 	  "HDMI-A-1, disable"
 	  ];
