@@ -7,7 +7,7 @@
     ../system/nfs-client.nix
     ../system/plasma.nix
     ../system/tailscale.nix
-    ../system/vitmanager.nix
+    ../system/virtmanager.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
     ../hardware/fake-server.nix
