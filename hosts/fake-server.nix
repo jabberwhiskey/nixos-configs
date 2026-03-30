@@ -5,6 +5,7 @@
     ../system/containers.nix
     ../system/kernel-latest.nix
     ../system/nfs-client.nix
+    ../system/intel-laptop.nix
     ../system/plasma.nix
     ../system/tailscale.nix
     ../system/virtmanager.nix
