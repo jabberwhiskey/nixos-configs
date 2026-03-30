@@ -34,11 +34,6 @@
       hm = "home-manager switch --flake ${config.home.homeDirectory}/dev/nixos-configs#jcw@linainverse";
       hypr = "start-hyprland";
     };
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec start-hyprland
-      fi
-    '';
   };
   programs.git = {
     enable = true;
@@ -103,7 +98,6 @@
       wiki-tui
       ranger
       ytermusic
-      iamb
       nix-inspect
       neonmodem
       browsh
