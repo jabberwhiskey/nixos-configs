@@ -9,7 +9,6 @@
 {
   imports = [
     ../home/tmux.nix
-    ../home/nfs.nix
     ../home/sway.nix
     ../home/bash.nix
     ../home/sway-inhibit.nix
