@@ -20,7 +20,7 @@
       bitwarden-desktop
       wiki-tui
       ytermusic
-      iamb
+#      iamb
       goread
       nix-inspect
       bitwarden-cli
