@@ -28,4 +28,5 @@
     enable = true;
     prompt.enable = true;
   };
+  nix.config.trusted-users = ["root" "jcw" ];
 }

@@ -68,7 +68,7 @@
     openFirewall = false;
     settings = {
       PasswordAuthentication = false;
-      KbdInteractiveAuthentication = true;
+#      KbdInteractiveAuthentication = true;
     };
   };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
