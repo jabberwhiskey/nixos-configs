@@ -3,7 +3,7 @@
   programs.waybar = {
     systemd = {
       enable = true;
-      target = "hyprland-session.target";
+      targets = [ "hyprland-session.target" ];
     };   enable = true;
     settings = {
       mainBar = {
