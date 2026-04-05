@@ -20,11 +20,11 @@
       extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
       extraPkgs =
         pkgs: with pkgs; [
-          xorg.libXcursor
-	  mangohud
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
+          libXcursor
+	        mangohud
+          libXi
+          libXinerama
+          libXScrnSaver
           libpng
           libpulseaudio
           libvorbis
