@@ -75,5 +75,6 @@
     ../user/keys
   ];
   services.printing.enable = true;
+  services.avahi.enable = true;
   services.flatpak.enable = true;
 }
