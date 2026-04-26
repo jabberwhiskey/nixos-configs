@@ -128,7 +128,6 @@
         workspace_back_and_forth = true;
       };
       dwindle = {
-        pseudotile = "true";
         force_split = 2;
         preserve_split = "true";
       };
