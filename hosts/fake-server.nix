@@ -6,8 +6,8 @@
     ../system/kernel-latest.nix
     ../system/nfs-client.nix
     ../system/intel-laptop.nix
-    ../system/plasma.nix
     ../system/tailscale.nix
+    ../system/hyprland.nix
     ../system/virtmanager.nix
     ../system/fonts.nix
     ../system/systemdboot.nix
@@ -23,6 +23,7 @@
         ../home/zsh.nix
         ../home/hm-dconf.nix
         ../home/nvim.nix
+        ../home/waybar.nix 
       ];
       home.stateVersion = "25.11";
     };
