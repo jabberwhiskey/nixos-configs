@@ -257,7 +257,11 @@
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        "$mod, mous:273, resizewindow"
+      ];
+      bindl = [
+        ",switch:on:Lid Switch,exec,hyprctl keyword monitor \"eDP-1, disable\""
+        ",switch:off:Lid Switch,exec,hyprctl keyword monitor \"eDP-1, preferred, auto, auto\""
       ];
     };
   };
