@@ -21,8 +21,8 @@
       wiki-tui
       ytermusic
 #      iamb
-      goread
       nix-inspect
+      electrum
       bitwarden-cli
       firefox
       browsh
