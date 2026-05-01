@@ -267,7 +267,7 @@
   };
   home.packages = with pkgs; [
     swayimg
-    rofi
+    rofi/
   ];
   home.sessionVariables = {
     TERMINAL = "foot";
@@ -276,7 +276,7 @@
 
   services.swayidle = {
     enable = true;
-    systemdTarget = "sway-session.target";
+    systemdTargets = ["sway-session.target"];
     timeouts = [
       {
         timeout = 600;
