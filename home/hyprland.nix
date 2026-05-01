@@ -6,9 +6,6 @@
   ...
 }:
 {
-  imports = [
-    ./shikane.nix
-  ];
   home = {
     packages = with pkgs; [
       wl-clipboard
