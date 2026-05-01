@@ -267,7 +267,7 @@
   };
   home.packages = with pkgs; [
     swayimg
-    rofi/
+    rofi
   ];
   home.sessionVariables = {
     TERMINAL = "foot";
