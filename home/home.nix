@@ -12,17 +12,16 @@
       btop
       chromium
       lazygit
-      discord
+#      discord
       discordo
       mumble
       mpv
       htop
-      bitwarden-desktop
+#      bitwarden-desktop
       wiki-tui
       ytermusic
 #      iamb
       nix-inspect
-      electrum
       bitwarden-cli
       firefox
       browsh
