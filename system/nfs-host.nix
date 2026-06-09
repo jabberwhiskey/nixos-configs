@@ -15,7 +15,7 @@
     lockdPort = 4001;
     mountdPort = 4002;
     statdPort = 4000; 
-    settings = ''
+    extraConfig = ''
       [nfsd]
       host=0.0.0.0
       vers4.2=y
