@@ -47,12 +47,12 @@
       enable = true;
       desktopSession = "plasma";
     };
-    steamos = {
-      useSteamOSConfig = true;
-      enableAutoMountUdevRules = true;
-      enableBluetoothConfig = true;
-    };
-    hardware.has.amd.gpu = true;
+#    steamos = {
+#      useSteamOSConfig = true;
+#      enableAutoMountUdevRules = true;
+#      enableBluetoothConfig = true;
+#    };
+#    hardware.has.amd.gpu = true;
   };
   boot = {
     consoleLogLevel = 0;
