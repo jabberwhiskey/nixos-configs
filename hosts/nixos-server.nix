@@ -36,26 +36,26 @@
       "sonarr"
     ];
   };
-  systemd.tmpfiles.settings = {
-    "10-perms_for_nas" = {
-      "/media/nas" = {
-        Z = {
-          user = "jcw";
-          group = "users";
-          mode = "0776";
-        };
-      };
-    };
-    "10-perms_for_media" = {
-      "/media/plex" = {
-        Z = {
-          user = "jcw";
-          group = "users";
-          mode = "0776";
-        };
-      };
-    };
-  };
+#  systemd.tmpfiles.settings = {
+#    "10-perms_for_nas" = {
+#      "/media/nas" = {
+#        Z = {
+#          user = "jcw";
+#          group = "users";
+#          mode = "0776";
+#        };
+#      };
+#    };
+#    "10-perms_for_media" = {
+#      "/media/plex" = {
+#        Z = {
+#          user = "jcw";
+#          group = "users";
+#          mode = "0776";
+#        };
+#      };
+#    };
+#  };
   nixpkgs.hostPlatform = "x86_64-linux";
   networking.wg-quick.interfaces = {
     wg0 = {
