@@ -37,6 +37,9 @@
       ];
     };
   };
+  environment.systemPackages = [
+    pks.kdePackages.plasma-bigscreen
+  ];
   security.pam.services.jcw.kwallet.enable = true;
   services.displayManager = {
     autoLogin = {
@@ -46,7 +49,7 @@
     sddm = {
       autoLogin.relogin = true;
     };
-    defaultSession = "plasma";
+    defaultSession = "plasma-bigscreen";
   };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
