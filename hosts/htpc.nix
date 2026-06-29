@@ -46,7 +46,6 @@
     sddm = {
       autoLogin.relogin = true;
     };
-    defaultSession = "plasma-bigscreen";
   };
   users.users.jcw.openssh.authorizedKeys.keyFiles = [
     ../user/keys
