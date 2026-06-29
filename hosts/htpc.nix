@@ -53,7 +53,7 @@
   ];
   environment.systemPackages = [
     inputs.stable.legacyPackages.${pkgs.system}.retroarch-free
-    pks.kdePackages.plasma-bigscreen
+    pkgs.kdePackages.plasma-bigscreen
   ];
    hardware = {
     steam-hardware.enable = true;
