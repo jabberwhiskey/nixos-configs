@@ -37,9 +37,6 @@
       ];
     };
   };
-  environment.systemPackages = [
-    pks.kdePackages.plasma-bigscreen
-  ];
   security.pam.services.jcw.kwallet.enable = true;
   services.displayManager = {
     autoLogin = {
@@ -56,6 +53,7 @@
   ];
   environment.systemPackages = [
     inputs.stable.legacyPackages.${pkgs.system}.retroarch-free
+    pks.kdePackages.plasma-bigscreen
   ];
    hardware = {
     steam-hardware.enable = true;
