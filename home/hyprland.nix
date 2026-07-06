@@ -48,6 +48,8 @@
     enable = true;
   };
   wayland.windowManager.hyprland = {
+    configType = "hyprlang";
+    #configType = "lua";
     package = null;
     portalPackage = null;
     enable = true;
