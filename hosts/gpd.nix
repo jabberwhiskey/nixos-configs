@@ -59,7 +59,7 @@
     initrd.verbose = false;
     kernelParams = [
       "quiet"
-      "amd_pstate=active"
+#      "amd_pstate=active"
       "logLevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
@@ -70,15 +70,15 @@
   services = {
     gvfs.enable = true;
   };
-  services.displayManager.sddm = {
-    enable = lib.mkForce false;
-    settings = {
-      Autologin = {
-        Session = "gamescope-wayland.desktop";
-        User = "jcw";
-      };
-    };
-  };
+#  services.displayManager.sddm = {
+#    enable = lib.mkForce false;
+#    settings = {
+#      Autologin = {
+#        Session = "gamescope-wayland.desktop";
+#        User = "jcw";
+#      };
+#    };
+#  };
   powerManagement = {
     enable = true;
   };
