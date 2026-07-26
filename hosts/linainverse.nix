@@ -89,7 +89,7 @@
     packages = with pkgs; [
       btop
 #      discord
-#      bitwarden-desktop
+      bitwarden-desktop
       imv
       mpv
       mumble
