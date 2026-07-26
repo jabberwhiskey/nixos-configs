@@ -18,11 +18,12 @@ hl.window_rule({
   match = {
     class = "Bitwarden",
     title = "Bitwarden",
-    workspace = "special:SCRTCHPD",
-    float = true,
-    fullscreen = false,
   },
   center = true,
+  float = true,
+  workspace = "special:SCRTCHPD",
+  fullscreen = false,
+  size = {'(monitor_w*0.5)', '(monitor_h*0.5)' }
 })
 hl.window_rule({
   name = "filepicker",

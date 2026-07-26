@@ -43,10 +43,10 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind(mainMod .. " + ALT + up", hl.dsp.window.resize({x = 0,y= 10}))
-hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({x = 0,y = -10}))
-hl.bind(mainMod .. " + ALT + right", hl.dsp.window.resize({x= 10,y= 0}))
-hl.bind(mainMod .. " + ALT + left", hl.dsp.window.resize({x= -10,y= 0}))
+hl.bind(mainMod .. " + ALT + up", hl.dsp.window.resize({ x = 0, y = 10}))
+hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({ x = 0, y = -10}))
+hl.bind(mainMod .. " + ALT + right", hl.dsp.window.resize({ x = 10, y = 0}))
+hl.bind(mainMod .. " + ALT + left", hl.dsp.window.resize({ x= -10, y = 0}))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
