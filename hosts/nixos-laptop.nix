@@ -43,7 +43,6 @@
         ../home/hypridle-extra.nix
         ../home/nvim.nix
         ../home/zsh.nix
-        ../home/hypr-swap-escape.nix
         ../home/home.nix
       ];
       programs.foot.settings.main.font = lib.mkForce "monospace:size=12";

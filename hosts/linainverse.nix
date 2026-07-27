@@ -16,7 +16,6 @@
     ../home/anyrun.nix
     ../home/nvim.nix
     ../home/hyprland.nix
-    ../home/hypr-swap-escape.nix
     ../home/waybar.nix
     ../home/inhibit-hyprland.nix
   ];
