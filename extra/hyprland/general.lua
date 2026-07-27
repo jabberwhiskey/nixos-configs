@@ -1,8 +1,8 @@
-require("keybinds")
-require("style")
-require("layout")
-require("windowrules")
-require("workspaces")
+--require("keybinds")
+--require("style")
+--require("layout")
+--require("windowrules")
+--require("workspaces")
 
 ---------------------
 ---- MY PROGRAMS ----
