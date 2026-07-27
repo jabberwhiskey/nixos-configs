@@ -34,7 +34,7 @@
         #inputs.anyrun.packages.${pkgs.system}.websearch
         # An array of all the plugins you want, which either can be paths to the .so files, or their packages
         "${pkgs.anyrun}/lib/libapplications.so"
-        "${pkgs.anyrun}/lib/libwebsearch.so"
+        "${pkgs.anyrun}/lib/libwebseach.so"
       ];
     };
     extraConfigFiles."websearch.ron".text = ''
@@ -190,5 +190,5 @@
       '';
 
   };
-  wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, anyrun" ];
+#  wayland.windowManager.hyprland.settings.bind = [ "$mod, R, exec, anyrun" ];
 }

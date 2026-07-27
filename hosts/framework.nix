@@ -26,7 +26,7 @@
     ../system/containers.nix
     ../hardware/framework.nix
     ../system/sdr.nix
-    #../system/kernel-latest.nix
+    ../system/kernel-latest.nix
   ];
   system.stateVersion = "23.05";
   home-manager = {
@@ -39,7 +39,6 @@
         ../home/hm-dconf.nix
         ../home/nvim.nix
         ../home/bash.nix
-        ../home/hypr-swap-escape.nix
         ../home/hypridle-extra.nix
         ../home/zsh.nix
         ../home/waybar-framework.nix
