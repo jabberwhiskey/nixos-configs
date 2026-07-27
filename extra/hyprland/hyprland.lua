@@ -81,6 +81,9 @@ hl.config({
             natural_scroll = false,
         },
     },
+    binds = {
+      workspace_back_and_forth = true,
+    },
 })
 
 hl.gesture({
