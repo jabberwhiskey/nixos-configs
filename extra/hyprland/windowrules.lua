@@ -38,15 +38,15 @@ hl.window_rule({
   match = {
     class = "mpv",
     title = "mpv",
-    float = true,
   },
+    float = true,
 })
 hl.window_rule({
   name = "imv",
   match = {
     class = "imv",
     title = "imv",
-    float = true,
   },
+    float = true,
 })
 
