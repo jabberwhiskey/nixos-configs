@@ -17,7 +17,7 @@
       proton-ge-bin
     ];
     package = pkgs.steam.override {
-      extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+      extraLibraries = pkgs: [ pkgs.libxcb ];
       extraPkgs =
         pkgs: with pkgs; [
           libXcursor

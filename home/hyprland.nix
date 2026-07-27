@@ -57,30 +57,46 @@
   };
   systemd.user.targets.hyprland-session = {
     Unit = {
-      Description = "Hyprland session";
-      BindsTo = "graphical-session.target";
-      Wants = "graphical-session-pre.target";
-      After = "graphical-session-pre.target";
+      BindsTo = ["graphical-session.target"];
+      Wants = ["graphical-session-pre.target"];
+      After =  ["graphical-session-pre.target"];
       PropagatesStopTo = "graphical-session.target";
     };
   };
-#  wayland.windowManager.hyprland = {
-#    configType = "hyprlang";
-#    #configType = "lua";
-#    package = null;
-#    portalPackage = null;
-#    enable = true;
-#    systemd.enable = true;
+  wayland.windowManager.hyprland = {
+    configType = "lua";
+    package = null;
+    portalPackage = null;
+    enable = true;
+    extraLuaFiles = {
+      "general" = {
+        content = ../extra/hyprland/general.lua;
+        autoLoad = true;
+      };
+      "keybinds" = {
+        content = ../extra/hyprland/keybinds.lua;
+        autoLoad = true;
+      };
+      "layout" = {
+        content = ../extra/hyprland/layout.lua;
+        autoLoad = true;
+      };
+      "style" = {
+        content = ../extra/hyprland/style.lua;
+        autoLoad = true;
+      };
+      "windowrules" = {
+        content = ../extra/hyprland/windowrules.lua;
+        autoLoad = true;
+      };
+      "workspaces" = {
+        content = ../extra/hyprland/workspaces.lua;
+        autoLoad = true;
+      };
+    };
 #    settings = {
-#      monitor = [ ",preferred,auto,1" ];
 #      exec-once = [
 #      	"kwalletd6"
-#        "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
-#        "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
-#      ];
-#      "$mod" = "SUPER";
-#      "$term" = "${pkgs.foot}/bin/foot";
-#      "$fileManager" = "${pkgs.pcmanfm-qt}/bin/pcmanfm-qt";
 #      env = [
 #        "XCURSOR_SIZE,24"
 #        "XCURSOR_THEME,rose-pine"
@@ -89,14 +105,6 @@
 #        "QT_QPA_PLATFORMTHEME,qt6ct"
 #        "XDG_CURRENT_DESKTOP,Hyprland"
 #      ];
-#      input = {
-#        kb_layout = "us";
-#        follow_mouse = "1";
-#        sensitivity = "0";
-#        touchpad = {
-#          natural_scroll = false;
-#        };
-#      };
 #      general = {
 #        gaps_in = "5";
 #        gaps_out = "10";
@@ -156,15 +164,8 @@
 #      };
 #      scrolling = {
 #        fullscreen_on_one_column = true;
-#
 #      };
 #
-##      windowrule = [
-##        "float,class:^(Bitwarden)$,title:^(Bitwarden)$"
-##        "float,class:^(xdg-desktop-portal-gtk)$,title:^(All Files)$"
-##        "float,class:^(Waydroid)$,title:^(Waydroid)$"
-##        "float,class:^(mpv)$,title:^(mpv)$"
-##      ];
 #      windowrule = [
 #        "match:class Bitwarden, match:title Bitwarden, workspace special:SCRTCHPD, float true, group set always, size monitor_w*0.5 monitor_h*0.5, center on"
 #        "match:class xdg-desktop-portal-gtk, match:title All Files, float true"
@@ -174,42 +175,7 @@
 #        "match:workspace special:SCRTCHPD, float true"
 #        "match:class Steam, match:title Steam, monitor 0"
 #      ];
-#      workspace = [
-#        "special:SCRTCHPD, m[0]"
-#        "1, m[0], defualt:true"
-#        "10, layout:scrolling"
-#        "9, layout:master"
-#      ];
-#      bind = [
-#        #groups
-#        "$mod SHIFT, code:59, moveintogroup, l" # ,
-#        "$mod SHIFT, code:60, moveintogroup, r" # ,
-#        "$mod, code:58, lockactivegroup, toggle" # m
-#        "$mod Control_L, code:61, togglegroup," # /
-#        "$mod, code:60, changegroupactive, f" # .
-#        "$mod, code:59, changegroupactive, b" # ,
-#        "$mod Alt, code:61, moveoutofgroup, active" # /
-#        #dwindle layout
-#        "$mod, U, layoutmsg, togglesplit" # dwindle
-#        "$mod, I, layoutmsg, pseudo" # dwindle
-#        #master layout
-#        "$mod, B, layoutmsg, swapwithmaster ingnoremaster"
-#        "$mod SHIFT, N, layoutmsg, swapnext"
-#        "$mod ALT, N, layoutmsg, swapprev"
-#        "$mod CONTROL_L, space, layoutmsg, removemaster"
-#        "$mod ALT, space, layoutmsg, removemaster"
-#        "$mod ALT, B, layoutmsg, rollnext"
-#        #scrolling layout
-#        "$mod, bracketright, layoutmsg, move +col"
-#        "$mod, bracketleft, layoutmsg, move -col"
-#        "$mod SHIFT, bracketright, layoutmsg, swapcol r"
-#        "$mod SHIFT, bracketleft, layoutmsg, swapcol l"
-#        "$mod ALT, code:51, layoutmsg, promote"
-#        "$mod, code:51, layoutmsg, togglefit"
-#        "$mod, P, layoutmsg, colresize +conf"
-#        "$mod, O, layoutmsg, colresize -conf"
-#    };
-#  };
+  };
   services.dunst = {
     enable = true;
     settings = {
