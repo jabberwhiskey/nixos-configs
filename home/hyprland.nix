@@ -10,6 +10,7 @@
     packages = with pkgs; [
       wl-clipboard
       cliphist
+      hyprshot
       qpwgraph
       pcmanfm-qt
       brillo
@@ -179,29 +180,6 @@
 #        "9, layout:master"
 #      ];
 #      bind = [
-#        "$mod, Return, exec, $term"
-#        "$mod, Space, exec, dunstctl close-all"
-#        "$mod Alt, Space, exec, dunstctl history-pop"
-#        "$mod, C, killactive,"
-#        "$mod SHIFT, Q, exit,"
-#        "$mod, E, exec, $fileManager"
-#        #rofi
-#        "$mod, D, exec, rofi -show drun"
-#        "$mod, v, exec, ${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-#        "$mod, F, fullscreen,"
-#        "$mod SHIFT, F,togglefloating"
-#        ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output"
-#        "SHIFT, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m region"
-#        "Alt, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m active"
-#        #move focus
-#        "$mod, left, movefocus, l"
-#        "$mod, H, movefocus, l"
-#        "$mod, right, movefocus, r"
-#        "$mod, L, movefocus, r"
-#        "$mod, up, movefocus, u"
-#        "$mod, K, movefocus, u"
-#        "$mod, down, movefocus, d"
-#        "$mod, J, movefocus, d"
 #        #groups
 #        "$mod SHIFT, code:59, moveintogroup, l" # ,
 #        "$mod SHIFT, code:60, moveintogroup, r" # ,
@@ -210,11 +188,6 @@
 #        "$mod, code:60, changegroupactive, f" # .
 #        "$mod, code:59, changegroupactive, b" # ,
 #        "$mod Alt, code:61, moveoutofgroup, active" # /
-#        #move window
-#        "$mod SHIFT, up, movewindow, u"
-#        "$mod SHIFT, down, movewindow, d"
-#        "$mod SHIFT, left, movewindow, l"
-#        "$mod SHIFT, right, movewindow, r"
 #        #dwindle layout
 #        "$mod, U, layoutmsg, togglesplit" # dwindle
 #        "$mod, I, layoutmsg, pseudo" # dwindle
@@ -234,48 +207,6 @@
 #        "$mod, code:51, layoutmsg, togglefit"
 #        "$mod, P, layoutmsg, colresize +conf"
 #        "$mod, O, layoutmsg, colresize -conf"
-#        #scratchpad
-#        "$mod, code:20, togglespecialworkspace, SCRTCHPD" # minus
-#        "$mod Shift, code:20, movetoworkspace, special:SCRTCHPD" # minus
-#        #brightness
-#        ",XF86MonBrightnessDown,exec, ${pkgs.brillo}/bin/brillo -q -U 5"
-#        ",XF86MonBrightnessUp, exec, ${pkgs.brillo}/bin/brillo -q -A 5"
-#        #mute, volume is under binde
-#        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-#        #playerctl
-#        ", XF86AudioPrev, exec, plyerctl previous"
-#        ", XF86AudioNext, exec, plyerctl next"
-#        ", XF86AudioPlay, exec, plyerctl play-pause"
-#      ]
-#      ++ (builtins.concatLists (
-#        builtins.genList (
-#          x:
-#          let
-#            ws =
-#              let
-#                c = (x + 1) / 10;
-#              in
-#              builtins.toString (x + 1 - (c * 10));
-#          in
-#          [
-#            "$mod, ${ws}, workspace, ${toString (x + 1)}"
-#            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-#          ]
-#        ) 10
-#      ));
-#      binde = [
-#        ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
-#        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
-#        #resize window
-#        "$mod Alt, up, resizeactive, 0 10"
-#        "$mod Alt, down, resizeactive, 0 -10"
-#        "$mod Alt, right, resizeactive, 10 0"
-#        "$mod Alt, left, resizeactive, -10 0"
-#      ];
-#      bindm = [
-#        "$mod, mouse:272, movewindow"
-#        "$mod, mous:273, resizewindow"
-#      ];
 #    };
 #  };
   services.dunst = {
