@@ -38,21 +38,21 @@
         ../home/hm-dconf.nix
       ];
       home.stateVersion = "24.11";
-      wayland.windowManager.hyprland = {
+#      wayland.windowManager.hyprland = {
 #      	settings.debug = { full_cm_proto=true; };
-	settings.monitor = [
-	  "DP-1, 2560x1440@239.95700, 0x0, 1, bitdepth, 10, cm, hdr, vrr, 1"
-          "DP-2, 3840x2160@59.99700, -170x-1080, 2"
-	  "HDMI-A-1, disable"
-	  ];
-	  settings.bind =
-	  [ "$mod Alt, F, exec, hyprctl keyword monitor HDMI-A-1, enable " 
-	   "$mod Alt, G, exec, hyprctl keyword monitor HDMI-A-1, disable " ];
-	  settings.workspace = [
-	    "2, m[1]"
-	  ];
+#	settings.monitor = [
+#	  "DP-1, 2560x1440@239.95700, 0x0, 1, bitdepth, 10, cm, hdr, vrr, 1"
+#          "DP-2, 3840x2160@59.99700, -170x-1080, 2"
+#	  "HDMI-A-1, disable"
+#	  ];
+#	  settings.bind =
+#	  [ "$mod Alt, F, exec, hyprctl keyword monitor HDMI-A-1, enable " 
+#	   "$mod Alt, G, exec, hyprctl keyword monitor HDMI-A-1, disable " ];
+#	  settings.workspace = [
+#	    "2, m[1]"
+#	  ];
 	
-      };
+#      };
     };
   };
   #specialArgs = { inherit inputs; };
