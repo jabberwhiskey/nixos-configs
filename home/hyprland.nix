@@ -39,6 +39,7 @@
     name = "BreezeX-RosePine-Linux";
     size = 24;
     gtk.enable = true;
+    enable = true;
   };
   qt = {
     platformTheme.name = "qtct";
