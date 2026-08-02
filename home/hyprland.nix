@@ -269,13 +269,6 @@
       };
     };
   };
-  programs.ranger = {
-    enable = true;
-    extraConfig = ''
-            set preview_images true
-            set preview_images_method sixel
-    '';
-  };
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.foot}/bin/foot";

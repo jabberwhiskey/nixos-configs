@@ -87,9 +87,10 @@
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       btop
-#      discord
-      bitwarden-desktop
+      #discord
+      #bitwarden-desktop
       imv
+      yazi
       mpv
       mumble
       htop

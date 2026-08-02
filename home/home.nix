@@ -10,9 +10,9 @@
     homeDirectory = "/home/jcw";
     packages = with pkgs; [
       btop
+      yazi
       chromium
       lazygit
-#      discord
       discordo
       mumble
       mpv
@@ -20,7 +20,6 @@
 #      bitwarden-desktop
       wiki-tui
       ytermusic
-#      iamb
       nix-inspect
       bitwarden-cli
       firefox
@@ -61,8 +60,8 @@
       program_options = {
         udisks_version = 2;
         tray = "auto";
-        icon_names.media = [ "drive-removable-media-usb" ];
       };
+      icon_names.media = [ "drive-removable-media-usb" ];
     };
   };
 }

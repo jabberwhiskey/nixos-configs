@@ -16,7 +16,19 @@ hl.window_rule({
 hl.window_rule({
   name = "bitwarden",
   match = {
-    class = "Bitwarden",
+    class = "Bitwarden",  
+    title = "Bitwarden",
+  },
+  center = true,
+  float = true,
+  workspace = "special:SCRTCHPD",
+  fullscreen = false,
+  size = {'(monitor_w*0.5)', '(monitor_h*0.5)' }
+})
+hl.window_rule({
+  name = "bitwarden2",
+  match = {
+    class = "bitwarden",  
     title = "Bitwarden",
   },
   center = true,
