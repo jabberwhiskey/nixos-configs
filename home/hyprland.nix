@@ -18,22 +18,22 @@
       kdePackages.breeze
     ];
   };
-  gtk = {
-    cursorTheme = {
-      name = "BreezeX-RosePine-Linux";
-      package = pkgs.rose-pine-cursor;
-      size = 24;
-    };
-    iconTheme = {
-      name = "rose-pine-icons";
-      package = pkgs.rose-pine-icon-theme;
-    };
-    theme = {
-      name = "rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
-    };
-    enable = true;
-  };
+#  gtk = {
+#    cursorTheme = {
+#      name = "BreezeX-RosePine-Linux";
+#      package = pkgs.rose-pine-cursor;
+#      size = 24;
+#    };
+#    iconTheme = {
+#      name = "rose-pine-icons";
+#      package = pkgs.rose-pine-icon-theme;
+#    };
+#    theme = {
+#      name = "rose-pine";
+#      package = pkgs.rose-pine-gtk-theme;
+#    };
+#    enable = true;
+#  };
   home.pointerCursor = {
     package = pkgs.rose-pine-cursor;
     name = "BreezeX-RosePine-Linux";
@@ -60,7 +60,7 @@
       BindsTo = ["graphical-session.target"];
       Wants = ["graphical-session-pre.target"];
       After =  ["graphical-session-pre.target"];
-      PropagatesStopTo = "graphical-session.target";
+      PropagatesStopTo = ["graphical-session.target"];
     };
   };
   wayland.windowManager.hyprland = {
