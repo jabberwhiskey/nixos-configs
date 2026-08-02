@@ -46,7 +46,12 @@
   programs.home-manager.enable = true;
   xdg = {
     enable = true;
-    portal.xdgOpenUsePortal = true;
+    #portal.xdgOpenUsePortal = true;
+    portal = {
+        enable = true;
+        extraPortals = [inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
+        ];
+      };
     mimeApps.defaultApplications = {
       "image/jpeg" = "imv.desktop";
       "image/png" = "imv.desktop";
