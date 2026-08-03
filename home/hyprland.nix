@@ -94,17 +94,6 @@
         autoLoad = true;
       };
     };
-#    settings = {
-#      exec-once = [
-#      	"kwalletd6"
-#      env = [
-#        "XCURSOR_SIZE,24"
-#        "XCURSOR_THEME,rose-pine"
-#        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-#        "HYPRCURSOR_SIZE, 24"
-#        "QT_QPA_PLATFORMTHEME,qt6ct"
-#        "XDG_CURRENT_DESKTOP,Hyprland"
-#      ];
 #      general = {
 #        gaps_in = "5";
 #        gaps_out = "10";
@@ -151,30 +140,10 @@
 #          "workspaces, 1, 6, default"
 #        ];
 #      };
-#      binds = {
-#        workspace_back_and_forth = true;
-#      };
-#      dwindle = {
-#        force_split = 2;
-#        preserve_split = "true";
-#      };
-#      master = {
-#        new_status = "slave";
-#        new_on_top = true;
-#      };
 #      scrolling = {
 #        fullscreen_on_one_column = true;
 #      };
 #
-#      windowrule = [
-#        "match:class Bitwarden, match:title Bitwarden, workspace special:SCRTCHPD, float true, group set always, size monitor_w*0.5 monitor_h*0.5, center on"
-#        "match:class xdg-desktop-portal-gtk, match:title All Files, float true"
-#        "match:class Waydroid, match:title Waydroid, float true"
-#        "match:class mpv, match:title mpv, float true"
-#        "match:class imv, match:title imv, float true"
-#        "match:workspace special:SCRTCHPD, float true"
-#        "match:class Steam, match:title Steam, monitor 0"
-#      ];
   };
   services.dunst = {
     enable = true;
