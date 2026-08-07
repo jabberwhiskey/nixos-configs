@@ -26,8 +26,6 @@ local menu        = "dmenu"
 hl.on("hyprland.start", function () 
    hl.exec_cmd("systemctl start --user hyprland-session.target")
    hl.exec_cmd("wl-paste --watch cliphist store")
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
  end)
 hl.on("hyprland.shutdown", function()
     os.execute("systemctl --user stop hyprland-session.target && sleep 0.1")
@@ -45,7 +43,6 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "rose-pine-hyprcursor")
 
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_CURRENT_DESKTOP", "hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
