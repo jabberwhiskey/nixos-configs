@@ -49,12 +49,6 @@
     };
     enable = true;
   };
-  xdg.configFile.hypr = {
-    source = ../extra/hyprland;
-    recursive = true;
-    target = "hypr";
-    enable = true;
-  };
   systemd.user.targets.hyprland-session = {
     Unit = {
       BindsTo = ["graphical-session.target"];
