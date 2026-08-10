@@ -94,7 +94,7 @@
   };
   services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
   systemd.sleep.settings.Sleep = {
-    HibernateDelaySec = "2h"; 
+    HibernateDelaySec = "7200"; 
     SuspendState = "mem";
   };
   services.logind.settings.Login.PowerKey = "hibernate";
