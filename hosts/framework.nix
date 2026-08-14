@@ -40,6 +40,7 @@
         ../home/nvim.nix
         ../home/bash.nix
         ../home/hypridle-extra.nix
+        ../home/hypr-swapescape.nix
         ../home/zsh.nix
         ../home/waybar-framework.nix
       ];

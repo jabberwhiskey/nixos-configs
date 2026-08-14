@@ -12,6 +12,7 @@
     ../home/sway.nix
     ../home/bash.nix
     ../home/sway-inhibit.nix
+    ../home/hypr-swapescape.nix
     ../home/zsh.nix
     ../home/anyrun.nix
     ../home/nvim.nix

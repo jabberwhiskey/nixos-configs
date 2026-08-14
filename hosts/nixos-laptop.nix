@@ -40,6 +40,7 @@
       imports = [
         ../home/waybar.nix
         ../home/bash.nix
+        ../home/hypr-swapescape.nix
         ../home/hypridle-extra.nix
         ../home/nvim.nix
         ../home/zsh.nix
