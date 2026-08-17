@@ -12,6 +12,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hm-stable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "stable";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     jovian = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -31,6 +35,7 @@
       nix-bitcoin,
       nixpkgs,
       home-manager,
+      hm-stable,
       stable,
       nixos-hardware,
       hyprland,
