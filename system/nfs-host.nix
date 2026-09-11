@@ -32,6 +32,8 @@
     kernelModules = [ "nfs" ];
   };
   systemd.services.nfs-server = {
-    after = [ "remote-fs.target" ];
+    After = [ "remote-fs.target" ];
+    RestartSec = ["10s"];
+    Restart = ["on-failure"];
   };
 }
