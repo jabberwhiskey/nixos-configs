@@ -45,6 +45,8 @@
       enable = true;
       user = "jcw";
     };
+    defaultSession = "plasma-bigscreen-wayland";
+    sessionPackages = [ pkgs.kdePackages.plasma-bigscreen ];
     sddm = {
       autoLogin.relogin = true;
     };
