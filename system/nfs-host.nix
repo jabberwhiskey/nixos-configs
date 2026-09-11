@@ -34,7 +34,8 @@
   systemd.services.nfs-server = {
     after = [ "remote-fs.target" ];
     serviceConfig = {
-      RestartSec =10;
+      RestartSec ="30s";
+      StartLimitIntervalSec=120;
       Restart ="on-failure";
     };
   };
