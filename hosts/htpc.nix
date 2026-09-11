@@ -27,6 +27,8 @@
           youtube
           upnext
           inputstreamhelper
+          keymap
+          osmc-skin
 	      ]);
       };
     };
