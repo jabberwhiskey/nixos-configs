@@ -86,4 +86,5 @@
     pkgs.retroarch-free
   ];
   networking.hostName = "gpdwin";
+  services.hardware.openrgb.enable = true;
 }

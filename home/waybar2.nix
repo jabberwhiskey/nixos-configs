@@ -4,7 +4,9 @@
     systemd = {
       enable = true;
       targets = [ "hyprland-session.target" ];
-    };   enable = true;
+    };   
+    enable = true;
+    package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       mainBar = {
         layer = "top";

@@ -1,6 +1,7 @@
 {
   #  home = {
   programs.waybar = {
+    package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
     systemd = {
       enable = true;
       targets = ["hyprland-session.target"];
