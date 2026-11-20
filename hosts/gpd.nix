@@ -56,7 +56,7 @@
   };
   boot = {
     consoleLogLevel = 0;
-    initrd.verbose = false;
+#    initrd.verbose = false;
     kernelParams = [
       "quiet"
 #      "amd_pstate=active"
